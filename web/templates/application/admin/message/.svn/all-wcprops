@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/1121/trunk/web/templates/application/admin/message
+END
+cv_upload.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/message/cv_upload.html
+END
+message_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/message/message_list.html
+END
+cs_corporate.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/1121/trunk/web/templates/application/admin/message/cs_corporate.html
+END
+detail_csCorporate.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/message/detail_csCorporate.html
+END
+cs_website.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/message/cs_website.html
+END
+detail_csWebsite.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/message/detail_csWebsite.html
+END

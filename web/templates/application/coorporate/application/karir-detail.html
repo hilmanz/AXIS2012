@@ -1,0 +1,41 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}life_in_axis">{$locale.lifeinaxis.title}</a> &raquo; <a >{$locale.karir.title}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="theContent">
+        <div class="theTitle">
+            <h1>{$locale.lifeinaxis.title}</h1>
+        </div><!-- end .theTitle -->
+    	<div id="sidebar">
+            <div class="theBox">
+                <div class="headBox">
+                    <h1>{$locale.lifeinaxis.head_vacancy}</h1>
+                </div><!-- end .headBox -->
+                <div class="entryBox">
+                    <div class="rowBtns">
+					{section name=i loop=$karirList}
+                        <a class="purpleBtn {if $content.parentid==$karirList[i].parentid}current{/if}" href="{$basedomain}life_in_axis/karir_detail/{$karirList[i].parentid}"> {$karirList[i].title} </a>   
+                    {/section}   
+                    </div><!-- end .rowBtns -->
+                </div><!-- end .entryBox -->
+                <div class="shadow"></div>
+            </div><!-- end .theBox -->
+           {$recent_blog}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+            <div class="entryDetail">
+                <div class="entry">
+                    <div class="entry-title">
+                         <h1>{$content.title}</h1>
+                    </div><!-- end .entry-title -->
+                    <div class="entry-post white_table">
+                          <h2>{$content.brief}</h2>
+                          {*}<p>{$locale.karir.lihatlebihlengkap}</p>{/*}
+							{$content.content}
+                             <a href="{$basedomain}life_in_axis/submit_cv" class="purpleBtn">{$locale.karir.klikdisinicv}</a>
+                    </div><!-- end .entry-post -->
+                </div><!-- end .entry -->
+            </div><!-- end .entryDetail -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+</div><!-- end #container -->

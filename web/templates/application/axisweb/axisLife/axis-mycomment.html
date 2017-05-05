@@ -1,0 +1,79 @@
+
+<div id="container">
+    <div class="wrapper" id="axisLife">
+		<div id="shorter">
+        	<h1 class="titleDetail">{$locale.axislife.category}</h1>
+            <a class="backBtn" href="{$basedomain}{$userpage}">&laquo; {$locale.msg.kembali}</a>
+        </div>
+    	
+    	{$sidebar_axis_life}
+        <div id="contents">
+			<div class="theTitle">
+            	<h1 class="icon_favorite">{$locale.widget.mykomentar}</h1>
+            </div><!-- end .theTitle -->
+			{if $comment}
+              <div class="shadowCtop"> 
+            	<div class="shadowCbottom">
+                    <div class="entryDetail list">
+                        {foreach from=$comment key=k item=v}
+							<div class="row">
+								<div class="cat_movie">
+									<div class="circleThumb">
+									{if $v.categoryid==18}
+										<a href="{$basedomain}content/{if  $v.social==1}sdetail{else}detail{/if}/{$v.parentid}"><img src="http://img.youtube.com/vi/{$v.url|replace:'http://www.youtube.com/watch?v=':''}/0.jpg" /></a>
+									{else}
+										{if $v.social!=1}
+												<a href="{$basedomain}content/detail/{$v.parentid}">
+												{if $v.image}<img src="{$basedomain}public_assets/{if $v.social==1}user/content{else}article{/if}/{$v.image}" />
+												{else}<img src="{$basedomain}assets/images/thumb.jpg" />
+												{/if}
+												</a>
+										{else}
+											<a href="{$basedomain}content/sdetail/{$v.parentid}">
+												{if $v.image}<img src="{$basedomain}public_assets/{if $v.social==1}user/content{else}article{/if}/{$v.image}" />
+												{else}<img src="{$basedomain}assets/images/thumb.jpg" />
+												{/if}
+											</a>
+										{/if}
+									{/if}
+									</div><!-- end .circleThumb -->
+									<div class="entry">
+										{if $v.social!=1}
+										<h3><a href="{$basedomain}content/detail/{$v.parentid}">{$v.title} </a></h3>
+										<h5><a href="{$basedomain}content/detail/{$v.parentid}">{$v.brief} </a></h5>
+										{else}
+										<h3><a href="{$basedomain}content/sdetail/{$v.parentid}">{$v.title} </a></h3>
+										<h5><a href="{$basedomain}content/sdetail/{$v.parentid}">{$v.brief} </a></h5>
+										{/if}
+										<p> {$v.posted_date}</p>
+										{if $v.comment}
+											<ul>
+											{foreach from=$v.comment key=kc item=vc}
+												<p>{$vc.comment} at {$vc.date|date_format:'%d-%m-%Y %I:%M %p'} </p>
+											{/foreach}
+											</ul>
+										{/if}
+										<p></p>
+										{*}<a class="removeBtn" href="#">X</a>{/*}
+									</div><!-- end .entry -->
+								</div>
+							</div><!-- end .row -->
+						{/foreach}
+                    </div><!-- end .entryDetail -->
+                </div><!-- end .shadowCbottom -->
+              <div class="paging" >
+                   
+                </div><!-- end .paging -->
+				
+            </div><!-- end .shadowCtop -->
+          {else}
+		  <div class="shadowCtop">
+			<h3 class="emptyMessage">{$locale.axislife.emptymycomment}</h3>
+		  </div>
+		  {/if}
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+    <div class="widget-axisLife">
+    {$carousel_banner}
+    </div><!-- end .widget-whyAxis -->
+</div><!-- end #container -->

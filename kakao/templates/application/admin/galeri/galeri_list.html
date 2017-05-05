@@ -1,0 +1,61 @@
+<div style="padding:10px;">
+<h2>Galery Entry</h2>
+<hr>
+<div><a href="index.php?s=galeri&act=excelreport&lid={$lid}&id_cat={$id_cat}&id_type={$id_type}">Download XLS</a></div></br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="addlist zebra">
+	<tr>
+		<td colspan="16">
+			<form>
+				<input type="hidden" name="s" value="galeri" />
+							
+				Date Range&nbsp; 
+				<input type="text" name="startdate" value="{$startdate}" style="width:150px;"  class="datepicker"/>&nbsp;&nbsp;
+				- &nbsp;
+				<input type="text" name="enddate" value="{$enddate}" style="width:150px;"  class="datepicker"/>&nbsp;&nbsp;
+				&nbsp;<input type="submit" value="cari" />
+			</form>
+			&nbsp;
+			<input type="button" value="Add" onclick="javascript: window.location.href='index.php?s=galeri&act=add' ;" style="width:110px;"/>
+		</td>
+	</tr>
+	<tr class="head">
+		<td><strong>No</strong></td>
+		<td><strong>Finalist Name</strong></td>
+		<td><strong>Finalist Email</strong></td>
+		<td><strong>Image Name</strong></td>
+		<td><strong>Image</strong></td>
+		<td><strong>Created Date</strong></td>
+		<td><strong>Status</strong></td>
+		<td colspan="2" align="center"><strong>Action</strong></td>
+	</tr>
+	
+	{foreach from=$list key=k item=v}
+	{assign var=no value=$no++}
+	{assign var=lid value=$v.lid}
+	<tr>
+		<td>{$no}</td>
+		<td>{$v.owner}</td>
+		<td>{$v.email}</td>
+		<td>{$v.name}</td>
+		<td>{if $v.image}<img src="{$baseurl}public_assets/galeri/tiny_{$v.image}" />{/if}</td>
+		<td><nobr>{$v.created_date|date_format:"%e %B %Y"} &nbsp;{$v.created_date|date_format:$time.time}</nobr></td>
+		<td align="center">
+			{if $v.n_status==0} Inactive 
+			{elseif $v.n_status==1} Publish 
+			{elseif $v.n_status==2} Unpublish
+			{else}
+			{/if}
+		</td>
+		
+		<td width="10%">
+				<a href="index.php?s=galeri&act=edit&id={$v.id}" style="text-decoration:none;"> update </a>
+				<a href="index.php?s=galeri&act=delete&id={$v.id}" style="text-decoration:none;" onclick="return confirm('Are you sure you want to delete this?')">delete</a>
+		</td>
+	</tr>
+	{/foreach}
+</table>
+<br>
+<p>{$paging}</p>
+</div>
+
+

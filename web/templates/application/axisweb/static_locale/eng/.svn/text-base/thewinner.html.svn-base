@@ -1,0 +1,1594 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="index.php">Home</a> &raquo; <a>100 Uploader</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="axisLife">
+    	<div id="bgSplash">
+            <div id="theWinner">
+            	<div class="theWinner">
+           	 		<div class="theWinnerBottom">
+                        <div class="winnLogo">
+                            <img src="{$basedomain}assets/images/win_logo_id.png" />
+                        </div>
+                        <script>
+						{literal}
+							jQuery(document).ready(function($) {
+								$('#selectDates').change(function(){
+									var selected = $(this).find(':selected');
+									$('.winnerList').fadeOut();
+									$('.winnerList').removeClass("tabActive");
+								    $('.'+selected.val()).fadeIn();
+								    $('.'+selected.val()).addClass("tabActive");
+								});
+							});
+						{/literal}
+						</script>
+                        <h1 class="winTitle">100 Uploader</h1>
+                        <h3 class="selectPeriod">Daily Winners :</h3>
+                        <select id="selectDates" class="styled">
+                                <option value="hari1">November 17, 2012</option>
+                                <option value="hari2">November 18, 2012</option>
+                                <option value="hari3">November 19, 2012</option>
+                                <option value="hari4">November 20, 2012</option>
+                                <option value="hari5">November 21, 2012</option>
+                                <option value="hari6">November 22, 2012</option>
+                                <option value="hari7">November 23, 2012</option>
+                                <option value="hari8">November 24, 2012</option>
+                                <option value="hari9">November 25, 2012</option>
+                                <option value="hari10">November 26, 2012</option>
+                                <option value="hari11">November 27, 2012</option>
+                                <option value="hari12">November 28, 2012</option>
+                                <option value="hari13">November 29, 2012</option>
+                                <option value="hari14">November 30, 2012</option>
+                                <option value="hari15">December 1, 2012</option>
+                                <option value="hari16">December 2, 2012</option>
+                                <option value="hari17">December 3, 2012</option>
+                                <option value="hari18">December 4, 2012</option>
+                                <option value="hari19">December 5, 2012</option>
+                                <option value="hari20">December 6, 2012</option>
+                                <option value="hari21">December 7, 2012</option>
+                                <option value="hari22">December 8, 2012</option>
+                                <option value="hari23">December 9, 2012</option>
+                                <option value="hari24">December 10, 2012</option>
+                                <option value="hari25">December 11, 2012</option>
+                                <option value="hari26">December 12, 2012</option>
+                                <option value="hari27">December 13, 2012</option>
+                                <option value="hari28">December 14, 2012</option>
+                                <option value="hari29">December 15, 2012</option>
+                                <option value="hari30">December 16, 2012</option>
+                                <option value="hari31">December 17, 2012</option>
+                                <option value="hari32">December 18, 2012</option>
+                                <option value="hari33">December 19, 2012</option>
+                                <option value="hari34">December 20, 2012</option>
+                                <option value="hari35">December 21, 2012</option>
+                        </select>
+                        <div id="tabwinnner">
+                            <div class="winContent winnerList hari1 tabActive">
+                                <ol class="colLeft">
+                                  <li>Joeza Eza</li>
+                                  <li>Monang Sianipar</li>
+                                  <li>windy Andrianiaisah</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari2">
+                                <ol class="colLeft">
+                                  <li>Heri Setiawan</li>
+                                  <li>Bhonsay Taiminong (ANDRI AGUS TRIYANTO)</li>
+                                  <li>Ecy Cecem</li>
+                                  <li>Suci Chixmal</li>
+                                  <li>Trisna Budiman</li>
+                                  <li>Mahendra Putra</li>
+                                  <li>Faisal Acill</li>
+                                  <li>Ali Ridho</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari3">
+                                <ol class="colLeft">
+                                  <li>Mizz Sunshine</li>
+                                  <li>Rudi Hariono</li>
+                                  <li>Rama Makie</li>
+                                  <li>Arifah Abriana Nasution</li>
+                                  <li>Tomi Yuli Setiawan</li>
+                                  <li>Ircham Gallan</li>
+                                  <li>Chafidin Chaf</li>
+                                  <li>Miftahul Jannah</li>
+                                  <li>Tonugamu S</li>
+                                  <li>Yosef Wahyudi</li>
+                                  <li>Rima Pramanik</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari4">
+                                <ol class="colLeft">
+                                  <li>Suryo Wibisono</li>
+                                  <li>Muhammad Ibnul Zikri</li>
+                                  <li>Daiyeng Situmorang</li>
+                                  <li>Scholastica Tyassanti</li>
+                                  <li>Mohammed Chaled</li>
+                                  <li>Riza Sauqi Valasev</li>
+                                  <li>Nina Hadiyanti</li>
+                                  <li>IGON Catburry (Hendra Lesmana Nugraha)</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari5">
+                                <ol class="colLeft">
+                                  <li>Sinta Kartika Putri</li>
+                                  <li>Riko Arturo</li>
+                                  <li>Aku Citra</li>
+                                  <li>Bambang Rahadi</li>
+                                  <li>Krisna Purnamasari</li>
+                                  <li>Ap Syariev</li>
+                                  <li>Farhad Makarim</li>
+                                  <li>Ichsan kamil</li>
+                                  <li>Herawati Manihuruk</li>
+                                  <li>Setiawan Wibowo</li>
+                                  <li>Jhon Bravontal (yusuf)</li>
+                                  <li>Bhoray purnama (dwi purwanti)</li>
+                                  <li>Dharma Aday (Hidayatulloh)</li>
+                                  <li>Bayu Irfani</li>
+                                  <li>Ekiw Jah (Wike Widayanto)</li>
+                                  <li>Aris Mustofa</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari6">
+                                <ol class="colLeft">
+                                  <li>Yuda Chandra Wiguna</li>
+                                  <li>KARYADI Kry</li>
+                                  <li>Tito Yuariesma</li>
+                                  <li>Syarif Pudin</li>
+                                  <li>Ahmad Yazzid</li>
+                                  <li>Salpriando Waldemar</li>
+                                  <li>Alvania Kirana</li>
+                                  <li>Jimson Rhino</li>
+                                  <li>Nazhifa Putrinda</li>
+                                  <li>Furdy LilF</li>
+                                  <li>Benks Setiawan</li>
+                                  <li>Hardi Setiawan</li>
+                                  <li>Faiqoh Marlina</li>
+                                  <li>Liyah Maria</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari7">
+                                <ol class="colLeft">
+                                  <li>Umi Nur Chayanti</li>
+                                  <li>Ocy oktavia (Nur Oktavia Wahyuningsih)</li>
+                                  <li>Mayati Ati</li>
+                                  <li>Sabrina Adfi</li>
+                                  <li>Yudha Adi (yudha adi wicaksono)</li>
+                                  <li>Septyaningsih Ekayadi</li>
+                                  <li>Feyza Sahnoon</li>
+                                  <li>Ady Renardo</li>
+                                  <li>Nita Natalia</li>
+                                  <li>Setiawan Tampan (setiawan)</li>
+                                  <li>Ratih Anggraeni</li>
+                                  <li>Andy Meggy</li>
+                                  <li>Aqila Putri</li>
+                                  <li>Ramdani Ahmad</li>
+                                  <li>Galih Arum</li>
+                                  <li>Futichatul Izah</li>
+                                  <li>Doriska Apridayani</li>
+                                  <li>Hamka Ashari</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari8">
+                                <ol class="colLeft">
+                                  <li>Didik Adityo</li>
+                                  <li>Irna Rosita</li>
+                                  <li>Latifah Batoq</li>
+                                  <li>Marselina Ncell</li>
+                                  <li>Fahmi Nurzan</li>
+                                  <li>Risky Purnama</li>
+                                  <li>Astriana yuni</li>
+                                  <li>Nadia Kartika</li>
+                                  <li>Adipati Krisna Dwipayana</li>
+                                  <li>Nabila Asty (Nabila Asty Prameswari)</li>
+                                  <li>Caca Tiwi</li>
+                                  <li>Muhammad Alfatih</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari9">
+                                <ol class="colLeft">
+                                  <li>Ayunda Khumaira</li>
+                                  <li>Noval Ganteng</li>
+                                  <li>Iwan Suwandy</li>
+                                  <li>Rabel Relianta Zagoto</li>
+                                  <li>Galih Wicaksono</li>
+                                  <li>Umi Salma</li>
+                                  <li>Ahmad Aries</li>
+                                  <li>Seeva Aisyah</li>
+                                  <li>Lulu Lutuna</li>
+                                  <li>Gusti Dwi Saputra</li>
+                                  <li>Maria Citra</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari10">
+                                <ol class="colLeft">
+                                  <li>Elvia Susanti</li>
+                                  <li>Tri Wahyuni</li>
+                                  <li>Benny Wahyudi</li>
+                                  <li>Ryan Aribowo</li>
+                                  <li>Viki Lesmana</li>
+                                  <li>Nan Shanty (susanti)</li>
+                                  <li>Zarky Admal</li>
+                                  <li>Kikio Belle</li>
+                                  <li>Nita Ardilla</li>
+                                  <li>Ryan Cayoo</li>
+                                  <li>Ichwan RM</li>
+                                  <li>Chenur Jannah (siti nurjanah)</li>
+                                  <li>Sony Fiffandi</li>
+                                  <li>Putri Ayu</li>
+                                  <li>Vania Prameswari</li>
+                                  <li>Rizka Sendiri (rizka indah permata)</li>
+                                  <li>Aben Setiono</li>
+                                  <li>Siti Ati</li>
+                                  <li>Joni Sakti</li>
+                                  <li>San Fadlol (fadlol umar)</li>
+                                  <li>Muhammad Athar</li>
+                                  <li>Danial Makarim</li>
+                                  <li>Indri Ati</li>
+                                  <li>Jane Eka</li>
+                                  <li>Elang Jaka</li>
+                                  <li>Ani Suryani</li>
+                                  <li>Memer Bannie</li>
+                                  <li>Irpan Dadi</li>
+                                  <li>Hazel Queen</li>
+                                  <li>Yoga Panji  (Riansah Panji Prayoga)</li>
+                                  <li>Agus Purnama (Agus Munaji)</li>
+                                  <li>Fevi Febrianti</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari11">
+                                <ol class="colLeft">
+                                  <li>Ani Dinata (Astri Ani Dinata)</li>
+                                  <li>Ferry Gunawan</li>
+                                  <li>Putra Siburian </li>
+                                  <li>Galung Kasesa</li>
+                                  <li>Nadi TKJ</li>
+                                  <li>Minah Nur Hasannah</li>
+                                  <li>Joni Kemon</li>
+                                  <li>Evi Dwi Rahmawati</li>
+                                  <li>Axal Hafis</li>
+                                  <li>Ferry Anggriawan</li>
+                                  <li>Randy Cityasa</li>
+                                  <li>Jasmine Syiva (jasmine ananda syiva)</li>
+                                  <li>Tommy G</li>
+                                  <li>Ef Fendi</li>
+                                  <li>Zaenal Kuryadi (Zaenal Tri Kuryadi)</li>
+                                  <li>Setiawan Fatih</li>
+                                  <li>Victoria Moore</li>
+                                  <li>AS Roma (Frans Titto)</li>
+                                  <li>Yolina Harsa</li>
+                                  <li>Chacha Hanika (Meiriza Hanika)</li>
+                                  <li>Irma Fibrani</li>
+                                  <li>Ibnunafis Aal (Ibnunafis Allayubi)</li>
+                                  <li>Dharma Yagami</li>
+                                  <li>Diana Putri</li>
+                                  <li>Yana Emilia</li>
+                                  <li>Nur Haznah</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari12">
+                                <ol class="colLeft">
+                                  <li>Ferfau jr</li>
+                                  <li>Ahmad Yusuf</li>
+                                  <li>Elsa Monika</li>
+                                  <li>Sandi Permana</li>
+                                  <li>Defannie Costa</li>
+                                  <li>Wahyou Prabawa</li>
+                                  <li>Bembem Tio</li>
+                                  <li>Akbar Putra Pratama</li>
+                                  <li>Isti Mahmuda</li>
+                                  <li>Sulaeman Yadi</li>
+                                  <li>Muhamad Ridwan</li>
+                                  <li>Neng Putri</li>
+                                  <li>Gustriyo Achmadi</li>
+                                  <li>Fitri Handayani</li>
+                                  <li>Tanti Yulia </li>
+                                  <li>Nuh Agung</li>
+                                  <li>Nancy Sisnawati</li>
+                                  <li>Norris Dwi Artono</li>
+                                  <li>Beni Budiman</li>
+                                  <li>Suryadi Wijaya</li>
+                                  <li>Jason Setiadi</li>
+                                  <li>Anda Coco</li>
+                                  <li>Fadl Nan</li>
+                                  <li>Fitry Jayanti</li>
+                                  <li>Dimas Zafir</li>
+                                  <li>Elly Indriyanti</li>
+                                  <li>Crucio D'major</li>
+                                  <li>Mia Meeto</li>
+                                  <li>Putra Pratomo</li>
+                                  <li>Onah Ipansyah</li>
+                                  <li>Eko Frastyo</li>
+                                  <li>Roy Simarmata</li>
+                                  <li>Ben Budiman</li>
+                                  <li>Rahman Hakim</li>
+                                  <li>Mas Kholbie</li>
+                                  <li>Sudarmi Se</li>
+                                  <li>Febrich Rahadi</li>
+                                  <li>Fauzanah Ilma</li>
+                                  <li>Anggela Anatasya</li>
+                                  <li>Denis Setianugraha</li>
+                                  <li>She Rain</li>
+                                  <li>Susi Sulistia</li>
+                                  <li>Semi Yassin</li>
+                                  <li>Permana Andy</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari13">
+                                <ol class="colLeft">
+                                  <li>Niken Indah Permatasari</li>
+                                  <li>Memey Camay</li>
+                                  <li>Piter Uwm</li>
+                                  <li>Ardiansyah Ahmad</li>
+                                  <li>Dwi Novitasari</li>
+                                  <li>Widdy Puspita</li>
+                                  <li>Bambang Setiawan</li>
+                                  <li>Sayid Malik</li>
+                                  <li>Vicha Anggraini</li>
+                                  <li>Aulia larasatu</li>
+                                  <li>Septya Riswan</li>
+                                  <li>Matsuya Tobing</li>
+                                  <li>Emar Wiwi</li>
+                                  <li>Nurul Ain</li>
+                                  <li>Sopian Yadi</li>
+                                  <li>Dewi Oktasari</li>
+                                  <li>Andita Hermawan</li>
+                                  <li>Martin Martian</li>
+                                  <li>Benks Setia</li>
+                                  <li>Rufaidah Nasrul</li>
+                                  <li>Nurul Inayah</li>
+                                  <li>Renidwi Trisnawati</li>
+                                  <li>Ria Ulfa</li>
+                                  <li>Rui Andye</li>
+                                  <li>Muhammad Riyadh</li>
+                                  <li>Danil Boag</li>
+                                  <li>Ewinda Rizani</li>
+                                  <li>Arina Sakura</li>
+                                  <li>Airin Wicaksono</li>
+                                  <li>Suyadi Sc</li>
+                                  <li>Adjie Prasojo</li>
+                                  <li>Tya Ekayadi</li>
+                                  <li>Iwan Riswan</li>
+                                  <li>Puput Wulandari</li>
+                                  <li>Apriyanto Wahyu</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari14">
+                                <ol class="colLeft">
+                                  <li>Helmi Abdul</li>
+                                  <li>Azra Kriwil</li>
+                                  <li>Choky Bic</li>
+                                  <li>Bintang Prince</li>
+                                  <li>Anas Muhammad</li>
+                                  <li>Iwan.Suwandi Simanjuntak</li>
+                                  <li>Azis Pradibta</li>
+                                  <li>Siti Ainiyah</li>
+                                  <li>Yusuf Galib</li>
+                                  <li>Amean Holmes</li>
+                                  <li>Leon Pratama Putra</li>
+                                  <li>Maha Cinta</li>
+                                  <li>Nabilla Juwita</li>
+                                  <li>Caesar Aulia</li>
+                                  <li>Risty Wendy</li>
+                                  <li>Sulies Tias</li>
+                                  <li>Ahmad Muhlis</li>
+                                  <li>Mutia Putri</li>
+                                  <li>Cakra Setia</li>
+                                  <li>Septi Lucu</li>
+                                  <li>Vani Indriasti</li>
+                                  <li>Cha Ica</li>
+                                  <li>Tati Hartati</li>
+                                  <li>Nindi Regina</li>
+                                  <li>Gerry Saragih</li>
+                                  <li>Ari Wibowo</li>
+                                  <li>Wahyu Mahmud</li>
+                                  <li>Ridwan Syam</li>
+                                  <li>Aina Cantik</li>
+                                  <li>Nino Cahpml</li>
+                                  <li>Aniy Fitri</li>
+                                  <li>Wili Nawilis</li>
+                                  <li>Astri Iche</li>
+                                  <li>Ana Suminah</li>
+                                  <li>Rizky Khairunnisa</li>
+                                  <li>Mikail Akmal</li>
+                                  <li>Gatot Jenar</li>
+                                  <li>Yudi Lesmana</li>
+                                  <li>Galang Ridwan</li>
+                                  <li>Rere Salvator</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari15">
+                                <ol class="colLeft">
+                                  <li>Becky Dionisio</li>
+                                  <li>Tio Aben</li>
+                                  <li>Bhismo Bemo</li>
+                                  <li>Khotijah Sity</li>
+                                  <li>Fachmi Alfaro</li>
+                                  <li>Resta Bakara</li>
+                                  <li>Fisca Ran</li>
+                                  <li>Vina Dinks</li>
+                                  <li>Ahmad Syamsudin</li>
+                                  <li>Tri Purnomo</li>
+                                  <li>Alib Asedel</li>
+                                  <li>Ncell Tazmania</li>
+                                  <li>Anisa Mayasari</li>
+                                  <li>Agus Munaji</li>
+                                  <li>Cece wardani</li>
+                                  <li>Che’gw Naungkebidik</li>
+                                  <li>Ramzy Putra Akbar</li>
+                                  <li>Reza Rifai</li>
+                                  <li>Rini Tri</li>
+                                  <li>Nur Aulia</li>
+                                  <li>Anah Elhisani</li>
+                                  <li>Robin Ahmad</li>
+                                  <li>Rama Dhezign</li>
+                                  <li>Ida Herman</li>
+                                  <li>Indah Amanda</li>
+                                  <li>Fitrie Azwar</li>
+                                  <li>Ismi Umar</li>
+                                  <li>Ardiego Leonardo</li>
+                                  <li>Ayu Goprana</li>
+                                  <li>Arie Yulistiyo</li>
+                                  <li>Kitty Ariesta</li>
+                                  <li>Annisa Sofhia</li>
+                                  <li>Iis Adisty</li>
+                                  <li>Rizal Afandy</li>
+                                  <li>Nurhayati Hasan</li>
+                                  <li>Hotlas Riana</li>
+                                  <li>Natalia Eki</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari16">
+                                <ol class="colLeft">
+                                  <li>Nely Oktavia</li>
+                                  <li>Heri Andesta</li>
+                                  <li>Agra Tara</li>
+                                  <li>Deni Suherlan</li>
+                                  <li>Arinta Hamada</li>
+                                  <li>Alfath Athar</li>
+                                  <li>Aprilia Leksmana</li>
+                                  <li>Dao Daranee</li>
+                                  <li>Sasmika Krib</li>
+                                  <li>Ani Satriani</li>
+                                  <li>Lilis Su’aebah</li>
+                                  <li>Calista Isabella</li>
+                                  <li>Hilma Samhelmi</li>
+                                  <li>Tri Agustina</li>
+                                  <li>Amanda Cantik</li>
+                                  <li>Singa Tua</li>
+                                  <li>Bams Alfatih</li>
+                                  <li>Indah Irmawati</li>
+                                  <li>Joan Lestari</li>
+                                  <li>Ryan Aribowo</li>
+                                  <li>Dhio Arga</li>
+                                  <li>Sofyan Hidayat</li>
+                                  <li>Irfan Hadi</li>
+                                  <li>Edi Kusnaedi</li>
+                                  <li>Wahyu Asyari M</li>
+                                  <li>Anindita Putri</li>
+                                  <li>Mirani Yolanda</li>
+                                  <li>Adhitya Putra</li>
+                                  <li>Sofian Tetap Yadi</li>
+                                  <li>Sahid Panji</li>
+                                  <li>Andri Fitriyani</li>
+                                  <li>Adi Salamander</li>
+                                  <li>Ati Keysa</li>
+                                  <li>Dedemit Bluek</li>
+                                  <li>Sumardi Ajadeh</li>
+                                  <li>Febry Ansyah</li>
+                                  <li>Selvi Ajah</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari17">
+                                <ol class="colLeft">
+                                  <li>Dimas Wijoko</li>
+                                  <li>Lulus Richantini</li>
+                                  <li>Ahnad Faisal</li>
+                                  <li>Eko Mulyanto</li>
+                                  <li>Annita Liesyana</li>
+                                  <li>Zul Kautsar</li>
+                                  <li>Septi Ariyani</li>
+                                  <li>Onah Ipansyah</li>
+                                  <li>Harummi Slaluceria</li>
+                                  <li>Rahmat Tongtong</li>
+                                  <li>Desy Ariana</li>
+                                  <li>Ari Gustam</li>
+                                  <li>Sofwan tabe</li>
+                                  <li>Rina Susanti</li>
+                                  <li>Yadi Kosmik</li>
+                                  <li>Halimah Rudi</li>
+                                  <li>Kosim Nurseha</li>
+                                  <li>Ria Sumarnih</li>
+                                  <li>Melt Tabe</li>
+                                  <li>El Ryuzaki Ahmad</li>
+                                  <li>Diah Putri</li>
+                                  <li>Ahmad Adha</li>
+                                  <li>Bejo Aditiya</li>
+                                  <li>Khanza Sasikirana</li>
+                                  <li>Irfani Bayu</li>
+                                  <li>Arif Mahfud</li>
+                                  <li>Farah Dillah</li>
+                                  <li>Panji Dwi</li>
+                                  <li>Dedy Margono</li>
+                                  <li>Edubae</li>
+                                  <li>Sinta Bela</li>
+                                  <li>Saga Adi</li>
+                                  <li>Liga Juanda</li>
+                                  <li>Hareizky Teuku</li>
+                                  <li>Andy Coky</li>
+                                  <li>Keysa Fani</li>
+                                  <li>Kharisma Cantik</li>
+                                  <li>Indra Gunawan</li>
+                                  <li>Hilda Lukmana</li>
+                                  <li>Boni Vegasus</li>
+                                  <li>Dwi Putra</li>
+                                  <li>Cinthya Kinasih</li>
+                                  <li>Indah Al</li>
+                                  <li>Teguh Sutrisno</li>
+                                  <li>Mujib Durahman</li>
+                                  <li>Andriansyah Bebek</li>
+                                  <li>Dika Suny</li>
+                                  <li>Yogi Bravo</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari18">
+                                <ol class="colLeft">
+                                      <li>Olan Kurniawan</li>
+                                      <li>Andri Tozca</li>
+                                      <li>Myyta Bellamy</li>
+                                      <li>Hasan Asyari</li>
+                                      <li>Fendik Vendul</li>
+                                      <li>Choky G</li>
+                                      <li>Vivi ce </li>
+                                      <li>Syahrul Ramdani</li>
+                                      <li>Satria Muda</li>
+                                      <li>Widya Lestiani</li>
+                                      <li>Ajid Yazid</li>
+                                      <li>Fachmi Haze</li>
+                                      <li>Bapak Doeng</li>
+                                      <li>Okta Goprana</li>
+                                      <li>Donny Rizanto</li>
+                                      <li>Zaki Ananda</li>
+                                      <li>Sekhoe Riyanto</li>
+                                      <li>Indri Gondray</li>
+                                      <li>Feny Try Nur Azizah</li>
+                                      <li>Tomy Tzuone</li>
+                                      <li>Achi Asri</li>
+                                      <li>Novando Kendru</li>
+                                      <li>Nana Cutez</li>
+                                      <li>Setyo Widodo</li>
+                                      <li>Efi Laili</li>
+                                      <li>Nurfie Al Asror</li>
+                                      <li>Dewi Mumi</li>
+                                      <li>Iyga Mament</li>
+                                      <li>Adi Mament</li>
+                                      <li>Depi Nina</li>
+                                      <li>Tiada Tara</li>
+                                      <li>Pradita Sendy</li>
+                                      <li>Anita Maya</li>
+                                      <li>Joy Sukma</li>
+                                      <li>Rahmat Irfan</li>
+                                      <li>Siti Abok Maimunah</li>
+                                      <li>Roni Benks</li>
+                                      <li>Lusiana Dewi</li>
+                                      <li>Eki Wijatmoko</li>
+                                      <li>Nina Hadi</li>
+                                      <li>Indah Wulandari</li>
+                                      <li>Teguh Arvi</li>
+                                      <li>Diana Wati</li>
+                                      <li>Tris Midianto</li>
+                                      <li>Handoyo Widodo</li>
+                                      <li>Vani Selaluh</li>
+                                      <li>Bernando Delapans</li>
+                                      <li>Lyant Darmawan</li>
+                                      <li>Zulvickar Husni</li>
+                                      <li>Andini Ajah</li>
+                                      <li>Danish Algazi</li>
+                                      <li>Lazeiya Ishagiya</li>
+                                      <li>Mery Baniie</li>
+                                      <li>Tarqila Noski</li>
+                                      <li>Budhi Handuk</li>
+                                      <li>Ahmadi Saputra</li>
+                                      <li>Budhii salamander</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari19">
+                                <ol class="colLeft">
+                                      <li>Ujang Budiman</li>
+                                      <li>Nurul Wardah</li>
+                                      <li>Tarmidi Sajalah</li>
+                                      <li>Rayoenk Gondrong</li>
+                                      <li>Harris Kurniawan</li>
+                                      <li>Dito Satriyo</li>
+                                      <li>Ida Safitri</li>
+                                      <li>Alie Kelieung</li>
+                                      <li>Taufia Hidayah</li>
+                                      <li>Anita Eka</li>
+                                      <li>Silvia Avini</li>
+                                      <li>Dian Syah</li>
+                                      <li>Andre Backbone</li>
+                                      <li>Yini Hungkul</li>
+                                      <li>Vpiet Pipiet</li>
+                                      <li>Kheyla Putri</li>
+                                      <li>Any Anita</li>
+                                      <li>Dwi Tarti</li>
+                                      <li>Prilly Galuh</li>
+                                      <li>Mariuana Salsabillah</li>
+                                      <li>Keyla Diana</li>
+                                      <li>Stanley Vendie Itsmeholic</li>
+                                      <li>Pinkan Galuh</li>
+                                      <li>Abok Abokk</li>
+                                      <li>Ayu Mei</li>
+                                      <li>Arianiee Saja</li>
+                                      <li>Siti Avaya</li>
+                                      <li>Johan Arab</li>
+                                      <li>Ronan Jarot Winata</li>
+                                      <li>Andromeda Nina</li>
+                                      <li>Bimo Prakoso</li>
+                                      <li>Mayang Oktani</li>
+                                      <li>Yoza Eka</li>
+                                      <li>Aldi Raino</li>
+                                      <li>Panji Hananto</li>
+                                      <li>Sisil Wulandari</li>
+                                      <li>Sisillia Cutezz</li>
+                                      <li>Rama Embe</li>
+                                      <li>Niken Daniarti</li>
+                                      <li>Mang Ivan</li>
+                                      <li>Kiki Alfreda</li>
+                                      <li>Daniel Rossi</li>
+                                      <li>Moch Evans Basc</li>
+                                      <li>Dian Novita</li>
+                                      <li>Leonardo Christian</li>
+                                      <li>Muhammad Muklis</li>
+                                      <li>Mazidah Tuwuk</li>
+                                      <li>Don King</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari20">
+                                <ol class="colLeft">
+                                      <li>Nia Canda</li>
+                                      <li>Asih Fitriani</li>
+                                      <li>Sugino Sukirmin</li>
+                                      <li>Safei Harsa</li>
+                                      <li>Anggie Suwarto</li>
+                                      <li>Annisa Nurul</li>
+                                      <li>Aditya Putra</li>
+                                      <li>Sang Penari</li>
+                                      <li>Tyaskhumaida Ken Damayanti</li>
+                                      <li>Cablak Asegaf</li>
+                                      <li>Tri Tina</li>
+                                      <li>Adi Gunawan</li>
+                                      <li>Firman Alamsayah</li>
+                                      <li>Theun Cahaya</li>
+                                      <li>Purwanti Dwi</li>
+                                      <li>Rahma Firda</li>
+                                      <li>Cez Lavigne</li>
+                                      <li>Neng Geulis</li>
+                                      <li>Via Susanti</li>
+                                      <li>Torik Smileh</li>
+                                      <li>Ilham Akbar</li>
+                                      <li>Fatimah Jn</li>
+                                      <li>Ida Farida</li>
+                                      <li>Ciara Baby</li>
+                                      <li>Noni Sunarsih</li>
+                                      <li>Sela Manjah </li>
+                                      <li>Eri Asmono</li>
+                                      <li>Dii Alviana</li>
+                                      <li>Aji Nugroho</li>
+                                      <li>Galang Sangmaestro</li>
+                                      <li>Ari Setya</li>
+                                      <li>Virgi Praditya</li>
+                                      <li>Nisa Datun </li>
+                                      <li>Alfi Alvin</li>
+                                      <li>Hariyanto Pendik</li>
+                                      <li>Ajie Saputra</li>
+                                      <li>Fitri Martiani</li>
+                                      <li>Ulil Abshor</li>
+                                      <li>Gus Bud</li>
+                                      <li>Harnelly Kashmir</li>
+                                      <li>Prabu Perjaka</li>
+                                      <li>Magolphy Black</li>
+                                      <li>Esta Maya</li>
+                                      <li>Dede Lilf</li>
+                                      <li>Budhi Elbaihaqi</li>
+                                      <li>X.moods See Station</li>
+                                      <li>Samsul Hardi</li>
+                                      <li>Mia Almana</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari21">
+                                <ol class="colLeft">
+                                  <li>Rezky Dana</li>
+                                  <li>Eva Suwandhi</li>
+                                  <li>Setyo Widarti</li>
+                                  <li>Bakekok Sia</li>
+                                  <li>Gugum Gumbira</li>
+                                  <li>Dindin Komarudin</li>
+                                  <li>Cep Suracep</li>
+                                  <li>Gatot Pratama</li>
+                                  <li>Neo Damara</li>
+                                  <li>Syantie Nurmalasari</li>
+                                  <li>Utama Mp</li>
+                                  <li>Heri Samsul Haerudin</li>
+                                  <li>Zahrul Atriah</li>
+                                  <li>Nima Azizah</li>
+                                  <li>Jhony Gobel</li>
+                                  <li>Rendi Permana</li>
+                                  <li>Sarah Anisa</li>
+                                  <li>Nanda Nugraha</li>
+                                  <li>Fika Keysa</li>
+                                  <li>Wandi Costa</li>
+                                  <li>Johari Lono</li>
+                                  <li>Mia Yuvani</li>
+                                  <li>Dindana Anda</li>
+                                  <li>Maryyeta adelya</li>
+                                  <li>Sendy Purnama</li>
+                                  <li>Gadis Oca</li>
+                                  <li>Hasan Fitri</li>
+                                  <li>Raditya Yayat</li>
+                                  <li>Adam Susilo</li>
+                                  <li>Siska Ardini</li>
+                                  <li>Hana albinia</li>
+                                  <li>Ariani Dewi</li>
+                                  <li>Adi Hans</li>
+                                  <li>Lucky Dewayanti</li>
+                                  <li>Lucky rezaa</li>
+                                  <li>Vidi Vidy</li>
+                                  <li>Andri Yaniee</li>
+                                  <li>Diaz Rahmannur</li>
+                                  <li>Ramdhani Rais</li>
+                                  <li>Supardi Joko</li>
+                                  <li>Cindy Lusiana </li>
+                                  <li>Januar Andri </li>
+                                  <li>Anjani Cika</li>
+                                  <li>Hermin Tanaya</li>
+                                  <li>Tri Sulastri</li>
+                                  <li>Dimas Sigit </li>
+                                  <li>Ali Tongtong</li>
+                                  <li>Irwan Danu</li>
+                                  <li>Suhendri Cez</li>
+                                  <li>Rifai Amini</li>
+                                  <li>Doyok Kembar </li>
+                                  <li>Supra Buntut</li>
+                                  <li>Joko Hadi</li>
+                                  <li>Win Wiwin</li>
+                                  <li>Siti Khadijah</li>
+                                  <li>Chandra Indah</li>
+                                  <li>Cimot Moti</li>
+                                  <li>Muhamad Firmansyah</li>
+                                  <li>Muhamad Rokhim</li>
+                                  <li>Alghof Arwan</li>
+                                  <li>Ria Rosalinda</li>
+                                  <li>Irma Sagita</li>
+                                  <li>Nur Winida</li>
+                                  <li>Maruli Tua</li>
+                                  <li>Casmin Aja</li>
+                                  <li>Angga Satria</li>
+                                  <li>Nur Andiya</li>
+                                  <li>Nur Ayina</li>
+                                  <li>Septi Elisa</li>
+                                  <li>Fernando Pasha</li>
+                                  <li>Chowy Gtooh</li>
+                                  <li>Mita Afrila</li>
+                                  <li>Risma Astuti</li>
+                                  <li>Donni Simajuntak</li>
+                                  <li>Aji Mahardika</li>
+                                  <li>Ahmad Dika</li>
+                                  <li>Doni Balaraja</li>
+                                  <li>Ayu Anisa</li>
+                                  <li>Nadia Anggun</li>
+                                  <li>Irdamsyah Aza</li>
+                                  <li>Dani Oktaprihandi</li>
+                                  <li>Yuli Afriana</li>
+                                  <li>Rizki Rizkiono</li>
+                                  <li>Arindra Hopkins</li>
+                                  <li>Anggie Sisnawati</li>
+                                  <li>Farham Mpf</li>
+                                  <li>Rini Quen</li>
+                                  <li>Abdi Syahputra</li>
+                                  <li>Imay Naisa</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari22">
+                                <ol class="colLeft">
+                                  <li>Yuda Ajiy</li>
+                                  <li>Yuki Fani</li>
+                                  <li>Annisa Alwahida</li>
+                                  <li>Keyla Putri</li>
+                                  <li>Randi Ajah</li>
+                                  <li>Joko Riyanto</li>
+                                  <li>Uzwah Hasnia</li>
+                                  <li>Novita Manik</li>
+                                  <li>Teddy Juanda</li>
+                                  <li>Ariyanti Prime</li>
+                                  <li>Rohman Mubarok</li>
+                                  <li>Memey Dzzah</li>
+                                  <li>Phenphennt Azizah</li>
+                                  <li>Rizki Amalia</li>
+                                  <li>Neng Himayati</li>
+                                  <li>Ahmad Subekti</li>
+                                  <li>Abink Roman</li>
+                                  <li>Siti Masrofah</li>
+                                  <li>Rika Gustiana</li>
+                                  <li>Bambang Okeh</li>
+                                  <li>Ulfa Chubby</li>
+                                  <li>Ismail Kusuma</li>
+                                  <li>Winda Widya</li>
+                                  <li>Roy Nuary</li>
+                                  <li>Kong Fei</li>
+                                  <li>Eka Velisa</li>
+                                  <li>Ari Prime</li>
+                                  <li>Ayu Wulandari</li>
+                                  <li>Agil Femz</li>
+                                  <li>Irwan T</li>
+                                  <li>Geladis Pasirsalam</li>
+                                  <li>Arif Budiman</li>
+                                  <li>Teguh Asmoro</li>
+                                  <li>Nabila Nanti</li>
+                                  <li>Encan Buhisa</li>
+                                  <li>Lala Octavia</li>
+                                  <li>Moh Wira</li>
+                                  <li>Chiee Intan</li>
+                                  <li>Icha Ramadhani</li>
+                                  <li>Eldiva Dante</li>
+                                  <li>Nabila Putri</li>
+                                  <li>Ayunda Chika</li>
+                                  <li>Niken Nuryunita</li>
+                                  <li>Novita Sugandhie</li>
+                                  <li>Sandi Perdana</li>
+                                  <li>Ramadha Permana</li>
+                                  <li>Kristina Liya</li>
+                                  <li>Akang Ibet</li>
+                                  <li>Nurlian Oktavia</li>
+                                  <li>Tasya Imelda</li>
+                                  <li>Andri Perdana</li>
+                                  <li>Ayu Erika</li>
+                                  <li>Salsabila Juanda</li>
+                                  <li>Roce Erika</li>
+                                  <li>Nina Jayanti</li>
+                                  <li>Manti Sumanto</li>
+                                  <li>Teddy Juanda</li>
+                                  <li>Rael Zivilia</li>
+                                  <li>Tamiha Bunda</li>
+                                  <li>Putri Wahyuni</li>
+                                  <li>Ida Rasyidha</li>
+                                  <li>Awal Ludin</li>
+                                  <li>Nanda Seraya</li>
+                                  <li>Noldi Ferdiansyah</li>
+                                  <li>Ahmad Ansyori</li>
+                                  <li>Andi Pramana</li>
+                                  <li>Erwin Wijaya</li>
+                                  <li>Tri Handoyo</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari23">
+                                <ol class="colLeft">
+                                  <li>Sapta Ramadhan </li>
+                                  <li>Lili Liana</li>
+                                  <li>Desi Villia</li>
+                                  <li>Bayu Ardian</li>
+                                  <li>Lia Vitri</li>
+                                  <li>Guruh Yoga W</li>
+                                  <li>Yozza Eka Diman</li>
+                                  <li>Khana Rosyida</li>
+                                  <li>Muhammad Shofie</li>
+                                  <li>Andityo Trilaksono</li>
+                                  <li>Abdu Khoiri</li>
+                                  <li>Irene Aprilina</li>
+                                  <li>Pudin Oke</li>
+                                  <li>Sari Puspita</li>
+                                  <li>Rida Cyntia</li>
+                                  <li>Nina Udin</li>
+                                  <li>Andi Fernandi</li>
+                                  <li>Tara Arini</li>
+                                  <li>Anna Maria</li>
+                                  <li>Destiana Ana</li>
+                                  <li>Siti Bentar</li>
+                                  <li>Putri Fatimah</li>
+                                  <li>Supiana Abigael</li>
+                                  <li>Supri Adi</li>
+                                  <li>Gilang Dumble</li>
+                                  <li>Salim Aliyudin</li>
+                                  <li>Syaripudin Floor</li>
+                                  <li>Sinta Jojo</li>
+                                  <li>Sunardi Pratama</li>
+                                  <li>Urip Sudiharjo</li>
+                                  <li>Eva Rosdiana</li>
+                                  <li>Hendra Gunawan</li>
+                                  <li>Dedi Iriansyah</li>
+                                  <li>Siti Fatimah</li>
+                                  <li>Julandi Rajagukguk</li>
+                                  <li>Viky Febriansyah</li>
+                                  <li>Tika Atika</li>
+                                  <li>Deni Fajria</li>
+                                  <li>Hafiz Yogandaru</li>
+                                  <li>Febri Rahmawati</li>
+                                  <li>Indriani Kusumadewi</li>
+                                  <li>Inyong Mamake</li>
+                                  <li>Devi Arisusanti</li>
+                                  <li>Hilman Taufik</li>
+                                  <li>Dewi Ayu</li>
+                                  <li>Arul Ruli</li>
+                                  <li>Sutarna Jajang</li>
+                                  <li>Ajat Java</li>
+                                  <li>Rizal Antovani</li>
+                                  <li>Nabilla Billa</li>
+                                  <li>Muhammad Muhlis</li>
+                                  <li>Eko Suprapto</li>
+                                  <li>Shela Shelina</li>
+                                  <li>Nicky Wu</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari24">
+                                <ol class="colLeft">
+                                  <li>Yandi Suganda</li>
+                                  <li>Nadya Dya</li>
+                                  <li>Fitri Virginia</li>
+                                  <li>Sandi Panggabean</li>
+                                  <li>Dinda Siluman</li>
+                                  <li>Indah Salamon</li>
+                                  <li>Putri Alkhoir</li>
+                                  <li>Maman Tongtong</li>
+                                  <li>Cim Ocim</li>
+                                  <li>Umi Dani</li>
+                                  <li>Cing Tiah</li>
+                                  <li>Hanter Xhanter</li>
+                                  <li>Suheti Andri</li>
+                                  <li>Margareta Siregar</li>
+                                  <li>Taey Cheon Lee</li>
+                                  <li>Syarip Simanjuntak</li>
+                                  <li>Ida Damayanti</li>
+                                  <li>Ipar Sianipar</li>
+                                  <li>Tyas Mirasti</li>
+                                  <li>Maman Item</li>
+                                  <li>Fery Top</li>
+                                  <li>Eko Jati</li>
+                                  <li>Nurdin Zaelani</li>
+                                  <li>Schneider Van Halen</li>
+                                  <li>Slamet Thok</li>
+                                  <li>Muhammad Anas</li>
+                                  <li>Chintya Putri</li>
+                                  <li>Cantika Rini </li>
+                                  <li>Rudi Anto</li>
+                                  <li>Joko Susanto</li>
+                                  <li>Fitri Juwita</li>
+                                  <li>Eli Erawati</li>
+                                  <li>Sinta Ayu</li>
+                                  <li>April Ani</li>
+                                  <li>Doni Anto</li>
+                                  <li>Dela Frente</li>
+                                  <li>Siska Angini</li>
+                                  <li>Evi Selvina</li>
+                                  <li>Rani Simbolon</li>
+                                  <li>Julian Sah</li>
+                                  <li>Kia Nanih</li>
+                                  <li>Fitri Zaidit</li>
+                                  <li>Ria Andriani</li>
+                                  <li>Dery Sudrajat</li>
+                                  <li>Sandrino Malakiano</li>
+                                  <li>Susi Sagita</li>
+                                  <li>Iwan Budiman</li>
+                                  <li>Jasmadi Ramadhan</li>
+                                  <li>Suci Lestari</li>
+                                  <li>Aji Setyadi</li>
+                                  <li>Rifki Putra</li>
+                                  <li>Hendra Kuncoro</li>
+                                  <li>Anandita Prakoso</li>
+                                  <li>Laura Basuki</li>
+                                  <li>Reisya Aulia</li>
+                                  <li>Lidia Dea</li>
+                                  <li>Shinta Dewi</li>
+                                  <li>Nova Ayu</li>
+                                  <li>Azizah Zahra</li>
+                                  <li>Anton Sugiono</li>
+                                  <li>Mey Meysa</li>
+                                  <li>Adinda Zahra</li>
+                                  <li>Yasmin Niandra</li>
+                                  <li>Edison Maroe</li>
+                                  <li>Shella Andini</li>
+                                  <li>Sofia Anakmana</li>
+                                  <li>Tasya Sakina</li>
+                                  <li>Belinda Yasmin</li>
+                                  <li>Shinta Devy</li>
+                                  <li>Herlina Seftany</li>
+                                  <li>Lany Melany</li>
+                                  <li>Elsa Yustina</li>
+                                  <li>Mornika Manik</li>
+                                  <li>Icha Ceropy</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari25">
+                                <ol class="colLeft">
+                                  <li>Bram Mustika</li>
+                                  <li>Anji Marpaung</li>
+                                  <li>Farid Okeh</li>
+                                  <li>Febriana Siregras</li>
+                                  <li>Dita Aprilia</li>
+                                  <li>Mamat Nugraha</li>
+                                  <li>Ria Irawati</li>
+                                  <li>Rini Tamasya</li>
+                                  <li>Rahman Kaila</li>
+                                  <li>Bayu Saputra</li>
+                                  <li>Katak bangkong</li>
+                                  <li>Aang Yulianhar</li>
+                                  <li>Ncang Awal</li>
+                                  <li>Argaditya Samudra</li>
+                                  <li>Darus Hilmawan</li>
+                                  <li>Sefi Puspitasari</li>
+                                  <li>Balanar Pujangga</li>
+                                  <li>Okeu Perdana</li>
+                                  <li>Oky Mutz</li>
+                                  <li>Syafilla Chairunnisa</li>
+                                  <li>Iaquinta Azzira</li>
+                                  <li>Softiany Tia</li>
+                                  <li>Qiqi Fatmawaty</li>
+                                  <li>Citra Ciyo</li>
+                                  <li>Toni Putra</li>
+                                  <li>Bens Benyamin</li>
+                                  <li>Salsabila Afaf</li>
+                                  <li>Imas Fatoni</li>
+                                  <li>Retno Jumiati</li>
+                                  <li>Baihaqi Bara</li>
+                                  <li>Dara Yashinta</li>
+                                  <li>Yogi Sapta</li>
+                                  <li>Sukoco Hadikusumo</li>
+                                  <li>Erna Jonie</li>
+                                  <li>Boyke Ari</li>
+                                  <li>Budi Sugiono</li>
+                                  <li>Putri Uthie</li>
+                                  <li>Dian Atmajaya</li>
+                                  <li>Nining Anjarwati</li>
+                                  <li>Soffi Bakhri</li>
+                                  <li>Mosi Sasikirana</li>
+                                  <li>Viola Rosa</li>
+                                  <li>Ikbal Maulana</li>
+                                  <li>Ade Lia</li>
+                                  <li>May Saroh</li>
+                                  <li>Novita Sari</li>
+                                  <li>Echi Shipol</li>
+                                  <li>Aulia Destyasari</li>
+                                  <li>Ida Farida</li>
+                                  <li>Ronis Rizal</li>
+                                  <li>Mardi Putro</li>
+                                  <li>Sukma Wati</li>
+                                  <li>Rani Andini</li>
+                                  <li>Andre Wagunsu</li>
+                                  <li>Ipansyah Putra</li>
+                                  <li>Robbie Binnur</li>
+                                  <li>Tatu Yulia</li>
+                                  <li>Ayna Aina</li>
+                                  <li>Panji Christoper</li>
+                                  <li>Firmansyah Qtink</li>
+                                  <li>Firmansyah AMD</li>
+                                  <li>Doni Sukmana</li>
+                                  <li>Icha Ria</li>
+                                  <li>Winda Asril</li>
+                                  <li>Franco Sandico</li>
+                                  <li>Evi Velisa</li>
+                                  <li>Agung Kurniawan</li>
+                                  <li>Vina Lisa</li>
+                                  <li>Reno Putra</li>
+                                  <li>Firma Ganda</li>
+                                  <li>Ulina Manik</li>
+                                  <li>Kern Septyan</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari26">
+                                <ol class="colLeft">
+                                  <li>Anjani Hutapea </li>
+                                  <li>Immanuel Rante</li>
+                                  <li>Nur Arifin</li>
+                                  <li>Sisilia Kusuma</li>
+                                  <li>Teguhti Sumantri</li>
+                                  <li>Teguh Handoyo</li>
+                                  <li>Andik Triwitanto</li>
+                                  <li>Yoga Kusuma</li>
+                                  <li>Abden Pradita</li>
+                                  <li>Anwar Nopiar</li>
+                                  <li>Anjar Anjani</li>
+                                  <li>Novie Adelia</li>
+                                  <li>Andi Supriyanto</li>
+                                  <li>Mustika Wati</li>
+                                  <li>Yuli Ariestha</li>
+                                  <li>Yas Jasmine</li>
+                                  <li>Puspa Maharani</li>
+                                  <li>Suryadi Kelik</li>
+                                  <li>Jessika Salih</li>
+                                  <li>Noviana Dewi</li>
+                                  <li>Lavigne Lagi</li>
+                                  <li>Azura Grana</li>
+                                  <li>Kay Yumemizu</li>
+                                  <li>Era Moka</li>
+                                  <li>Ibrahim Sulaeman</li>
+                                  <li>Francie aninditya</li>
+                                  <li>Masskiki Kiki</li>
+                                  <li>Sarah Mouse</li>
+                                  <li>Darma Anto Anto</li>
+                                  <li>Yanti Basuki</li>
+                                  <li>Herman Priska</li>
+                                  <li>Aldy Nola</li>
+                                  <li>Abay Chubby</li>
+                                  <li>Siti Maftuhah</li>
+                                  <li>Siti Fadilla</li>
+                                  <li>Ega Anggun</li>
+                                  <li>Chibi Fifi</li>
+                                  <li>Iran Febrian</li>
+                                  <li>Ikhwatun Nisa</li>
+                                  <li>Aulia Normalita</li>
+                                  <li>Djenal Alim</li>
+                                  <li>Iqbal Efendi</li>
+                                  <li>Cang Salmah</li>
+                                  <li>Paty Linartha</li>
+                                  <li>Caca Siska</li>
+                                  <li>Rindu Ndu</li>
+                                  <li>Sigit Hop</li>
+                                  <li>Ridwan Ahmad</li>
+                                  <li>Suny Dika</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari27">
+                                <ol class="colLeft">
+                                  <li>Dimas G</li>
+                                  <li>Bola Hujan</li>
+                                  <li>Ryan Bowo</li>
+                                  <li>Palupi Tri</li>
+                                  <li>Ari Bowo</li>
+                                  <li>Tri Ari</li>
+                                  <li>Tasya Melinda</li>
+                                  <li>Safira Hazimah</li>
+                                  <li>Budi Susanto</li>
+                                  <li>Wildan Farhan</li>
+                                  <li>Nur Ayu</li>
+                                  <li>Sari Yusnita</li>
+                                  <li>Rizka Niar</li>
+                                  <li>Sakha Kirom</li>
+                                  <li>Novi Lestari</li>
+                                  <li>Iskandar Maulana</li>
+                                  <li>Eric Yusuf</li>
+                                  <li>Dodi Ahmad</li>
+                                  <li>Imah Chaiia</li>
+                                  <li>Ariyawan Mc Cloud</li>
+                                  <li>Wahyu Efendi</li>
+                                  <li>Karina Jayanti</li>
+                                  <li>Astri Nurlaliasari</li>
+                                  <li>Samsul Bahri</li>
+                                  <li>Erni Lusfiyanti</li>
+                                  <li>Angelina Inryani</li>
+                                  <li>Cecep Sabarudin</li>
+                                  <li>Nadifa Sayhla</li>
+                                  <li>Idayati Hanafi</li>
+                                  <li>Nani Sunarya</li>
+                                  <li>Arya Choirunnisa</li>
+                                  <li>Nunu Aprilianto</li>
+                                  <li>Eko Budiman</li>
+                                  <li>Antu Balai</li>
+                                  <li>Adinda Lubna</li>
+                                  <li>Ahmad Ismail</li>
+                                  <li>Nuri Handayani</li>
+                                  <li>Marina Purwanti</li>
+                                  <li>Mozaky Yus</li>
+                                  <li>Ahmad Andre</li>
+                                  <li>Dani Purtyshara</li>
+                                  <li>Ahmad azam</li>
+                                  <li>Muhammad Zulfikar</li>
+                                  <li>Fifi Okeh</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari28">
+                                <ol class="colLeft">
+                                  <li>Goez Dudulz</li>
+                                  <li>Lia Kalilawar</li>
+                                  <li>Anggi Diandra</li>
+                                  <li>Adevia Dewi</li>
+                                  <li>Sapta Septi</li>
+                                  <li>Rina Dewi</li>
+                                  <li>Siti Fatma</li>
+                                  <li>Rio Ernanto</li>
+                                  <li>Kuslani Putra</li>
+                                  <li>Sisi Sisilia</li>
+                                  <li>Ajeng Ramanda</li>
+                                  <li>Wini Sagita</li>
+                                  <li>Muhammad Sopian</li>
+                                  <li>Raden Pandu</li>
+                                  <li>Kanaya Azrila</li>
+                                  <li>Latief Ramadhan</li>
+                                  <li>Ian Darma</li>
+                                  <li>Sella Septya Nurlaili</li>
+                                  <li>Rizal Hamzal</li>
+                                  <li>Yanuar Rochim</li>
+                                  <li>Putra Ciput</li>
+                                  <li>Feni Tasari</li>
+                                  <li>Romie Hardianto</li>
+                                  <li>Wilson Aurelius</li>
+                                  <li>Amelia Safitri</li>
+                                  <li>Iga Sitepu</li>
+                                  <li>Syahrul Latif</li>
+                                  <li>Aniatul Aeni</li>
+                                  <li>Deni Setiawan</li>
+                                  <li>Dian Intan</li>
+                                  <li>Jajang Nurzaman</li>
+                                  <li>Dias Loetoena</li>
+                                  <li>Danisa Gembrots</li>
+                                  <li>Helmy Indry</li>
+                                  <li>Tanto Armoy</li>
+                                  <li>Asri Retno Pamungkas</li>
+                                  <li>Dwi Susilohadi</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari29 ">
+                                <ol class="colLeft">
+                                  <li>Aedmon Doang</li>
+                                  <li>Dea Rahayu</li>
+                                  <li>Vila Maijah</li>
+                                  <li>Diah Wuri Agustini</li>
+                                  <li>Nabiyatul Azizah</li>
+                                  <li>Rara Setiawan</li>
+                                  <li>Ahmad Fauzan</li>
+                                  <li>Ogy Lando</li>
+                                  <li>Oktarina Kurnianingsih</li>
+                                  <li>Aulia Narendra</li>
+                                  <li>Lukita Jati</li>
+                                  <li>Feri Forlon</li>
+                                  <li>Rifki Purwanto</li>
+                                  <li>Ahmad Ramzi</li>
+                                  <li>Riyan Riyadi</li>
+                                  <li>Imam Dwi Pramono</li>
+                                  <li>Andires Fahrezi</li>
+                                  <li>Singgih Dwi Cahyo</li>
+                                  <li>Desi Anas</li>
+                                  <li>Yuni Awimba</li>
+                                  <li>Nur Dianka</li>
+                                  <li>Nadia Zahra</li>
+                                  <li>Ahmad Saifudin</li>
+                                  <li>Dilla Fadillah</li>
+                                  <li>Fitri I</li>
+                                  <li>Maru San</li>
+                                  <li>Bayi Putu</li>
+                                  <li>Freddy Prahman</li>
+                                  <li>Yayuk Haryanti Haryanti</li>
+                                  <li>Shely Aristiana</li>
+                                  <li>Azilla Qairen</li>
+                                  <li>Hilmi Mimi</li>
+                                  <li>Gerry Yan</li>
+                                  <li>Renatha Eleanor</li>
+                                  <li>Arum Khoirunnisa</li>
+                                  <li>Margaretha Tata</li>
+                                  <li>Syafilla Chairunnisa</li>
+                                  <li>Widya Naya</li>
+                                  <li>Nu KSAC</li>
+                                  <li>Billy Maulana</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari30 ">
+                                <ol class="colLeft">
+                                  <li>Frida Lystiani</li>
+                                  <li>Alma Shakira</li>
+                                  <li>Yoandra Yoan</li>
+                                  <li>Melda Aisya</li>
+                                  <li>Gita Pratiwi</li>
+                                  <li>Fara Disa</li>
+                                  <li>Sulhan Mpf</li>
+                                  <li>Ria Hermansyah</li>
+                                  <li>Dwi Maharani</li>
+                                  <li>Jeremy Titi</li>
+                                  <li>Vira Amalia</li>
+                                  <li>Anggie Ayoe</li>
+                                  <li>Ira Puspita</li>
+                                  <li>Piter Walank</li>
+                                  <li>Yoga Fitra</li>
+                                  <li>Siti Nuril</li>
+                                  <li>Aprilia Lianjani</li>
+                                  <li>Nurul Fathia</li>
+                                  <li>Macostee Mahes</li>
+                                  <li>Siti Hindun</li>
+                                  <li>Cahya Annisa</li>
+                                  <li>Rieta Thata</li>
+                                  <li>Juni Sinambela</li>
+                                  <li>Mufly Wijaya</li>
+                                  <li>Arai Putra</li>
+                                  <li>Titin Tina</li>
+                                  <li>Yanuar Rizay</li>
+                                  <li>Islah Ubaidillah</li>
+                                  <li>Johan Irawan</li>
+                                  <li>Angga Khoiri</li>
+                                  <li>Nana Supriatna</li>
+                                  <li>Dygta Dewantoro</li>
+                                  <li>Indra Putra</li>
+                                  <li>Putra Martin</li>
+                                  <li>Apri Yani</li>
+                                  <li>Airial Via</li>
+                                  <li>Syihab Husein</li>
+                                  <li>Nunung Jantoro</li>
+                                  <li>Jaelani Abdi</li>
+                                  <li>Khairun Absor</li>
+                                  <li>Bachroin Amadi</li>
+                                  <li>Alma Ida</li>
+                                  <li>Ahmad Sofyan Lubis</li>
+                                  <li>Nur Tatala</li>
+                                  <li>Citra Permata</li>
+                                  <li>Ayin Wika</li>
+                                  <li>Brad Stut</li>
+                                  <li>Ara Suryadi</li>
+                                  <li>Munajat Akbar</li>
+                                  <li>Rehand Vagencez</li>
+                                  <li>Naiyaa Cinta</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari31 ">
+                                <ol class="colLeft">
+                                      <li>Luxman Afandy</li>
+                                      <li>Lusiana Luth</li>
+                                      <li>Maria Estri</li>
+                                      <li>Agung Ruswiaji</li>
+                                      <li>Yudi Suryanto</li>
+                                      <li>Yosep Suryanto</li>
+                                      <li>Yolanda Grace</li>
+                                      <li>Itha Gevera</li>
+                                      <li>Pelay Nocturno</li>
+                                      <li>Alfian Arif</li>
+                                      <li>Ridwan Mi</li>
+                                      <li>Bertha Rasti</li>
+                                      <li>Tegar Setiaji</li>
+                                      <li>Iyaazh Frashsetya</li>
+                                      <li>Daoed Nizel</li>
+                                      <li>Sheva Rizky</li>
+                                      <li>Oting Bastian</li>
+                                      <li>Stevy Wibowo</li>
+                                      <li>Bowo Ari</li>
+                                      <li>Ryan Boedi</li>
+                                      <li>Aya Rowin</li>
+                                      <li>Astrid Jameela</li>
+                                      <li>Alifia Dinda</li>
+                                      <li>Casmin Mantap</li>
+                                      <li>Maudy Ayu</li>
+                                      <li>Lia Chibii</li>
+                                      <li>Dhita Fadillah</li>
+                                      <li>Cindi Jaya</li>
+                                      <li>Dido Abdi</li>
+                                      <li>Engkos Salmah</li>
+                                      <li>Aya Cahya</li>
+                                      <li>Intan Putri</li>
+                                      <li>Doni Rintoharo</li>
+                                      <li>Icha Aiya</li>
+                                      <li>Guntur Guruh</li>
+                                      <li>Ivo Kristiansen</li>
+                                      <li>Dhika Muktiar</li>
+                                      <li>Agung Mercon</li>
+                                      <li>Asha Nadia</li>
+                                      <li>Sahman Batubara</li>
+                                      <li>Nano Sugiono</li>
+                                      <li>Ferdian Fascal</li>
+                                      <li>Mar Tinah</li>
+                                      <li>Tomsa Bgt</li>
+                                      <li>Rina Rena</li>
+                                      <li>Zahra Jaja</li>
+                                      <li>Ira Tambeng</li>
+                                      <li>Ira Gebleg</li>
+                                      <li>Bayu Natali</li>
+                                      <li>Lia Pakbonteng</li>
+                                      <li>Tya Maratus</li>
+                                      <li>Deni Sutisna</li>
+                                      <li>Boedi Agung</li>
+                                      <li>Riesna Bawel</li>
+                                      <li>Lucky Heriyani</li>
+                                      <li>Maria Ulfa</li>
+                                      <li>Jajang Sujana</li>
+                                      <li>Annas Subaji</li>
+                                      <li>Athar Athir</li>
+                                      <li>Albertus Budhy</li>
+                                      <li>Ara Suryadi</li>
+                                      <li>Suajana Jana</li>
+                                      <li>Muljadi Yusuf</li>
+                                      <li>Manorsa Laeli</li>
+                                      <li>Eqi Imut</li>
+                                      <li>Maura Handayani</li>
+                                      <li>Van Ryan</li>
+                                      <li>Ati Mar</li>
+                                      <li>Sahrir Utama</li>
+                                      <li>Kristria Saputra</li>
+                                      <li>Kang Mfiex Thea</li>
+                                      <li>Bela Isabela</li>
+                                      <li>Lerry Gobel</li>
+                                      <li>Siti Hasanah</li>
+                                      <li>Yuvita Gani</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari32">
+                                <ol class="colLeft">
+                                  <li>Duma Purba</li>
+                                  <li>Erwin Setia</li>
+                                  <li>Hadi Nur Rachmat</li>
+                                  <li>Liliss Sejahtera</li>
+                                  <li>Widodo Budi Santoso</li>
+                                  <li>Shandy Pratama</li>
+                                  <li>Irwan Nirvana</li>
+                                  <li>Niel Parulina</li>
+                                  <li>Ben Arturo</li>
+                                  <li>Wanih Trio</li>
+                                  <li>Gilar Febrizio</li>
+                                  <li>Inne Nathalia</li>
+                                  <li>Tripuspita Ningrum</li>
+                                  <li>Nanik Suharti</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari33">
+                                <ol class="colLeft">
+                                     <li>Dinal Dinol</li>
+                                      <li>Jojo Joshua</li>
+                                      <li>Sulistyo Afriza</li>
+                                      <li>Leo Aldo </li>
+                                      <li>Irma Fardiana</li>
+                                      <li>Randy Dede</li>
+                                      <li>Tri Novi</li>
+                                      <li>Novita Diana</li>
+                                      <li>Margareth Manick</li>
+                                      <li>Ahmad Manto</li>
+                                      <li>Tio Setyo</li>
+                                      <li>Vera Amelia</li>
+                                      <li>Fika Sujiono</li>
+                                      <li>Amelia Rusty</li>
+                                      <li>Nina Hadianti</li>
+                                      <li>Rachmat Suhendar</li>
+                                      <li>Heni Suherniany</li>
+                                      <li>Jimi Panca</li>
+                                      <li>Ria Handayani</li>
+                                      <li>Yeni Purwanti</li>
+                                      <li>Rena Andika</li>
+                                      <li>Adityo Pradono</li>
+                                      <li>George Sapulete</li>
+                                      <li>Prita Meirina</li>
+                                      <li>Arto Darma</li>
+                                      <li>Rama Yanti</li>
+                                      <li>Wijaya Kusuma</li>
+                                      <li>Rahayu Dewi</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari34">
+                                <ol class="colLeft">
+                                       <li>Lindayani Suhendar</li>
+                                          <li>Yesica Sinaga</li>
+                                          <li>Imas Aryani</li>
+                                          <li>Hanita Annisa</li>
+                                          <li>Hanindy Fajrina</li>
+                                          <li>Geby Catur</li>
+                                          <li>Mustika Ticha</li>
+                                          <li>Ezza Eza</li>
+                                          <li>Reyna Laras</li>
+                                          <li>Muhammad Hasan</li>
+                                          <li>Nila Jasman</li>
+                                          <li>Ety Sudarsi</li>
+                                          <li>Fakhri Zulfikar</li>
+                                          <li>Desri Damanik</li>
+                                          <li>Melly Anda</li>
+                                          <li>Indah Kalila</li>
+                                          <li>Dian Ratih</li>
+                                          <li>Iemiena G</li>
+                                          <li>Harlinda Dela</li>
+                                          <li>II Khoiriyah</li>
+                                          <li>Inka Faradilla</li>
+                                          <li>Anggie Winarti</li>
+                                          <li>Maharani Wibowo</li>
+                                          <li>Abdul Hasan</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                            <div class="winContent winnerList hari35">
+                                <ol class="colLeft">
+                                       <li>Erick Patrick</li>
+                                          <li>Chifa Fauzia</li>
+                                          <li>Winny Malonda</li>
+                                          <li>Septo Atlian</li>
+                                          <li>Imron Cherry</li>
+                                          <li>Wulan Dwi</li>
+                                          <li>Toby Helya</li>
+                                          <li>Toni Yunante</li>
+                                          <li>Nelli Ullo</li>
+                                          <li>Anisa Icha</li>
+                                          <li>Novi Elwita</li>
+                                          <li>Prayogo Hadi</li>
+                                          <li>Nurvita Senja</li>
+                                          <li>Imam Santosa</li>
+                                          <li>Risfi Aditya</li>
+                                          <li>Rista Elizabeth</li>
+                                          <li>Refty Royan</li>
+                                          <li>Winda Desi</li>
+                                          <li>Wita Nur</li>
+                                          <li>Lilis Setiyani</li>
+                                          <li>Rizaldy Rizaldy</li>
+                                          <li>Joy Jody</li>
+                                          <li>Taufig Sandjaja</li>
+                                          <li>Justin Adrian</li>
+                                          <li>Danny Dwi Putra</li>
+                                          <li>Salva Putri</li>
+                                          <li>Julia Susanti</li>
+                                          <li>Hilda Febriana</li>
+                                          <li>Ronald Rustam Purba</li>
+                                          <li>Noviany Dharmawati</li>
+                                          <li>Novianti Sari Pangestu</li>
+                                          <li>Ayip Lioe</li>
+                                          <li>Kiki Puspitasari</li>
+                                          <li>Stefanus Pandu Dewanto</li>
+                                          <li>Doan Sitohang</li>
+                                          <li>Fuad Ramadhan</li>
+                                          <li>Cecep Hinayah</li>
+                                          <li>Dea Ananta</li>
+                                          <li>Isal Rosa</li>
+                                          <li>Devinta Zahrani</li>
+                                          <li>Sir Jon</li>
+                                          <li>Cahya Maulida</li>
+                                </ol>
+                            </div><!-- end .winContent -->
+                        </div><!-- end #tabsingle -->
+                        <div class="winContent" id="footerWinner">
+								<p>If you see your name on the list above, please send your data right away to <a href="mailto:digital@axisworld.co.id">digital@axisworld.co.id</a> using the same email you use for your G+ account. You just have to put your name, phone number and G+ account in the email</p>
+                            <p>See the <a href="#TncPhotoUpload" class="showPopup">Terms and Conditions.</a></p>
+                        </div><!-- end .winContent -->
+                        <div class="socialLike">
+                            <div class="facebookLike">
+								<a href="#" onclick="shareFB('Pengumuman 100 Uploader PERTAMA','http://www.axisworld.co.id/GooglePlus','{$basedomain}assets/images/win_logo_id.png','AXISgsm','Jika namamu tertera pada daftar di atas, mohon segera kirimkan data diri ke digital@axisworld.co.id dengan alamat email yang kamu gunakan untuk akun G+ kamu. Cukup cantumkan nama, nomor telepon dan nama akun G+ kamu.');"><img width="63" src="{$basedomain}assets/images/icon/facebook_share_button.png"></a>
+                            </div><!-- end .facebookLike -->
+                            <div class="shareTwit">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="{$basedomain}" data-via="axisgsm" data-related="axisgsm" data-hashtags="AXISGSM">Tweet</a>
+								{literal}
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+								{/literal}
+                            </div><!-- end .shareTwit -->
+                            <div class="googlePlus">
+                                {literal}
+								<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+								  {parsetags: 'explicit'}
+								</script>
+								{/literal}
+								<div class="g-plusone" data-size="medium" data-annotation="inline" data-width="120" data-href="{$basedomain}"></div>
+								<script type="text/javascript">gapi.plusone.go();</script>
+                            </div><!-- end .googlePlus -->
+                        </div><!-- end .socialLike -->
+                	</div><!-- end .theWinnerBottom -->
+                </div><!-- end .theWinner -->
+            </div><!-- end #theWinner -->
+         </div>
+    </div><!-- end #axisLife -->
+</div><!-- end #container -->
+
+<div class="popup" id="TncPhotoUpload">
+    <div class="ui-overlay">
+        <div class="ui-widget-overlay"></div>
+    </div><!-- end .ui-overlay -->
+    <div class="popupContent" style="width:800px; margin:0 0 0 -400px; position:absolute;">
+    	<div class="headPopup">
+           	<h3>Terms and Conditions</h3>
+        </div>
+        <div class="entry">
+			<ol>
+                <li>By joining this event, therefore the participant is agree to the Terms and Condition Applied below.</li>
+                <li>Employee from PT ("AXIS Telekom Indonesia") and Google, along with the affilliated company, distributor, creative agency acting on behalf of AXIs in organizing this program, including their Family and close relatives arte not allowed to participate in "AXIS G+ Photo Upload"</li>
+                <li>The registration period is starting from 17th November 2012 unti 21st December 2012.</li>
+                <li>Pictures uploaded is privately owned by the participant. Therefore, AXIS, nor Google shall be responsible  to any void, invalidity, illegality, unlawfulness caused by the post.</li>
+                <li>Participant may post pictures with the theme "Hangout with friends" according the to terms and condition . However, 1 participant can only entitled 1 thankyou note (appreciation) during the program.</li>
+                <li>Picture  should not contain any Pornography, Racist issues and terms, and should comply with the company regulation from AXIS and Google.</li>
+                <li>AXIS and Google will choose 100 first pictures uploaded (that are comply with the terms and condition) to google+ with Hastag #AXISG+Photo  per day.</li>
+                <li>Announcement of the first 100 uploader name list will be uploaded in "AXISGSM Yang Baik" Google Plus account streamline ( http://bit.ly/QrWj4V) or  <a href="http://www.axisworld.co.id/GooglePlus" target="_blank">www.axisworld.co.id/GooglePlus</a> the day after picture screening.</li>
+                <li>Each participant should check the announcement on  <a href="http://www.axisworld.co.id/GooglePlus" target="_blank">www.axisworld.co.id/GooglePlus</a> or "AXISGSM Yang Baik" Google Plus account streamline ( http://bit.ly/QrWj4V) and send back and email using the same email used for Google plus account which include:
+                <ol>
+                  <li>name (as written in the KTP, SIM or KK),</li>
+                  <li> AXIS and Google is allowed to contact the participant, use their personal information if urgently needed.</li>
+                  <li>mobile phone number</li>
+                </ol>
+                </li>
+                <li>After the verification process is done, AXIS and Google will send the apreciation to the participant through email.</li>
+                <li>All the selected picture materials, along with the caption (if inserted) will be owned by AXIS and Google. Therefore AXIS and Google have the priviledge to use, edit, and publish the materials and informations included with out further notice and additional payment to the previous owner.</li>
+                <li>All the decision made by AXIS and Google in relation with picture selection is final and unchangeable.</li>
+                <li>All the appreciation cannot be exchanged with any other products or money.</li>
+                <li>The delivery of thank you note will be done by AXIS within 7 days after the participant completed administration process required.</li>
+                <li>All the administration data required should be sent by the participant within 7 days after the announcement in the website is done.</li>
+                <li>All the Participant in AXIS G+ Photo Upolad is agreed that:
+                <ol>
+                  <li>AXIS and Google keeps their private information following the AXIS and Google's internal and legal compliance.</li>
+                  <li> AXIS and Google is allowed to contact the participant, use their personal information if urgently needed.</li>
+                  <li>AXIS and Google is not allowed to share the participant’s private information to the third party for any othe purpose that AXIS G+ Photo program. </li>
+                </ol>
+                </li>
+                <li>Participant may cancel their agreement to this Terms and Condition for AXIS G+ Photo Upolad and not to be contacted at anytime by sending an email to <a href="mailto:digital@axisworld.co.id">digital@axisworld.co.id</a> with subject Cancelation and include their detailed contact in the mail.</li>
+            </ol>
+        </div><!-- end .entry -->
+    </div><!-- end .popupContent -->
+</div><!-- end .popup -->

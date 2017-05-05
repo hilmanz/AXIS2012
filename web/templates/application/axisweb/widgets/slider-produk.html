@@ -1,0 +1,41 @@
+    <div id="slider">
+		<link rel="stylesheet" type="text/css" href="{$basedomain}assets/css/slider-produk.css" />
+        <div id="da-slider" class="da-slider">
+		{if $type=='internet' || $type==''}
+            <div class="da-slide" id="slide2">
+                <div class="entrySlide">
+                    <h1>{$locale.widget.internet}</h1>
+                    <h2>{$locale.widget.kapanpun}</h2>
+                </div>
+                <div class="da-img"><img src="{$basedomain}assets/content/slider/produk/internet.jpg"/></div>
+            </div><!-- end .da-slide -->
+		{/if}
+		{if $type=='telepon' || $type==''}
+            <div class="da-slide " id="slide1">
+                <div class="entrySlide">
+                    <h1>{$locale.widget.teleponsms}</h1>
+                    <h2>{$locale.widget.hematpulsa}</h2>
+                </div>
+                <div class="da-img"><img src="{$basedomain}assets/content/slider/produk/telepon_sms.jpg"/></div>
+            </div><!-- end .da-slide -->
+		{/if}
+		{if $type=='bundling' || $type==''}
+		  <div class="da-slide" id="slide3">
+                <div class="entrySlide">
+                    <h1>{$locale.widget.bundlingdevice}</h1>
+                    <h2>{$locale.widget.bundlingaxis}</h2>
+                </div>
+                <div class="da-img"><img src="{$basedomain}assets/content/slider/produk/device.jpg"/></div>
+            </div><!-- end .da-slide -->
+		{/if}
+		{if $type=='kartu' || $type==''}         
+		 <div class="da-slide" id="slide4">
+                <div class="entrySlide">
+                    <h1>{$locale.widget.kartuaxis}</h1>
+                    <h2>{$locale.widget.pilihkartu}</h2>
+                </div>
+                <div class="da-img"><img src="{$basedomain}assets/content/slider/produk/kartu2.jpg"/></div>
+            </div><!-- end .da-slide -->
+		{/if}
+        </div><!-- end #da-slider -->
+    </div><!-- end #slider -->

@@ -1,0 +1,21 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta property="og:title" content="{$metaTag.title}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="{$globalURL}public_assets/article/{$metaTag.image}"/>
+<meta property="og:site_name" content="AXIS - GSM YANG BAIK"/>
+<meta property="og:description" content="{$metaTag.content}"/>
+<title>AXIS - GSM YANG BAIK</title>
+<link rel="stylesheet" type="text/css" href="{$assets_domain}css/kakao.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="{$assets_domain}js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="{$assets_domain}js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="{$assets_domain}js/scroll-startstop.events.jquery.js"></script>
+<script type="text/javascript" src="{$assets_domain}js/kakao.js"></script>
+
+</head>
+
+<!-- s : modules JS -->
+<script type="text/javascript" src="{$assets_domain}js/kipagination.js"></script>
+<!-- e : module JS -->

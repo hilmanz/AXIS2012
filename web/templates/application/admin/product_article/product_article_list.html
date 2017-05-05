@@ -1,0 +1,108 @@
+<div class="theContent">
+    <div class="theTitle">
+        <h2>Product Article Content</h2>
+        <a href="index.php?s=product_article&act=downloadreport&lid={$lid}&id_cat={$id_cat}&id_type={$id_type}" class="btn btn_document"><span>Download XLS</span></a>
+        <a href="index.php?s=product_article&act=add" class="btn btn_pencil"><span>Add New Product</span></a>
+    </div><!--contenttitle-->
+    <div class="tableoptions">
+			<form>
+				<input type="text" name="search" value="{$search}"/>
+				<input type="hidden" name="s" value="product_article" />
+				<select name="lid" style="width:200px;">
+					<option value=""> - Language - </option>
+					{section name=i loop=$language}
+					{if $language[i].id == $lid}
+						<option value="{$language[i].id}" selected="selected">{$language[i].language}</option>
+					{else}
+						<option value="{$language[i].id}">{$language[i].language}</option>
+					{/if}
+					{/section}
+				</select>
+				<select name="id_cat">
+					<option value=""> - Pilih - </option>
+					{section name=i loop=$Category}
+					{if $cat[i].id == $id_cat}
+					<option value="{$cat[i].id}" selected="selected">{$cat[i].category}</option>
+					{else}
+					<option value="{$cat[i].id}">{$cat[i].category}</option>
+					{/if}
+					{/section}
+				</select>
+            	<span>Date Range</span>
+				<input type="text" name="startdate" value="{$startdate}"  class="datepicker"/>
+            	<span>s/d</span>
+				<input type="text" name="enddate" value="{$enddate}" class="datepicker"/>
+           		 <input type="submit" value="cari" class="stdbtn btn_orange" />
+			</form>
+    </div><!--tableoptions-->	
+    <table cellpadding="0" cellspacing="0" border="0" id="table1" class="stdtable">
+    
+        <thead>
+            <tr>
+                <th class="head0">No</th>
+                <th class="head1">Language</th>
+                <th class="head0">Title</th>
+                <th class="head1">URL</th>
+                <th class="head0">price</th>
+                <th class="head1">image</th>
+                <th class="head0">category</th>
+                <th class="head1">Created Date</th>
+                <th class="head1">Published Date</th>
+                <th class="head0">Unpublished Date</th>
+                <th class="head1">Status</th>
+                <th class="head0">Action</th>
+            </tr>
+        </thead>
+	
+	{foreach from=$list key=k item=v}
+	{assign var=no value=$no++}
+	{assign var=lid value=$v.lid}
+	<tr>
+		<td width="3%">{$no}</td>
+		<td>{$v.language_data.langDesc.$lid}</td>
+		<td>{$v.title}</td>
+		<td><input type="text" value="{$baseUrl}{$product_article_detail}{$v.id}" style="width:271px" /></td>
+		<td>{$v.prize}</td>
+		<td>{if $v.image}<img src="{$baseurl}public_assets/product_article/tiny_{$v.image}" />{/if}</td>
+		<td>{$v.category}</td>
+		<td width="10%"><nobr>{$v.created_date|date_format:"%d-%m-%Y"} &nbsp;{$v.created_date|date_format:$time.time}</nobr></td>
+		<td width="10%"><nobr>{$v.posted_date|date_format:"%d-%m-%Y"} &nbsp;{$v.posted_date|date_format:$time.time}</nobr></td>
+		<td width="10%"><nobr>{$v.expired_date|date_format:"%d-%m-%Y"} &nbsp;{$v.expired_date|date_format:$time.time}</nobr></td>
+		
+		<td align="center">
+                    {if $v[$k].n_status==0} <span class="red">Inactive</span>
+                    {elseif $v[$k].n_status==1} <span class="green">Publish </span>
+                    {elseif $v[$k].n_status==2} <span class="orange">Unpublish</span>
+                    {else}
+                    {/if}
+		</td>
+		
+		<td width="10%">
+			<nobr>
+			{foreach from=$v.language_data.langDesc key=klang item=vlang}
+				<strong>{$vlang|capitalize}</strong>			
+					
+				{if $v.language_data.$klang==1}
+                	<p>
+					<a href="index.php?s=product_article&act=edit&id={$v.parentid}&lid={$klang}" class="green"> update </a>
+					
+					&nbsp;| <a href="javascript:void(0)" class="popuppreview" url="http://axis-preview.kanadigital.com/index.php?page=produk&act=article&id={$v.parentid}" class="orange">preview</a> 
+					| <a href="index.php?s=product_article&act=hapus&parentid={$v.parentid}" class="red"onclick="return confirm('Are you sure you want to delete this?')">delete</a>
+					</p>
+				{else}
+                	<p>
+					<a href="index.php?s=product_article&act=add_language&id={$v.parentid}&id_lang={$klang}" class="green"> add </a>
+					 &nbsp;&nbsp;</p>
+				{/if}
+			{/foreach}
+			</nobr>
+		</td>
+	</tr>
+	{/foreach}
+</table>
+    <div class="paging">
+    	{$paging}
+    </div>
+</div><!--theContent-->
+
+

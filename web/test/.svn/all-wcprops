@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/axis2012/!svn/ver/47/trunk/web/test
+END
+composer.json
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/axis2012/!svn/ver/8/trunk/web/test/composer.json
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/axis2012/!svn/ver/8/trunk/web/test/LICENSE
+END
+phpdox.xml.dist
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/axis2012/!svn/ver/8/trunk/web/test/phpdox.xml.dist
+END
+phpunit.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/axis2012/!svn/ver/8/trunk/web/test/phpunit.xsd
+END
+ChangeLog.md
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/axis2012/!svn/ver/8/trunk/web/test/ChangeLog.md
+END
+CONTRIBUTING.md
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/axis2012/!svn/ver/8/trunk/web/test/CONTRIBUTING.md
+END
+phpunit.xml.dist
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/axis2012/!svn/ver/8/trunk/web/test/phpunit.xml.dist
+END
+package-composer.json
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/axis2012/!svn/ver/8/trunk/web/test/package-composer.json
+END
+package.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/axis2012/!svn/ver/8/trunk/web/test/package.xml
+END
+phpunit.bat
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/axis2012/!svn/ver/8/trunk/web/test/phpunit.bat
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/axis2012/!svn/ver/8/trunk/web/test/README.md
+END
+phpunit.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/axis2012/!svn/ver/8/trunk/web/test/phpunit.php
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/axis2012/!svn/ver/8/trunk/web/test/build.xml
+END
+common.php
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/axis2012/!svn/ver/8/trunk/web/test/common.php
+END

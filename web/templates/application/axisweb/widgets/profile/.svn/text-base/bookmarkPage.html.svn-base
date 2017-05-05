@@ -1,0 +1,11 @@
+<div style="padding:20px;float:left"> 
+<h1>Your Bookmark</h1>
+{foreach from=$bookmark key=k item=v}
+	<div style="padding:20px">
+		<p><h3><a href="{$v.url}" >{$v.title}</a></h3></p>
+		<h6>{$v.date} - {$v.category}</h6>
+		
+	</div>
+{/foreach}
+
+</div>

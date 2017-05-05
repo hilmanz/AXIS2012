@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/axis2012/!svn/ver/452/trunk/kakao/engines/Smarty
+END
+SmartyDriver.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/452/trunk/kakao/engines/Smarty/SmartyDriver.php
+END
+Smarty_Compiler.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/452/trunk/kakao/engines/Smarty/Smarty_Compiler.class.php
+END
+debug.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/452/trunk/kakao/engines/Smarty/debug.tpl
+END
+Smarty.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/452/trunk/kakao/engines/Smarty/Smarty.class.php
+END
+Config_File.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/axis2012/!svn/ver/452/trunk/kakao/engines/Smarty/Config_File.class.php
+END

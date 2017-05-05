@@ -1,0 +1,25 @@
+<div id="breadcumb" class="wrapper">
+</div><!-- end #breadcumb -->
+{$slider_default}
+{$carousel_banner}
+{*}
+<div id="quote" class="wrapper">
+    <h1 class="icon_horn"><a href="{$basedomain}?page={$userpage}">{$locale.nav.axislife}</a></h1>
+    <div class="entry">
+        <h2><a href="{$basedomain}?page={$userpage}">{$locale.home.apaansih}</a></h2>
+        {$locale.home.tempatkumpul}
+    </div><!-- end .entry -->
+</div><!-- end #quote -->
+{$slider_hot_news}
+{$featured}
+{/*}
+
+<script>
+postGCS = '{$postGCS}'; 
+{literal}
+	if(postGCS != ''){
+		$('#querySearch').val(postGCS);
+		searchGCS();
+	}
+{/literal}
+</script>

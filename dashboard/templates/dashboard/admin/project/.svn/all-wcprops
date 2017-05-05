@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/axis2012/!svn/ver/64/trunk/dashboard/templates/dashboard/admin/project
+END
+insert_budget.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/axis2012/!svn/ver/64/trunk/dashboard/templates/dashboard/admin/project/insert_budget.html
+END
+list_project.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/axis2012/!svn/ver/64/trunk/dashboard/templates/dashboard/admin/project/list_project.html
+END
+create_project.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/axis2012/!svn/ver/64/trunk/dashboard/templates/dashboard/admin/project/create_project.html
+END
+edit_project.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/axis2012/!svn/ver/64/trunk/dashboard/templates/dashboard/admin/project/edit_project.html
+END

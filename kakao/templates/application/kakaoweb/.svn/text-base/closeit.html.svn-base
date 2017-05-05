@@ -1,0 +1,8 @@
+
+	
+<script>
+	
+{literal}
+	window.close();
+{/literal}
+</script>

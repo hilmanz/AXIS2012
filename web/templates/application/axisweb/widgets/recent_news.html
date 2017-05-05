@@ -1,0 +1,41 @@
+{if $renews}
+<div class="theTitle">
+            	<h1 class="icon_smile">{$locale.widget.kontenlain}</h1>
+            </div>
+    <div id="recentHot" class="widget shadowWtop">
+        <div class="widgetContainer shadowWbottom">
+            {foreach from=$renews key=k item=v}
+			{if $v.id}
+				{assign var="rate" value=1}
+				<div class="row">
+					<div class="cat_movie">
+						<div class="circleThumb">
+							<a href="{$basedomain}content/{if $v.user}sdetail{else}detail{/if}/{$v.id}">
+								{if $v.categoryid==18} <img src="http://img.youtube.com/vi/{$v.video_thumbnail}/0.jpg" />
+								{else}
+									{if $v.image}<img src="{$basedomain}public_assets/{if $v.user}user/content{else}article{/if}/thumb_{$v.image}" />
+									{else}<img src="{$basedomain}assets/images/thumb.jpg" />
+									{/if}
+								{/if}
+							</a>
+						</div><!-- end .circleThumb -->
+						<div class="entryWidget">
+							<h3><a href="{$basedomain}content/{if $v.user}sdetail{else}detail{/if}/{$v.id}">{$v.title}</a></h3>
+							<div class="stars">
+							   {if $v.rating >= 1}
+											{section name=rate start=0 loop=$v.rating step=1}
+												<img src="{$basedomain}assets/images/icon/stars.png" />
+											{/section}
+								{/if}
+							</div><!-- end .stars -->
+						</div><!-- end .entryWidget -->
+					</div>
+				</div><!-- end .row -->
+			{/if}
+             {/foreach}  
+        </div><!-- end .widgetContainer -->
+	
+		<div class="paging"></div><!-- end .paging -->
+		
+    </div><!-- end #recentHot -->
+{/if }

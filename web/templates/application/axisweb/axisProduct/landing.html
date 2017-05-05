@@ -1,0 +1,46 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}landing/{$type}">{$type}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper">
+        <div class="entry-post white_table">
+        	{if $locale.country==1}{include file="application/axisweb/static_locale/ind/landing-page-$type.html"}
+			{else}{include file="application/axisweb/static_locale/eng/landing-page-$type.html"}
+			{/if}
+            <div class="socialLike">
+				{*}<a class="favorite">&nbsp;<span class="fav-count">3</span></a>{/*}
+                <div class="facebookLike">
+                    <div id="fb-root"></div>
+					{literal}
+                    <script>(function(d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return;
+                      js = d.createElement(s); js.id = id;
+                      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=267918769990528";
+                      fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+					{/literal}
+                    <div class="fb-like" data-href="{$basedomain}/landing/{$type}" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div>
+                </div><!-- end .facebookLike -->
+                <div class="shareTwit">
+                	<a href="https://twitter.com/share" class="twitter-share-button" data-url="{$basedomain}/landing/{$type}" data-via="axisgsm" data-related="axisgsm" data-hashtags="AXISGSM">Tweet</a>
+					{literal}
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	{/literal}
+                </div><!-- end .shareTwit -->
+                <div class="googlePlus">
+				{literal}
+					<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+                      {parsetags: 'explicit'}
+                    </script>
+				{/literal}
+                    <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="120" data-href="{$basedomain}/landing/{$type}"></div>
+                   	{literal} <script type="text/javascript">gapi.plusone.go();</script>	{/literal}
+                </div><!-- end .googlePlus -->
+            </div><!-- end .socialLike -->
+        </div><!-- end #contentPromo -->
+    </div><!-- end #promoDetail -->
+</div><!-- end #container -->
+<div class="widget-promoDetail">
+{$carousel_promo}
+</div><!-- end .widget-whyAxis -->

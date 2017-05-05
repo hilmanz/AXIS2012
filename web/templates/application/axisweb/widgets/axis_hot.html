@@ -1,0 +1,44 @@
+{if $content}
+<div class="theTitle">
+            	<h1 class="icon_smile">{$locale.widget.axishot}</h1>
+            </div>
+    <div id="recentHot" class="widget shadowWtop">
+        <div class="widgetContainer shadowWbottom">
+         {foreach from=$content key=k item=v}
+			{assign var="rate" value=1}
+			{if $k!=0}
+			<div class="row">
+                <div class="cat_movie">
+                    <div class="circleThumb">
+                        <a href="{$basedomain}content/detail/{$v.id}">
+							{if $v.image}<img src="{$basedomain}public_assets/article/{$v.image}" />
+							{else}<img src="{$basedomain}assets/images/thumb.jpg" />
+							{/if}
+                    </div><!-- end .circleThumb -->
+                    <div class="entryWidget">
+                        <h3><a href="{$basedomain}content/detail/{$v.id}">{$v.title}</a></h3>
+                        <div class="stars">
+                            	{if $v.rating >= 1}
+										{section name=rate start=0 loop=$v.rating step=1}
+											<img src="{$basedomain}assets/images/icon/star.png" />
+										{/section}
+								{/if}
+                        </div><!-- end .stars -->
+                    </div><!-- end .entryWidget -->
+                </div>
+            </div><!-- end .row -->
+			{/if}
+            {/foreach}
+        </div><!-- end .widgetContainer -->
+		   {*}
+        <div class="paging">
+            <a class="prev" href="#">&laquo;</a>
+            <a href="#" class="current" >1</a>
+            <a href="#" >2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a class="next" href="#">&raquo;</a>
+        </div><!-- end .paging -->
+		   {/*}
+    </div><!-- end #recentHot -->
+{/if}

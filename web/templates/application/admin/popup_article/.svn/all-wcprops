@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/1321/trunk/web/templates/application/admin/popup_article
+END
+popup_new.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/axis2012/!svn/ver/1321/trunk/web/templates/application/admin/popup_article/popup_new.html
+END
+popup_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/axis2012/!svn/ver/1321/trunk/web/templates/application/admin/popup_article/popup_list.html
+END
+popup_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/axis2012/!svn/ver/1321/trunk/web/templates/application/admin/popup_article/popup_edit.html
+END

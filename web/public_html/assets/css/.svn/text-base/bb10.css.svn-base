@@ -1,0 +1,54 @@
+body {
+	height: 100%; margin: 0px;
+}
+
+
+@font-face {
+		font-family: 'HelveticaLTStd-Light';
+		src: url('../font/helveticaltstdlight.eot');
+		src: url('../font/helveticaltstdlight.eot?#iefix') format('embedded-opentype'),
+				 url('../font/helveticaltstdlight.woff') format('woff'),
+				 url('../font/helveticaltstdlight.ttf') format('truetype'),
+				 url('../font/helveticaltstdlight.svg#helveticaltstdlight') format('svg');
+		font-weight: normal;
+		font-style: normal;
+}
+	
+
+@font-face {
+				font-family: 'TradeGothicNextLTPro-Rg';
+				src: url('../font/tradegothicnextltprorg.eot');
+				src: url('../font/tradegothicnextltprorg.eot?#iefix') format('embedded-opentype'),
+						 url('../font/tradegothicnextltprorg.woff') format('woff'),
+						 url('../font/tradegothicnextltprorg.ttf') format('truetype'),
+						 url('../font/tradegothicnextltprorg.svg#tradegothicnextltprorg') format('svg');
+				font-weight: normal;
+				font-style: normal;
+		}
+
+.tulisantitle {font: 24px 'HelveticaLTStd-Light', arial, san-serif; color:#000; text-shadow: 0 2px 0 #cccccc; }
+.tulisanfooter {font: 8px 'TradeGothicNextLTPro-Rg', arial, san-serif; color:#666;}
+.tulisansocial{font: 12px 'TradeGothicNextLTPro-Rg', arial, san-serif; color:#666;}
+
+.tulisancounter {font: 30px 'TradeGothicNextLTPro-Rg', arial, san-serif; color:#Fff; letter-spacing:6px; }
+.tulisan18 {font: 26px 'TradeGothicNextLTPro-Rg', arial, san-serif; color:#000; }
+
+.tulisanketcounter {font: 13px 'TradeGothicNextLTPro-Rg', arial, san-serif; color:#000;  }
+
+div.floating-logo {position: fixed;width:100%;z-index:500; bottom:0; left:0;}
+
+.dash {
+	float: left;
+	margin:0 0 0 0;
+	position: relative;
+}
+.dash .digit {
+	float: left;
+	text-align: center;
+	position: relative;
+}
+.space {
+	float:left;
+	display:block;
+	text-align:center;
+}

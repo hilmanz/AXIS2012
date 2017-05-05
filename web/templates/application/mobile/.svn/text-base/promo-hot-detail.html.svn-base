@@ -1,0 +1,77 @@
+<div class="breadcrumb">
+		<a href="{$mobiledomain}">{$locale.home.title}</a>	&raquo;  
+        <a href="{$mobiledomain}promo/hot">{$locale.nav.promo}</a>	 
+        {*}&raquo; <a href="{$mobiledomain}product/hot">HOT PROMO</a>	{/*}
+</div>
+<div class="page-body" data-role="content">
+		
+		<div class="page-image-heading">
+			{if $promo.image}<img src="{$basedomain}public_assets/article/small_{$promo.image}" />{/if}
+		</div>
+		
+		<div class="page-meta">
+		<h1 class="page-title page-title2"><span class="icon"></span>{$promo.title}</h1>
+			<div class="page-content clear">
+				<article>
+					{if $promo.brief} <h3>{$promo.brief}</h3>{/if}
+					<p>{$promo.content|replace:'public_assets/content/uploads/':"`$basedomain`public_assets/content/uploads/"|replace:'produk':'product'|replace:'':$mobiledomain|replace:'home/app/':$basedomain|replace:"`$basedomain``$basedomain`":$basedomain|replace:"DI MANA KAMU TINGGAL? KLIK DI SINI UNTUK PILIH AREAMU":""|replace:"WHERE DO YOU LIVE? CLICK HERE TO CHOOSE YOUR AREA":""|replace:"klik di sini":""|replace:"Klik di sini":""|replace:"click here":""|replace:"Click here":""|replace:"berikut ini":""|replace:"these countries":""}</p>
+					<div class="socialLike">
+						<a class="favorite" contentid="{if $promo.myfavorite}0{else}{$promo.parentid}{/if}" href="javascript:void(0)" >&nbsp;<span class="fav-count" countFav="{if $promo.favorite}{$promo.favorite}{else}0{/if}" >{if $promo.favorite}{$promo.favorite}{else}0{/if}</span></a>
+						
+						<!-- s: social media -->
+							<div class="facebookLike">
+								<a href="#" onclick="shareFB('{$promo.title}','{$twitURL}','{$basedomain}public_assets/article/small_{$promo.image}','AXISgsm','{$promo.brief}');"><img width="63" src="{$mobiledomain}assets/images/icon/facebook_share_button.png"></a>
+								{*}
+								<fb:like send="false" layout="button_count" width="450" show_faces="false"></fb:like>
+								{/*}								
+							</div><!-- end .facebookLike -->
+							<div class="shareTwit">
+								<a href="https://twitter.com/share" class="twitter-share-button" data-url="{$twitURL}" data-counturl="{$twitURL}" data-via="AXISgsm" data-text="{$promo.title}" data-lang="en">Tweet</a>
+							{literal}
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+							{/literal}
+							</div>
+							<div class="googlePlus">
+								<div class="g-plusone" data-size="medium" data-annotation="bubble" data-width="120" data-href="{$twitURL}"></div>							
+								<script type="text/javascript">
+								{literal}
+									$(document).ready(function(){
+										gapi.plusone.go();
+									});
+								{/literal}
+								</script>
+							</div><!-- end .googlePlus -->
+						<!-- e: social media -->
+					</div><!-- end .socialLike -->
+				</article>
+			</div>
+		</div>
+		
+		<div class="list-nav">
+			<ul data-role="listview" data-inset="true">
+				<li>
+					<a href="{$mobiledomain}promo/hot" data-transition="slide">
+						<span class="icon icon-plus"></span>
+						<span class="textLink">{$locale.mobilebtn.promo}</span>
+					</a>
+				</li>
+				<li>
+					<a href="{$mobiledomain}" data-transition="slide">
+						<span class="icon icon-home"></span>	
+						<span class="textLink">{$locale.mobilebtn.home}</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /content -->
+	
+<script>
+var uname = "{$user->name}";
+var fbid = "{$user->fb_id}";
+var userpage = "{$userpage}";
+{literal}
+
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	
+</script>
+{/literal}

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/axis2012/!svn/ver/76/trunk/dashboard/config
+END
+notification_events.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/76/trunk/dashboard/config/notification_events.php
+END
+config.sample.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/76/trunk/dashboard/config/config.sample.inc.php
+END
+events_copy.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/axis2012/!svn/ver/76/trunk/dashboard/config/events_copy.php
+END
+activity_events.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/axis2012/!svn/ver/76/trunk/dashboard/config/activity_events.php
+END

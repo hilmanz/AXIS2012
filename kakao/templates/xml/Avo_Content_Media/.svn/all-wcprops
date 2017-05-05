@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/452/trunk/kakao/templates/xml/Avo_Content_Media
+END
+mediaRelated.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/axis2012/!svn/ver/452/trunk/kakao/templates/xml/Avo_Content_Media/mediaRelated.xml
+END
+mediaTotal.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/axis2012/!svn/ver/452/trunk/kakao/templates/xml/Avo_Content_Media/mediaTotal.xml
+END
+articleRelatedMedia.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/axis2012/!svn/ver/452/trunk/kakao/templates/xml/Avo_Content_Media/articleRelatedMedia.xml
+END
+comments.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/axis2012/!svn/ver/452/trunk/kakao/templates/xml/Avo_Content_Media/comments.xml
+END
+mediaByGroup.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/axis2012/!svn/ver/452/trunk/kakao/templates/xml/Avo_Content_Media/mediaByGroup.xml
+END
+media.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/axis2012/!svn/ver/452/trunk/kakao/templates/xml/Avo_Content_Media/media.xml
+END
+mediaPublished.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/axis2012/!svn/ver/452/trunk/kakao/templates/xml/Avo_Content_Media/mediaPublished.xml
+END

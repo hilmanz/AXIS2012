@@ -1,0 +1,29 @@
+{if $latest}
+<div class="theTitle">
+            	<h1 class="icon_coffee">{$locale.widget.axisterbaru}</h1>
+            </div><!-- end .theTitle -->
+            <div id="recentHot" class="widget shadowWtop">
+                <div class="widgetContainer shadowWbottom">
+					{foreach from=$latest key=k item=v}
+						{if $v.id}
+					   <div class="cat_movie">
+                            <div class="circleThumb">
+							<a href="{$basedomain}content/detail/{$v.id}">
+								{if $v.categoryid==18} <img src="http://img.youtube.com/vi/{$v.video_thumbnail}/0.jpg" />
+								{else}
+									{if $v.image}<img src="{$basedomain}public_assets/article/thumb_{$v.image}" />
+									{else}<img src="{$basedomain}assets/images/thumb.jpg" />
+									{/if}
+								{/if}
+							</a>
+                            </div><!-- end .circleThumb -->
+                            <div class="entryWidget">
+                                <h3><a href="{$basedomain}content/detail/{$v.id}">{$v.title}</a></h3>
+                               <a class="commentCount"> {if $v.comment}{$v.comment}{else}0{/if} Komentar</a>
+                            </div><!-- end .entryWidget -->
+                        </div>
+						{/if}
+					  {/foreach}
+                </div><!-- end .widgetContainer -->
+            </div><!-- end #recentHot -->
+{/if}

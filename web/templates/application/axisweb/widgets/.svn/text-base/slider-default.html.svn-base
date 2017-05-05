@@ -1,0 +1,50 @@
+{if $banner}
+    <div id="slider">
+		<link rel="stylesheet" type="text/css" href="{$basedomain}assets/css/slider-default.css" />
+        <div id="da-slider" class="da-slider">
+		{assign var='idxslider' value=0}
+            	{section name=i loop=$banner}
+				{if $banner[i].slider_image!=''}
+					<div class="da-slide" id="{if $banner[i].banner.textalign=='left' }slide1{else}slide3{/if}">
+						{if $banner[i].url==''}
+						<div class="entrySlide">
+							<h1>{$banner[i].title}</h1>
+							<h2>{$banner[i].brief}</h2>
+							{if $banner[i].articleType==1} <a class="detail " {if $banner[i].url}href="{$banner[i].url}"{else}href="{$basedomain}online_store/detail/{$banner[i].id}"{/if}>{$locale.btn.detail}</a>       
+							{else}<a class="detail " {if $banner[i].url}href="{$banner[i].url}"{else}href="{$basedomain}promo/detail/{$banner[i].id}"{/if}>{$locale.btn.detail}</a>{/if} 
+						</div>
+						{/if}
+						
+						<div class="da-img">
+						{if $banner[i].url}<a href="{$banner[i].url}" {if $banner[i].url!="#"}target="_blank"{/if}>{/if}
+						<img src="" url="{$basedomain}public_assets/banner/{$banner[i].slider_image}" class="img_slider sliderd{$idxslider} sequenceload" />
+						{if $banner[i].url}</a>{/if}
+						</div>
+					</div><!-- end .da-slide -->
+					{assign var='idxslider' value=$idxslider+1}
+				{/if}
+			    {/section}
+
+            </div><!-- end .da-slide -->
+    </div><!-- end #slider -->
+{/if}
+
+
+{literal}
+<script>
+	$(document).ready(function () {
+			$(".sliderd0").attr('src',$(".sliderd0").attr("url"));
+	  });
+	
+	$(".sequenceload").each(function(i,e){
+		$(this).load(function(){nextload('.sliderd',i)});
+	});
+	
+	/*$(".img_slider").each(function(i,e){
+			$(".sliderd"+i).attr('src',$(this).attr("url"));
+			$("img.sliderd"+i).load(function(){
+				return true;
+			});
+	});*/
+</script>
+{/literal}

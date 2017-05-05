@@ -1,0 +1,43 @@
+2012-11-30 10:03:28 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-30 10:03:30 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-30 10:03:31 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-30 14:50:43 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-30 14:50:43 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-30 14:50:43 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-30 14:50:51 SELECT * FROM axis_province_reference  
+2012-11-30 14:50:51 SELECT * FROM axis_message_type WHERE web_type=1 AND lid = 1
+2012-11-30 14:51:09 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-30 14:51:09 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-30 14:51:09 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-30 14:51:16 SELECT * FROM axis_province_reference  
+2012-11-30 14:51:16 SELECT * FROM axis_message_type WHERE web_type=1 AND lid = 1
+2012-11-30 15:59:23 SELECT * FROM axis_province_reference  
+2012-11-30 15:59:23 SELECT * FROM axis_message_type WHERE web_type=1 AND lid = 1
+2012-11-30 16:08:46 SELECT * FROM axis_province_reference  
+2012-11-30 16:08:46 SELECT * FROM axis_message_type WHERE web_type=1 AND lid = 1
+2012-11-30 16:10:04 SELECT * FROM axis_province_reference  
+2012-11-30 16:10:04 SELECT * FROM axis_message_type WHERE web_type=1 AND lid = 1
+2012-11-30 16:10:57 SELECT * FROM axis_province_reference  
+2012-11-30 16:10:57 SELECT * FROM axis_message_type WHERE web_type=1 AND lid = 1
+2012-11-30 16:14:13 SELECT * FROM axis_province_reference  
+2012-11-30 16:14:13 SELECT * FROM axis_message_type WHERE web_type=1 AND lid = 1
+2012-11-30 16:14:55 SELECT * FROM axis_province_reference  
+2012-11-30 16:14:55 SELECT * FROM axis_message_type WHERE web_type=1 AND lid = 1
+2012-11-30 16:15:35 SELECT * FROM axis_news_content_category WHERE used=0 AND id=1 LIMIT 0,1
+2012-11-30 16:15:35 SELECT * FROM axis_news_content_type 
+2012-11-30 16:15:35 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-30 16:16:43 SELECT * FROM axis_province_reference  
+2012-11-30 16:16:43 SELECT * FROM axis_message_type WHERE web_type=1 AND lid = 1
+2012-11-30 16:17:38 SELECT * FROM axis_province_reference  
+2012-11-30 16:17:38 SELECT * FROM axis_message_type WHERE web_type=1 AND lid = 1
+2012-11-30 16:21:17 SELECT * FROM axis_province_reference  
+2012-11-30 16:21:17 SELECT * FROM axis_message_type WHERE web_type=1 AND lid = 1
+2012-11-30 16:29:29 SELECT * FROM axis_province_reference  
+2012-11-30 16:29:29 SELECT * FROM axis_message_type WHERE web_type=1 AND lid = 1
+2012-11-30 18:20:35 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-30 18:20:35 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-30 18:20:35 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-30 18:20:40 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-30 18:22:59 SELECT * FROM axis_news_content_category WHERE used=0 AND id=2 LIMIT 0,1
+2012-11-30 18:22:59 SELECT * FROM axis_news_content_type 
+2012-11-30 18:22:59 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 

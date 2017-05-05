@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/1387/trunk/web/templates/application/admin/Banner
+END
+banner_new.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/axis2012/!svn/ver/620/trunk/web/templates/application/admin/Banner/banner_new.html
+END
+banner_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/axis2012/!svn/ver/1387/trunk/web/templates/application/admin/Banner/banner_list.html
+END
+banner_comment.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/115/trunk/web/templates/application/admin/Banner/banner_comment.html
+END
+banner_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/axis2012/!svn/ver/620/trunk/web/templates/application/admin/Banner/banner_edit.html
+END

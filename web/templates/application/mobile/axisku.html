@@ -1,0 +1,75 @@
+<div class="breadcrumb">
+		<a href="{$mobiledomain}">{$locale.home.title}</a>	&raquo; <a href="{$mobiledomain}myworld">{$locale.nav.axislife}</a>	
+	</div>
+<div class="page-body" data-role="content">
+	<div class="promo">
+		<div class="page-image-heading">
+			<img src="assets/images/axisku.jpg" />
+            <h1>{$locale.nav.axislife}</h1>
+		</div>
+	</div>
+		<div class="page-content clear">
+			<div id="product-category-list" class="page-content-list">
+				<ul data-role="listview" data-inset="true" id="axiskuList" >
+					{foreach from=$category key=k item=v}
+						<li>
+							<a href="{$mobiledomain}myworld/{$v.id}" data-transition="slide" rel="external">
+								<span class="text">{$v.category}</span>
+							</a>
+						</li>
+					{/foreach}
+				</ul>
+			</div>
+		</div>
+		<div id="axisPaging" class="paging">
+		</div><!-- end .paging -->
+		<div class="list-nav">
+			<ul data-role="listview" data-inset="true">
+				<li>
+					<a href="{$mobiledomain}" data-transition="slide">
+						<span class="icon icon-home"></span>
+						<span class="textLink">{$locale.mobilebtn.home}</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /content -->
+<script type="text/javascript">
+	var total_rows = '{$category[0].total_rows}';
+	var basedomain = "{$basedomain}";
+	var mobiledomain = "{$mobiledomain}";
+	var myworldPage = {$myworldPage};
+	{literal}
+		$(document).ready(function(){
+			initiatePaging(total_rows);
+		});
+		function initiatePaging(total_rows){
+			var pageInit = 0;
+			var start = myworldPage;
+			//Init Page
+			if(pageInit == 0){
+				pageInit = 1;
+				if(start == 0)start=1;
+				kiPagination(total_rows, start, 'axisPaging', 'myworld', 'axisku_ajax', 5);
+			}
+		}
+		function axisku_ajax(fungsi, start){
+			$('#axiskuList').html('<div class="loaders"><img src="'+basedomain+'assets/images/loader.png"></div>');
+			$.post(mobiledomain+'myworld', {start : start, axiskuList : 1}, function(data){
+				var str='';
+				$.each(data, function(k,v){
+					str+='<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="a" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-corner-top ui-btn-up-a">';
+						str+='<div class="ui-btn-inner ui-li ui-corner-top"><div class="ui-btn-text">';
+							str+='<a rel="external" data-transition="slide" href="'+mobiledomain+'myworld&#47;'+v.id+'" class="ui-link-inherit">';
+								str+='<span class="text">'+v.category+'</span>';
+							str+='</a>';
+						str+='</div>';
+						str+='<span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div>';
+					str+='</li>';
+				});
+				$('.loaders').remove();
+				$('#axiskuList').html(str);
+			});
+		}
+	{/literal}
+</script>

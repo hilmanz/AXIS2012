@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Report/HTML/Renderer
+END
+File.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Report/HTML/Renderer/File.php
+END
+Directory.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Report/HTML/Renderer/Directory.php
+END
+Dashboard.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Report/HTML/Renderer/Dashboard.php
+END

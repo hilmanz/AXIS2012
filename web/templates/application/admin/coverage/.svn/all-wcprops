@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/1149/trunk/web/templates/application/admin/coverage
+END
+coverage_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/axis2012/!svn/ver/1149/trunk/web/templates/application/admin/coverage/coverage_edit.html
+END
+coverage_new.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/axis2012/!svn/ver/1149/trunk/web/templates/application/admin/coverage/coverage_new.html
+END
+coverage_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/axis2012/!svn/ver/1149/trunk/web/templates/application/admin/coverage/coverage_list.html
+END

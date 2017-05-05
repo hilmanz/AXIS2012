@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>AXIS</title>
+<script type="text/javascript" src="{$assets_domain}js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="{$assets_domain}js/jquery.lwtCountdown-1.0.js"></script>
+<script type="text/javascript" src="{$assets_domain}js/misc.js"></script>
+<script type="text/javascript" src="{$assets_domain}js/php.js"></script>
+{literal}
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+{/literal}
+</head>
+
+<body>
+<img src="{$assets_domain}images/splash.jpg" width="100%"/>
+<div id="countdown_dashboard" style="display:none;"></div>
+<script language="javascript" type="text/javascript">
+	//var _launchdate = {$launchdate};
+	var _ts = {$ts};
+	var _now = time();
+	var _launchts = {$launchts};
+	{literal}
+	if(_ts<_now){
+		var difftime = intval(_now)-intval(_ts);
+		_launchts+=difftime;
+		
+	}
+	_launchts+=2;
+
+	_launchdate = {
+					'day': 		intval(date("d",_launchts)),
+					'month': 	intval(date("m",_launchts)),
+					'year': 	intval(date("Y",_launchts)),
+					'hour': 	intval(date("H",_launchts)),
+					'min': 		intval(date("i",_launchts)),
+					'sec': 		intval(date("s",_launchts))
+				}
+
+
+		jQuery(document).ready(function() {
+			// Countdown
+			$('#countdown_dashboard').countDown({
+				targetDate: _launchdate,
+				omitWeeks: true,
+				onComplete: function() 
+				{ 
+					$('#countdown_dashboard').hide(1000);
+					document.location.reload();
+				}
+			});
+		});
+	{/literal}
+</script>
+</body>
+</html>

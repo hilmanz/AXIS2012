@@ -1,0 +1,53 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}yangasik">{$locale.footnav.yangasik}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="headBanner">
+    <div class="headBanner">
+        <div id="headBannerContent">
+            <div class="headBannerImg"><img src="{$locale.fitur.image_slider}"/></div>
+        </div><!-- end #headBannerContent -->
+    </div><!-- end .headBanner -->
+</div><!-- end #headBanner -->
+{if $product}
+<div id="produkDetailPage">
+	<div class="wrapper">
+    	<div class="navTab">
+        	<ul>
+				{foreach from=$product key=k item=v}
+					<li><a href="#tab{$v.id}" >{$v.title}</a></li>
+				{/foreach}
+            </ul>
+        </div>
+    </div>
+    <div class="productPage">
+    	<div class="wrapper" id="produkDetail">
+        	<div class="tabContainer">
+			{foreach from=$product key=k item=v}
+                <div class="tabContent" id="tab{$v.id}">
+                	
+                        {if $v.image}<img src="{$basedomain}public_assets/product/{$v.image}" />{/if}
+                        {if $v.brief} <h2>{$v.brief}</h2>{/if}
+                        {if $v.content}	<div class="white_table">{$v.content|replace:'../':''|replace:'index.php?':"`$basedomain`index.php?"|replace:'public_assets/content/uploads/':"`$basedomain`public_assets/content/uploads/"}</div>{/if}
+                 
+                    <div class="accordion">
+						{if $v.desc}
+							{foreach from=$v.desc key=kdesc item=vdesc}
+							<h3>{$vdesc.title}</h3>
+								<div class="entry">
+									<div class="white_table">	{$vdesc.description|replace:'../':''|replace:'index.php?':"`$basedomain`index.php?"|replace:'public_assets/content/uploads/':"`$basedomain`public_assets/content/uploads/"}
+									</div>
+								</div>
+							{/foreach}
+                        {/if}
+                    </div><!-- end .accordion -->
+					
+                </div><!-- end .tabContent -->
+             {/foreach}  
+            </div><!-- end .tabContainer -->
+		</div><!-- end #produkDetail -->
+    </div><!-- end .productPage -->
+</div><!-- end #produkDetailPage -->
+{/if}
+<div class="widget-product">
+{$carousel_banner}
+</div><!-- end .widget-whyAxis -->

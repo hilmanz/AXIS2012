@@ -1,0 +1,24 @@
+<div class="title">
+<h1>{$locale.btn.detail}</h1>
+</div><!-- end .title -->
+<div class="detail">
+	<div class="post">
+        <div class="entryTitle">
+			{foreach from=$data key=k item=v}
+        	<h1>{$v.title} </h1>
+            <p>{$v.content}</p>
+        </div><!-- end .entryTitle -->
+			{if $v.desc}
+				{foreach from=$v.desc key=kdesc item=vdesc}
+				<h3>{$vdesc.title}</h3>
+				<div class="entryPost">
+					<p>{$vdesc.description|replace:'../public_assets/content/uploads/':'public_assets/content/uploads/'}</p>
+				</div><!-- end .entryPost -->
+				{/foreach}
+            {/if}
+		{/foreach}
+    </div><!-- end .row -->
+</div><!-- end .detail -->
+<div class="rowBtn">
+	 <a href="{$basedomain}produk/tab/{$type}" class="btnBack" >&laquo; Back</a> 
+</div>

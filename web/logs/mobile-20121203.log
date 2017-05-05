@@ -1,0 +1,23 @@
+2012-12-03 10:01:04 SELECT * FROM axis_news_content_category WHERE used=0 AND id=1 LIMIT 0,1
+2012-12-03 10:01:04 SELECT * FROM axis_news_content_type 
+2012-12-03 10:01:04 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-12-03 10:01:07 SELECT * FROM axis_news_content_category WHERE used=0 AND id=1 LIMIT 0,1
+2012-12-03 10:01:07 SELECT * FROM axis_news_content_type 
+2012-12-03 10:01:07 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-12-03 10:01:56 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-12-03 10:01:56 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-12-03 10:01:56 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-12-03 10:14:22 SELECT * FROM axis_news_content_category WHERE used=0 AND id=2 LIMIT 0,1
+2012-12-03 10:14:22 SELECT * FROM axis_news_content_type 
+2012-12-03 10:14:22 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-12-03 10:14:35 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-12-03 10:14:35 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-12-03 10:14:35 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-12-03 10:15:50 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-12-03 10:15:51 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-12-03 10:15:51 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-12-03 10:15:55 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-12-03 10:15:55 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-12-03 10:15:55 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-12-03 10:24:15 SELECT * FROM axis_province_reference  
+2012-12-03 10:24:16 SELECT * FROM axis_message_type WHERE web_type=1 AND lid = 1

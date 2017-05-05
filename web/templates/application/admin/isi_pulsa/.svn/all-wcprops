@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/axis2012/!svn/ver/1300/trunk/web/templates/application/admin/isi_pulsa
+END
+isi_pulsa_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/axis2012/!svn/ver/1300/trunk/web/templates/application/admin/isi_pulsa/isi_pulsa_edit.html
+END
+isi_pulsa_new.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/axis2012/!svn/ver/1300/trunk/web/templates/application/admin/isi_pulsa/isi_pulsa_new.html
+END
+isi_pulsa_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/axis2012/!svn/ver/1300/trunk/web/templates/application/admin/isi_pulsa/isi_pulsa_list.html
+END

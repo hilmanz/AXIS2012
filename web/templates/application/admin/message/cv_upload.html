@@ -1,0 +1,48 @@
+<div class="theContent">
+    <div class="theTitle">
+        <h2>Message CV Upload</h2>
+        <a href="index.php?s=message&act=excel_message&search={$search}" class="btn btn_document"><span>Download XLS</span></a>
+    </div><!--contenttitle-->
+    <div class="tableoptions">  
+			<form>
+            	<span>Search</span>
+				<input type="text" name="search" value="{$search}"/>
+				<span>Date Range</span>
+				<input type="text" name="startdate" value="{$startdate}" class="datepicker"/>
+				<span>s/d </span>			
+				<input type="text" name="enddate" value="{$enddate}" class="datepicker"/>
+				<input type="submit" value="cari" class="stdbtn btn_orange"/>
+				<input type="hidden" name="s" value="message" />
+				<input type="hidden" name="act" value="uploadCV" />
+			</form> 
+    </div><!--tableoptions-->	
+    <table cellpadding="0" cellspacing="0" border="0" id="table1" class="stdtable">
+        <colgroup>
+            <col class="con0" style="width: 4%" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="head0">Nama CV</th>
+                <th class="head1">Job as</th>
+                <th class="head0">Date Submit</th>
+            </tr>
+        </thead>
+        <tbody>
+              {section name=i loop=$list}
+              <tr>
+                <td><a class="green" href="index.php?s=message&act=downloadCV&file={$list[i].cv_name}">{$list[i].cv_name}&nbsp;</a></td>
+                <td width="30%">{$list[i].jobas}&nbsp;</td>
+                <td width="10%">{$list[i].tgl_submit|date_format:"%d-%m-%Y"} &nbsp;{$list[i].tgl_submit|date_format:$time.time}</td>
+              </tr>
+              {/section}
+        </tbody>
+    </table>
+    <div class="paging">
+    	{$paging}
+    </div>
+</div><!--theContent-->

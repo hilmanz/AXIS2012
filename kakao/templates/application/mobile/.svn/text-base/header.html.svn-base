@@ -1,0 +1,39 @@
+<!--[if lt IE 7]>
+	<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+<![endif]-->
+
+<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="#">AXIS MOBILE [{$mobileType}]</a>
+			<div class="nav-collapse collapse">
+				<ul class="nav">
+					<li class="active"><a href="index.php?page=home">Home</a></li>
+					{if !$isLogin}
+					<li><a href="{if $fbConnect}{$fbConnect}{else}javascript:void(0){/if}" > {$facebookButton} </a></li>
+					<li><a href="{if $twConnect}{$twConnect}{else}javascript:void(0){/if}" > {$twConnectButton} </a></li>
+					<li><a href="{if $gplusConnect}{$gplusConnect}{else}javascript:void(0){/if}" > {$gplusConnectButton} </a></li>
+					{/if}
+				</ul>
+				{if $isLogin}
+				<a href="logout.php" class="logout">LOGOUT | </a> 
+				<span class="welcome">Hello, <span id="headNickname">{if $user->name} <a href="index.php?page=axisLife" class="hoverBig" >{$user->name} {$user->last_name}</a> {else}<a href="index.php?page=axisLife&act=changeProfile" class="hoverBig" >please add your name</a>{/if}</span></span>
+				{else}
+				<form id="login" method="POST" class="navbar-form pull-right" action="login.php">
+					<input class="span2" type="text" placeholder="Phone" name="phonenumber" onCLick="this.value=''">
+					<input class="span2" type="password" placeholder="Password" name="password" onCLick="this.value=''">
+					<input type="hidden" name="login" value="1" /> 
+					<button type="submit" class="btn">Sign in</button>
+				</form>
+				{/if}
+			</div><!--/.nav-collapse -->
+		</div>
+	</div>
+</div>

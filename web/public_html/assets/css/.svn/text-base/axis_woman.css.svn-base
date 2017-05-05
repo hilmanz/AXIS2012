@@ -1,0 +1,64 @@
+
+/*
+Theme Name: AXIS 
+Version: 1.0
+Author: ACIT JAZZ - 2012
+*/
+#themewoman #ornamen{
+	display:none;
+}
+#themewoman #mainContent{
+	background:url(../images/themes_woman/bg.jpg) center bottom no-repeat;
+	padding:0 0 350px 0;
+}
+#themewoman .circleThumb2{
+	background:url(../images/themes_woman/circle4.png) no-repeat;
+}
+#themewoman .odd .circleThumb2{
+	background:url(../images/themes_woman/circle4.png) no-repeat;
+}
+#themewoman .odd .circleThumb2 a.thumbnails,#themewoman .circleThumb2 a.thumbnails{
+	left:50px;
+	top:35px;
+}
+#themewoman #axisLife .circleThumb2 .icon{
+	background:#ec1e79;
+	border:2px solid #ec1e79;
+}
+#themewoman #axisLife .select {
+	background: url(../images/themes_woman/select.png) no-repeat;
+}
+#themewoman #axisLife #shorter h1,#themewoman #axisLife .theTitle h1{
+	color:#ec1e79;
+}
+#themewoman #shorter .cols label{
+	color:#fb95ae;
+}
+#themewoman #profileBox .headBox,#themewoman #profileBoxTab ul,#themewoman #boxNetwork .headBox{
+	background:#EE2B74;
+	border:none;
+}
+#themewoman #profileBoxTab ul li a{
+	color:#ff85a3;
+}
+#themewoman #profileBoxTab ul li a:hover,#themewoman #profileBoxTab ul li.ui-tabs-active a{
+	color:#fff;
+}
+#themewoman #profileBox .thumbUser a.thumbUsers,#themewoman #axisLife .circleThumb,#themewoman #boxNetworkTab .rowInput input[type="submit"],#themewoman #boxNetworkTab .rowInput input[type="button"]{
+	background:#EE2B74;
+}
+#themewoman #boxNetworkTab .rowInput input[type="submit"]:hover,#themewoman #boxNetworkTab .rowInput input[type="button"]:hover{
+	background:#7a1878;
+}
+#themewoman #profileBox .userDetail h4{
+	color:#f9285c;
+}
+#themewoman #axisLife a.arrows2{
+	background:url(../images/arrow_r.png) #ee2b74 no-repeat right;
+}
+#themewoman #axisLife a.arrows2:hover{
+	background:url(../images/arrow_r.png) #7a1878 no-repeat right;
+}
+#themewoman #axisLife .icon_coffee{
+	background-image:url(../images/themes_woman/t_coffee.png);
+}

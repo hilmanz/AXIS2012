@@ -1,0 +1,117 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}life_in_axis">{$locale.lifeinaxis.title}</a> &raquo; <a >{$locale.karir.title}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="theContent">
+        <div class="theTitle">
+            <h1>{$locale.lifeinaxis.title}</h1>
+        </div><!-- end .theTitle -->
+    	<div id="sidebar">
+            <div class="theBox">
+                <div class="headBox">
+                    <h1>{$locale.submitcv.peluang}</h1>
+                </div><!-- end .headBox -->
+                <div class="entryBox">
+                    <div class="rowBtns">
+                       {section name=i loop=$karirList}
+                        <a class="purpleBtn " href="{$basedomain}life_in_axis/karir_detail/{$karirList[i].id}"> {$karirList[i].title} </a>   
+						{/section}  
+                    </div><!-- end .rowBtns -->
+                </div><!-- end .entryBox -->
+                <div class="shadow"></div>
+            </div><!-- end .theBox -->
+            {$recent_blog}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+            <div class="entryDetail">
+                <div class="entry">
+                    <div class="entry-title">
+                         <h1>{$locale.submitcv.kirim}</h1>
+                    </div><!-- end .entry-title -->
+                    <div class="entry-post white_table">
+						{$locale.submitcv.belumnemuposisi}                        
+                        <form class="theForm validate" style="position:relative;" method="post" action="{$basedomain}life_in_axis/submit_cv" enctype="multipart/form-data">
+                          <p> <strong>{$locale.submitcv.namafile.title}</strong> {$locale.submitcv.namafile} <br>
+                            <i><strong>{$locale.submitcv.contoh.title}</strong> {$locale.submitcv.contoh}</i> </p>
+                          <div class="row">
+                          <select id="jobPosition" class="styled required" name="jobPosition">
+                            <option value="">{$locale.submitcv.pilihposisi}</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="SalesDistribution">Sales Distribution</option>
+                            <option value="Finance">Finance</option>
+                            <option value="HRCommunication">HR &amp; Communication</option>
+                            <option value="others">Others</option>
+                          </select>
+                          </div>
+                          <div class="row">
+                            <input type="file" size="30" name="fileCV">
+                          </div>
+                          <div class="row">
+                          <input type="hidden" value="1" name="submitCV">
+                          <input type="submit" class="submit" value="SUBMIT">
+						  <div class="progress" style="display:none;">
+								<div class="bar"></div>
+								<div class="percent">0%</div>
+							</div>
+							<span id="status" style="color:#ff0000;margin:0 0 0 10px;"></span>
+                          </div>
+							
+                        </form><br /><br />
+                       {$locale.submitcv.hubungikami}
+                    </div><!-- end .entry-post -->
+                </div><!-- end .entry -->
+            </div><!-- end .entryDetail -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+</div><!-- end #container -->
+<div class="popup sendmessage" >
+	<div class="popupContent smallPopup popupMessage">        
+		<div class="entry">
+			 <span class="successend" style="color:black">{$locale.cv.sending_success}</span>
+		</div><!-- end .entry -->
+	</div><!-- end .popupContent -->
+	  <div class="ui-overlay">
+		<div class="ui-widget-overlay">&nbsp;</div>
+	</div><!-- end .ui-overlay -->
+</div><!-- end .popup -->
+{literal}
+<script>
+$(document).ready(function(){
+	var bar = $('.bar');
+	var percent = $('.percent');
+	var status = $('#status');   
+	$('form').ajaxForm({
+		beforeSend: function() {
+			status.empty();
+			var percentVal = '0%';
+			bar.width(percentVal)
+			percent.html(percentVal);
+		},
+		uploadProgress: function(event, position, total, percentComplete) {
+			$('.progress').fadeIn();
+			var percentVal = percentComplete + '%';
+			bar.width(percentVal)
+			percent.html(percentVal);
+		},
+		complete: function(xhr) {
+			if(xhr.responseText != '\r\n\r\n\r\n\r\n\r\nsuccess'){
+				status.html(xhr.responseText);
+				$('.progress').fadeOut();
+			}else{
+				$('.progress').fadeOut();
+				$(".ui-overlay").show();
+				$(".successend").show();
+				$('.sendmessage').show();
+			}
+			
+		}
+	});
+
+	$(".ui-overlay").click(function(){
+		$(this).hide();
+		$('.sendmessage').hide();
+	});
+}) ;
+</script>
+{/literal}

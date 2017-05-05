@@ -1,0 +1,109 @@
+{if $content} {$content} {else}
+<div class="theContent">
+    <div class="theTitle">
+        <h2>User Content List</h2>
+        <a href="index.php?s=article&act=excel_user_post&search={$search}&status={$status}&startdate={$startdate}&enddate={$enddate}" class="btn btn_document"><span>Download XLS</span></a>
+    </div><!--contenttitle-->
+    <div class="tableoptions">      
+			<form>Search &nbsp;
+				<input type="text" name="search" value="{$search}" style="width:200px;"/>&nbsp;&nbsp;
+				Status &nbsp;
+				<select name="n_status" style="width:150px;">
+					<option value="">ALL</option>
+					<option value="0" {if $status == '0'} selected="selected"{/if}>Non Publishing</option>
+					<option value="1" {if $status == 1} selected="selected"{/if}>Publishing</option>
+				</select>&nbsp;&nbsp;
+				Date Range &nbsp;
+				<input type="text" name="startdate" value="{$startdate}" style="width:150px;" class="datepicker" />&nbsp;&nbsp;
+				s/d &nbsp; 
+				<input type="text" name="enddate" value="{$enddate}" style="width:150px;" class="datepicker" />&nbsp;&nbsp;
+				<input type="submit" value="cari" style="width:50px;"/>
+				<input type="hidden" name="s" value="article" />
+				<input type="hidden" name="act" value="userpost" />
+				<input type="hidden" name="filter" value="cari" />
+			</form>
+    </div><!--tableoptions-->	
+    <table cellpadding="0" cellspacing="0" border="0" id="table1" class="stdtable">
+        <colgroup>
+            <col class="con0" style="width: 4%" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="head0">No</th>
+                <th class="head1">User Name</th>
+                <th class="head0">Title</th>
+                {*}<th class="head0">Brief</th>{/*}
+                {*}<th class="head1">Content</th>{/*}
+                <th class="head0">Category</th>
+                {*}<th class="head1">Type</th>{/*}
+                <th class="head1">Posted Date</th>
+                <th class="head0">Status</th>
+                <th class="head1">Image</th>
+                <th class="head0">Preview</th>
+                <th class="head1">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {section name=i loop=$list}
+            <tr>
+                <td>{$list[i].no}&nbsp;</td>
+                <td>{$list[i].name}&nbsp;</td>
+                <td>{$list[i].title}</td>
+                {*}<td>{$list[i].brief|truncate:30}</td>{/*}
+               {*} <td>{$list[i].content|truncate:100}</td>{/*}
+                <td>{$list[i].category}</td>
+                {*}<td>{$list[i].type_name}</td>{/*}
+                <td><nobr>{$list[i].posted_date|date_format:"%d-%m-%Y"} {$list[i].posted_date|date_format:$time.time}</nobr></td>
+                <td align="center">
+                    <select name='status' onchange='javascript:changeStatus({$list[i].id},this.value);' id="sel-{$list[i].id}" style="width:150px;">
+                        <option value="0" {if $list[i].n_status|intval eq 0} selected="selected"{/if}>Non Publishing</option>
+                        <option value="1" {if $list[i].n_status|intval eq 1} selected="selected" {/if}>Publishing</option>
+                    </select>
+                </td>
+                <td><img src="{$baseurl}public_assets/user/photo/tiny_{$list[i].image}" width="100"/></td>
+                <td align="center"><a href="{$list[i].url}" style="text-decoration:none;" target="_blank">preview</a></td>
+                <td align="center" width="4%">
+				<nobr>
+				<a href="index.php?s=article&act=edit_content_user&id={$list[i].id}" style="text-decoration:none;">Edit</a>
+				  | <a href="index.php?s=article&act=hapus_content_user&id={$list[i].id}" style="text-decoration:none;" onclick="return confirm('Are you sure you want to delete this?')">Delete</a>
+				</nobr>
+				</td>
+            </tr>
+            {/section}
+        </tbody>
+    </table>
+    <div class="paging">
+    	{$paging}
+    </div>
+</div><!--theContent-->
+{literal}
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+	function changeStatus(id,status){
+		$.get(
+			'index.php?s=article&act=change_status_user_content&id='+id+'&status='+status,
+			{},
+			function(data){
+				if(data.success > 0){
+					$("#sel-"+id).fadeOut('fast',function(){
+						$("#sel-"+id).fadeIn('slow');
+					});
+				}else{
+					alert('Gagal mengganti status, silakan coba lagi!');
+				}
+			},
+			"json"
+		);
+		return false;
+	}
+</script>
+{/literal}
+{/if}

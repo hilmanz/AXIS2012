@@ -1,0 +1,108 @@
+<div class="breadcrumb">
+		<a href="{$mobiledomain}">{$locale.home.title}</a>	&raquo; <a href="{$mobiledomain}kenapaAxis">{$locale.nav.kenapaaxis}</a>	
+	</div>
+<div class="page-body" data-role="content">
+		
+		<div class="page-image-heading" id="imageHeading">
+			<img src="{$mobiledomain}assets/images/pakai_axis.jpg" />
+            <h1>{$locale.nav.kenapaaxis}</h1>
+		</div>
+		<div class="page-content clear">
+			<div id="product-category-list" class="page-content-list">
+				<ol id="whyAxis">
+                    <li>
+                       {$locale.slider.whyaxis.service}
+                    </li>
+                    <li>
+                        {$locale.slider.whyaxis.coverage}
+                    </li>
+                    <li>
+                        {$locale.slider.whyaxis.tariff}
+                    </li>
+				</ol>
+			</div>
+		</div>
+		<div class="page-meta">
+			<h1 class="page-title page-title3"><span class="icon"></span>{$locale.knapaaxis.panduan}</h1>
+		
+			<div class="page-content clear">
+				<ul id="manual-activation">
+					<li class="activation-step-1">
+						<span class="thumb"></span>
+						<div>
+							{$locale.knapaaxis.kartuaxis2}
+						</div>
+ 					</li>
+ 					<li class="activation-step-2">
+ 						<div>
+	 						{$locale.knapaaxis.kartumu2}		
+ 						</div>
+ 						<span class="thumb"></span>
+ 					</li>
+ 					<li class="activation-step-3">
+ 						<span class="thumb"></span>
+ 						<div>
+	 						{$locale.knapaaxis.registrasi2}	
+	 					</div>	
+ 					</li>
+ 					<li class="activation-step-4">
+ 						<div>
+	 						{$locale.knapaaxis.restart2}
+						</div>
+						<span class="thumb"></span>
+ 					</li>
+ 					<li class="activation-step-5">
+ 						<span class="thumb"></span>
+ 						<div>
+	 						{$locale.knapaaxis.pengaturan2}
+	 					</div>	
+ 					</li>
+				</ul>
+				 <div class="socialLike">
+            	<a class="favorite" contentid="1" urlcontent="{$basedomain}kenapaAxis" href="javascript:void(0)" >&nbsp;<span class="fav-count" countFav="{if $fav}{$fav}{else}0{/if}" >{if $fav}{$fav}{else}0{/if}</span></a>
+                <div class="facebookLike">
+					<a href="#" onclick="shareFB('{$locale.nav.kenapaaxis}','{$mobiledomain}','{$mobiledomain}assets/images/pakai_axis.jpg','AXISgsm','{$locale.knapaaxis.panduan}');"><img width="63" src="{$mobiledomain}assets/images/icon/facebook_share_button.png"></a>
+                    {*}
+					<div id="fb-root"></div>
+					{literal}
+                    <script>(function(d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return;
+                      js = d.createElement(s); js.id = id;
+                      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=267918769990528";
+                      fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+					{/literal}
+                    <div class="fb-like" data-href="{$basedomain}" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div>
+					{/*}
+				</div><!-- end .facebookLike -->
+				<div class="shareTwit">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="{$basedomain}" data-via="axisgsm" data-related="axisgsm" data-hashtags="AXISGSM">Tweet</a>
+				{literal}
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				{/literal}
+				</div><!-- end .shareTwit -->
+                <div class="googlePlus">
+					{literal}
+					<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+                      {parsetags: 'explicit'}
+                    </script>
+					{/literal}
+                    <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="120" data-href="{$basedomain}"></div>
+                    <script type="text/javascript">gapi.plusone.go();</script>
+                </div><!-- end .googlePlus -->
+          	  </div><!-- end .socialLike -->
+			</div>
+		</div>
+		
+		<div class="list-nav">
+			<ul data-role="listview" data-inset="true">
+				<li>
+					<a href="{$mobiledomain}" data-transition="slide" data-url="{$mobiledomain}">
+						<span class="icon icon-home"></span>
+						<span class="textLink">{$locale.mobilebtn.home}</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /content -->

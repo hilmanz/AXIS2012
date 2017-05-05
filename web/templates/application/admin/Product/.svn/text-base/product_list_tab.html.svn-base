@@ -1,0 +1,67 @@
+
+<div class="theContent">
+    <div class="theTitle">
+        <h2>Product Desription List - Title Content Article&nbsp; : &nbsp;{$title_article|capitalize:true}</h2>
+        <a href="index.php?s=product&act=product_add&id_content={$id_content}&start={$start}" class="btn btn_pencil"><span>Add New</span></a>
+        <a href="index.php?s=product" class="btn btn_archive"><span>Back to Product</span></a>
+    </div><!--contenttitle-->
+    <table cellpadding="0" cellspacing="0" border="0" id="table1" class="stdtable">
+        <thead>
+            <tr>        
+                <th class="head0">No</th>
+                <th class="head1">Title</th>
+                {*}<th class="head0">Description</th>{/*}
+                <th class="head1">Date</th>
+                <th class="head0">Status</th>
+                <th class="head1" colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {assign var="fullpath" value=$baseurl|cat:'public_assets/'}
+            {section name=i loop=$list}
+            <tr>
+                <td>{$list[i].no}&nbsp;</td>
+                <td width="20%">{$list[i].title}</td>
+                {*}<td>{$list[i].description|replace:'../public_assets/':$fullpath}</td>{/*}
+                <td><nobr>{$list[i].date|date_format:"%e %B %Y"} &nbsp;{$list[i].date|date_format:$time.time}</nobr></td>
+                <td>
+                    <select name='status' onchange='javascript:changeStatus({$list[i].id},this.value);' id="sel-{$list[i].id}" style="width:150px;">
+                        <option value="0" {if $list[i].n_status|intval eq 0} selected="selected"{/if}>Non Publishing</option>
+                        <option value="1" {if $list[i].n_status|intval eq 1} selected="selected" {/if}>Publishing</option>
+                    </select>
+                </td>
+                <td width="4%" align="center"><a class="blue" href="index.php?s=product&act=product_edit&id={$list[i].id}&id_content={$id_content}&start={$start}" style="text-decoration:none;"> Edit </a></td>
+                <td width="4%" align="center"><a class="red" href="index.php?s=product&act=product_hapus&id={$list[i].id}&id_content={$id_content}&start={$start}" style="text-decoration:none;" onclick="return confirm('Are you sure you want to delete this?')">Delete</a></td>
+            </tr>
+            {/section}
+        </tbody>
+    </table>
+    <div class="paging">
+    	{$paging}
+    </div>
+</div><!--theContent-->
+{literal}
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+	function changeStatus(id,status){
+		$.get(
+			'index.php?s=product&act=change_status_product&id='+id+'&status='+status,
+			{},
+			function(data){
+				if(data.success > 0){
+					$("#sel-"+id).fadeOut('fast',function(){
+						$("#sel-"+id).fadeIn('slow');
+					});
+				}else{
+					alert('Gagal mengganti status, silakan coba lagi!');
+				}
+			},
+			"json"
+		);
+		return false;
+	}
+</script>
+{/literal}

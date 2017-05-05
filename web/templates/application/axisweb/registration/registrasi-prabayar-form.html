@@ -1,0 +1,127 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="index.php">Home</a> &raquo; <a>{$locale.prepaidonlinereg.title}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="axisLife">
+    	<div id="sidebar">
+   			{$medium_banner}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+        	<div class="theTitle">
+            	<h1 class="icon_register">{$locale.prepaidonlinereg.title}</h1>
+            </div><!-- end .theTitle -->
+            <div class="shadowCtop">
+            	<div class="shadowCbottom" style="height:345px;">
+                    <div class="entryDetail">
+                            <form accept-charset="utf-8" action="{$registrationLink}" method="post" id="inputuser" class="theForm validate registrationForm">
+                                <span style="color:#ff0000;">{$msg}</span>
+								<div class="row">
+                                <label for="msisdn">{$locale.prepaidonlinereg.nomoraxis}</label>
+                                <input type="text" maxlength="20" id="PrepaidRegistrationMsisdn" class="text" value="{$number}" readonly="readonly" name="phone">
+                                </div>
+                                <div class="row">                   
+                                <label for="name">{$locale.prepaidonlinereg.nama}</label>
+                                <input type="text" id="PrepaidRegistrationName" class="text required" name="name">
+                                </div>
+                                <div class="row">  
+                                <label for="id_type">{$locale.prepaidonlinereg.typeid}</label>
+                                <select id="PrepaidRegistrationIdType" class="required" name="id_type">
+                                  <option value="">-{$locale.onlinereg.pilih}-</option>
+                                  <option value="1">{$locale.prepaidonlinereg.sim}</option>
+                                  <option value="4">{$locale.prepaidonlinereg.kitas}</option>
+                                  <option value="3">{$locale.prepaidonlinereg.paspor}</option>
+                                  <option value="2">{$locale.prepaidonlinereg.ktp}</option>
+                                  <option value="5">{$locale.prepaidonlinereg.kartupelajar}</option>
+                                </select>
+                                </div>
+                                <div class="row">  
+                                <label for="id_number">{$locale.prepaidonlinereg.noid}</label>
+                                <input type="text" maxlength="50" id="PrepaidRegistrationIdNumber" class="text smalltext required" name="id_number" >
+                                </div>
+                                <div class="row">  
+                                <label for="email">{$locale.prepaidonlinereg.email}</label>
+                                <input type="text" maxlength="50" id="PrepaidRegistrationEmail" class="text required email" name="email">
+                                </div>
+                                <div class="row">  
+                                <label for="place_birth">{$locale.prepaidonlinereg.tempatlahir}</label>
+                                <input type="text" maxlength="50" id="PrepaidRegistrationPlaceBirth" class="text smalltext required" name="place_birth">
+                                </div>
+                                <div class="row">  
+                                <label for="date_birth">{$locale.prepaidonlinereg.tanggallahir}</label>
+								<input type="text" id="dateBirth" maxlength="255" class="dateBirth required" value="" name="dob" />
+                                </div>
+                                <div class="row">  
+                                <label for="religion">{$locale.prepaidonlinereg.agama}</label>
+                                <select id="PrepaidRegistrationReligion" class="required" name="religion">
+                                  <option value="">-{$locale.onlinereg.pilih}-</option>
+                                  <option value="B">{$locale.prepaidonlinereg.budha}</option>
+                                  <option value="C">{$locale.prepaidonlinereg.katolik}</option>
+                                  <option value="H">{$locale.prepaidonlinereg.hindu}</option>
+                                  <option value="M">{$locale.prepaidonlinereg.islam}</option>
+                                  <option value="R">{$locale.prepaidonlinereg.protestan}</option>
+                                </select>
+                                </div>
+                                <div class="row">  
+                                <label for="address">{$locale.prepaidonlinereg.alamat}</label>
+                                <textarea class="required" maxlength="50" cols="" rows="" wrap="no" id="PrepaidRegistrationAddress" class="textarea" name="address"></textarea>
+                                </div>
+                                <div class="row">  
+                                <label for="city">{$locale.prepaidonlinereg.kota}</label>
+                                <input type="text" maxlength="20" id="PrepaidRegistrationCity" class="text required" name="city">
+                                </div>
+                                <div class="row">  
+                                <label for="zipcode">{$locale.prepaidonlinereg.kodepos}</label>
+                                <input type="text" maxlength="10" id="PrepaidRegistrationZipcode" class="text smalltext required numeric" name="zipcode">
+                                </div>
+                                <div class="row">  
+                                <label for="alt_phone">{$locale.prepaidonlinereg.altphone}</label>
+                                <input type="text" maxlength="20" id="PrepaidRegistrationAltPhone" class="text required numeric" name="alt_phone">
+                                </div>
+                                <div class="row">
+                                <label for="occupation">{$locale.prepaidonlinereg.pekerjaan}</label>
+                                <select id="PrepaidRegistrationOccupation" class="required" name="occupation">
+                                  <option value="">-{$locale.onlinereg.pilih}-</option>
+                                  <option value="03">{$locale.prepaidonlinereg.bisnis}</option>
+                                  <option value="01">{$locale.prepaidonlinereg.pns}</option>
+                                  <option value="04">{$locale.prepaidonlinereg.iburt}</option>
+                                  <option value="06">{$locale.prepaidonlinereg.freelance}</option>
+                                  <option value="02">{$locale.prepaidonlinereg.karyawan}</option>
+                                  <option value="05">{$locale.prepaidonlinereg.profesional}</option>
+                                  <option value="08">{$locale.prepaidonlinereg.pensiunan}</option>
+                                  <option value="09">{$locale.prepaidonlinereg.pelajar}</option>
+                                  <option value="07">{$locale.prepaidonlinereg.tdkbekerja}</option>
+                                  <option value="11">{$locale.prepaidonlinereg.buruh}</option>
+                                  <option value="10">{$locale.prepaidonlinereg.mahasiswa}</option>
+                                </select>
+                                </div>
+                                <div class="row">  
+                                <label for="hobby">{$locale.prepaidonlinereg.hobi}</label>
+                                <select id="PrepaidRegistrationHobby" class="required" name="hobby">
+                                  <option value="">-{$locale.onlinereg.pilih}-</option>
+                                  <option value="09">{$locale.prepaidonlinereg.club}</option>
+                                  <option value="07">{$locale.prepaidonlinereg.masak}</option>
+                                  <option value="10">{$locale.prepaidonlinereg.makan}</option>
+                                  <option value="06">{$locale.prepaidonlinereg.kebun}</option>
+                                  <option value="08">{$locale.prepaidonlinereg.nonton}</option>
+                                  <option value="04">{$locale.prepaidonlinereg.musik}</option>
+                                  <option value="11">{$locale.prepaidonlinereg.photo}</option>
+                                  <option value="05">{$locale.prepaidonlinereg.baca}</option>
+                                  <option value="03">{$locale.prepaidonlinereg.belanja}</option>
+                                  <option value="01">{$locale.prepaidonlinereg.olahraga}</option>
+                                  <option value="02">{$locale.prepaidonlinereg.plesir}</option>
+                                </select>
+                                </div>
+                                <div class="row lastchild">  
+                              <input type="hidden" value="1" name="registering">
+                              <input type="submit" value="{$locale.prepaidonlinereg.reg}" class="submit9">
+                                </div>
+                            </form>
+                    </div><!-- end .entryDetail -->
+                </div><!-- end .shadowCbottom -->
+            </div><!-- end .shadowCtop -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+    <div class="widget-axisLife">
+    {$carousel_banner}
+    </div><!-- end .widget-whyAxis -->
+</div><!-- end #container -->

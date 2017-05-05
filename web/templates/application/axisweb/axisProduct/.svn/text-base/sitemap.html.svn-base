@@ -1,0 +1,126 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="index.php">{$locale.home.title}</a>  &raquo; <a>{$locale.botnav.petasitus}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="axisLife">
+        	<div class="theTitle">
+            	<h1 class="icon_tworld">{$locale.botnav.petasitus}</h1>
+            </div><!-- end .theTitle -->
+            <ul class="colLeft">
+                <h3 class="title">AXISWORLD</h3>
+                <li><a href="{$basedomain}kenapaAxis">{$locale.nav.kenapaaxis}</a></li>
+                <li><a href="{$basedomain}produk">{$locale.nav.produk}</a>
+                    <ul>
+                        <li><a href="{$basedomain}produk/detail/internet">{$locale.nav.internet}</a>
+                            <ul>
+                                <li><a href="{$basedomain}produk/detail/internet#tab5">{$locale.internet.tarifdaftar}</a></li>
+                                <li><a href="{$basedomain}produk/detail/internet#tab7">{$locale.internet.internetharian}</a></li>
+                                <li><a href="{$basedomain}produk/detail/internet#tab6">{$locale.internet.internetgaul}</a></li>
+                                <li><a href="{$basedomain}produk/detail/internet#tab8">{$locale.internet.axispro}</a></li>
+                                <li><a href="{$basedomain}produk/detail/internet#tab12">{$locale.internet.blackberry}</a></li>
+                                <li><a href="{$basedomain}produk/detail/internet#tab97">{$locale.internet.smartphone}</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{$basedomain}produk/detail/telepon">{$locale.nav.telepon}</a>
+                            <ul>
+                                <li><a href="{$basedomain}produk/detail/telepon#tab9">{$locale.telepon.tarif}</a></li>
+                                <li><a href="{$basedomain}produk/detail/telepon#tab252">{$locale.telepon.smsinternational}</a></li>
+                                <li><a href="{$basedomain}produk/detail/telepon#tab252">{$locale.telepon.teleponinternational}</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{$basedomain}produk/detail/bundling">{$locale.nav.bundling}</a>
+                            <ul>
+                                <li><a href="{$basedomain}produk/detail/bundling#tab11">Modem/Dongle</a></li>
+                                <li><a href="{$basedomain}produk/detail/bundling#tab260">Handphone</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{$basedomain}produk/detail/kartu">{$locale.nav.kartuaxis}</a>
+                            <ul>
+                                <li><a href="{$basedomain}produk/detail/kartu#tab23">Prabayar</a></li>
+                                <li><a href="{$basedomain}produk/detail/kartu#tab26">Pascabayar</a></li>
+                                <!--<li><a href="{$basedomain}produk/detail/kartu#tab31">Golden Number</a></li>-->
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+           </ul>
+           <ul class="colLeft">
+                <h3 class="title">&nbsp;</h3>
+                <li><a href="{$basedomain}promo">{$locale.nav.promo}</a></li>
+                <li><a href="{if $isLogin}{$basedomain}{$userpage}{else}{$basedomain}{$userpage}{/if}">{$locale.nav.axislife}</a></li>
+                <li><a href="{$basedomain}coverage">{$locale.nav.coverage}</a></li>
+                {*}<li><a href="http://rbt.axisworld.co.id" target="_blank">{$locale.nav.onlinestore}</a></li>{/*}
+                <li><a href="{$basedomain}isi_ulang">{$locale.nav.isiulang}</a></li>
+                <li><a href="{$basedomain}customer_care">{$locale.nav.customercare}</a></li>
+                <li><a href="{$basedomain}international">{$locale.footnav.internasional}</a>
+                    <ul>
+                        <li><a href="{$basedomain}international#{$locale.footnav.tabdatangkeindonesia}">{$locale.footnav.datangkeindonesia}</a></li>
+                        <li><a href="{$basedomain}international#{$locale.footnav.tabpergikeluarnegri}">{$locale.footnav.pergikeluarnegri}</a></li>
+                    </ul>
+                </li>
+                <li><a href="{$basedomain}yang_asik">{$locale.footnav.yangasik}</a>
+                    <ul>
+                        <li><a href="{$basedomain}yang_asik#tab-1">{$locale.footnav.axisbox}</a></li>
+                        <li><a href="http://bukutelponku.axisworld.co.id/">{$locale.footnav.bukutelepon}</a></li>
+                        <li><a href="{$basedomain}yang_asik#{$locale.footnav.tablayanansuara}">{$locale.footnav.layanansuara}</a></li>
+                        <li><a href="{$basedomain}yang_asik#{$locale.footnav.tabfitursms}">{$locale.footnav.fitursms}</a></li>
+                        <li><a href="http://www.duniaaxis.com">{$locale.footnav.duniaaxis}</a></li>
+                        <li><a href="http://sekolah.axisworld.co.id">{$locale.footnav.komunitassekolah}</a></li>
+                        <li><a href="http://net.axisworld.co.id/" target="_blank">AXIS NET</a></li>  
+                    </ul>
+                </li>      
+           </ul>
+           <ul class="colLeft">   
+                <h3 class="title">&nbsp;</h3>        
+                <li><a href="{$basedomain}{$userpage}">{$locale.footnav.yangpopuler}</a>
+                    <ul>
+                        <li><a href="{$basedomain}{$userpage}">{$locale.footnav.iphone16gb}</a></li>
+                        <li><a href="{$basedomain}promo">{$locale.footnav.htc8gb}</a></li>
+                    </ul>
+                </li>
+                <li><a href="{$basedomain}bantuan">{$locale.footnav.bantuan}</a>
+                    <ul>
+                        <li><a href="{$basedomain}bantuan#{$locale.footnav.tabfaq}">F.A.Q</a></li>
+                        <li><a href="{$basedomain}bantuan#{$locale.footnav.tabdevicesetting}">{$locale.footnav.devicesetting}</a></li>
+                        <!--<li><a href="{$basedomain}bantuan#{$locale.footnav.tabmanualsetting}">{$locale.footnav.manualsetting}</a></li>-->
+                        <li><a href="{$basedomain}bantuan#{$locale.footnav.tabquicktips}">{$locale.footnav.quicktips}</a></li>
+                        <li><a href="{$basedomain}bantuan#{$locale.footnav.tabnomorpenting}">{$locale.footnav.nomorpenting}</a></li>
+                        <li><a href="{$basedomain}bantuan#{$locale.footnav.tabbantuan123}">{$locale.footnav.bantuan123}</a></li>
+                    </ul>
+                </li>
+                <li><a href="{$basedomain}petasitus">{$locale.botnav.petasitus}</a></li>
+                <li><a href="{$basedomain}penyangkalan">{$locale.botnav.kebijakanprivasi}</a></li>
+                <li><a href="{$basedomain}syarat_ketentuan">{$locale.botnav.syaratketentuan}</a></li>
+           </ul>
+           <ul class="colLeft">
+                <h3 class="title">{$locale.korporate.title}</h3>  
+                <li><a href="{$coorporate_base_path}index.php?page=tentang_axis">{$localecoorporate.nav.tetangaxis}</a>
+                    <ul>
+                        <li><a href="{$coorporate_base_path}index.php?page=tentang_axis&act=tanggung_jawab">{$localecoorporate.sidenav.tanggungjawab}</a></li>
+                        <li><a href="{$coorporate_base_path}index.php?page=tentang_axis&act=karyawan_dan_managemen">{$localecoorporate.sidenav.karyawanmanajemen}</a> </li>
+                        <li><a href="{$coorporate_base_path}index.php?page=tentang_axis&act=kualitas_layanan">{$localecoorporate.sidenav.kualitaslayanan}</a></li>
+                        <li><a href="{$coorporate_base_path}index.php?page=tentang_axis&act=grup_kami">{$localecoorporate.sidenav.grupkami}</a></li>
+                    </ul>
+                </li>
+                <li><a href="{$coorporate_base_path}index.php?page=life_in_axis">{$localecoorporate.nav.lifeinaxis}</a>
+                    <ul>
+                         <li><a href="{$coorporate_base_path}index.php?page=life_in_axis">{$localecoorporate.sidenav.komunitas}</a></li>
+                         <li><a href="{$coorporate_base_path}index.php?page=life_in_axis&act=kegiatan_ekstrakurikuler">{$localecoorporate.sidenav.ekstrakulikuler}</a></li>
+                         <li><a href="{$coorporate_base_path}index.php?page=life_in_axis&act=meet_our_people">{$localecoorporate.sidenav.meetour}</a></li>
+                         <li><a href="{$coorporate_base_path}index.php?page=life_in_axis&act=peranan_divisi">{$localecoorporate.sidenav.divisi}</a></li>
+                         <li><a href="{$coorporate_base_path}index.php?page=life_in_axis&act=galeri">{$localecoorporate.sidenav.galeri}</a></li>
+                         <li><a href="{$coorporate_base_path}index.php?page=life_in_axis&act=karir">{$localecoorporate.sidenav.karir}</a></li>
+                    </ul>
+                </li>
+           </ul>
+           <ul class="colLeft">
+                <h3 class="title">{$localecoorporate.footnav.korporat}&nbsp;</h3>
+                <li><a href="{$coorporate_base_path}index.php?page=berita">{$localecoorporate.nav.ruangberita}</a></li>
+                <li><a href="{$coorporate_base_path}index.php?page=seputar_perusahaan">{$localecoorporate.nav.infoseputar}</a></li>
+                <li><a href="{$coorporate_base_path}index.php?page=blog">{$localecoorporate.nav.blog}</a></li>
+                <li><a href="{$coorporate_base_path}index.php?page=distributor_resmi">{$localecoorporate.nav.distributorresmi}</a></li>
+                <li><a href="{$coorporate_base_path}index.php?page=hubungi_kami">{$localecoorporate.nav.hubungikami}</a></li>
+           </ul>
+        </div>
+    </div><!-- end #axisLife -->
+</div><!-- end #container -->

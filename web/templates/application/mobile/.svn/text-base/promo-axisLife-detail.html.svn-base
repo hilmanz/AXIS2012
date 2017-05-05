@@ -1,0 +1,40 @@
+<div class="breadcrumb">
+		<a href="{$mobiledomain}index.php">{$locale.home.title}</a>	&raquo;  
+        <a href="{$mobiledomain}index.php?page=promo">{$locale.nav.promo}</a>	 &raquo; 
+        <a href="{$mobiledomain}index.php?page=product&act=axisLife">HOT DI AXIS LIFE</a>
+</div>
+<div class="page-body" data-role="content">
+		
+		<div class="page-image-heading">
+			{if $promo[0].image}<img src="{$basedomain}public_assets/article/small_{$promo[0].image}" />{/if}
+		</div>
+		
+		<div class="page-meta">
+		<h1 class="page-title page-title2"><span class="icon"></span>{$promo[0].title}</h1>
+		
+			<div class="page-content clear">
+				<article>
+					{if $promo[0].brief} <h3>{$promo[0].brief}</h3>{/if}
+					<p>{$promo[0].content}</p>
+				</article>
+			</div>
+		</div>
+		
+		<div class="list-nav">
+			<ul data-role="listview" data-inset="true">
+				<li>
+					<a href="{$mobiledomain}index.php?page=promo&act=axisLife" data-transition="slide">
+						<span class="icon icon-plus"></span>
+						<span class="textLink">Hot AXIS Life Lainnya</span>
+						
+					</a>
+				</li>
+				<li>
+					<a href="{$mobiledomain}index.php?page=promo" data-transition="slide">
+						<span class="icon icon-home"></span>
+						<span class="textLink">Back To Promo</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /content -->

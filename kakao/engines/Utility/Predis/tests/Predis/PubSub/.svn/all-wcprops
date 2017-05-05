@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/PubSub
+END
+DispatcherLoopTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/PubSub/DispatcherLoopTest.php
+END
+PubSubContextTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/PubSub/PubSubContextTest.php
+END

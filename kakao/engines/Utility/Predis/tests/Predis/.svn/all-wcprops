@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis
+END
+MonitorContextTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/MonitorContextTest.php
+END
+ClientExceptionTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/ClientExceptionTest.php
+END
+ClientTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/ClientTest.php
+END
+HelpersTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/HelpersTest.php
+END
+ConnectionParametersTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/ConnectionParametersTest.php
+END
+CommunicationExceptionTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/CommunicationExceptionTest.php
+END
+PredisExceptionTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/PredisExceptionTest.php
+END
+ServerExceptionTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/ServerExceptionTest.php
+END
+ResponseQueuedTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/ResponseQueuedTest.php
+END
+ConnectionFactoryTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/ConnectionFactoryTest.php
+END
+ResponseErrorTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/ResponseErrorTest.php
+END

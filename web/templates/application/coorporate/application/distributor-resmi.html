@@ -1,0 +1,141 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">Home</a> &raquo; <a>{$locale.nav.distributorresmi}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="theContent">
+        <div class="theTitle">
+            <h1>{$locale.nav.distributorresmi} - {$locale.nav.distributorresmibrief}</h1>
+        </div><!-- end .theTitle -->
+    	<div id="sidebar">
+            {$recent_news}
+            {$recent_blog}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+            <div class="entryDetail">
+                <div class="entry">
+                    <div class="entry-title">
+                         {*}<h1>{$locale.nav.distributorresmibrief}</h1>{/*}
+                    </div><!-- end .entry-title -->
+                    <div class="entry-post">
+                          <div id="get_axis">
+                          	<p>
+                            <select id="select1" name="select1" class="styled">
+                              {*}<option value="">-{$locale.input.province}-</option>{/*}
+                              {section name=i loop=$province}
+									<option value="{$province[i].id}">{if $locale.js==1}{$province[i].province}{else}{$province[i].province_en}{/if}</option>
+								{/section}
+                            </select>
+                           
+                            <select id="select2" name="select2" class="styled">
+                              {*}<option value="">-{$locale.input.city}-</option>{/*}    
+								{section name=i loop=$city}
+								  <option value="{$city[i].id}">{if $locale.js==1}{$city[i].city}{else}{$city[i].city_en}{/if}</option>
+								{/section}		
+                            </select>
+
+                            </p>
+                            <span id="result" class="white_table">
+                            <table cellpadding="0" cellspacing="0" border="0">					
+								<tbody id="daftarLokasi">
+									<tr>
+									  <td><span id="namaKota">{$city[0].city}</span></td>
+									</tr>
+									{section name=i loop=$default}
+									<tr>
+									<td>
+									{$default[i].brief}
+									</td>
+									</tr>
+									{/section}
+								</tbody>
+                            </table>
+                            </span>
+                          </div>
+						   <div id="distributorPaging" class="paging">
+                
+							</div><!-- end .paging -->
+                    </div><!-- end .entry-post -->
+                </div><!-- end .entry -->
+            </div><!-- end .entryDetail -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+</div><!-- end #container -->
+<script>
+	var locale = "{if $locale.btn.detail}{$locale.btn.detail}{else}0{/if}";
+	var cityID;
+	var defaultCity = '{$locale.input.city}';
+	var distributorMSG = '{$locale.input.distributor}';
+	var basedomain = '{$basedomain}';
+	var country = {if $locale.js=='1'}1{else}0{/if};
+{literal}
+	
+	function initiatePaging(total_rows){
+		var pageInit = 0;
+		var start = 0;
+		//Init Page
+		if(pageInit == 0){
+			pageInit = 1;
+			if(start == 0)start=1;
+			kiPagination(total_rows, start, 'distributorPaging', 'distributor_paging_ajax', 'distributor_paging_ajax', 7);
+		}
+	}
+	
+	function distributor_paging_ajax(fungsi, start){
+		$('#daftarLokasi').html('<tr><td><span>'+$('#selectselect2').html()+'</span></td></tr>');
+		$('#daftarLokasi').append('<div class="loaders"><img src="'+basedomain+'assets/images/loader.png"></div>');
+		$.post(basedomain+'distributor_resmi&act='+fungsi, {start : start, city : cityID}, function(data){
+			var str='';
+			$.each(data, function(k,v){
+				str+='<tr>';
+					str+='<td>';
+					str+=''+v.brief+'</td>';
+				str+='</tr>';
+			});
+			$('.loaders').remove();
+			$('#daftarLokasi').append(str);
+		});
+	}
+	
+	$('#select1').change(function(){
+		$('#select2').html('<option value="">-'+defaultCity+'-</option>');
+		$('#selectselect2').html('-'+defaultCity+'-');
+		var province = $(this).val();
+		$.post(basedomain+'distributor_resmi/getCitybyProvince', {province : province}, function(city){
+			var str='';
+			str+='<option value="">-'+defaultCity+'-</option>';
+			$.each(city, function(k,v){
+				if(country==1) str+='<option value="'+v.id+'">'+v.city+'</option>';
+				else str+='<option value="'+v.id+'">'+v.city_en+'</option>';
+			});
+			$('#select2').html(str);
+		});
+	});
+	
+	$(document).on('change','#select2',function(){
+		$('#distributorPaging').html('');
+		$('#daftarLokasi').html('');
+		cityID = $(this).val();
+		//$('#namaKota').html($('#selectselect2').html());
+		$('#daftarLokasi').html('<tr><td><span>'+$('#selectselect2').html()+'</span></td></tr>');
+		$('#daftarLokasi').append('<div class="loaders"><img src="'+basedomain+'assets/images/loader.png"></div>');
+		$.post(basedomain+'distributor_resmi/distributor_ajax', {city : cityID}, function(data){
+			var str='';
+			if(data!=false){
+				initiatePaging(data[0].total_rows);
+				$.each(data, function(k,v){
+					str+='<tr>';
+					str+='<td>';
+					str+=''+v.brief+'</td>';
+					str+='</tr>';
+				});
+			}else{
+				$('.loaders').remove();
+				$('#isi_ulangPaging').html('');
+				str+='<tr><td>'+distributorMSG+'</td></tr>';
+			}
+			$('.loaders').remove();
+			$('#daftarLokasi').append(str);
+		});
+	});
+{/literal}		
+</script>

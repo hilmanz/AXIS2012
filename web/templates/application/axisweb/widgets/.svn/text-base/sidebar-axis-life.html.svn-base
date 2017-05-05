@@ -1,0 +1,12 @@
+<div id="sidebar">
+			{if $user} 
+			{$profile_box}
+			{$axis_new}
+			{$social_network}
+			{else}
+				{$axis_login}
+				{$socialLogin}
+			{/if}
+			
+			
+</div><!-- end #sidebar -->

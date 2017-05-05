@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/Log
+END
+JSON.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/Log/JSON.php
+END
+JUnit.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/Log/JUnit.php
+END
+TAP.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/Log/TAP.php
+END

@@ -1,0 +1,257 @@
+<div class="breadcrumb">
+		<a href="{$mobiledomain}">{$locale.home.title}</a>	&raquo; 
+        <a href="{$mobiledomain}myworld">{$locale.nav.axislife}</a> &raquo; 
+        <a href="{$mobiledomain}myworld/{$cid}">{$axis.category}</a> 
+</div>
+<div class="page-body" data-role="content">
+	<div class="page-meta2">
+		<h1 class="page-title">{$axis.title}</h1>
+		<div class="page-excerpt">
+				<p>{$axis.brief}</p>
+		</div>
+		<div class="page-image-heading">
+		
+			 {if $axis.url}
+				{*}<embed width="100%" height="320" src="http://www.youtube.com/v/{$axis.url|replace:'http://www.youtube.com/watch?v=':''}"	type="application/x-shockwave-flash"></embed>{/*}
+				<div id="ytplayer"></div>
+				<script>
+				  var video_ID = "{$axis.url|replace:'http://www.youtube.com/watch?v=':''}";
+				  // Load the IFrame Player API code asynchronously.
+				  var tag = document.createElement('script');
+				  tag.src = "https://www.youtube.com/player_api";
+				  var firstScriptTag = document.getElementsByTagName('script')[0];
+				  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				{literal}
+				  // Replace the 'ytplayer' element with an <iframe> and
+				  // YouTube player after the API code downloads.
+				  var player;
+				  function onYouTubePlayerAPIReady() {
+					player = new YT.Player('ytplayer', {
+					  height: '320',
+					  width: '100%',
+					  videoId: video_ID
+					});
+				  }
+				{/literal}
+				</script>
+			 {else}<img src="{$basedomain}public_assets/article/{$axis.image}" />
+			 {/if}					   
+	
+		</div>
+	</div>
+	<div class="page-content clear">
+		<article>
+			<!-- 3 star rating -->
+			<div class="ratings" >
+				{section name=x start=1 loop=$axis.rating step=1}<img src="{$basedomain}assets/images/icon/stars.png" />{/section}
+			</div>
+			<p>{$axis.content}</p>
+		</article>
+        <div class="socialLike">
+			<a class="favorite" contentid="{if $axis.myfavorite}0{else}{$axis.parentid}{/if}" href="javascript:void(0)" >&nbsp;<span class="fav-count" countFav="{if $axis.favorite}{$axis.favorite}{else}0{/if}" >{if $axis.favorite}{$axis.favorite}{else}0{/if}</span></a>
+           
+            <!-- s: social media -->
+				<div class="facebookLike">
+					<a href="#" onclick="shareFB('{$axis.title}','{$twitURL}','{$basedomain}public_assets/article/small_{$axis.image}','AXISgsm','{$axis.brief}');"><img width="63" src="{$mobiledomain}assets/images/icon/facebook_share_button.png"></a>
+					{*}
+					<fb:like send="false" layout="button_count" width="450" show_faces="false"></fb:like>
+					{/*}
+				</div><!-- end .facebookLike -->
+				<div class="shareTwit">
+					<a href="https://twitter.com/share" class="twitter-share-button" data-url="{$twitURL}" data-counturl="{$twitURL}" data-via="AXISgsm" data-text="{$axis.title}" data-lang="en">Tweet</a>
+				{literal}
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				{/literal}
+				</div>
+				<div class="googlePlus">
+					<div class="g-plusone" data-size="medium" data-annotation="bubble" data-width="120" data-href="{$twitURL}"></div>							
+					<script type="text/javascript">
+					{literal}
+						$(document).ready(function(){
+							gapi.plusone.go();
+						});
+					{/literal}
+					</script>
+				</div><!-- end .googlePlus -->
+			<!-- e: social media -->
+        </div><!-- end .socialLike -->
+		{if $user}
+		<div class="form-comment-wrapper">
+			<form name="form-comment" method="post" action="">
+				<div data-role="fieldcontain" class="input">
+                   
+                    <span class=" rateVal" rate="{if $axis.rating}{$axis.rating}{else}0{/if}" > </span>
+					<div class="rateBox rates rating" content="{$axis.id}">
+											<a  href="javascript:void(0)" class="poolingStar node1" node="1"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+											<a  href="javascript:void(0)" class="poolingStar node2" node="2"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+											<a  href="javascript:void(0)" class="poolingStar node3" node="3"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+											<a  href="javascript:void(0)" class="poolingStar node4" node="4"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+											<a  href="javascript:void(0)" class="poolingStar node5" node="5"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+					</div><!-- end .rates -->
+                
+					<label for="comment">{$locale.msg.komentar}</label>
+					<textarea name="myComment" class="myComment_{$axis.id} comment"  textarea></textarea>
+									<input type="button" value="SUBMIT"  class="postComment" cid="{$axis.id}" />
+				</div>
+			</form>
+		</div>
+		{else}
+			<span class="notLoginMsg">		{$locale.msg.silahkanlogin}	</span>
+		{/if}
+		{*}
+		{if $axis.comment}
+					
+		<div class="comment-list-wrapper">
+			<ul class="comment-list appendComment_{$axis.id}">
+			
+				{foreach from=$axis.comment key=kComment item=vComment}
+				<li>
+					<div class="avatar">
+					{if $vComment.img!=""}<img src="{$basedomain}public_assets/user/photo/{$vComment.img}" alt="{$vComment.name}" />
+					{else}<img src="https://graph.facebook.com/{$vComment.fb_id}/picture?type=square&return_ssl_resources=1" alt="{$vComment.name}" />
+					{/if}
+					</div>
+					<div class="commentary">
+						<span class="comment-writer">{$vComment.name}</span>
+						<span class="comment-text">
+							{$vComment.comment}
+						</span>
+						<span class="post-date">{$vComment.date}</span>
+						<div class="rates">
+												{if $vComment.rate >= 1}
+													{section name=rate start=0 loop=$vComment.rate step=1}
+														<img src="{$mobiledomain}assets/images/icon/star.png" />
+													{/section}
+												{/if}
+													
+							</div><!-- end .rates -->
+					</div>
+				</li>
+				{/foreach}
+		
+			</ul>
+		</div>
+		<div class="paging" id="pagingID">
+                   
+		</div><!-- end .paging -->	
+		{/if}
+		{/*}
+		<div class="comment-list-wrapper">
+         	<ul class="comment-list">
+                <span class="appendComment_{$axis.parentid}">
+                    {if $axis.comment}
+                            {foreach from=$axis.comment key=kComment item=vComment}
+                                <li>
+                                    <div class="avatar">
+                                        <a href="#">
+                                        {if $vComment.img!=""}<img width="55" src="{$basedomain}public_assets/user/photo/{$vComment.img}" /></a>
+                                        {else}<img width="55" src="{$vComment.socimg}" /></a>
+                                        {/if}
+                                    </div><!-- end .thumb -->
+                                    <div class="commentary">
+                                        <span class="comment-writer">{$vComment.name}</span>
+                                        <span class="comment-text">
+                                           {$vComment.comment}
+                                        </span>
+                                        <span class="post-date">{$vComment.date|date_format:'%d-%m-%Y %I:%M %p'}</span>
+                                        <div class="rates">
+                                        {if $vComment.rate >= 1}
+                                            {section name=rate start=0 loop=$vComment.rate step=1}
+                                                <img src="{$basedomain}assets/images/icon/stars.png" />
+                                            {/section}
+                                        {/if}
+                                        </div><!-- end .rates -->
+                                    </div><!-- end .post -->
+                                </li>
+                            {/foreach}
+                    {/if}   
+               </span>
+            </ul>
+        </div>
+		<div class="paging" id="pagingID">
+                   
+		</div><!-- end .paging -->
+	</div>
+	
+	<div class="list-nav">
+		<ul data-role="listview" data-inset="true">
+			<li>
+				<a href="{$mobiledomain}myworld/{$cid}" data-transition="slide" rel="external">
+					<span class="icon icon-left-arrow"></span>
+					<span class="textLink">{$locale.mobilebtn.backkategory2}</span>
+				</a>
+			</li>
+			<li>
+				<a href="{$mobiledomain}myworld" data-transition="slide"  rel="external">
+					<span class="icon icon-home"></span>
+					<span class="textLink">{$locale.mobilebtn.backkategory}</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div><!-- /content -->
+
+<script>
+var uname = "{$user->name}";
+var fbid = "{$user->fb_id}";
+var userpage = "{$userpage}";
+var socimg = "{$user->socmed}";
+var userimg = "{$user->img}";
+var total_rows = {if $axis.total_comment}{$axis.total_comment}{else}0{/if};
+var basedomain = "{$basedomain}";
+var localebtnbaca = "{$locale.btn.baca}";
+var pageurl = '{$basedomain}{encrypt url="index.php?page=content&act=getComment_ajax"}';
+var cid = "{$axis.parentid}";
+var localeentrycomment = "{$locale.msg.entrycomment}"; 
+{literal}
+$(document).ready(function(){
+		
+		var pageInit = 0;
+		var start = 0;
+		//Init Page
+		if(pageInit == 0){
+			pageInit = 1;
+			if(start == 0)start=1;
+			kiPagination(total_rows, start, 'pagingID', 'paging_ajax', 'paging_ajax', 5);
+		}
+
+});
+
+function paging_ajax(fungsi, start){
+		$(".appendComment_"+cid).html('');
+		$(".appendComment_"+cid).append('<div class="loaders"><img src="'+basedomain+'assets/images/loader.png"></div>');
+		$.post(pageurl, {cid:cid,start : start}, function(data){
+			var str='';
+			var idxs = 0;
+			$.each(data[cid], function(k,v){
+						str += '	<li>';
+						str += '			<div class="avatar">';
+						str += '				<a href="#">';
+						if(v.img) str += '				<img width="55" src="'+basedomain+'public_assets/user/photo/'+v.img+'" /></a>';
+						else str += '					<img width="55" src="'+v.socimg+'" /></a>';
+						str += '			</div>';
+						str += '			<div class="commentary">';
+						str += '				<span class="comment-writer">'+v.name+'</span>';
+						str += '				<span class="comment-text">'+v.comment+'</span>';
+						str += '				<span class="post-date">'+v.date+'</span>';
+						str += '				<div class="rates">';
+						if(v.rate>0){
+							for(var x=1;x<=v.rate;x++){
+								str += '						<img src="'+basedomain+'assets/images/icon/star.png" />';
+							}
+						}
+						str += '					';
+						str += '				</div>';
+						str += '				<span class="arrows"></span>';
+						str += '			</div>';
+						str += '	</li>';
+						
+					
+			});
+			$('.loaders').remove();
+			$(".appendComment_"+cid).html(str);
+		},"json");
+}
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");	
+</script>
+{/literal}

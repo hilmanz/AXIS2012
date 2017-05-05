@@ -1,0 +1,140 @@
+
+   <link rel="stylesheet" href="{$basedomain}assets/css/jquery.Jcrop.css" type="text/css" />
+<div class="popup" id="updateFoto" >
+    <div class="ui-overlay">
+        <div class="ui-widget-overlay"></div>
+    </div><!-- end .ui-overlay -->
+    <div class="popupContent">
+    	<a class="closePopup" href="#">X</a>
+			   
+    	<div class="headPopup">
+           	<h3>{$locale.popup.updatefoto}</h3>
+        </div>
+        <div class="entry">
+		 <div id="previewPhoto"> 	
+					<img id="preview" src=""   />
+				</div>
+		<form id = "updateThumbPhotoForm" action="{$basedomain}{$userpage}/saveCropImage" method="POST">
+				<input type="hidden" id="x" name="x" />
+				<input type="hidden" id="y" name="y" />
+				<input type="hidden" id="w" name="w" />
+				<input type="hidden" id="h" name="h" />
+				<input type="hidden" name="imageFilename" class = "imageFilename" value="" />
+				<input type="hidden" name="imageUrl" class = "imageUrl" value="{$basedomain}public_assets/user/photo/" />
+				<input type="submit" name="upload_thumbnail" value="{$locale.popup.savefoto}" class="dosimpan" />
+		</form>
+		<form enctype="multipart/form-data" id = "updatePhotoForm" action="{$basedomain}{$userpage}/saveImage" method="POST" >
+		       
+                <div class="btnUpload">
+                	<input type="file" name="myImage" class="myImage" />
+                </div>
+						
+        </form>
+			
+        </div><!-- end .entry -->
+		<div><span class="msg-upload-foto"></span></div>
+    </div><!-- end .popupContent -->
+</div><!-- end .popup -->
+
+
+<script >
+var basedomain = '{$basedomain}';
+var localepilihfoto = "{$locale.msg.pilihfoto}";
+	{literal}	
+			$(function(){
+			
+				
+				
+				$(".msg-upload-foto").hide();
+				$('#preview').Jcrop({
+									onSelect: updateCoords
+				});
+				
+				$(document).on('change','#updatePhotoForm',function(){
+				
+					$("#previewPhoto").html("<img id='preview' src='' />");
+					$("#preview").attr('src',basedomain+'assets/images/loader.gif');
+					$(".msg-upload-foto").hide();
+					$(".msg-upload-foto").html('');
+					$(".dosimpan").val("Simpan Foto");
+					$(".dosimpan").removeClass("ui-overlay");
+					$(this).submit();
+				});
+				
+				$('#updatePhotoForm').ajaxForm(function(data) { 
+						
+						if(data.filename){
+							
+							$("#previewPhoto").html("<img id='preview' src='' />");
+							$("#preview").attr('src',basedomain+data.url+data.filename);
+							$(".imageFilename").val(data.filename);
+							$(".imageUrl").val(data.url);
+							$('#preview').Jcrop({
+										onSelect: updateCoords
+							});
+						}
+					
+				
+				});
+				var options = { 
+						success:    function(data) { 
+							
+						
+							if(data.filename) {
+								$("#previewPhoto").html("<img id='preview' src='' />");
+								$("#preview").attr('src',basedomain+data.url+data.filename);
+								$(".imageFilename").val(data.filename);
+								$(".imageUrl").val(data.url);
+								$(".thumbUsers img").attr('src',data.url+data.filename);
+								$(".thumbSmallUser a img").attr('src',basedomain+data.url+data.filename);
+								
+								$(".dosimpan").val("Tutup");
+								$(".dosimpan").addClass("ui-overlay");
+								
+								$('#preview').Jcrop({
+											onSelect: updateCoords
+								});
+							}else {
+								$("#previewPhoto").html("<img id='preview' src='' />");
+								$("#preview").attr('src',basedomain+data.url+data.filename);
+								$(".msg-upload-foto").show();
+								$(".msg-upload-foto").html(localepilihfoto);
+								return false;
+							}
+				
+					} ,
+						beforeSubmit: function() { 
+										
+										$(".msg-upload-foto").hide();
+										$(".msg-upload-foto").html('');
+										$("#previewPhoto").html("<img id='preview' src='' />");
+										$("#preview").attr('src',basedomain+'assets/images/loader.gif');
+					}
+				};
+				$('#updateThumbPhotoForm').ajaxForm(options);
+				
+				
+			
+			function updateCoords(c)
+			{
+			
+				$('#x').val(c.x);
+				$('#y').val(c.y);
+				$('#w').val(c.w);
+				$('#h').val(c.h);
+				
+			};
+			
+			function checkCoords()
+			{
+				if (parseInt($('#w').val())) return true;
+				alert('Please select a crop region then press submit.');
+				return false;
+			};
+			
+			
+});
+
+		</script>
+
+{/literal}

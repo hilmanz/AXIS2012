@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util
+END
+InvalidArgumentHelper.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/InvalidArgumentHelper.php
+END
+XML.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/XML.php
+END
+GlobalState.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/GlobalState.php
+END
+Getopt.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/Getopt.php
+END
+TestSuiteIterator.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/TestSuiteIterator.php
+END
+Class.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/Class.php
+END
+Fileloader.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/Fileloader.php
+END
+String.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/String.php
+END
+Configuration.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/Configuration.php
+END
+Diff.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/Diff.php
+END
+DeprecatedFeature.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/DeprecatedFeature.php
+END
+Test.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/Test.php
+END
+Type.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/Type.php
+END
+Printer.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/Printer.php
+END
+Filesystem.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/Filesystem.php
+END
+Filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/Filter.php
+END
+PHP.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/PHP.php
+END
+ErrorHandler.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Util/ErrorHandler.php
+END

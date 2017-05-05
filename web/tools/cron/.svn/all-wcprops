@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/axis2012/!svn/ver/1315/trunk/web/tools/cron
+END
+article_contextual.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/axis2012/!svn/ver/1160/trunk/web/tools/cron/article_contextual.php
+END
+get_social.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/1315/trunk/web/tools/cron/get_social.php
+END
+curl_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/axis2012/!svn/ver/2/trunk/web/tools/cron/curl_class.php
+END
+emailBlast.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/axis2012/!svn/ver/15/trunk/web/tools/cron/emailBlast.php
+END
+twitter_report.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/axis2012/!svn/ver/73/trunk/web/tools/cron/twitter_report.php
+END
+user_preference_tracking.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/axis2012/!svn/ver/1160/trunk/web/tools/cron/user_preference_tracking.php
+END
+solo.pl
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/axis2012/!svn/ver/60/trunk/web/tools/cron/solo.pl
+END
+gplus_activity_report.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/67/trunk/web/tools/cron/gplus_activity_report.php
+END
+smac.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/axis2012/!svn/ver/73/trunk/web/tools/cron/smac.php
+END
+ngram.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/axis2012/!svn/ver/1160/trunk/web/tools/cron/ngram.php
+END
+db.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/axis2012/!svn/ver/159/trunk/web/tools/cron/db.php
+END
+gplus_activity.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/axis2012/!svn/ver/66/trunk/web/tools/cron/gplus_activity.php
+END
+twitter_feeds.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/axis2012/!svn/ver/73/trunk/web/tools/cron/twitter_feeds.php
+END

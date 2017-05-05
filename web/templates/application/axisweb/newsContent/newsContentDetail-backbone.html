@@ -1,0 +1,39 @@
+<div style="margin: 0px auto; padding-left: 100px; padding-top: 20px;overflow: auto; height: 100%; width: 100%;">
+	<div class="rating" content="<%= detailNews.content.id %>">rate </div>
+	<span>[ <a href="javascript:void(0)" class="poolingStar node1" node="1">o</a> ]</span>
+	<span>[ <a href="javascript:void(0)" class="poolingStar node2" node="2">o</a> ]</span>
+	<span>[ <a href="javascript:void(0)" class="poolingStar node3" node="3">o</a> ]</span>
+	<span>[ <a href="javascript:void(0)" class="poolingStar node4" node="4">o</a> ]</span>
+	<span>[ <a href="javascript:void(0)" class="poolingStar node5" node="5">o</a> ]</span>
+	<h1><%= detailNews.content.title %></h1>
+	<h3><%= detailNews.content.brief %></h3>
+	<img src="public_assets/content/image/<%= detailNews.content.image %>" />
+	<p><%= detailNews.content.content %></p>	
+	<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fpreview.kanadigital.com%3Findex.php%3Fpage%3DcontentModule%23%2FcontentModule%2Fdetail%2F<%= detailNews.content.id %>&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://preview.kanadigital.com?index.php?page=content#/content/detail/<%= detailNews.content.id %>" data-via="your_screen_name" data-lang="en">Tweet</a>
+</div>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	
+
+
+</script>
+<script>
+$(".poolingStar").click(function(){
+		var rate = $(this).attr("node");
+		var cid = $(".rating").attr("content");
+		$.post('index.php?page=content&act=saveRate',{cid:cid,rate:rate}, function(data){
+		if(data){
+			for(var x=1;x<=rate;x++){
+				
+				$(".node"+x).html("x");
+			
+			}
+		}
+		});
+		
+	
+	});
+
+</script>

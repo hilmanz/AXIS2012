@@ -1,0 +1,136 @@
+<div style="margin: 0px auto; padding-left: 100px; padding-top: 20px;overflow: auto; height: 100%; width: 100%;">
+	
+			<div style="top: 0px; z-index: 1; width: 500px;float:left">
+				<h1 id="contentTitle" style="padding-left: 10px;">{$title} </h1>
+		
+			<div style="padding:20px">
+				<div style="padding:20px;float:left"> 
+			
+					{foreach from=$content key=k item=v}
+						{assign var="rate" value=1}
+						<div style="padding:20px">
+							<h1>{$v.title}</h1> 
+							<span class="rateVal" rate="{if $v.rating}{$v.rating}{else}0{/if}" > </span>
+							<h6>{$v.posted_date} - {$v.category}</h6>
+							<h3>{$v.brief}</h3>
+							<img src="public_assets/article/{$v.image}" />
+							<p>{$v.content}</p>
+							<p style="text-align:right" >
+								<a href="index.php?page=bookmarkModule&act=getBookmark&id={$v.id}"> bookmark </a> | 
+								{*}<a href="index.php?page=content&act=detail&id={$v.id}"> read more </a>{/*}
+								<a href="#/content/detail/{$v.id}"> read more </a>
+							</p>
+							<div>
+							<textarea name="myComment" class="myComment_{$v.id}"  style="width: 286px; height: 49px;"></textarea> 
+							<a href="javascript:void(0)" class="postComment" cid="{$v.id}"  >post</a>
+							</div>
+							
+							<p class="appendComment_{$v.id}" >
+							
+							{if $v.comment}
+								{foreach from=$v.comment key=kComment item=vComment}
+									<div>{$vComment.name}</div>
+									<p>{$vComment.comment}</p>
+								{/foreach}
+							{/if}
+							</p>
+						</div>
+					{/foreach}
+
+					</div>
+		
+			</div>
+			</div>
+			
+			<div style="top: 0px; z-index: 1; width: 500px;float:left">
+				<h1 id="contentTitle" style="padding-left: 10px;">{$titleSocial} </h1>
+		
+			<div style="padding:20px">
+				<div style="padding:20px;float:left"> 
+					{foreach from=$socialContent key=k item=v}
+						<div style="padding:20px">
+							<h1>{$v.title}</h1>
+							<h6>{$v.posted_date} - {$v.category}</h6>
+							
+							<img src="public_assets/article/{$v.image}" />
+							<p>{$v.content}</p>
+							<p style="text-align:right" >
+								{*}<a href="index.php?page=content&act=detail&id={$v.id}"> read more </a>
+								<a href="#/content/detail/{$v.id}"> read more </a>{/*}
+							</p>
+							
+						</div>
+					{/foreach}
+
+					</div>
+		
+			</div>
+			</div>
+			
+			<div style="top: 0px; z-index: 1; width: 500px;float:left">
+				<h1 id="contentTitle" style="padding-left: 10px;">My Last Tweet </h1>
+		
+			<div style="padding:20px">
+				<div style="padding:20px;float:left"> 
+					<div id="results">&nbsp;</div>
+					</div>
+		
+			</div>
+			</div>
+
+
+		</div>
+	
+
+		<script>
+		var uname = "{$user->name}";
+		{literal}
+		
+								
+					var username = 'arukaterra'; 
+					var url='http://search.twitter.com/search.json?callback=?&rpp=10&search_type=recent&q=from:'+username+'';
+					var show = new Array(); 				 
+
+					$( "#results" ).empty();
+						 $.post(url,function(json){
+						 $.each(json.results,function(i,item){ 
+							  show[i] = '<p style="text-align:left;">'
+							 +'<img src="'+item.profile_image_url+'" width="48" height="48" align="left" />'+item.text+' <br />\r\n '
+							 +'&nbsp;&nbsp; <small>'+item.created_at+'</small><br />&nbsp;\r\n '
+						  +'</p>\r\n'; 
+						   $("#results").append(show[i]); 
+						   });
+						},'json');
+		
+		
+		
+			$('.postComment').click(function(){
+			
+				var cid = $(this).attr('cid');
+				var comment = $('.myComment_'+cid).val();
+				$.post('index.php?page=content&act=sendComment',{cid:cid,comment:comment},function(data){
+				if(data){
+					var html ='<div>'+uname+'</div>';
+						html+='<p>'+comment+'</p>';
+					$('.appendComment_'+cid).prepend(html);
+					 $('.myComment_'+cid).val("");
+				}else return false;
+				});
+			
+			});
+			
+			$(".rateVal").each(function(n,i){
+				var rate = $(this).attr('rate');
+				var rated = "";
+				for(var x=1;x<=rate;x++){
+					rated+=" * ";				
+				}
+				$(this).html(rated);
+			});
+			
+			
+		</script>
+	
+	{/literal}
+
+	

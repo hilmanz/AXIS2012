@@ -1,0 +1,47 @@
+<script>
+	var feedJson = {$fbFeeds};
+	{literal}
+	$(document).ready(function(){
+		str='';
+		$.each(feedJson.data, function(k, v){
+			if(v.story != null){
+				str+='<p>'+v.story+'</p>';
+			}else{
+				str+='<p>'+v.message+'</p>';
+			}
+		});
+		$('#fbFeed').html(str);
+	});	
+	{/literal}
+</script>
+<h1>Facebook</h1>
+<div id="fbFeed"></div>
+<br>
+<button onclick="postToWall();return false;">Post to your wall</button>
+<script>
+{literal}
+
+function postToWall(){
+
+	 FB.ui({ 
+		method: 'feed', 
+		message: ''
+		});
+}
+{/literal}
+</script>
+<br>
+<br>
+<br>
+<h1>Twitter</h1>
+<h3>axisGSM</h3>
+<a class="twitter-timeline" href="https://twitter.com/AXISgsm" data-widget-id="259151178770817024">Tweets by @AXISgsm</a>
+{literal}
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+{/literal}
+<br><br><br>
+<h3>myLastTwit</h3>
+<a class="twitter-timeline" data-dnt=true href="https://twitter.com/search?q=omombe" data-widget-id="259196556325036032">Tweets about "cendekiapp"</a>
+{literal}
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+{/literal}

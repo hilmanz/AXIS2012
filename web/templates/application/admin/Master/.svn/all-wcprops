@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/1291/trunk/web/templates/application/admin/Master
+END
+list_type.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/axis2012/!svn/ver/1134/trunk/web/templates/application/admin/Master/list_type.html
+END
+edit_city.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/axis2012/!svn/ver/1166/trunk/web/templates/application/admin/Master/edit_city.html
+END
+edit_category_News.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/axis2012/!svn/ver/1134/trunk/web/templates/application/admin/Master/edit_category_News.html
+END
+list_province.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/1186/trunk/web/templates/application/admin/Master/list_province.html
+END
+edit_page.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/axis2012/!svn/ver/1152/trunk/web/templates/application/admin/Master/edit_page.html
+END
+new_city.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/axis2012/!svn/ver/1166/trunk/web/templates/application/admin/Master/new_city.html
+END
+new_category_News.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/axis2012/!svn/ver/1134/trunk/web/templates/application/admin/Master/new_category_News.html
+END
+edit_type_News.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/axis2012/!svn/ver/1134/trunk/web/templates/application/admin/Master/edit_type_News.html
+END
+default.html
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/axis2012/!svn/ver/1134/trunk/web/templates/application/admin/Master/default.html
+END
+new_page.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/axis2012/!svn/ver/1152/trunk/web/templates/application/admin/Master/new_page.html
+END
+new_type_News.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/1134/trunk/web/templates/application/admin/Master/new_type_News.html
+END
+list_device.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/axis2012/!svn/ver/1134/trunk/web/templates/application/admin/Master/list_device.html
+END
+edit_province.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/1291/trunk/web/templates/application/admin/Master/edit_province.html
+END
+new_province.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/axis2012/!svn/ver/1291/trunk/web/templates/application/admin/Master/new_province.html
+END
+list_city.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/axis2012/!svn/ver/1186/trunk/web/templates/application/admin/Master/list_city.html
+END
+edit_device.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/axis2012/!svn/ver/1134/trunk/web/templates/application/admin/Master/edit_device.html
+END
+list_page.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/axis2012/!svn/ver/1152/trunk/web/templates/application/admin/Master/list_page.html
+END
+new_device.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/axis2012/!svn/ver/1134/trunk/web/templates/application/admin/Master/new_device.html
+END
+list_category.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/1134/trunk/web/templates/application/admin/Master/list_category.html
+END

@@ -1,0 +1,57 @@
+{literal}
+<!-- Put the following javascript before the closing </head> tag. -->
+<script>
+  (function() {
+    var cx = '014012272390167310842:7c_rrursaei';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+{/literal}
+<div id="breadcumb" class="wrapper">
+	<h1><a href="index.php">Home</a> &raquo; <a>You Search </a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="axisLife">
+    	<div id="sidebar">
+   			{$medium_banner}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+        	<div class="theTitle">
+            	<h1 class="icon_favorite">{$locale.gcs.searchresult}</h1>
+            </div><!-- end .theTitle -->
+            <div class="shadowCtop">
+            	<div class="shadowCbottom">
+                    <div class="entryDetail list">
+						<!-- Place this tag where you want the search results to render -->
+						<gcse:searchresults-only></gcse:searchresults-only> 
+                        {*}
+                        <div class="row">
+                            <div class="searchText">
+                                <div class="entry">
+                                    <h3><a href="#">Paranorman: Revolusi Teknik Stop-Motion</a></h3>
+                                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod.</p>
+                                </div><!-- end .entry -->
+                            </div>
+                        </div><!-- end .row -->
+						{/*}
+                    </div><!-- end .entryDetail -->
+                </div><!-- end .shadowCbottom -->
+               {*} <div class="paging">
+                    <a class="prev" href="#">&laquo;</a>
+                    <a href="#" class="current">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#" >4</a>
+                    <a class="next" href="#">&raquo;</a>
+                </div><!-- end .paging -->
+			{/*}
+            </div><!-- end .shadowCtop -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+    <div class="widget-axisLife">
+    {$carousel_banner}
+    </div><!-- end .widget-whyAxis -->
+</div><!-- end #container -->

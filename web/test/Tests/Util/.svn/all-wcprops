@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Util
+END
+TestTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Util/TestTest.php
+END
+XMLTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Util/XMLTest.php
+END
+TypeTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Util/TypeTest.php
+END
+ClassTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Util/ClassTest.php
+END
+ConfigurationTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Util/ConfigurationTest.php
+END
+DiffTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Util/DiffTest.php
+END

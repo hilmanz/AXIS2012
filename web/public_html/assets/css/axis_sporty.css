@@ -1,0 +1,113 @@
+
+/*
+Theme Name: AXIS 
+Version: 1.0
+Author: ACIT JAZZ - 2012
+*/
+#themesporty #ornamen{
+	display:none;
+}
+#themesporty .splashBox2{
+	display:none;
+}
+#themesporty #mainContent{
+	background:url(../images/themes_sporty/bg.jpg) center bottom no-repeat;
+	padding:0 0 350px 0;
+}
+#themesporty .circleThumb2{
+	background:url(../images/themes_sporty/circle5.png) no-repeat;
+}
+#themesporty .odd .circleThumb2{
+	background:url(../images/themes_sporty/circle4.png) no-repeat;
+}
+#themesporty .odd .circleThumb2 a.thumbnails{
+	left:32px;
+	top:59px;
+}
+#themesporty .circleThumb2 a.thumbnails{
+	left:40px;
+	top:40px;
+}
+#themesporty #axisLife .circleThumb2 .icon{
+	background:#663366;
+	border:2px solid #663366;
+}
+#themesporty .postEntry h1{
+	color:#474646;
+}
+#themesporty #axisLife .select {
+	background: url(../images/themes_sporty/select.png) no-repeat;
+}
+#themesporty #axisLife #shorter h1,#themesporty #axisLife .theTitle h1{
+	color:#663366;
+}
+#themesporty #shorter .cols label{
+	color:#663366;
+}
+#themesporty #profileBoxTab, #boxNetworkTab{
+	color:#cac8ca;
+}
+#themesporty #profileBox .headBox,#themesporty #profileBoxTab ul,#themesporty #boxNetwork .headBox{
+	background:#none repeat scroll 0 0 #663366;
+	border:none;
+}
+#themesporty #profileBoxTab ul li a{
+	color:#333030;
+}
+#themesporty #profileBoxTab ul li a:hover,#themesporty #profileBoxTab ul li.ui-tabs-active a{
+	color:#fff;
+}
+#themesporty #profileBox .thumbUser a.thumbUsers,#themesporty #axisLife .circleThumb{
+	background:#7A1878;
+}
+#themesporty #profileBox .userDetail h4{
+	color:#333030;
+}
+#themesporty #profileBox .userDetail p.pangkat{
+	color:#7A1878;
+}
+#themesporty a.purpleBtn{
+	background:none repeat scroll 0 0 #663366;
+}
+#themesporty a.purpleBtn:hover{
+	background:none repeat scroll 0 0 #92278f;
+}
+#themesporty #axisLife a.arrows2{
+	background:url(../images/arrow_r.png) #663366 no-repeat right;
+}
+#themesporty #axisLife a.arrows2:hover{
+	background:url(../images/arrow_r.png) #92278f no-repeat right;
+}
+#themesporty #axisLife .icon_coffee{
+	background-image:url(../images/themes_geek/t_coffee.png);
+}
+#themesporty #boxNetworkTab .rowInput{
+	background:#656666;
+}
+#themesporty #boxNetworkTab .rowInput input[type="submit"], #boxNetworkTab .rowInput input[type="button"]{
+	background:#cac8ca;
+}
+#themesporty #boxNetworkTab .rowInput input[type="submit"], #boxNetworkTab .rowInput input[type="button"]:hover{
+	background:#989897;
+}
+#themesporty #axisLife a.readmore{
+	background: url("../images/icon/detail.png") no-repeat scroll 8px 5px #663366;
+}
+#themesporty #axisLife a.readmore:hover{
+	background: url("../images/icon/detail.png") no-repeat scroll 8px 5px #92278f;
+}
+#themesporty #boxNetwork .headBox{
+	background:none repeat scroll 0 0 #663366;
+}
+#themesporty #axisLife .paging a:hover,#themesporty #axisLife  .paging a.current{
+	background:none repeat scroll 0 0 #663366;
+}
+#themesporty #profileBoxTab ul{
+	background: none repeat scroll 0 0 #663366;
+}
+#themesporty #boxNetworkTab ul{
+	background: none repeat scroll 0 0 #ffffff;
+}
+#themesporty #axisLife .paging a{
+	background:none repeat scroll 0 0 #cccccc;
+}

@@ -1,0 +1,32 @@
+	<!-- Main hero unit for a primary marketing message or call to action -->
+	<div class="hero-unit">
+		<div class="rating" content="{$article.content.id}">rate</div>
+		<span>[ <a href="javascript:void(0)" class="poolingStar node1" node="1">o</a> ]</span>
+		<span>[ <a href="javascript:void(0)" class="poolingStar node2" node="2">o</a> ]</span>
+		<span>[ <a href="javascript:void(0)" class="poolingStar node3" node="3">o</a> ]</span>
+		<span>[ <a href="javascript:void(0)" class="poolingStar node4" node="4">o</a> ]</span>
+		<span>[ <a href="javascript:void(0)" class="poolingStar node5" node="5">o</a> ]</span>
+		<h1>{$article.title}</h1>
+		<p>{$article.content}</p>
+	</div>
+	
+{literal}
+	<script>
+	$(".poolingStar").click(function(){
+			var rate = $(this).attr("node");
+			var cid = $(".rating").attr("content");
+			$.post('index.php?page=contentModule&act=saveRate',{cid:cid,rate:rate}, function(data){
+			if(data){
+				for(var x=1;x<=rate;x++){
+					
+					$(".node"+x).html("x");
+				
+				}
+			}
+			});
+			
+		
+		});
+
+	</script>
+{/literal}

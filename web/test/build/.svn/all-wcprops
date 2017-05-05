@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/axis2012/!svn/ver/47/trunk/web/test/build
+END
+assertions.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/axis2012/!svn/ver/8/trunk/web/test/build/assertions.php
+END
+phpmd.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/axis2012/!svn/ver/8/trunk/web/test/build/phpmd.xml
+END
+phar-autoload.php.in
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/axis2012/!svn/ver/8/trunk/web/test/build/phar-autoload.php.in
+END

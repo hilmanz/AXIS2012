@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/axis2012/!svn/ver/1407/trunk/web/templates/application/axisweb/axisLife
+END
+axis-favorite.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/axis2012/!svn/ver/1226/trunk/web/templates/application/axisweb/axisLife/axis-favorite.html
+END
+axis-life.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/1407/trunk/web/templates/application/axisweb/axisLife/axis-life.html
+END
+axis-life-submit-article.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/axis2012/!svn/ver/1248/trunk/web/templates/application/axisweb/axisLife/axis-life-submit-article.html
+END
+axis-mycomment.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/axis2012/!svn/ver/1212/trunk/web/templates/application/axisweb/axisLife/axis-mycomment.html
+END
+axis-myarticle.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/axis2012/!svn/ver/1226/trunk/web/templates/application/axisweb/axisLife/axis-myarticle.html
+END

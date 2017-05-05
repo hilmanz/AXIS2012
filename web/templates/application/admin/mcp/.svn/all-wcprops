@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/axis2012/!svn/ver/1117/trunk/web/templates/application/admin/mcp
+END
+mcp_comment.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/mcp/mcp_comment.html
+END
+mcp_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/mcp/mcp_edit.html
+END
+mcp_new.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/mcp/mcp_new.html
+END
+mcp_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/axis2012/!svn/ver/1117/trunk/web/templates/application/admin/mcp/mcp_list.html
+END

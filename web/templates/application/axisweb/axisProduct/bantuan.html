@@ -1,0 +1,124 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}bantuan">{$locale.footnav.bantuan}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="headBanner">
+    <div class="headBanner">
+        <div id="headBannerContent">
+            <div class="headBannerImg"><img src="{$basedomain}assets/content/slider/bantuan.jpg"/></div>
+        	<div class="headBannerEntry">
+                {$locale.bantuan.header}
+            </div>
+        </div><!-- end #headBannerContent -->
+    </div><!-- end .headBanner -->
+</div><!-- end #headBanner -->
+{if $product}
+<div id="produkDetailPage">
+	<div class="wrapper">
+    	<div class="navTab">
+        	<ul>
+				{foreach from=$product key=k item=v}
+					<li><a href="#tab{$v.id}" >{$v.title}</a></li>
+				{/foreach}
+            </ul>
+        </div>
+    </div>
+    <div class="productPage">
+    	<div class="wrapper" id="produkDetail">
+        	<div class="tabContainer">
+			{foreach from=$product key=k item=v}
+                <div class="tabContent" id="tab{$v.id}">
+                	
+                        {if $v.image}<img src="{$basedomain}public_assets/product/{$v.image}" />{/if}
+                        {if $v.brief} <h2>{$v.brief}</h2>{/if}
+                        {if $v.content}	<div class="white_table">{$v.content|replace:'../':''|replace:'index.php?':"`$basedomain`index.php?"|replace:'public_assets/content/uploads/':"`$basedomain`public_assets/content/uploads/"}</div>{/if}
+                 
+                    <div class="accordion">
+						{if $v.desc}
+							{foreach from=$v.desc key=kdesc item=vdesc}
+							<h3>{$vdesc.title}</h3>
+								<div class="entry">
+									<div class="white_table">
+										{$vdesc.description|replace:'../':''|replace:'index.php?':"`$basedomain`index.php?"|replace:'public_assets/content/uploads/':"`$basedomain`public_assets/content/uploads/"}
+									</div>
+								</div>
+							{/foreach}
+                        {/if}
+                    </div><!-- end .accordion -->
+					
+                </div><!-- end .tabContent -->
+             {/foreach}  
+            </div><!-- end .tabContainer -->
+		</div><!-- end #produkDetail -->
+    </div><!-- end .productPage -->
+</div><!-- end #produkDetailPage -->
+{/if}
+<div class="widget-product">
+{$carousel_banner}
+</div><!-- end .widget-whyAxis -->
+
+<a href="#global-popup" class="showPopup showpopupglobal"  id="showpopupglobal" style="display:none"></a>
+
+	<script>	
+			var  localehandset =  "{$locale.handset}";
+			var  localehandsettype = "{$locale.handset_type}";
+			var  msgsendsms = "{$locale.sendsms}";
+			{literal}
+			$(document).ready(function(){
+				$("#selecthandset").html(localehandset);
+				$("#selecthandset_type").html(localehandsettype);
+				$.post(basedomain+'device_settings/ajax',{needs:"getDevices"},function(data){
+					var html = "";
+					html+="<option value=''>"+localehandset+"</option>";
+					if(data){
+						
+							$.each(data,function(i,e){
+								html+="<option value='"+e.device+"'>"+e.device+"</option>";
+							});
+					
+					}
+					$("#handset").html(html);
+				},"JSON");
+			
+			});
+			
+			$(document).on('change','#handset',function(){
+				var handset = $(this).val();
+				
+				$.post(basedomain+'device_settings/ajax',{needs:"getTypes",handset:handset},function(data){
+					var html = "";
+					html+="<option value=''>"+localehandsettype+"</option>";
+					if(data){
+						
+							$.each(data,function(i,e){
+								html+="<option value='"+e.type+"'>"+e.type+"</option>";
+							});
+					
+					}
+					$("#handset_type").html(html);
+				},"JSON");
+				
+			});
+			
+			$(document).on('click','.submitbotton',function(){
+				var handset = $("#handset").val();
+				var handset_type = $("#handset_type").val();
+				var feature = $("#feature").val();
+				var code = $("#code").val();
+				var number = $("#number").val();
+				
+				/* global popup */
+				$(".global-msg").html("please wait..");
+				$("#showpopupglobal").trigger("click");
+				
+				$.post(basedomain+'device_settings/ajax',{needs:"sendSMS",handset:handset,handset_type:handset_type,feature:feature,code:code,number:number},function(data){
+					
+						
+							/* global popup */
+							$(".global-msg").html(msgsendsms);
+							$("#showpopupglobal").trigger("click");
+											
+					},"JSON");
+					
+			});
+	</script>
+{/literal}

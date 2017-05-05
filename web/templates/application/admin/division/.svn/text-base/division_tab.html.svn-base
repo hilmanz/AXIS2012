@@ -1,0 +1,114 @@
+
+<div class="theContent">
+    <div class="theTitle">
+        <h2>Division Description - Title Content Blog&nbsp; : &nbsp;{$title_blog|capitalize:true}</h2>
+        <a href="index.php?s=division&act=add_tab&id_content={$id_content}&start={$start}" class="btn btn_pencil"><span>Add New</span></a>
+    </div><!--contenttitle-->
+    <div class="tableoptions">        
+    <form>
+        <input type="text" name="search" value="{$search}">
+        <input type="hidden" name="s" value="article" />
+        <select name="lid"  class="radius3">
+            <option value=""> - Language - </option>
+            {section name=i loop=$language}
+            {if $language[i].id == $lid}
+                <option value="{$language[i].id}" selected="selected">{$language[i].language}</option>
+            {else}
+                <option value="{$language[i].id}">{$language[i].language}</option>
+            {/if}
+            {/section}
+        </select>
+        <select name="id_cat" class="radius3">
+            <option value=""> - Category - </option>
+            {if $cek_cat==1}
+                {section name=i loop=$cat}
+                    <option value="{$cat[i].id}" {if $cat[i].id == $id_cat} selected="selected" {/if}>{$cat[i].category}</option>
+                {/section}
+            {else}
+                {section name=i loop=$cat}
+                <option value="{$cat[i].id}" {if $cat[i].id == $id_cat} selected="selected" {/if}>{$cat[i].category}</option>
+                {/section}					
+            {/if}
+        </select>
+        <select name="id_type">
+            <option value=""> - Type - </option>
+            {section name=i loop=$type}
+            {if $type[i].id == $id_type}<option value="{$type[i].id}" selected>{$type[i].type}</option>
+            {else}<option value="{$type[i].id}">{$type[i].type}</option>
+            {/if}
+            {/section}
+        </select>
+       <span>Date Range</span>
+        <input type="text" name="startdate" value="{$startdate}" class="datepicker radius3" />
+       <span>s/d</span>
+        <input type="text" name="enddate" value="{$enddate}" class="datepicker radius3" />
+        <input type="submit" value="cari" class="stdbtn btn_orange" />
+    </form>
+    </div><!--tableoptions-->	
+    <table cellpadding="0" cellspacing="0" border="0" id="table1" class="stdtable">
+        <colgroup>
+            <col class="con0" style="width: 4%" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="head0">No</th>
+                <th class="head1">Title</th>
+                <th class="head0">Description</th>
+                <th class="head1">Date</th>
+                <th class="head0">Status</th>
+                <th class="head1" colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {section name=i loop=$list}
+            <tr>
+                <td>{$list[i].no}&nbsp;</td>
+                <td width="20%">{$list[i].title}</td>
+                <td>{$list[i].description|replace}</td>
+                <td><nobr>{$list[i].date|date_format:"%e %B %Y"} &nbsp;{$list[i].date|date_format:$time.time}</nobr></td>
+                <td width="200" align="center">
+                    <select name='status' onchange='javascript:changeStatus({$list[i].id},this.value);' id="sel-{$list[i].id}" style="width:150px;">
+                        <option value="0" {if $list[i].n_status|intval eq 0} selected="selected"{/if}>Non Publishing</option>
+                        <option value="1" {if $list[i].n_status|intval eq 1} selected="selected" {/if}>Publishing</option>
+                    </select>
+                </td>
+                <td width="4%" align="center"><a href="index.php?s=division&act=edit_tab&id={$list[i].id}&id_content={$id_content}&start={$start}" style="text-decoration:none;"> Edit </a></td>
+                <td width="4%" align="center"><a href="index.php?s=division&act=delete_tab&id={$list[i].id}&id_content={$id_content}&start={$start}" style="text-decoration:none;" onclick="return confirm('Are you sure you want to delete this?')">Delete</a></td>
+            </tr>
+            {/section}
+        </tbody>
+    </table>
+    <div class="paging">
+    	{$paging}
+    </div>
+</div><!--theContent-->
+{literal}
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+	function changeStatus(id,status){
+		$.get(
+			'index.php?s=division&act=change_status&id='+id+'&status='+status,
+			{},
+			function(data){
+				if(data.success > 0){
+					$("#sel-"+id).fadeOut('fast',function(){
+						$("#sel-"+id).fadeIn('slow');
+					});
+				}else{
+					alert('Gagal mengganti status, silakan coba lagi!');
+				}
+			},
+			"json"
+		);
+		return false;
+	}
+</script>
+{/literal}

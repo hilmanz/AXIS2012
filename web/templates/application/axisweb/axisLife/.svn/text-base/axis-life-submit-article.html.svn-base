@@ -1,0 +1,150 @@
+<script type="text/javascript" src="{$basedomain}assets/jscripts/tiny_mce/tiny_mce.js"></script>
+<div id="container">
+    <div class="wrapper" id="axisLife">
+		<div id="shorter">
+        	<h1 class="titleDetail">{$locale.axislife.category}</h1>
+            <a class="backBtn" href="{$basedomain}index.php?page={$userpage}">&laquo; {$locale.msg.kembali}</a>
+        </div>
+    	{$sidebar_axis_life}
+        <div id="contents">
+        	<div class="theTitle">
+            	<h1 class="icon_artikel">{$locale.axislife.kirimarticle}</h1>
+            </div><!-- end .theTitle -->
+            <div class="shadowCtop">
+            	<div class="shadowCbottom">
+                    <div class="entryDetail">
+						
+                    	<form id="submitArticleForm"  method="POST" class="shareForm validate" action="{$basedomain}index.php?page={$userpage}&act=posting" enctype="multipart/form-data" >
+                        	<div class="row">
+                            	<label>{$locale.axislife.judularticle}</label>
+								<div>
+									<input type="text" name="myTitle" class="required" />
+								</div>
+                            </div>
+							<div class="row">
+                            	<label>{$locale.axislife.alamatarticle}</label>
+                                <input type="text" name="myUrl"  />
+                            </div>
+                        	<div class="row">
+                            	<label>{$locale.axislife.kategori}</label>
+                                <select class="styled required" name="myCategory"   />
+									<option value="" >{$locale.axislife.pilihkategori}</option>
+                                    	{if $category}
+											{foreach from=$category key=kcat item=vcat}
+												{if $vcat.id!=23}<option value="{$vcat.id}" >{$vcat.category}</option>{/if}
+											{/foreach}
+										{/if}
+                                </select>
+                            </div>
+                        	<div class="row">
+                            	<label>{$locale.axislife.tag}</label>
+								<div>
+									<input type="text" name="myTag" class="required" />
+								</div>
+                            </div>
+                            <!--
+                        	<div class="row">
+                            	<label>Penilaian</label>
+                                <div class="rating " >
+                                <a  href="javascript:void(0)" class="poolingStar node1" node="1"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+                                <a  href="javascript:void(0)" class="poolingStar node2" node="2"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+                                <a  href="javascript:void(0)" class="poolingStar node3" node="3"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+                                <a  href="javascript:void(0)" class="poolingStar node4" node="4"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+								<a  href="javascript:void(0)" class="poolingStar node5" node="5"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+								</div>
+								<input type="hidden" name="myRate" class="myRate" value="0" />
+                            </div>
+                            -->
+							<div class="row">
+                            	<label>{$locale.axislife.pilihgambar}</label>
+								<input type="file" name="myImage" /><br />
+                                <small>({$locale.axislife.infopilihgambar})</small>
+                            </div>
+                        	<div class="row">
+                            	<label>{$locale.axislife.detailarticle}</label>
+								<div>
+                                <textarea name="myPosting"  class="required"  id="teditor" ></textarea>
+								</div>
+                            </div>
+							<!--
+                        	<div class="rowShare">
+                            	<span class="shareIcon">Share</span>
+                                <input type="checkbox" class="styled"/>
+                                <label>TWITTER</label>
+                                <input type="checkbox" class="styled"/>
+                                <label>FACEBOOK</label>
+                                <input type="checkbox" class="styled"/>
+                                <label>GOOGLE +</label>
+                            </div>
+							      -->
+                            <div class="rowSubmit">
+                                <input type="checkbox" class="styled" id="checkthis" />
+                            	<label>{$locale.axislife.sayasetuju} <a class="showPopup" href="#tncsubmitarticle">{$locale.axislife.syaratketentuan}</a></label>
+                                <input type="submit" value="{$locale.axislife.kirim}" />
+								<label><span class="tosMsg"></span></label>
+                            </div>
+                        </form>
+                    </div><!-- end .entryDetail -->
+                </div><!-- end .shadowCbottom -->
+            </div><!-- end .shadowCtop -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+    <div class="widget-axisLife">
+	{$carousel_banner}
+    </div><!-- end .widget-whyAxis -->
+</div><!-- end #container -->
+
+{include file="application/axisweb/widgets/popup_tnc_submit_article.html"}
+
+
+
+<script>
+var basedomain = "{$basedomain}";
+var localemsg = "{$locale.axislife.mohonisi}";
+{literal}
+$("#submitArticleForm").submit(function(){
+
+	if($("#checkthis:checked").val()!="on") {
+		$(".tosMsg").html("<span style='color:#ff0000;'> "+ localemsg +" </span>");
+		return false;
+	}
+	var arrRequired = new Array();
+	$(".required").each(function(i,e){
+		if($(this).val()=='')arrRequired.push(false);
+		else arrRequired.push(true);
+	})
+	if($.inArray(false,arrRequired)>0) return false;
+	return true;
+});
+
+</script>
+
+<script type="text/javascript">
+	tinyMCE.init({
+		theme : "advanced",
+        mode : "exact",
+        elements : "teditor",
+	
+		paste_remove_styles: true,
+		paste_auto_cleanup_on_paste : true,
+		
+		theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,formatselect,fontselect,fontsizeselect",
+        theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,cleanup,insertdate,inserttime,preview,|,forecolor,backcolor",
+		paste_use_dialog : true,
+		theme_advanced_resizing : true,
+		theme_advanced_resize_horizontal : true,
+		apply_source_formatting : true,
+		force_br_newlines : true,
+		force_p_newlines : false,	
+		relative_urls : true,
+		
+		theme_advanced_toolbar_location : false,
+		theme_advanced_toolbar_align : "left",
+		theme_advanced_resizing : false
+	});
+	
+	
+	
+</script>
+
+{/literal}

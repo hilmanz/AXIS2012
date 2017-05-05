@@ -1,0 +1,69 @@
+
+<div class="theBox" id="arsipBlog">
+    <div class="headBox">
+        <h1>{$locale.arsipberita.title}</h1>
+    </div><!-- end .headBox -->
+    <div id="arsipBerita" class="entryBox">
+        {section name=i loop=$arsipberita}
+		<div class="row">
+			<!--
+			{if $arsipberita[i].image}
+            <div class="smallThumb">
+                <a href="berita/detail/{$arsipberita[i].parentid}"><img src="{$base_web_path}public_assets/news/{$arsipberita[i].image}" /></a>
+            </div>
+			{/if}
+			-->
+            <div class="entrySmall">
+                <h1><a href="{$basedomain}berita/detail/{$arsipberita[i].parentid}">{$arsipberita[i].title}</a></h1>
+                <p class="date">{$arsipberita[i].posted_date|date_format:"%d-%m-%Y"}</p>
+            </div>
+        </div><!-- end .row -->
+        {/section}
+    </div><!-- end .entryBox -->
+    <div class="shadow"></div>
+    <div id="arsipBeritaPaging" class="paging">
+        
+    </div><!-- end .paging -->
+</div><!-- end .theBox -->
+<script>
+var total_rows = {$arsipberita[0].total_rows};
+var basedomain = "{$base_web_path}";
+var corporatedomain = "{$basedomain}";
+var corpBeritaPage = {$corpBeritaPage};
+{literal}
+$(document).ready(function(){
+	var pageInit = 0;
+		var start = corpBeritaPage;
+		//Init Page
+		if(pageInit == 0){
+			pageInit = 1;
+			if(start == 0)start=1;
+			kiPagination(total_rows,start, 'arsipBeritaPaging', 'arsip_berita_ajax', 'arsip_berita', 4, true);
+		}
+});
+
+function arsip_berita(fungsi, start){
+	$('#arsipBerita').html('<div class="loaders"><img src="'+basedomain+'assets/images/loader.png"></div>');
+	$.post(corporatedomain+'berita/'+fungsi, {start : start}, function(arsip){
+		var str = '';
+		$.each(arsip, function(k,v){
+			var posteddate = v.posted_date;
+			var dateofpost = posteddate.split(' ');
+			
+			str+='<div class="row">';
+			
+			str+='<div class="entrySmall">';
+				str+='<h1><a href="'+corporatedomain+'berita/detail/'+v.parentid+'">'+v.title+'</a></h1>';
+				str+='<p class="date">'+dateofpost[0]+'</p>';
+			str+='</div></div>';
+		});
+		$('.loaders').remove();
+		$('#arsipBerita').html(str);
+	});
+}
+
+$(document).on('click','.cPaging', function(){
+	$('html, body').animate({scrollTop: '100px'}, 500);
+});
+{/literal}
+</script>

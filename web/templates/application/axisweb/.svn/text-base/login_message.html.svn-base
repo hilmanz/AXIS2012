@@ -1,0 +1,16 @@
+
+<div class="loaders loaderBox">
+<img src="{$basedomain}assets/images/loader.gif">
+</div>
+
+<script>
+	var basedomain = "{$basedomain}";
+	var tab = "{$tab}";
+	var userpage = "{$userpage}";
+{literal}	
+	window.opener.location.href = basedomain+userpage+tab;
+	window.opener.location.reload();
+	window.close();
+
+</script>
+{/literal}

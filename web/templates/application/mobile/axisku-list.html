@@ -1,0 +1,115 @@
+<div class="breadcrumb">
+		<a href="{$mobiledomain}">{$locale.home.title}</a>	&raquo; <a href="{$mobiledomain}myworld">{$locale.nav.axislife}</a> &raquo;  <a href="{$mobiledomain}myworld/{$cid}">{$category[0].category}</a>
+</div>
+<div class="page-body" data-role="content">
+	<div class="page-meta">
+		<h1 class="page-title">{$category[0].category}</h1>
+		
+		<div class="page-excerpt">
+			<p>
+				Buat kamu yang gila {$category[0].category}, jangan lewatkan <br /> 
+				semua review dan info terbaru seputar <br />
+				{$category[0].category}-{$category[0].category} paling seru  di sini. 
+			</p>	
+		</div>
+	</div>
+	
+	<div class="page-content clear" id="axiskuList">
+		<div id="life-film-list" class="page-content-list">
+			<ul id="axisContent" data-role="listview" data-inset="true">
+				{foreach from=$listAxis key=k item=v}
+					{if $v.id}
+						<li>
+							<a href="{$mobiledomain}myworld/{if $v.user}sdetail{else}detail{/if}/{$cid}/{$v.id}" data-transition="slide" title="{$v.title}" data-ajax="false">
+								{*}
+								<img src="{$basedomain}public_assets/article/thumb_{$v.image}" title="" class="thumbnail" />
+								{/*}
+								
+								{if $v.categoryid==18} <img src="http://img.youtube.com/vi/{$v.video_thumbnail}/0.jpg" />
+								{else}
+									{if $v.image}<img src="{$basedomain}public_assets/{if $v.user}user/content{else}article{/if}/thumb_{$v.image}" class="thumbnail" />
+									{else}<img src="{$basedomain}assets/images/thumb.jpg" />
+									{/if}
+								{/if}
+								
+								{*}<span class="icon icon-{$category[0].cssname}"></span>{/*}
+								<span class="text">{$v.title}</span>
+							</a>
+						</li>
+					{/if}
+				{/foreach}
+			</ul>
+		</div>
+	</div>
+	<div id="axisPaging" class="paging">
+	</div><!-- end .paging -->
+	<div class="list-nav">
+		<ul data-role="listview" data-inset="true">
+			<li>
+				<a href="{$mobiledomain}myworld" data-transition="slide" rel="external">
+					<span class="icon icon-plus"></span>
+					<span class="textLink">{$locale.mobilebtn.backkategory}</span>
+				</a>
+			</li>
+			<li>
+				<a href="{$mobiledomain}" data-transition="slide" data-url="">
+					<span class="icon icon-home"></span>
+					<span class="textLink">{$locale.mobilebtn.home}</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div><!-- /content -->
+<script type="text/javascript">
+	var total_rows = '{$listAxis[0].total_rows}';
+	var mobiledomain = "{$mobiledomain}";
+	var basedomain = "{$basedomain}";
+	var cid = "{$cid}";
+	var myworldDetail = {$myworldDetail};
+	{literal}
+		$(document).ready(function(){
+			initiatePaging(total_rows);
+		});
+		function initiatePaging(total_rows){
+			var pageInit = 0;
+			var start = myworldDetail;
+			//Init Page
+			if(pageInit == 0){
+				pageInit = 1;
+				if(start == 0)start=1;
+				kiPagination(total_rows, start, 'axisPaging', 'myWordContent', 'axisku_ajax', 4);
+			}
+		}
+		function axisku_ajax(fungsi, start){
+			$('#axisContent').html('<div class="loaders"><img src="'+basedomain+'assets/images/loader.png"></div>');
+			$.post(mobiledomain+'myworld/'+fungsi, {start : start, axiskuList : 1, catid: cid}, function(data){
+				var str='';
+				$.each(data, function(k,v){
+					if(v.id){
+						
+						str+='<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="a" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-li-has-thumb ui-corner-top ui-btn-up-a">';
+							str+='<div class="ui-btn-inner ui-li ui-corner-top"><div class="ui-btn-text">';
+							
+							if(v.user) str+='<a data-ajax="false" title="'+v.title+'" data-transition="slide" href="'+mobiledomain+'myworld&#47;sdetail&#47;'+cid+'&#47;'+v.id+'" class="ui-link-inherit">';
+							else str+='<a data-ajax="false" title="'+v.title+'" data-transition="slide" href="'+mobiledomain+'myworld&#47;detail&#47;'+cid+'&#47;'+v.id+'" class="ui-link-inherit">';
+								if (v.categoryid==18){ 
+									if(v.video_thumbnail) vurl = v.video_thumbnail;	
+									str+= '<img src="http://img.youtube.com/vi/'+vurl+'/0.jpg" />';
+								}else{
+									if (v.image) {
+										if(v.user) str += '<img class="thumbnail ui-li-thumb ui-corner-tl"  src="'+basedomain+'public_assets/user/content/thumb_'+v.image+'" />';
+										else  str += '<img class="thumbnail ui-li-thumb ui-corner-tl"src="'+basedomain+'public_assets/article/thumb_'+v.image+'" />';
+									}else  str += '<img class="thumbnail ui-li-thumb ui-corner-tl" src="'+basedomain+'assets/images/thumb.jpg" />';
+										
+								}						
+								str+='<span class="text">'+v.title+'</span>';
+							str+='</a>';
+						str+='</div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>';
+					}
+				});
+				$('.loaders').remove();
+				$('#axisContent').html(str);
+			});
+		}
+	{/literal}
+</script>

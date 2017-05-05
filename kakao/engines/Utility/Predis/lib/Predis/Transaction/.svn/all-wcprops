@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/lib/Predis/Transaction
+END
+AbortedMultiExecException.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/lib/Predis/Transaction/AbortedMultiExecException.php
+END
+MultiExecContext.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/lib/Predis/Transaction/MultiExecContext.php
+END

@@ -1,0 +1,413 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files
+END
+TestIterator.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/TestIterator.php
+END
+foo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/foo.xml
+END
+expectedFileFormat.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/expectedFileFormat.txt
+END
+StackTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/StackTest.php
+END
+structureWrongNumberOfNodes.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/structureWrongNumberOfNodes.xml
+END
+ChangeCurrentWorkingDirectoryTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/ChangeCurrentWorkingDirectoryTest.php
+END
+SelectorAssertionsFixture.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/SelectorAssertionsFixture.html
+END
+ConcreteTest.my.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/ConcreteTest.my.php
+END
+Failure.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/Failure.php
+END
+Book.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/Book.php
+END
+structureIsSameButDataIsNot.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/structureIsSameButDataIsNot.xml
+END
+ExceptionTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/ExceptionTest.php
+END
+Author.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/Author.php
+END
+NothingTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/NothingTest.php
+END
+SampleClass.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/SampleClass.php
+END
+InheritedTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/InheritedTestCase.php
+END
+Success.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/Success.php
+END
+OverrideTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/OverrideTestCase.php
+END
+bar.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/bar.xml
+END
+WasRun.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/WasRun.php
+END
+ExceptionInTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/ExceptionInTest.php
+END
+DependencyFailureTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/DependencyFailureTest.php
+END
+DependencyTestSuite.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/DependencyTestSuite.php
+END
+BankAccountTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/BankAccountTest.php
+END
+Calculator.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/Calculator.php
+END
+NotPublicTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/NotPublicTestCase.php
+END
+NoTestCases.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/NoTestCases.php
+END
+structureExpected.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/structureExpected.xml
+END
+structureWrongNumberOfAttributes.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/structureWrongNumberOfAttributes.xml
+END
+OutputTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/OutputTestCase.php
+END
+TemplateMethodsTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/TemplateMethodsTest.php
+END
+NonStatic.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/NonStatic.php
+END
+ConcreteTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/ConcreteTest.php
+END
+AbstractTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/AbstractTest.php
+END
+DependencySuccessTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/DependencySuccessTest.php
+END
+ExceptionInAssertPreConditionsTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/ExceptionInAssertPreConditionsTest.php
+END
+RequirementsClassDocBlockTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/RequirementsClassDocBlockTest.php
+END
+structureIgnoreTextNodes.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/structureIgnoreTextNodes.xml
+END
+OneTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/OneTestCase.php
+END
+ThrowExceptionTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/ThrowExceptionTestCase.php
+END
+MockRunner.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/MockRunner.php
+END
+DataProviderTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/DataProviderTest.php
+END
+ExceptionStack.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/ExceptionStack.php
+END
+FailureTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/FailureTest.php
+END
+FatalTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/FatalTest.php
+END
+MultiDependencyTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/MultiDependencyTest.php
+END
+Error.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/Error.php
+END
+ExceptionInTearDownTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/ExceptionInTearDownTest.php
+END
+EmptyTestCaseTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/EmptyTestCaseTest.php
+END
+ClassWithToString.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/ClassWithToString.php
+END
+NoTestCaseClass.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/NoTestCaseClass.php
+END
+IncompleteTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/IncompleteTest.php
+END
+Singleton.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/Singleton.php
+END
+NoArgTestCaseTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/NoArgTestCaseTest.php
+END
+BankAccountTest.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/BankAccountTest.test.php
+END
+DoubleTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/DoubleTestCase.php
+END
+ExceptionInSetUpTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/ExceptionInSetUpTest.php
+END
+ExceptionInAssertPostConditionsTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/ExceptionInAssertPostConditionsTest.php
+END
+configuration_xinclude.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/configuration_xinclude.xml
+END
+ThrowNoExceptionTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/ThrowNoExceptionTestCase.php
+END
+ExceptionNamespaceTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/ExceptionNamespaceTest.php
+END
+NotVoidTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/NotVoidTestCase.php
+END
+configuration.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/configuration.xml
+END
+structureAttributesAreSameButValuesAreNot.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/structureAttributesAreSameButValuesAreNot.xml
+END
+ClassWithNonPublicAttributes.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/ClassWithNonPublicAttributes.php
+END
+RequirementsTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/RequirementsTest.php
+END
+Struct.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/Struct.php
+END
+BankAccount.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/axis2012/!svn/ver/8/trunk/web/test/Tests/_files/BankAccount.php
+END

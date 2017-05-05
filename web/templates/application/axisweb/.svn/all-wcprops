@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/axis2012/!svn/ver/1435/trunk/web/templates/application/axisweb
+END
+login_message.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/axis2012/!svn/ver/1188/trunk/web/templates/application/axisweb/login_message.html
+END
+footer.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/1425/trunk/web/templates/application/axisweb/footer.html
+END
+message.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/axis2012/!svn/ver/1014/trunk/web/templates/application/axisweb/message.html
+END
+meta.html
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/axis2012/!svn/ver/1421/trunk/web/templates/application/axisweb/meta.html
+END
+home.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/axis2012/!svn/ver/831/trunk/web/templates/application/axisweb/home.html
+END
+login.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/axis2012/!svn/ver/93/trunk/web/templates/application/axisweb/login.html
+END
+header.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/1433/trunk/web/templates/application/axisweb/header.html
+END
+home2.html
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/axis2012/!svn/ver/592/trunk/web/templates/application/axisweb/home2.html
+END
+master.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/1359/trunk/web/templates/application/axisweb/master.html
+END

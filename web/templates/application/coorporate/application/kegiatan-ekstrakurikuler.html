@@ -1,0 +1,38 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}life_in_axis/kegiatan_ekstrakurikuler">{$locale.lifeinaxis.title}</a> &raquo; <a>{$locale.extrakulikuler.title}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="theContent">
+        <div class="theTitle">
+            <h1>{$locale.lifeinaxis.title}</h1>
+        </div><!-- end .theTitle -->
+    	<div id="sidebar">
+            <div class="theBox">
+                <div class="entryBox">
+                    <div class="rowBtns">
+							{include file="application/coorporate/widgets/sidebar_life_in_axis.html"}
+                    </div><!-- end .rowBtns -->
+                </div><!-- end .entryBox -->
+                <div class="shadow"></div>
+            </div><!-- end .theBox -->
+            {$recent_blog}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+            <div class="entryDetail">
+                <div class="imgDetail">
+           		    <div class="shadowImg"></div>
+           		    <div class="splash1"></div>
+                    <img src="{$basedomain}assets/content/kurikuler.jpg" />
+                </div><!-- end .imgDetail -->
+                <div class="entry">
+                    <div class="entry-title">
+                         <h1>{$locale.extrakulikuler.title}</h1>
+                    </div><!-- end .entry-title -->
+                    {if $locale.extrakulikuler.content==1}{include file="application/coorporate/static_locale/ind/extrakulikuler.html"}
+					{else}{include file="application/coorporate/static_locale/eng/extrakulikuler.html"}
+					{/if}
+                </div><!-- end .entry -->
+            </div><!-- end .entryDetail -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+</div><!-- end #container -->

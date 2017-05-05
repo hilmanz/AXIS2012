@@ -1,0 +1,258 @@
+<script type="text/javascript">
+	var page = "project";
+	var page_detail = "web";
+	var catID, catName;
+	var dailyData = {$dd};
+	var maxPeopleOnline = {$max};
+	{literal}
+	$(document).ready(function() {
+		//Initial
+		lineChartData(dailyData, 'registered', 'dailyData');
+		barChart(maxPeopleOnline);
+		//barChartData(maxPeopleOnline, 'maximum_people_online', 'dailyData');
+		
+	});
+	
+	function lineChartData(dailyData, catName, container, catID){
+		var category = dailyData.category;
+		var data = [{
+						name: catName,
+						data: dailyData.data_count,
+						visible: true
+					}];
+		lineChart(container, category, data, catID);
+	}
+	
+	function dailyDataAjax(catID){
+		var container = 'dailyData';
+		$.ajax({
+			url: 'index.php?s=web&actAjax=daily',
+			type: 'POST',
+			data : {categoryID: catID},
+			dataType: 'json',
+			beforeSend: function(){
+				$('#dailyData').html('');
+			},
+			success: function(response) {		
+				lineChartData(response, response['cat_name'], container, catID);
+			}
+		});
+	}
+	
+	function barChart(maxPeopleOnline){
+		chart = new Highcharts.Chart({
+			chart: {
+				renderTo: 'maxPeople',
+				backgroundColor: false,
+				borderWidth: 0,
+				type: 'column',
+				zoomType: 'xy'
+			},
+			title: false,
+			subtitle: false,
+			xAxis: [{
+				categories: maxPeopleOnline.category
+			}],
+			credits: false,
+			yAxis: [
+			        {
+			        labels: {
+					formatter: function() {
+						return this.value;
+					},
+					style: {
+						color: '#f26522'
+					}
+				},
+				title: false
+			}],
+			tooltip: {
+				formatter: function() {
+					return '<b>'+ this.series.name +'</b><br/>'+
+					this.y+' people';
+				}
+			},
+			legend:false,
+			series: [{
+				name: 'Number of people',
+				color: '#75f222',
+				data: maxPeopleOnline.online_count
+
+			}]
+		});
+	}
+	
+	function weeklyData(weekNumber){
+		var container = 'weeklyWin';
+		$.ajax({
+			url: 'index.php?s=web&actAjax=weekly',
+			type: 'POST',
+			data : {weekNum: weekNumber},
+			dataType: 'json',
+			beforeSend: function(){
+				$('#weeklyWin').html('');
+				$('#maxPeople').html('');
+				$('#freeContent').html('');
+				$('#paidContent').html('');
+			},
+			success: function(response) {
+				if(response['winner'] != null){
+					if(response['winner'] !=null){
+						$('#weeklyWin').html(weeklyWinner_row(response['winner']));
+					}else{
+						$('#weeklyWin').html("The data is not available yet.");
+					}
+					if(response['maxOnline'] !=null){
+						barChart(response['maxOnline']);
+					}else{
+						$('#maxPeople').html("The data is not available yet.");
+					}
+					if(response['free'] !=null){
+						$('#freeContent').html(topItem(response['free']));
+					}else{
+						$('#freeContent').html("The data is not available yet.");
+					}
+					if(response['paid'] !=null){
+						$('#paidContent').html(topItem(response['paid']));
+					}else{
+						$('#paidContent').html("The data is not available yet.");
+					}
+				}else{
+					$('#weeklyWin').html("The data is not available yet.");
+					$('#maxPeople').html("The data is not available yet.");
+					$('#freeContent').html("The data is not available yet.");
+					$('#paidContent').html("The data is not available yet.");
+				}
+			}
+		});
+	}
+	{/literal}
+</script>
+<div id="mainDash" class="body-content" style="background: none;position:relative;padding-top:25px;">
+	<span style="position: absolute; top: 0px; right:15px;">Last Update on <span style="color:#9E2666;">{$axislastUpdate}</span></span>
+	<div id="overall">
+    	<div class="box firstBox">
+        	<span>Returning Visitor</span>
+            <h1>{if $returnVisitor}{$returnVisitor}{else}0{/if}%</h1>
+        </div>
+    	<div class="box">
+        	<span>Bounce Rate</span>
+            <h1>{if $bounceRate}{$bounceRate}{else}0{/if}%</h1>
+        </div>
+    	<div class="box">
+        	<span>Twitter Share</span>
+            <h1>{if $totalTwitterShares}{$totalTwitterShares}{else}0{/if}</h1>
+        </div>
+    	<div class="box">
+        	<span>Facebook Share</span>
+            <h1>{if $totalFacebookShares}{$totalFacebookShares}{else}0{/if}</h1>
+        </div>
+    	<div class="box">
+        	<span>Paid Content Clicks</span>
+            <h1>{if $totalPaidContentClicks}{$totalPaidContentClicks}{else}0{/if}</h1>
+        </div>
+    	<div class="box lastBox">
+        	<span>Free Content Clicks</span>
+            <h1>{if $totalFreeContentClicks}{$totalFreeContentClicks}{else}0{/if}</h1>
+        </div>
+    </div>
+	<div class="body-content-head">
+		<h1 class="flLeft" style="font-size:20px; margin:0;">DAILY DATA</h1>
+		<div class="shortBox">	
+            <span class="labels">SORT BY</span>
+			<div class="selectDropdown dropdown">
+                <select id="dailySelect" name="d" class="styled">
+                  <option value="registered">REGISTERED USERS</option>
+                  <option value="unique">UNIQUE VISITORS</option>
+                  <option value="organic">ORGANIC CONV RATE %</option>
+                  <option value="status">STATUS POSTED</option>
+                  <option value="picture">PICTURES POSTED</option>
+                </select>
+			</div><!-- end.selectDropdown -->
+         </div><!-- end.shortBox -->
+	</div><!-- end.body-content-head -->
+	<div id="dailyData" style="height: 292px;margin: 15px 0;"></div>
+	<div class="body-content-head">
+		<h1 class="flLeft" style="font-size:20px; margin:0;">WEEKLY DATA</h1>
+		<div class="shortBox">	
+            <span class="labels">SORT BY</span>
+			<div class="selectDropdown dropdown">
+                <select id="weekSelect" name="day" class="styled">
+                  <option value="1">1st Week</option>
+                  <option value="2">2nd Week</option>
+                  <option value="3">3rd Week</option>
+                  <option value="4">4th Week</option>
+                </select>
+			</div><!-- end.selectDropdown -->
+         </div><!-- end.shortBox -->
+	</div><!-- end.body-content-head -->
+    <div class="clear">
+        <div id="weeklyWinner" class="boxGrey">
+        	<h1>Top 5 Users</h1>
+			<div id="weeklyWin">
+				{section name=i loop=$ww}
+				<div class="row">
+					<a href="#" class="thumbs"><img src="https://graph.facebook.com/{$ww[i].fb_id}/picture" /></a>
+					<div class="entry">
+						<h4><a href="#">{$ww[i].user_name}</a></h4>
+						<p>Score: {$ww[i].score} || Email: {$ww[i].email} || Nomor AXIS: {$ww[i].msisdn} || Last Update: {$ww[i].end_date}</p>
+					</div>
+				</div><!-- end.row -->
+				{/section}
+			</div>
+        </div><!-- end.boxGrey -->
+		<div id="top5User" class="boxGrey last">
+        	<h1>MAXIMUM NUMBER OF PEOPLE ONLINE</h1>
+			<div id="maxPeople" style="height: 345px;margin: 15px 0 0 0;"></div>
+        </div><!-- end.boxGrey -->
+		{*}
+        <div id="top5User" class="boxGrey last">
+        	<h1>TOP 5 USER</h1>
+			{section name=i loop=$t5u}
+            <div class="row">
+            	<a href="#" class="thumbs"><img src="https://graph.facebook.com/{$t5u[i].fb_id}/picture" /></a>
+                <div class="entry">
+                	<h4><a href="#">{$t5u[i].user_name}</a></h4>
+                    <p>{$t5u[i].score} Points.</p>
+                </div>
+            </div><!-- end.row -->
+			{/section}
+        </div><!-- end.boxGrey -->
+		{/*}
+    </div><!-- end.clear -->
+    <div class="clear">
+        <div class="boxGrey" style="min-height: 150px;">
+        	<h1>MOST CLICKED FREE CONTENT</h1>
+			<div id="freeContent">
+		   <ol>
+				{section name=i loop=$free}
+            	<li>{$free[i].item_name}</li>
+				{/section}
+            </ol>
+			</div>
+            
+        </div><!-- end.boxGrey -->
+        <div class="boxGrey last" style="min-height: 150px;">
+        	<h1>MOST CLICKED PAID CONTENT</h1>
+            <div id="paidContent">
+			<ol>
+            	{section name=i loop=$paid}
+            	<li>{$paid[i].item_name}</li>
+				{/section}
+            </ol>
+			</div>
+        </div><!-- end.boxGrey -->
+    </div><!-- end.clear -->
+    
+   
+</div>
+<script>
+{literal}
+	$("#dailySelect").live('change', function() {
+        dailyDataAjax(this.value);
+    });
+	$("#weekSelect").live('change', function() {
+        weeklyData(this.value);
+    });
+{/literal}
+</script>

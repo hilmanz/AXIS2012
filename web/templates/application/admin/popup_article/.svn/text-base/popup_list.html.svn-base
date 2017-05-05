@@ -1,0 +1,49 @@
+<div class="theContent">
+    <div class="theTitle">
+        <h2>Popup Article</h2>
+        <a href="index.php?s=popup_article&act=excelreport&lid={$lid}&id_cat={$id_cat}&id_type={$id_type}" class="btn btn_document"><span>Download XLS</span></a>
+        <a href="index.php?s=popup_article&act=add" class="btn btn_pencil"><span>Add New</span></a>
+    </div><!--contenttitle-->
+    <div class="tableoptions">       
+        <form>
+            <span>Search</span> 
+            <input type="text" name="search" value="{$search}"/>
+            <input type="text" name="startdate" value="{$startdate}" class="datepicker" />
+            <span>s/d</span>
+            <input type="text" name="enddate" value="{$enddate}"class="datepicker" />
+            <input type="submit" value="cari" class="stdbtn btn_orange"/>
+            <input type="hidden" name="s" value="popup_article" />
+        </form>
+    </div><!--tableoptions-->	
+    <table cellpadding="0" cellspacing="0" border="0" id="table1" class="stdtable">
+        <thead>
+            <tr>
+                <th class="head0">No</th>
+                <th class="head1">Article</th>
+				<th class="head1">Popup Link</th>
+                <th class="head0">Title Popup</th>             				
+                <th class="head1">Date</th>
+                <th class="head0">Status</th>
+                <th class="head1" colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+              {section name=i loop=$list}
+              <tr>
+                <td width="4%">{$list[i].no}&nbsp;</td>
+                <td width="10%">{$list[i].title_article}&nbsp;</td>
+                <td width="10%"><input type="text" value="#popup_{$list[i].conid}_{$list[i].id}" /> </td>
+                <td>{$list[i].title}</td>
+          
+                <td>{$list[i].date|date_format:"%d-%m-%Y"} &nbsp;{$list[i].date|date_format:$time.time}</td>
+                <td>{if $list[i].n_status==0} <span class="orange">Unpublish</span> {else} <span class="green">Publish</span> {/if}</td>
+                <td align="center" width="4%"><a href="index.php?s=popup_article&act=edit&id={$list[i].id}" class="green">Edit</a></td>
+                <td align="center" width="4%"><a href="index.php?s=popup_article&act=hapus&id={$list[i].id}" class="red" onclick="return confirm('Are you sure you want to delete this?')">Delete</a></td>
+              </tr>
+              {/section}
+        </tbody>
+    </table>
+    <div class="paging">
+    	{$paging}
+    </div>
+</div><!--theContent-->

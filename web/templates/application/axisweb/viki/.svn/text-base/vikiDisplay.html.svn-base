@@ -1,0 +1,47 @@
+<div style="margin: 0px auto; padding-left: 100px; padding-top: 20px;overflow: auto; height: 100%; width: 100%;">
+	
+	<div style="top: 0px; z-index: 1; width: 500px;float:left">
+				<h1 id="contentTitle" style="padding-left: 10px;">Axis Movie Gallery</h1>
+	{if $viki_data}
+		<div class="viki_movie">
+		<object width="400" height="300"
+		classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+		codebase="http://fpdownload.macromedia.com/
+		pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0">
+		<param name="SRC" value="{$viki_data.response[0].formats.flash_embed}">
+		<embed src="{$viki_data.response[0].formats.flash_embed}" width="400" height="300">
+		</embed>
+		</object> 
+		<div><a href="{$viki_data.response[0].web_uri}">{$viki_data.response[0].title}</a> | {$viki_data.response[0].created_at} - {$viki_data.response[0].subscriptions.count}</div>
+		</div>
+		{foreach from=$viki_data.response key=k item=v}
+			
+				<div><img src="{$v.image}" width="100"  height="100" class="playThis"  title="{$v.title}" url="{$v.web_uri}"  flash="{$v.formats.flash_embed}" created="{$v.created_at}" subscribe="{$v.subscriptions.count}" /></div>
+			
+				<div><a href="{$v.web_uri}">{$v.title}</a> | {$v.created_at} - {$v.subscriptions.count}</div>
+		
+		{/foreach}
+		{/if}
+	</div>
+</div>
+
+{literal}
+	<script>
+		$('.playThis').click(function(){
+			
+			var html ="";
+			
+			html+=' <object width="400" height="300" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0">';
+			html+='		<param name="SRC" value="'+$(this).attr("flash")+'">';
+			html+='		<embed src="'+$(this).attr("flash")+'" width="400" height="300"></embed>';
+			html+='	</object> ';
+			html+='	<div><a href="'+$(this).attr("url")+'">'+$(this).attr("title")+'</a> | '+$(this).attr("created")+' - ';
+			html+='  '+$(this).attr("subscribe")+'</div>';
+			
+			$('.viki_movie').html(html);
+		
+		});
+	</script>
+
+
+{/literal}

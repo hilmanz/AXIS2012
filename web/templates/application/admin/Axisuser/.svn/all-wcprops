@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/1219/trunk/web/templates/application/admin/Axisuser
+END
+axisuser_new.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/Axisuser/axisuser_new.html
+END
+axisuser_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/axis2012/!svn/ver/1219/trunk/web/templates/application/admin/Axisuser/axisuser_list.html
+END
+userpost_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/Axisuser/userpost_list.html
+END
+userpost_detail.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/Axisuser/userpost_detail.html
+END
+Axisuser_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/Axisuser/Axisuser_edit.html
+END

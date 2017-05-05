@@ -1,0 +1,62 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}tentang_axis/kualitas-layanan">{$locale.tentangaxis.title}</a> &raquo; <a>{$locale.kualitas.title}</a></h1></a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="theContent">
+        <div class="theTitle">
+            <h1>{$locale.home.tentang_axis}</h1>
+        </div><!-- end .theTitle -->
+    	<div id="sidebar">
+            <div class="theBox">
+                <div class="entryBox">
+                    <div class="rowBtns">
+                        {include file="application/coorporate/widgets/sidebar_tentang_axis.html"}
+                    </div><!-- end .rowBtns -->
+                </div><!-- end .entryBox -->
+                <div class="shadow"></div>
+            </div><!-- end .theBox -->
+		{$recent_blog}
+        </div><!-- end #sidebar -->
+         <div id="contents">
+            <div class="entryDetail">
+                <div class="imgDetail">
+           		    <div class="shadowImg"></div>
+           		    <div class="splash1"></div>
+                    <img src="{$basedomain}assets/content/img/siapa_kami_kualitas_layanan.jpg" />
+                </div><!-- end .imgDetail -->
+                <div class="entry">
+                    <div class="entry-title">
+                         <h1>{$locale.kualitas.title}</h1>
+                    </div><!-- end .entry-title -->
+                  <div class="entry-post">
+                        <h2>{$locale.kualitas.laporanpencapaian} </h2>
+                        <h3>{$locale.kualitas.pencapaian} :</h3>
+                        <p>
+						<form action="{$basedomain}tentang_axis/kualitas_layanan" method="POST" id="formLayanan" >
+							<select class="styled" name="periodeid" id="periodeid" >	
+									<option value="">{$locale.dropdown.kualitaslayanan.title}</option>
+									{section name=i loop=$layanan}
+										{if $layanan[i].id==$content.id}<option value="{$layanan[i].id}" selected>{$locale.dropdown.kualitaslayanan.text} {$layanan[i].title}</option>
+										{else}<option value="{$layanan[i].id}" >{$locale.dropdown.kualitaslayanan.text} {$layanan[i].title}</option>
+										{/if}
+									{/section}
+                            </select>
+						</form>
+                        </p>
+                        {$content.content}
+
+                    </div><!-- end .entry-post -->
+                </div><!-- end .entry -->
+            </div><!-- end .entryDetail -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+</div><!-- end #container -->
+{literal}
+	<script>
+		$("#periodeid").change(function(){
+		
+			$("#formLayanan").submit();
+		
+		});
+	</script>
+{/literal}

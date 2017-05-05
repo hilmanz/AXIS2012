@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/axis2012/!svn/ver/1167/trunk/web/db
+END
+tbl_twitter_unique_rt_people.sql
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/125/trunk/web/db/tbl_twitter_unique_rt_people.sql
+END
+ddl.sql
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/axis2012/!svn/ver/742/trunk/web/db/ddl.sql
+END
+category_keywords.sql
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/axis2012/!svn/ver/1167/trunk/web/db/category_keywords.sql
+END
+province_axis.sql
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/axis2012/!svn/ver/1162/trunk/web/db/province_axis.sql
+END
+tbl_fb_wordcloud.sql
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/axis2012/!svn/ver/125/trunk/web/db/tbl_fb_wordcloud.sql
+END
+axis_gplus_wordcloud.sql
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/axis2012/!svn/ver/125/trunk/web/db/axis_gplus_wordcloud.sql
+END
+channel_video_comment.sql
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/axis2012/!svn/ver/125/trunk/web/db/channel_video_comment.sql
+END
+axis_device_setting.sql
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/axis2012/!svn/ver/1162/trunk/web/db/axis_device_setting.sql
+END

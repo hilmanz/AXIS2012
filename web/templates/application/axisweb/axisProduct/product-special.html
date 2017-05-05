@@ -1,0 +1,11 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}produk">{$locale.product.title}</a> &raquo; <a href="{$basedomain}produk/product_special/{$title}/{$whats_product}">{$title}</a></h1>
+</div><!-- end #breadcumb -->
+
+	{if $locale.country==1}{include file="application/axisweb/static_locale/ind/$whats_product.html"}
+	{else}{include file="application/axisweb/static_locale/eng/$whats_product.html"}
+	{/if}
+
+<div class="widget-product">
+{$carousel_banner}
+</div><!-- end .widget-whyAxis -->

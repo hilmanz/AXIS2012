@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Framework/Comparator
+END
+Double.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Framework/Comparator/Double.php
+END
+SplObjectStorage.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Framework/Comparator/SplObjectStorage.php
+END
+Array.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Framework/Comparator/Array.php
+END
+DOMDocument.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Framework/Comparator/DOMDocument.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Framework/Comparator/Exception.php
+END
+MockObject.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Framework/Comparator/MockObject.php
+END
+Type.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Framework/Comparator/Type.php
+END
+Numeric.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Framework/Comparator/Numeric.php
+END
+Scalar.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Framework/Comparator/Scalar.php
+END
+Object.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Framework/Comparator/Object.php
+END
+Resource.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Framework/Comparator/Resource.php
+END

@@ -1,0 +1,95 @@
+
+/*
+Theme Name: AXIS 
+Version: 1.0
+Author: ACIT JAZZ - 2012
+*/
+#themegeek #ornamen{
+	display:none;
+}
+#themegeek .splashBox2{
+	display:none;
+}
+#themegeek #mainContent{
+	background:url(../images/themes_geek/bg.jpg) center bottom no-repeat;
+	padding:0 0 350px 0;
+}
+#themegeek .circleThumb2{
+	background:url(../images/themes_geek/circle4.png) no-repeat;
+}
+#themegeek .odd .circleThumb2{
+	background:url(../images/themes_geek/circle4.png) no-repeat;
+}
+#themegeek .odd .circleThumb2 a.thumbnails,#themegeek .circleThumb2 a.thumbnails{
+	left:50px;
+	top:35px;
+}
+#themegeek #axisLife .circleThumb2 .icon{
+	background:#666666;
+	border:2px solid #666666;
+}
+#themegeek .postEntry h1{
+	color:#474646;
+}
+#themegeek #axisLife .select {
+	background: url(../images/themes_geek/select.png) no-repeat;
+}
+#themegeek #axisLife #shorter h1,#themegeek #axisLife .theTitle h1{
+	color:#666666;
+}
+#themegeek #shorter .cols label{
+	color:#666666;
+}
+#themegeek #profileBoxTab, #boxNetworkTab{
+	color:#cac8ca;
+}
+#themegeek #profileBox .headBox,#themegeek #profileBoxTab ul,#themegeek #boxNetwork .headBox{
+	background:#666666;
+	border:none;
+}
+#themegeek #profileBoxTab ul li a{
+	color:#333030;
+}
+#themegeek #profileBoxTab ul li a:hover,#themegeek #profileBoxTab ul li.ui-tabs-active a{
+	color:#fff;
+}
+#themegeek #profileBox .thumbUser a.thumbUsers,#themegeek #axisLife .circleThumb{
+	background:#666666;
+}
+#themegeek #profileBox .userDetail h4{
+	color:#333030;
+}
+#themegeek #profileBox .userDetail p.pangkat{
+	color:#666666;
+}
+#themegeek #axisLife a.arrows2{
+	background:url(../images/arrow_r.png) #6a6a6a no-repeat right;
+}
+#themegeek #axisLife a.arrows2:hover{
+	background:url(../images/arrow_r.png) #989897 no-repeat right;
+}
+#themegeek #axisLife .icon_coffee{
+	background-image:url(../images/themes_geek/t_coffee.png);
+}
+#themegeek #boxNetworkTab .rowInput{
+	background:#656666;
+}
+#themegeek #boxNetworkTab .rowInput input[type="submit"], #boxNetworkTab .rowInput input[type="button"]{
+	background:#cac8ca;
+}
+#themegeek #boxNetworkTab .rowInput input[type="submit"], #boxNetworkTab .rowInput input[type="button"]:hover{
+	background:#989897;
+}
+#themegeek #axisLife a.readmore{
+	background: url("../images/icon/detail.png") no-repeat scroll 8px 5px #666666;
+}
+#themegeek #axisLife a.readmore:hover{
+	background: url("../images/icon/detail.png") no-repeat scroll 8px 5px #989897;
+}
+
+#themegeek #axisLife .paging a:hover,#themegeek #axisLife  .paging a.current{
+	background:none repeat scroll 0 0 #666666;
+}
+#themegeek #axisLife .paging a{
+	background:none repeat scroll 0 0 #cccccc;
+}

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/1197/trunk/web/templates/application/admin/Product
+END
+product_new_tab.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/Product/product_new_tab.html
+END
+product_list_tab.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/axis2012/!svn/ver/1134/trunk/web/templates/application/admin/Product/product_list_tab.html
+END
+product_comment.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/Product/product_comment.html
+END
+product_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/Product/product_edit.html
+END
+product_new.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/Product/product_new.html
+END
+product_edit_tab.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/Product/product_edit_tab.html
+END
+product_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/1197/trunk/web/templates/application/admin/Product/product_list.html
+END

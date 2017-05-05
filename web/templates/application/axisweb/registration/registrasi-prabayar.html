@@ -1,0 +1,36 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="index.php">Home</a> &raquo; <a>{$locale.prepaidonlinereg.title}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="axisLife">
+    	<div id="sidebar">
+   			{$medium_banner}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+        	<div class="theTitle">
+            	<h1 class="icon_register">{$locale.prepaidonlinereg.title}</h1>
+            </div><!-- end .theTitle -->
+            <div class="shadowCtop">
+            	<div class="shadowCbottom" style="height:345px;">
+                    <div class="entryDetail">
+							<h2>{$locale.prepaidonlinereg.subject}</h2> 
+							{$locale.prepaidonlinereg.content}
+							<p class="example">{$locale.prepaidonlinereg.sample}</p>
+							<div class="input">
+								<form class="theForm validate" accept-charset="utf-8" action="{$registrationLink}" method="post">
+                                	<p class="clear"><input type="text" onblur="{literal}if (this.value == '') {this.value = 'Nomor AXIS';}{/literal}" onfocus="{literal}if (this.value == 'Nomor AXIS') {this.value = '';}{/literal}" value="Nomor AXIS" class="required numberic" name="noHP">
+                                    </p>
+                                    <p class="clear"><input type="submit" class="reg reg-id" value="{$locale.prepaidonlinereg.startreg}"></p>
+									{*}<span style="color:#ff0000;">{$msg}</span>{/*}
+									<span style="color:#ff0000;">{if $msg eq '1'}{$locale.prepaidonlinereg.message}{/if}</span>
+								</form>
+							</div>
+                    </div><!-- end .entryDetail -->
+                </div><!-- end .shadowCbottom -->
+            </div><!-- end .shadowCtop -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+    <div class="widget-axisLife">
+    {$carousel_banner}
+    </div><!-- end .widget-whyAxis -->
+</div><!-- end #container -->

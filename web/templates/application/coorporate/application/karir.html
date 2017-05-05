@@ -1,0 +1,55 @@
+<div id="breadcumb" class="wrapper">
+
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}life_in_axis/karir">{$locale.lifeinaxis.title}</a> &raquo; <a >{$locale.karir.title}</a></h1>
+
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="theContent">
+        <div class="theTitle">
+            <h1>{$locale.lifeinaxis.title}</h1>
+        </div><!-- end .theTitle -->
+    	<div id="sidebar">
+            <div class="theBox">
+                <div class="entryBox">
+                    <div class="rowBtns">
+						{include file="application/coorporate/widgets/sidebar_life_in_axis.html"}
+                    </div><!-- end .rowBtns -->
+                </div><!-- end .entryBox -->
+                <div class="shadow"></div>
+            </div><!-- end .theBox -->
+           {$recent_blog}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+            <div class="entryDetail">
+                <div class="imgDetail">
+           		    <div class="shadowImg"></div>
+           		    <div class="splash1"></div>
+                    <img src="{$basedomain}assets/content/peranan_divisi_dept.jpg" />
+                </div><!-- end .imgDetail -->
+                <div class="entry">
+                    <div class="entry-title">
+                         <h1> {$content.title}</h1>
+                    </div><!-- end .entry-title -->
+				<div class="entry-post">
+                    {$locale.karir.kenapabekerja}
+					 <table border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td width="120"><p align="center"><strong>Date</strong></p></td>
+                            <td><p align="center"><strong>Position</strong></p></td>
+                            <td><p align="center"><strong>Location</strong></p></td>
+                          </tr>
+						  {section name=i loop=$content }
+                          <tr>
+                            <td><p align="center">{$content[i].posted_date|date_format:"%Y-%m-%d"}</p></td>
+                            <td><p align="center"><a href="{$basedomain}life_in_axis/karir_detail/{$content[i].parentid}"><strong>{$content[i].title}</strong></a></p></td>
+                            <td><p align="center">{$content[i].brief}</p></td>
+                          </tr>
+                          {/section}
+                        </table>
+                          <a href="{$basedomain}life_in_axis/submit_cv" class="purpleBtn">{$locale.karir.klikdisinicv}</a>
+				 </div><!-- end .entry-post -->
+                </div><!-- end .entry -->
+            </div><!-- end .entryDetail -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+</div><!-- end #container -->

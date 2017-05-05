@@ -1,0 +1,25 @@
+{if $banner}
+<div id="hotNews">
+    <div class="wrapper">
+        <ul id="newsCarousel" class="jcarousel-skin-tango">
+			{section name=i loop=$banner}
+            <li>
+                <div class="hotNews cat_music">
+                    <div class="hotThumb">
+                        <a href="#"><img src="{$basedomain}public_assets/article/thumb_{$banner[i].image}"/></a>
+                    </div>
+                    <div class="iconCat">
+                        <img src="{$basedomain}assets/images/cat_icon/big/icon-{$banner[i].category|truncate:3:"":true}.png"/>
+                    </div>
+                    <div class="entry">
+                        <h1><a href="#">{$banner[i].title}</a></h1>
+                        <p>{$banner[i].brief}</p>
+                        <a href="{$basedomain}promo/detail/{$banner[i].id}" class="readmore">{$locale.btn.baca}</a>
+                    </div>
+                </div>
+            </li>
+			{/section}
+        </ul><!-- end #bannerCarousel -->
+    </div><!-- end .wrapper -->
+</div><!-- end #hotNews -->
+{/if}

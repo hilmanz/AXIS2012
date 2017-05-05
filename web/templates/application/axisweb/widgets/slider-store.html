@@ -1,0 +1,15 @@
+{if $banner}
+    <div id="slider">
+		<link rel="stylesheet" type="text/css" href="{$basedomain}assets/css/slider-store.css" />
+        <div id="da-slider" class="da-slider">
+           {section name=i loop=$banner}
+			<div class="da-slide slidestore">
+                <h2>{$banner[i].brief}</h2>
+                {$banner[i].content}
+                <a href="{$basedomain}online_store/detail/{$banner[i].id}" class="detail linkSlide">{$locale.btn.detail}</a>
+                <div class="da-img">{if $banner[i].slider_image!=''}<img src="{$basedomain}public_assets/banner/{$banner[i].slider_image}" />{/if}</div>
+            </div><!-- end .da-slide -->
+            {/section}
+        </div><!-- end #da-slider -->
+    </div><!-- end #slider -->
+	{/if}

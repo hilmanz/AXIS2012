@@ -1,0 +1,76 @@
+
+<div class="theContent">
+    <div class="theTitle">
+        <h2>Comment Article</h2>
+        <a href="index.php?s=article&act=excel_comment&contentid={$contentid}" class="btn btn_document"><span>Download XLS</span></a>
+    </div><!--contenttitle-->	
+    <table cellpadding="0" cellspacing="0" border="0" id="table1" class="stdtable">
+        <colgroup>
+            <col class="con0" style="width: 4%" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="head0">No</th>
+                <th class="head1">Language</th>
+                <th class="head0">Title</th>
+                <th class="head1">Type</th>
+                <th class="head0">Created Date</th>
+                <th class="head1">Published Date</th>
+                <th class="head0">Unpublished Date</th>
+                <th class="head1">Status</th>
+                <th class="head0">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {section name=i loop=$list}
+            <tr>
+                <td width="4%">{$list[i].no}&nbsp;</td>
+                <td width="5%">{$list[i].id}&nbsp;</td>
+                <td width="20%">{$list[i].name}</td>
+                <td>{$list[i].comment}</td>
+                <td width="15%"><nobr>{$list[i].date|date_format:"%e %B %Y"} &nbsp;{$list[i].date|date_format:$time.time}</nobr></td>
+                <td width="20%">
+                    <select name='status' onchange='javascript:changeStatus({$list[i].id},this.value);' id="sel-{$list[i].id}" style="width:150px;">
+                        <option value="0" {if $list[i].n_status|intval eq 0} selected="selected"{/if}>Pending</option>
+                        <option value="1" {if $list[i].n_status|intval eq 1} selected="selected" {/if}>Approve</option>
+                        <option value="2" {if $list[i].n_status|intval eq 2} selected="selected" {/if}>Deleted</option>
+                    </select>
+                </td>
+            </tr>
+            {/section}
+        </tbody>
+    </table>
+    <div class="paging">
+    	{$paging}
+    </div>
+</div><!--theContent-->
+{literal}
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+	function changeStatus(id,status){
+		$.get(
+			'index.php?s=article&act=change_status_comment&id='+id+'&status='+status,
+			{},
+			function(data){
+				if(data.success > 0){
+					$("#sel-"+id).fadeOut('fast',function(){
+						$("#sel-"+id).fadeIn('slow');
+					});
+				}else{
+					alert('Gagal mengganti status, silakan coba lagi!');
+				}
+			},
+			"json"
+		);
+		//return 'index.php?s=article&act=comment';
+		return false;
+	}	
+</script>
+{/literal}

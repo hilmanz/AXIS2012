@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/axis2012/!svn/ver/588/trunk/kakao/templates/application/kakaoweb/widgets
+END
+popup_detail.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/axis2012/!svn/ver/580/trunk/kakao/templates/application/kakaoweb/widgets/popup_detail.html
+END
+popup_tnc.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/axis2012/!svn/ver/582/trunk/kakao/templates/application/kakaoweb/widgets/popup_tnc.html
+END
+popup_faq.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/axis2012/!svn/ver/588/trunk/kakao/templates/application/kakaoweb/widgets/popup_faq.html
+END

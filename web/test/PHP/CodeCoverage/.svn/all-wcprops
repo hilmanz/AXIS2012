@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage
+END
+Driver.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Driver.php
+END
+Autoload.php.in
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Autoload.php.in
+END
+Util.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Util.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Exception.php
+END
+Filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Filter.php
+END
+Version.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Version.php
+END
+Autoload.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Autoload.php
+END

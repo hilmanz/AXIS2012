@@ -1,0 +1,13 @@
+<div class="title">
+{$locale.promo.wapheader}
+</div><!-- end .title -->
+<div id="navigation">
+	<ul>
+		{foreach from=$promo key=k item=v}
+    	  <li><a href="{$basedomain}promo/detail/{$v.id}">{$v.title} &raquo;</a></li> 
+		{/foreach}
+    </ul>
+</div>
+<div class="rowBtn">
+	<a href="{$basedomain}" class="btnBack" >&laquo; Back</a>
+</div>

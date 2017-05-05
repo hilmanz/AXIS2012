@@ -1,0 +1,257 @@
+
+<div id="container">
+{*}
+<!-- s : coming soon -->
+  <div class="wrapper" id="axisLife">
+        <div id="headBanner">
+            <div class="headBanner">
+                <div id="headBannerContent">
+                    <!--<div class="headBannerImg"><img src="assets/content/slider/axis_life_teaser.jpg"/></div>-->
+		    <div class="headBannerImg" style="left:0;"><img src="{$basedomain}assets/content/slider/axis_life_teaser.jpg"/></div>
+                    <div class="entryTeaser">
+					{$locale.axislife.axisLifeinfo}
+                    </div>
+
+                    <form id="subscribe">
+                    	<input type="text" name="email" value="{$locale.axislife.axisLifekolomdaftar}" onBlur="if(this.value=='')this.value='{$locale.axislife.axisLifekolomdaftar}';" onFocus="if(this.value=='{$locale.axislife.axisLifekolomdaftar}')this.value='';" />
+                        <input type="button" value="{$locale.axislife.daftar}" />
+						<p id="saveStatus" style="text-align: right; color: rgb(122, 24, 120);"></p>
+                    </form>
+                </div><!-- end #headBannerContent -->
+            </div><!-- end .headBanner -->
+        </div><!-- end #headBanner -->
+    </div><!-- end #axisLife -->
+<!-- e :coming soon -->
+    {/*}
+	<div class="wrapper" id="axisLife">
+    	{if $user}
+		<div id="shorter">
+        	<h1>{$locale.axislife.category}</h1>
+              <form class="rightShort" method="POST" action="{$basedomain}{$userpage}" id="formtype"   >
+				
+				
+				<input type="hidden" name="type" value="{$type}" id="categoryid" />			
+			   	<div class="colsSelected">
+                  
+						<select class="styled" name="cid" id="typeCategory" />
+							<option value="0" >{$locale.axislife.kanal}</option>
+							{if $category}
+								{foreach from=$category key=kcat item=vcat}
+									<option value="{$vcat.id}" {if $typeCategory==$vcat.id}selected{/if}>{$vcat.category}</option>
+								{/foreach}
+							{/if}
+						</select>
+						
+					
+                </div>
+			</form>
+				<div class="cols  {if $type==1}active{/if}">
+						<input type="checkbox" class="styled pickcat" value="1" name="categories[]" {if $type==1}checked{/if} />
+						<label>{$locale.axislife.popular}</label>
+				</div>
+				<div class="cols  {if $type==2}active{/if}">
+						<input type="checkbox" class="styled pickcat" value="2" name="categories[]" {if $type==2}checked{/if} />
+						<label>{$locale.axislife.terbaru}</label>
+				</div>
+				<div class="cols  {if $type==3}active{/if}">
+						<input type="checkbox" class="styled pickcat" value="3" name="categories[]" {if $type==3}checked{/if} />
+						<label>{$locale.axislife.terbaik}</label>
+				</div>
+        </div>
+		{else}
+		<div id="breadcumb" class="wrapper">
+			<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo;  <a href="{if $user}{$basedomain}{$userpage}{else}{$userpage}{/if}">{$locale.axislife.title}</a></h1>
+		</div><!-- end #breadcumb -->
+		{/if}
+    	{$sidebar_axis_life}
+        <div id="contents">
+			{if !$user}
+        	<div class="theTitle">
+            	<h1 class="icon_populer">{$locale.axislife.yangpopuler}</h1>
+                <form class="rightShort" method="POST" action="{$basedomain}{$userpage}"  id="formtype" >
+           			<select class="styled" name="type" id="choosetypenoaxis" />
+						<option value="0" >{$locale.axislife.sort}</option>
+						<option value="1" {if $type==1}selected{/if}>{$locale.axislife.popular}</option>
+						<option value="2" {if $type==2}selected{/if}>{$locale.axislife.terbaru}</option>
+						<option value="3" {if $type==3}selected{/if}>{$locale.axislife.terbaik}</option>
+                    </select>
+		
+                </form>
+            </div><!-- end .shorter -->
+			{/if}
+		{if $content}
+            <div class="">
+                <div class="shadowCbottom">
+					{foreach from=$content key=k item=v}
+						{assign var="rate" value=1}
+						{assign var="idx" value=$idx+1}
+						{if $v.id}
+							<div class="row {if $idx is odd} odd {else} even {/if}">
+								<div class="circleThumb2">
+									<a class="thumbnails" href="{$basedomain}content/{if $v.user}sdetail{else}detail{/if}/{$v.id}">
+									{if $v.video_thumbnail} <img src="http://img.youtube.com/vi/{$v.video_thumbnail}/0.jpg" /></a>
+									{else}
+										{if $v.image}<img src="{$basedomain}public_assets/{if $v.user}user/content{else}article{/if}/thumb_{$v.image}" />
+										{else}<img src="{$basedomain}assets/images/thumb.jpg" />
+										{/if}
+									{/if}
+									<a class="icon" href="#">
+									{if $v.video_thumbnail}
+										{if $v.user} <img src="{$basedomain}assets/images/cat_icon/big/icon-{$v.category|truncate:3:'':true}.png" />
+										{else} <img src="{$basedomain}assets/images/cat_icon/big/icon-Axis.png" />
+										{/if}
+									{else}
+										{if $v.author.emblem}<img src="{$basedomain}public_assets/emblem/{$v.author.emblem}" />
+										{else}<img src="{$basedomain}assets/images/cat_icon/big/icon-{$v.category|truncate:3:'':true}.png" />
+										{/if}
+									{/if}
+									</a>
+								</div>
+								<div class="postEntry">
+									<h1>{$v.title}</h1>
+									<p>{$v.brief|truncate}</p>
+										<div class="rates">
+											{if $v.rating >= 1}
+															{section name=rate start=0 loop=$v.rating step=1}
+																<img src="{$basedomain}assets/images/icon/stars.png" />
+															{/section}
+											{/if}
+										</div><!-- end .rates -->
+										<a class="readmore" href="{$basedomain}content/{if $v.user}sdetail{else}detail{/if}/{$v.id}">{$locale.btn.baca}</a>
+								</div><!-- end .postEntry -->
+							</div><!-- end .row -->
+						{/if}
+					{/foreach}
+                	               	
+                </div><!-- end #shadowCbottom -->
+            </div><!-- end .shadowCtop -->
+         
+			<div id="pagingID" class="paging">
+                
+            </div><!-- end .paging -->
+		{/if}
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+	
+    <div class="widget-axisLife">
+    {$carousel_banner}
+    </div><!-- end .widget-whyAxis -->
+</div><!-- end #container -->
+
+<script>
+	var total_rows = {if $content[0].total_rows}{$content[0].total_rows}{else}0{/if};
+	var basedomain = "{$basedomain}";
+	var userpage = "{$userpage}";
+	var localebtnbaca = "{$locale.btn.baca}";
+	var type = {$type};
+	var pageurl = "{$basedomain}?{$getContent_ajax}&cid={$typeCategory}";
+	var myworldDetailWeb = {$myworldDetailWeb};
+	
+{literal}
+	$(document).ready(function(){
+		
+		var pageInit = 0;
+		var start = myworldDetailWeb;
+		//Init Page
+		if(pageInit == 0){
+			pageInit = 1;
+			if(start == 0)start=1;
+			kiPagination(total_rows, start, 'pagingID', 'paging_ajax', 'paging_ajax', 4);
+		}
+		
+		$("#subscribe input[type='button']").click(function(){
+			$("#saveStatus").show().html('');
+			var t = $("#subscribe input[name='email']").val();
+		
+			$.post(basedomain+''+userpage+'/saveEmail', {email: t}, function(status){
+				$("#subscribe input[name='email']").val('');
+				$("#saveStatus").html(status);
+			});
+		});
+		
+		
+	});
+	$(document).on('click','a.cPaging', function(){
+		$('html, body').animate({scrollTop: '0px'}, 500);
+	});
+	$(document).on('change','#typeCategory , #choosetypenoaxis',function(){
+		$("#formtype").submit();
+	
+	
+	});
+	
+	$(document).on('click','.checkbox',function(){
+		
+		$("#categoryid").val($(this).siblings(".pickcat").val());
+		$("#formtype").submit();
+	
+	
+	});
+	
+		
+	function paging_ajax(fungsi, start){
+		$('.shadowCbottom').html('');
+		$('.shadowCbottom').append('<div class="loaders"><img src="'+basedomain+'assets/images/loader.gif"></div>');
+		$.post(pageurl, {start : start,type:type}, function(data){
+			var str='';
+			var idxs = 0;
+			
+			$.each(data, function(k,v){
+				if(v.id){
+					var categories ='';
+					var vurl = '';
+					if(v.author) var authori = v.author;
+					else  var authori = false;
+					if(idxs%2) str += '<div class="row  even">';
+					else  str += '<div class="row  odd">';
+					if(v.category) categories = v.category;
+					if(v.video_thumbnail) vurl = v.video_thumbnail;				
+					str +='<div class="circleThumb2">';
+					if(v.user) str += ' 	<a class="thumbnails" href="'+basedomain+'content/sdetail/'+v.id+'">';
+					else str += ' 	<a class="thumbnails" href="'+basedomain+'content/detail/'+v.id+'">';
+						if (v.video_thumbnail) str += '<img src="http://img.youtube.com/vi/'+vurl+'/0.jpg" />';
+						else {
+								if (v.image) {
+									if(v.user) str += '<img src="'+basedomain+'public_assets/user/content/thumb_'+v.image+'" />';
+									else  str += '<img src="'+basedomain+'public_assets/article/thumb_'+v.image+'" />';
+								}else  str += '<img src="'+basedomain+'assets/images/thumb.jpg" />';
+						}
+					str +='</a>';
+					
+						if(authori.emblem!='') str += '    <a class="icon" href="#"><img src="'+basedomain+'public_assets/emblem/'+authori.emblem+'" /></a>';
+						else {
+							if(v.category) {
+								if (v.video_thumbnail) {
+									if(v.user) str += '<a class="icon" href="#"><img src="'+basedomain+'assets/images/cat_icon/big/icon-'+categories.substring(0,3)+'.png" /></a>';
+									else str += '    <a class="icon" href="#"><img src="'+basedomain+'assets/images/cat_icon/big/icon-Axis.png" /></a>';
+								}else str += '    <a class="icon" href="#"><img src="'+basedomain+'assets/images/cat_icon/big/icon-'+categories.substring(0,3)+'.png" /></a>';
+							
+							}else{
+								if (v.video_thumbnail) str += '    <a class="icon" href="#"><img src="'+basedomain+'assets/images/cat_icon/big/icon-Axis.png" /></a>';
+														
+							}				
+						}
+					str += '</div>';
+					str += ' <div class="postEntry">';
+					str += '	<h1>'+v.title+'</h1>';
+					str += '	<p>'+v.brief+'</p>';
+					str +='	<div class="rates">';
+					if(v.rating>0){
+							for(var x=1;x<=v.rating;x++){
+								str += '								<img src="'+basedomain+'assets/images/icon/stars.png" />';
+							}
+					}
+					str += '    </div>';
+					if(v.user) str += '    <a class="readmore" href="'+basedomain+'content/sdetail/'+v.id+'">'+localebtnbaca+'</a>';
+					else str += '    <a class="readmore" href="'+basedomain+'content/detail/'+v.id+'">'+localebtnbaca+'</a>';
+					str += '</div>';
+					str += '</div>';
+					idxs = idxs+1;
+				}
+			});
+			$('.loaders').remove();
+			$('.shadowCbottom').html(str);
+		},"json");
+	}
+{/literal}
+</script>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/axis2012/!svn/ver/8/trunk/web/test/PHP/Invoker
+END
+Autoload.php.in
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/axis2012/!svn/ver/8/trunk/web/test/PHP/Invoker/Autoload.php.in
+END
+TimeoutException.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/8/trunk/web/test/PHP/Invoker/TimeoutException.php
+END
+Autoload.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/axis2012/!svn/ver/8/trunk/web/test/PHP/Invoker/Autoload.php
+END

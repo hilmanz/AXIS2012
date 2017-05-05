@@ -1,0 +1,120 @@
+<div class="breadcrumb">
+		<a href="{$mobiledomain}">{$locale.home.title}</a>	&raquo; <a href="{$mobiledomain}kontak">{$locale.nav.customercare}</a>	
+	</div>
+
+<div class="page-body" data-role="content">
+		
+		<div class="page-image-heading" id="imageHeading">
+			<img src="{$mobiledomain}assets/images/ask_axis.jpg" />
+            <h1>{$locale.msg.perlubantuan2}</h1>
+		</div>
+		
+		<div class="page-meta">
+			<div class="page-content clear">
+                <div class="customerbox">
+					<div class="entry">
+						{$locale.customercare.melaluitelepon}
+                    </div><!-- end .entry -->
+                    <span class="callNumber">{$locale.customercare.melaluiteleponnomer}</span>
+				</div><!-- end .customerbox -->
+                <div class="customerbox">
+                    <div class="entry">
+                         <h1>MELALUI TWITTER</h1>
+                         <p>Layanan pelanggan AXIS hadir 24 jam di Twitter. Mention 
+    <a href="https://twitter.com/ask_AXIS" target="_blank">@ask_AXIS</a> dan sampaikan pertanyaan/keluhanmu seputar AXIS. 
+    Kami selalu siap membantu!</p>
+                    </div><!-- end .entry -->
+                    <a class="btns" href="https://twitter.com/ask_AXIS" target="_blank">Follow @ask_AXIS </a>
+                </div><!-- end .customerbox -->
+                <div class="customerbox">
+                    <div class="entry">
+                         <h1>MELALUI KASKUS</h1>
+                         <p>Kunjungi Thread resmi AXIS di Kaskus dan sampaikan 
+    pertanyaan, info, saran atau apapun seputar AXIS  dengan mudah 
+    melalui forum paling populer di Indonesia.</p>
+                    </div><!-- end .entry -->
+                    <a class="btns" href="http://www.kaskus.co.id/post/000000000000000761221201#post000000000000000761221201" target="_blank">Cekidot Gan!</a>
+                </div><!-- end .customerbox -->
+                <form id="contactForm" action="{$mobiledomain}kontak/saveMessage" class="theForm validate" method="POST">
+                    <div class="entryTitle">
+                       {$locale.customercare.lewatemail}
+                    </div><!-- end .entryTitle -->
+                    <div class="w300 rowBtns">
+						<div id="success" style="display: none;color: green;">{$locale.msg.pesanterkirim}</div>
+						<div id="fail" style="display: none;color: #ff0000;">{$locale.msg.pesantdkterkirim}</div>
+                        <input type="text" name="txtName" value="{$locale.customercare.nama}" onBlur="if(this.value=='')this.value='{$locale.customercare.nama}';" onFocus="if(this.value=='{$locale.customercare.nama}')this.value='';$('#txtName_error').hide()" class="alpha required" />
+                        <input type="text" name="txtEmail" value="Email" onBlur="if(this.value=='')this.value='Email';" onFocus="if(this.value=='Email')this.value='';$('#txtEmail_error').hide()" class="email required" />
+                        <input type="text" name="txtTelepon" value="{$locale.customercare.noaxis}" onBlur="if(this.value=='')this.value='{$locale.customercare.noaxis}';" onFocus="if(this.value=='{$locale.customercare.noaxis}')this.value='';$('#txtTelepon_error').hide()" class="numeric required" />
+                        <select id="select1" name="txtPropinisi" class="styled required">
+                            <option value="" >{$locale.customercare.propinsi}</option>
+							{section name=i loop=$province}
+								<option value="{$province[i].id}">{$province[i].province}</option>
+							{/section}
+                        </select>
+                        <select id="select2" name="txtKota" class="styled required">
+                            <option ="">{$locale.customercare.kota}</option>
+                        </select>
+                        <select name="txtTipe"  class="styled required">
+                            <option ="">{$locale.customercare.jenispertanyaan}</option>
+							{section name=i loop=$msgType}
+								<option value='{$msgType[i].type}'>{$msgType[i].type}</option>
+							{/section}
+                        </select>
+                    </div>
+                    <div class="w600">
+                        <textarea name="txtMessage" onFocus="$('#txtMessage_error').hide()" class="required"></textarea>
+                        <label><input type="checkbox" id="checkthis" name="checkTXT"  class="styled" /> {$locale.customercare.custos}</label>
+                        <input type="submit" class="kirim" value="{$locale.customercare.kirim}" />
+                    </div>
+               </form>
+			</div>
+		</div>
+		
+		<div class="list-nav">
+			<ul data-role="listview" data-inset="true">
+				<li>
+					<a href="{$mobiledomain}" data-transition="slide" data-url="">
+						<span class="icon icon-home"></span>
+						<span class="textLink">Back To Home</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /content -->
+
+<script>
+var kota = '{$locale.customercare.kota}';
+var mobiledomain = "{$mobiledomain}";
+{literal}
+	var required = v2.Validator.get('required').getMessage();
+	
+	$("#contactForm").submit(function(){
+		$('html, body').animate({scrollTop: '800px'}, 800);
+		
+		$(this).ajaxSubmit(function(data) { 
+			if(data.result) {
+				$('#success').fadeIn();
+				$('#success').delay(10000).fadeOut();
+			}else {
+				$('#fail').fadeIn();
+				$('#fail').delay(10000).fadeOut();
+			}
+		});
+		return false; 
+	});
+
+	$('#select1').change(function(){
+		$('#select2').html('<option value="">'+kota+'</option>');
+		$('#selectselect2').html(kota);
+		var province = $(this).val();
+		$.post(mobiledomain+'kontak/getCitybyProvince', {province : province}, function(city){
+			var str='';
+			str+='<option value="">'+kota+'</option>';
+			$.each(city, function(k,v){
+				str+='<option value="'+v.id+'">'+v.city+'</option>';
+			});
+			$('#select2').html(str);
+		});
+	});
+{/literal}
+</script>

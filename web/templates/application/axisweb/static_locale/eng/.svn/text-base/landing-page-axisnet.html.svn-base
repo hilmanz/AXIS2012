@@ -1,0 +1,86 @@
+<div class="wrapper" id="axisNetLanding">
+	<h1>Have fun helping yourself with AXIS Net!</h1>
+    <h2>A self-care app that set out to give you access to AXIS' online services anywhere you go.<br />
+	Click <a href="http://net.axisworld.co.id/" target="_blank">net.axisworld.co.id</a> from your AXIS-powered gadget and you can instantly enjoy these features.</h2>
+	<div id="content-axisNetLanding">
+        <div class="col5">
+        	<h3 class="title">ACCOUNT</h3>
+            <div class="col-entry">
+            	<ul>
+                	<li>Balance Check</li>
+                	<li>Balance Reload</li>
+                	<li>Voucher Purchase</li>
+                	<li>Balance Transfer</li>
+                	<li>Active Period Extension</li>
+                </ul>
+            </div><!-- end .col-entry -->
+        </div><!-- end .col5 -->
+        <div class="col5">
+        	<h3 class="title">PACKAGE</h3>
+            <div class="col-entry">
+            	<ul>
+                	<li>Internet Usage Monitor</li>
+                	<li>Recommended Package</li>
+                	<li>Internet Package Subscription</li>
+                	<li>Package Transfer</li>
+                    <li>The Best Package<br />For You</li>
+                </ul>
+            </div><!-- end .col-entry -->
+        </div><!-- end .col5 -->
+        <div class="col5">
+        	<h3 class="title">MOBILE LIFESTYLE</h3>
+            <div class="col-entry">
+            	<ul>
+                	<li>Cool Ring Back Tones</li>
+                	<li>Games</li>
+                	<li>Fun Stuff</li>
+                	<li>Getting Social</li>
+                </ul>
+            </div><!-- end .col-entry -->
+        </div><!-- end .col5 -->
+        <div class="col5">
+        	<h3 class="title">NOTIFICATION</h3>
+            <div class="col-entry">
+            	<ul>
+                	<li>Online Notification for every transaction</li>
+                </ul>
+            </div><!-- end .col-entry -->
+        </div><!-- end .col5 -->
+        <div class="col5 last">
+        	<h3 class="title">PROMO</h3>
+            <div class="col-entry">
+            	<ul>
+                	<li>Updates on AXIS latest promo</li>
+                </ul>
+            </div><!-- end .col-entry -->
+        </div><!-- end .col5 -->
+        <div class="col5">
+        	<h3 class="title">AXIS STORE</h3>
+            <div class="col-entry">
+            	<ul>
+                	<li>Categories</li>
+                	<li>See Transactions</li>
+                	<li>Shopping Guide</li>
+                	<li>Terms & Conditions</li>
+                </ul>
+            </div><!-- end .col-entry -->
+        </div><!-- end .col5 -->
+        <div class="col5">
+        	<h3 class="title" style="font-size:12px; margin:14px 0 30px;">INFORMATION & ASSISTANCE</h3>
+            <div class="col-entry">
+            	<ul>
+                	<li><h3>INFORMATION</h3>General Information</li>
+                	<li>AXIS Shop Locations</li>
+                	<li>Handset Settings</li>
+                	<li><h3>ASSISTANCE</h3>P.U.K</li>
+                	<li>Contact Us</li>
+                </ul>
+            </div><!-- end .col-entry -->
+        </div><!-- end .col5 -->
+        <div class="rowBtn" style="top:505px;">
+        <a href="http://net.axisworld.co.id/" target="_blank" class="readmore">GO TO AXIS NET</a>
+        <a href="http://www.axisworld.co.id/promo/hot_promo/download-axisnet" target="_blank" class="readmore" style="width:150px;">DOWNLOAD AXIS NET</a>
+        <a href="{$basedomain}landing/page/panduanaxisnet" target="_blank" class="readmore" style="width:120px;">USER GUIDANCE</a>
+        </div>
+    </div><!-- end #content-axisNetLanding -->
+</div><!-- end #axisNetLanding -->

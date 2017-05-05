@@ -1,0 +1,239 @@
+<div id="container">
+    <div class="wrapper" id="axisLife">
+    	{if $user}
+		<div id="shorter">
+        	<h1 class="titleDetail">{$locale.axislife.category}</h1>
+            <a class="backBtn" href="{$basedomain}{$userpage}">&laquo; {$locale.msg.kembali}</a>
+        </div>
+		{else}
+        <div id="breadcumb" class="wrapper">
+            <h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{if $user}{$basedomain}{$userpage}{else}{$basedomain}{$userpage}{/if}">{$locale.axislife.title}</a></h1>
+        </div><!-- end #breadcumb -->
+		{/if}
+    	{$sidebar_content}
+		{if $content}		
+        <div id="contents">
+        	<div class="theTitle">
+            	{if $content.author.emblem}<img class="icon-title" src="{$basedomain}public_assets/emblem/{$content.author.emblem}"/>
+				{else}<img class="icon-title" src="{$basedomain}assets/images/cat_icon/small/icon-{$content.category|truncate:3:'':true}.png"/>
+				{/if}<h1 class="the-title" >{$content.category}</h1>
+            </div><!-- end .theTitle -->
+            <div class="shadowCtop">
+            	<div class="shadowCbottom">
+                    <div class="entryDetail">
+                        <div class="imgDetail">
+                           {if $content.url } 
+							 {if $content.url}<embed	width="650" height="345"	src="http://www.youtube.com/v/{$content.url|replace:'http://www.youtube.com/watch?v=':''}"	type="application/x-shockwave-flash"></embed>
+							 {else}{if $content.image}<img src="{$basedomain}public_assets/article/{$content.image}" />{/if}
+							 {/if}					   
+						   {else}{if $content.image}<img src="{$basedomain}public_assets/article/{$content.image}" />{/if}
+						   {/if}
+                        </div><!-- end .imgDetail -->
+                        <div class="rowBtnSocial"> 
+							<span class="rateVal" rate="{if $content.rating}{$content.rating}{else}0{/if}" > </span>
+                            <div class="rates rating" content="{$content.parentid}">
+                                <a  href="javascript:void(0)" class=" nodes1" node="1"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+                                <a  href="javascript:void(0)" class=" nodes2" node="2"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+                                <a  href="javascript:void(0)" class=" nodes3" node="3"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+                                <a  href="javascript:void(0)" class=" nodes4" node="4"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+								<a  href="javascript:void(0)" class=" nodes5" node="5"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+                            </div><!-- end .rates -->
+                            <div class="rowShare">
+                                <a class="favorite" contentid="{if $content.myfavorite}0{else}{$content.parentid}{/if}" href="javascript:void(0)" >&nbsp;<span class="fav-count" countFav="{if $content.favorite}{$content.favorite}{else}0{/if}" >{if $content.favorite}{$content.favorite}{else}0{/if}</span></a>
+                            </div>
+                            <div class="socialLike">
+                                <!-- s: social media -->
+								<div class="facebookLike">
+									<a href="#" onclick="shareFB('{$content.title}','{$twitURL}','{$basedomain}public_assets/article/small_{$content.image}','AXISgsm','{$content.brief}');"><img width="63" src="{$basedomain}assets/images/icon/facebook_share_button.png"></a>
+									{*}
+									<fb:like send="false" layout="button_count" width="450" show_faces="false"></fb:like>
+									{/*}
+								</div><!-- end .facebookLike -->
+								<div class="shareTwit">
+									<a href="https://twitter.com/share" class="twitter-share-button" data-url="{$twitURL}" data-counturl="{$twitURL}" data-via="AXISgsm" data-text="{$content.title}" data-lang="en">Tweet</a>
+								{literal}
+									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+								{/literal}
+								</div>
+								<div class="googlePlus">
+									<div class="g-plusone" data-size="medium" data-annotation="bubble" data-width="120" data-href="{$twitURL}"></div>							
+									<script type="text/javascript">
+									{literal}
+										$(document).ready(function(){
+											gapi.plusone.go();
+										});
+									{/literal}
+									</script>
+								</div><!-- end .googlePlus -->
+								<!-- e: social media -->
+                            </div><!-- end .socialLike -->
+                        </div><!-- end .rowBtnSocial -->
+                        <div class="entry">
+                            <div class="entry-title">
+                           		 <h1>{$content.title}</h1>
+							
+                            </div><!-- end .entry-title -->
+                            <div class="entry-meta">
+                            	<p>{$locale.axislife.postby} 
+								{if $content.author}
+									{if $content.author.emblem!=''}{$content.author.name} 
+									{else} AXIS {/if}
+								{else} AXIS 
+								{/if}								
+								- {$content.posted_date|date_format:'%d-%m-%Y %I:%M %p'}</p>
+								<p>Tag: {$content.category}</p>
+                            </div><!-- end .entry-meta -->
+                            <div class="entry-post">
+                            <p> {$content.content} </p>
+							</div><!-- end .entry-post -->
+							{if $content.sourceurl}<div class="sourceurl"><strong>{$locale.axislife.sumber}  : <a href="{$content.sourceurl}">{$content.title_url}</a></strong></div>{/if}
+                        </div><!-- end .entry -->
+                    </div><!-- end .entryDetail -->
+                    <div id="komentar">
+                        <div class="theTitle">
+                            <h1 class="icon_comment">{$locale.msg.komentar}</h1>
+						 </div><!-- end .theTitle -->
+                        <div class="shadowCtop ">
+						{if $user}
+								<div class="commentForm">
+									<div class="rowUser">
+										<div class="thumbSmallUser"><a href="#"><img width="55"  src="{if $user->img}{$basedomain}public_assets/user/photo/{$user->img}{else}{$user->socmed}{/if}" /></a></div>
+										<span class="user-info">{$user->name}</span>
+									</div>
+								
+										<span class="rateVal" rate="{if $content.rating}{$content.rating}{else}0{/if}" > </span>
+										<div class="rates rating userRate" content="{$content.parentid}">
+                                        	<span class="rate-text">{$locale.axislife.berirating}</span>
+											<a  href="javascript:void(0)" class="{if $content.myRate==0}poolingStar{/if} node1 nodeuser1" node="1"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+											<a  href="javascript:void(0)" class="{if $content.myRate==0}poolingStar{/if} node2 nodeuser2" node="2"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+											<a  href="javascript:void(0)" class="{if $content.myRate==0}poolingStar{/if} node3 nodeuser3" node="3"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+											<a  href="javascript:void(0)" class="{if $content.myRate==0}poolingStar{/if} node4 nodeuser4" node="4"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+											<a  href="javascript:void(0)" class="{if $content.myRate==0}poolingStar{/if} node5 nodeuser5" node="5"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+										</div><!-- end .rates -->
+									
+									<textarea name="myComment" class="myComment_{$content.parentid}"  ></textarea>
+									<span class="msgcomment"></span>
+									<input type="button" value="SUBMIT"  class="postComment" cid="{$content.parentid}" />
+							
+								</div>
+								{else}
+								 <span class="notLoginMsg">		{$locale.msg.silahkanlogin}	</span>
+								{/if}
+						<span class="appendComment_{$content.parentid}">
+						{if $content.comment}
+								{foreach from=$content.comment key=kComment item=vComment}
+									<div class="row">
+											<div class="thumb">
+												<a href="#">
+												{if $vComment.img!=""}<img width="55" src="{$basedomain}public_assets/user/photo/{$vComment.img}" /></a>
+												{else}<img width="55" src="{$vComment.socimg}" /></a>
+												{/if}
+											</div><!-- end .thumb -->
+											<div class="post">
+												<h3 class="username">{$vComment.name}</h3>
+												<p>{$vComment.comment}</p>
+												<span class="post-date">{$vComment.date|date_format:'%d-%m-%Y %I:%M %p'}</span>
+												<div class="rates">
+												{if $vComment.rate >= 1}
+													{section name=rate start=0 loop=$vComment.rate step=1}
+														<img src="{$basedomain}assets/images/icon/stars.png" />
+													{/section}
+												{/if}
+													
+												</div><!-- end .rates -->
+												<span class="arrows"></span>
+											</div><!-- end .post -->
+									</div><!-- end .row -->
+								
+								{/foreach}
+						{/if}
+                           
+                           </span>
+                        </div><!-- end .shadowCtop -->
+                    </div><!-- end #review -->
+                </div><!-- end .shadowCbottom -->
+               <div class="paging" id="pagingID">
+                   
+				</div><!-- end .paging -->
+            </div><!-- end .shadowCtop -->
+        </div><!-- end #contents -->
+		{else}
+		<div id="contents">
+			{$locale.msg.contentnotfound}
+		</div><!-- end #contents -->
+		{/if}
+    </div><!-- end #axisLife -->
+    <div class="widget-axisLife">
+   {$carousel_banner}
+    </div><!-- end .widget-whyAxis -->
+</div><!-- end #container -->
+
+<script>
+var uname = "{$user->name}";
+var fbid = "{$user->fb_id}";
+var socimg = "{$user->socmed}";
+var userimg = "{$user->img}";
+var total_rows = {if $content.total_comment}{$content.total_comment}{else}0{/if};
+var basedomain = "{$basedomain}";
+var localebtnbaca = "{$locale.btn.baca}";
+var pageurl = '{$basedomain}{encrypt url="content&act=getComment_ajax"}';
+var cid = "{$content.parentid}";
+var localeentrycomment = "{$locale.msg.entrycomment}"; 
+
+
+var myRate = {if $content.myRate==0}0{else}{$content.myRate}{/if};
+
+{literal}
+$(document).ready(function(){
+		
+		var pageInit = 0;
+		var start = 0;
+		//Init Page
+		if(pageInit == 0){
+			pageInit = 1;
+			if(start == 0)start=1;
+			kiPagination(total_rows, start, 'pagingID', 'paging_ajax', 'paging_ajax', 5);
+		}
+		
+	//rating user
+		if(myRate!=0)	rateUser();
+		
+
+});
+
+function paging_ajax(fungsi, start){
+		$(".appendComment_"+cid).html('');
+		$(".appendComment_"+cid).append('<div class="loaders"><img src="'+basedomain+'assets/images/loader.png"></div>');
+		$.post(pageurl, {cid:cid,start : start}, function(data){
+			var str='';
+			var idxs = 0;
+			$.each(data[cid], function(k,v){
+						str += '	<div class="row">';
+						str += '			<div class="thumb">';
+						str += '				<a href="#">';
+						if(v.img) str += '				<img width="55" src="'+basedomain+'public_assets/user/photo/'+v.img+'" /></a>';
+						else str += '					<img width="55" src="'+v.socimg+'" /></a>';
+						str += '			</div>';
+						str += '			<div class="post">';
+						str += '				<h3 class="username">'+v.name+'</h3>';
+						str += '				<p>'+v.comment+'</p>';
+						str += '				<span class="post-date">'+v.date+'</span>';
+						str += '				<div class="rates">';
+						if(v.rate>0){
+							for(var x=1;x<=v.rate;x++){
+								str += '						<img src="'+basedomain+'assets/images/icon/stars.png" />';
+							}
+						}
+						str += '					';
+						str += '				</div>';
+						str += '				<span class="arrows"></span>';
+						str += '			</div>';
+						str += '	</div>';
+			});
+			$('.loaders').remove();
+			$(".appendComment_"+cid).html(str);
+		},"json");
+}
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");	
+</script>
+{/literal}

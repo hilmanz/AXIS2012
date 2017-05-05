@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/1171/trunk/dashboard/templates/dashboard
+END
+gplus_detail.html
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/axis2012/!svn/ver/1171/trunk/dashboard/templates/dashboard/gplus_detail.html
+END
+web.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/64/trunk/dashboard/templates/dashboard/web.html
+END
+youtube_detail.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/axis2012/!svn/ver/1171/trunk/dashboard/templates/dashboard/youtube_detail.html
+END
+default.html
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/axis2012/!svn/ver/100/trunk/dashboard/templates/dashboard/default.html
+END
+sem.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/64/trunk/dashboard/templates/dashboard/sem.html
+END
+seo.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/64/trunk/dashboard/templates/dashboard/seo.html
+END
+admin.html
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/100/trunk/dashboard/templates/dashboard/admin.html
+END
+mainDashboard.html
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/axis2012/!svn/ver/179/trunk/dashboard/templates/dashboard/mainDashboard.html
+END
+addCSV.html
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/64/trunk/dashboard/templates/dashboard/addCSV.html
+END
+login.html
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/148/trunk/dashboard/templates/dashboard/login.html
+END
+seo2.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/axis2012/!svn/ver/64/trunk/dashboard/templates/dashboard/seo2.html
+END
+seo_detail.html
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/axis2012/!svn/ver/64/trunk/dashboard/templates/dashboard/seo_detail.html
+END
+twit_detail.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/axis2012/!svn/ver/1171/trunk/dashboard/templates/dashboard/twit_detail.html
+END
+fb_detail.html
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/axis2012/!svn/ver/1171/trunk/dashboard/templates/dashboard/fb_detail.html
+END
+social.html
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/80/trunk/dashboard/templates/dashboard/social.html
+END

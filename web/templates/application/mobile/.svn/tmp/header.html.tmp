@@ -1,0 +1,109 @@
+<div class="page-header" data-role="header">
+	<div class="branding"><a href="index.php" rel="external"><img src="assets/images/logo.jpg" alt="Axis, GSM yang baik" /></a></div>
+	
+	<div class="wrapper clear">
+		 <div id="language">
+			<a class="flagen locale" href="{$basedomain}?page=locale&country=2&nexturl={$nexturl}" lid="2" >EN</a>
+			<a class="flagid locale" href="{$basedomain}?page=locale&country=1&nexturl={$nexturl}" lid="1" >ID</a>
+		</div><!-- end #language -->
+		<div class="search-wrapper">
+			<form id="searchTop" name="search-form" class="search-form" method="post" action="">
+				<div data-role="fieldcontain" class="input">
+					<input type="search"  id="querySearch" name="q" class="search-keyword" placeholder="{$locale.gcs.search}" />
+					<input name="lang" type="hidden" value="{$locale.country}">	
+				</div>
+			</form>
+		</div>
+			
+    <div id="loginBox">
+        <span class="user-info">Hi, 
+        {if $user->name} {$user->name} {$user->last_name} 
+        {else} <a href="index.php?page=user&act=changeProfile" class="hoverBig" >please add your name</a>
+        {/if}</span>
+        <a href="logout.php" class="logout">Logout</a>
+    </div><!-- end #loginBox -->
+	</div>
+	
+	<div class="breadcrumb">
+		<a href="index.php">Home</a>	
+	</div>
+	
+</div><!-- /header -->
+
+<script>
+var postGCS;
+var basedomain = "{$basedomain}";
+	{literal}
+		$(document).ready(function(){
+			$("#querySubmit").click(function(){
+				searchGCS();
+			});
+		});
+		
+		$(document).keypress(function(e) {
+			if(e.which == 13) {
+				searchGCS();
+				return false;
+			}
+		});
+		
+		function searchGCS(){
+			var t = "#searchTop input[name='q']";
+			var lang = "#searchTop input[name='lang']";
+			var mediumBanner;
+			//medium banner
+			$('#mainContent').html('<div class="loaders"><img src="'+basedomain+'assets/images/loader.png"></div>');
+			$.get('index.php?page=gcs&act=search_ajax', function(mediumBanner){
+				google_search(t, lang,function(data){
+					if(data != null){
+					var str='';
+					str+='<div class="wrapper" id="breadcumb"><h1><a>You Search "'+data.q+'"</a></h1></div>';
+					str+='<div id="container"><div id="axisLife" class="wrapper">';
+							str+='<div id="sidebar">';			
+							str+='</div>';
+							str+='<div id="contents">';
+								str+='<div class="theTitle">';
+									str+='<h1 class="icon_favorite">Hasil Pencarian</h1>';
+								str+='</div>';
+								str+='<div class="shadowCtop">';
+									str+='<div class="shadowCbottom">';
+										str+='<div class="entryDetail list">';
+										str+=resultListHTML(data);
+										str+='</div>';
+									str+='</div>';
+								str+='</div>';
+							str+='</div>';
+						str+='</div></div>';
+					}else{
+						window.location = '404.html';
+					}
+					$('.page-body').html(str);
+				});
+			});
+		}
+		
+		function resultListHTML(data){
+			var str='';				
+			$.each(data.items, function(k, v){			
+				
+				str+='<div class="row">';
+					if(v.image != ""){
+						str+='<div class="circleThumb">';
+							str+='<a href="'+v.url+'"><img src="'+v.image+'"></a>';
+						str+='</div>';
+					}
+					str+='<div class="searchText">';
+						str+='<div class="entry">';
+							str+='<h3><a href="'+v.url+'">'+v.title+'</a></h3>';
+							str+='<a href="'+v.url+'">'+v.url+'</a>';
+							str+='<p>'+v.text+'</p>';
+						str+='</div>';
+					str+='</div>';
+				str+='</div>';
+			});
+			return str;
+		}
+		
+
+	{/literal}
+</script>

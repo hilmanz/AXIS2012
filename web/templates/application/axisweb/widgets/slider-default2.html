@@ -1,0 +1,29 @@
+{if $banner}
+    <div id="slider">
+		<link rel="stylesheet" type="text/css" href="{$basedomain}assets/css/slider-default2.css" />
+        <div id="da-slider" class="da-slider">
+            	{section name=i loop=$banner}
+				<div class="da-slide" id="{if $banner[i].banner.textalign=='left' }slide1{else}slide3{/if}">
+                    <div class="entrySlide">
+                        <h1>{$banner[i].title}</h1>
+                        <h2>{$banner[i].brief}</h2>
+                        {if $banner[i].articleType==1} <a class="detail " href="{$basedomain}index.php?page=online_store&act=detail&id={$banner[i].id}">{$locale.btn.detail}</a>       
+                        {else}<a class="detail " href="{$basedomain}index.php?page=promo&act=detail&id={$banner[i].id}">{$locale.btn.detail}</a>  {/if} 
+                    </div>
+					<div class="da-img">{if $banner[i].slider_image!=''}<img src="{$basedomain}public_assets/banner/{$banner[i].slider_image}"   />{/if}</div>
+				</div><!-- end .da-slide -->
+			    {/section}
+
+            </div><!-- end .da-slide -->
+        </div><!-- end #da-slider -->
+    </div><!-- end #slider -->
+{/if}
+
+{literal}
+<script>
+	$("img").each(function(i,e){
+	
+	
+	});
+</script>
+{/literal}

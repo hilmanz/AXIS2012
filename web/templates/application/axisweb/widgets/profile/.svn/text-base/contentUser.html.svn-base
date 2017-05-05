@@ -1,0 +1,53 @@
+<div style="padding:20px;float:left"> 
+<h1>Your News Feeds</h1>
+{foreach from=$contentUser key=k item=v}
+	<div style="padding:20px">
+		<h1>{$v.title}</h1>
+		<h6>{$v.posted_date} - {$v.category}</h6>
+		<h3>{$v.brief}</h3>
+		<img src="{$basedomain}public_assets/content/image/{$v.image}" />
+		<p>{$v.content}</p>
+		<p style="text-align:right" >
+		<a href="index.php?page=bookmarkModule&act=getBookmark&id={$v.id}"> bookmark </a> | 
+		{*}<a href="index.php?page=content&act=detail&id={$v.id}"> read more </a></p>{/*}
+		<a href="#/content/detail/{$v.id}"> read more </a>
+		<div>
+							<textarea name="myComment" class="myComment_{$v.id}"  style="width: 286px; height: 49px;"></textarea> 
+							<a href="javascript:void(0)" class="postComment" cid="{$v.id}"  >post</a>
+							</div>
+							
+							<p class="appendComment_{$v.id}" >
+							
+							{if $v.comment}
+								{foreach from=$v.comment key=kComment item=vComment}
+									<div>{$vComment.name}</div>
+									<p>{$vComment.comment}</p>
+								{/foreach}
+							{/if}
+							</p>
+	</div>
+{/foreach}
+
+</div>
+
+
+		<script>
+			var uname = "{$user->name}";
+		{literal}
+			$('.postComment').click(function(){
+			
+				var cid = $(this).attr('cid');
+				var comment = $('.myComment_'+cid).val();
+				$.post('index.php?page=content&act=sendComment',{cid:cid,comment:comment},function(data){
+				if(data){
+					var html ='<div>'+uname+'</div>';
+						html+='<p>'+comment+'</p>';
+					$('.appendComment_'+cid).prepend(html);
+					 $('.myComment_'+cid).val("");
+				}else return false;
+				});
+			
+			});
+		</script>
+	
+	{/literal}

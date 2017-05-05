@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<head>
+   {$meta}
+</head>
+<body>
+<div id="body">
+	{$mainContent}
+</div><!-- end #body -->
+</body>
+</html>

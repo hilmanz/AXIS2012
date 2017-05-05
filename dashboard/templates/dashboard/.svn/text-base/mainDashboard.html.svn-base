@@ -1,0 +1,42 @@
+<script type="text/javascript">
+	var page = "main";
+	var page_detail = "";
+</script>
+<div class="body-content">
+	<span style="font-size:12px;margin:10px 0 0 2px;">You have {if $projectActive}{$projectActive}{else}not an{/if} active project. {if $projectActive}Click on each campaign type to view it's progress.{/if}</span>
+	{section name=i loop=$projectList}
+	<div class="body-project relative">		
+		<div class="box-project flLeft relative">
+			<span>
+				<span class="absolute" style="top:5px;left:10px;">{$projectList[i].name|stripslashes}</span>
+				<span class="fgrey arial absolute" style="font-size:11px;top:25px;left:10px;">
+				{if $projectList[i].seo == 1}
+				SEO optimization on {$projectList[i].cname|stripslashes} Youtube Channel
+				{elseif $projectList[i].web == 1}
+				{*}{$projectList[i].description}{/*}
+				{else}
+				Social optimization on AXIS
+				{/if}
+				</span>
+			</span>
+			<span class="absolute arial" style="top:15px;right:10px; font-size: 11px;">
+				{$projectStatus[i]}
+			</span>
+		</div>
+		<div class="project-status flRight">
+			<div class="statusNon flRight {*}{if $tabWeb[i] eq 'Active'}statusActive{elseif $tabWeb[i] eq 'Completed'}statusCompleted{/if}{*}" style="margin-left:10px">{if $tabWeb[i] == 'None'}<a href="index.php?s=web&id={$projectList[i].id}" class="link-project"></a>{else}{/if}</div>
+			<div class="statusNon flRight {if $tabSocial[i] eq 'Active'}statusActive{elseif $tabSocial[i] eq 'Completed'}statusCompleted{/if}" style="margin-left:10px">{if $tabSocial[i] != 'None'}<a href="index.php?s=social&id={$projectList[i].id}&act=fb" class="link-project">SOCIAL</a>{else}SOCIAL{/if}</div>
+			<div class="statusNon flRight {if $tabSEM[i] eq 'Active'}statusActive{elseif $tabSEM[i] eq 'Completed'}statusCompleted{/if}" style="margin-left:10px">{if $tabSEM[i] != 'None'}<a href="index.php?s=sem&id={$projectList[i].id}" class="link-project">SEM</a>{else}{/if}</div>
+			<div class="statusNon flRight {if $tabSEO[i] eq 'Active'}statusActive{elseif $tabSEO[i] eq 'Completed'}statusCompleted{/if}">{if $tabSEO[i] != 'None'}<a href="index.php?s=seo&id={$projectList[i].id}" class="link-project">SEO</a>{else}{/if}</div>
+		</div>
+		<div class="project-start arial flLeft fgrey2">{if $projectList[i].mulai}Started on: {$projectList[i].mulai}{/if}</div>
+		<div class="project-start arial absolute fgrey2" style="bottom:16px;right:85px;">{if $lastUpdate[i].lastUpdate} Last update: {$lastUpdate[i].lastUpdate}{/if}</div>
+		<div class="project-label arial flRight">
+			<div class="labelNon flRight {*}{if $tabWeb[i] eq 'Active'}labelActive{elseif $tabWeb[i] eq 'Completed'}labelGreen{/if}{/*}" style="margin-left:10px">{*}{$tabWeb[i]}{/*}</div>
+			<div class="labelNon flRight {if $tabSocial[i] eq 'Active'}labelActive{elseif $tabSocial[i] eq 'Completed'}labelGreen{/if}" style="margin-left:10px;margin-right: 100px;">{$tabSocial[i]}</div>
+			<div class="labelNon flRight {if $tabSEM[i] eq 'Active'}labelActive{elseif $tabSEM[i] eq 'Completed'}labelGreen{/if}" style="margin-left:10px">{*}{$tabSEM[i]}{/*}</div>
+			<div class="labelNon flRight {if $tabSEO[i] eq 'Active'}labelActive{elseif $tabSEO[i] eq 'Completed'}labelGreen{/if}" style="margin-left:10px">{*}{$tabSEO[i]}{/*}</div>
+		</div>
+	</div>
+	{/section}
+</div>

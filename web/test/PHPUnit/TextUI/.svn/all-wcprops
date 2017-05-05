@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/TextUI
+END
+TestRunner.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/TextUI/TestRunner.php
+END
+Command.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/TextUI/Command.php
+END
+ResultPrinter.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/TextUI/ResultPrinter.php
+END

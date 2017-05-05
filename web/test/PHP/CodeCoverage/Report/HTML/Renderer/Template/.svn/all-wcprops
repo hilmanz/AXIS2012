@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Report/HTML/Renderer/Template
+END
+file_item.html.dist
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Report/HTML/Renderer/Template/file_item.html.dist
+END
+method_item.html.dist
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Report/HTML/Renderer/Template/method_item.html.dist
+END
+coverage_bar.html.dist
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Report/HTML/Renderer/Template/coverage_bar.html.dist
+END
+file.html.dist
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Report/HTML/Renderer/Template/file.html.dist
+END
+directory_item.html.dist
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Report/HTML/Renderer/Template/directory_item.html.dist
+END
+directory.html.dist
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Report/HTML/Renderer/Template/directory.html.dist
+END
+dashboard.html.dist
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/axis2012/!svn/ver/8/trunk/web/test/PHP/CodeCoverage/Report/HTML/Renderer/Template/dashboard.html.dist
+END

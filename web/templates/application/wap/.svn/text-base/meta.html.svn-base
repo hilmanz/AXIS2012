@@ -1,0 +1,10 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Gabung di serunya DUNIA AXIS yang baru dan dapatkan segala info yang kamu butuhkan tentang operator GSM dengan pertumbuhan paling pesat di Indonesia">
+<meta name="keywords" content="axis internet,axis blackberry,axis unlimited,kartu axis,internet unlimited axis,axis transfer pulsa,promo axis,internet unlimited,paket blackberry,paket internet,internet murah">
+<meta name="author" content="AXIS TELEKOM INDONESIA">
+<meta name="google-site-verification" content="2D3LGlHuzeKiM4ib4CEWbBz3OSx3plei1zEE0ylJRAo" />
+<title> {if $metaTag.title} {$metaTag.title|replace:"_":" "} | {else} {if $currentType} {$currentType|replace:"_":" "} |  {else} {if $currentpage} {$currentpage|replace:"_":" "} | {/if} {/if} {/if} AXIS TELEKOM INDONESIA</title>
+<link rel="stylesheet" type="text/css" href="{$basedomain}assets/css/axismobile.css" />
+</head>

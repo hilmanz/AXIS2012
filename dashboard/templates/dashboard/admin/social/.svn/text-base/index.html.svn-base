@@ -1,0 +1,38 @@
+<script type="text/javascript">
+{literal}
+	$(document).ready(function() {
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+
+		var yyyy = today.getFullYear();
+		if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} today = yyyy+'-'+mm+'-'+dd;
+		var max = new Date(today);
+		$("#startDate").datepicker({maxDate: max});
+		$("#startDate").datepicker("option", "dateFormat", "yy-mm-dd");
+	});
+{/literal}
+</script>
+
+<form action="index.php?s=social&act=update-circle" method="post" enctype="multipart/form-data">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list">
+  <tr>
+    <td width="12%" class="head"><strong>Circle on Google +</strong></td>
+    <td width="88%">
+		<input type="text" name="circle" id="circle" value="" />
+  </tr>
+  <tr>
+    <td width="12%" class="head"><strong>Date</strong></td>
+    <td width="88%">
+		<input type="text" name="startDate" id="startDate" value="">
+  </tr>
+  
+ <tr>
+ 	<td colspan="2">
+    <input type="submit" name="submit" />
+    <input type="hidden" name="submit_circle" value="1"/>
+    </td>
+ </tr>
+<br>
+<span>{$err}{$ok}{$msg}</span>
+</form>

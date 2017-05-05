@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/axis2012/!svn/ver/150/trunk/dashboard/templates/common
+END
+confirm.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/axis2012/!svn/ver/64/trunk/dashboard/templates/common/confirm.html
+END
+dialog.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/64/trunk/dashboard/templates/common/dialog.html
+END
+paging_js.html
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/64/trunk/dashboard/templates/common/paging_js.html
+END
+default.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/axis2012/!svn/ver/64/trunk/dashboard/templates/common/default.html
+END
+message.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/axis2012/!svn/ver/64/trunk/dashboard/templates/common/message.html
+END
+paging.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/64/trunk/dashboard/templates/common/paging.html
+END
+blank.html
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/axis2012/!svn/ver/64/trunk/dashboard/templates/common/blank.html
+END
+error.html
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/axis2012/!svn/ver/64/trunk/dashboard/templates/common/error.html
+END
+main_club.html
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/64/trunk/dashboard/templates/common/main_club.html
+END
+contact.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/axis2012/!svn/ver/64/trunk/dashboard/templates/common/contact.html
+END

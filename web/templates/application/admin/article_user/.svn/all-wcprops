@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/axis2012/!svn/ver/1310/trunk/web/templates/application/admin/article_user
+END
+userpost_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/axis2012/!svn/ver/1310/trunk/web/templates/application/admin/article_user/userpost_list.html
+END
+view_publish.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/axis2012/!svn/ver/1203/trunk/web/templates/application/admin/article_user/view_publish.html
+END
+my_article.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/axis2012/!svn/ver/1203/trunk/web/templates/application/admin/article_user/my_article.html
+END
+userpost_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/axis2012/!svn/ver/1203/trunk/web/templates/application/admin/article_user/userpost_edit.html
+END

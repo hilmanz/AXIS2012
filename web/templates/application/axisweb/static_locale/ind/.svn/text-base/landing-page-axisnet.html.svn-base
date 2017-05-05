@@ -1,0 +1,86 @@
+<div class="wrapper" id="axisNetLanding">
+	<h1>Serunya menggunakan AXIS net!</h1>
+    <h2>Aplikasi self-care yang dibuat agar kamu bisa mengakses layanan AXIS secara online dimana saja.<br />
+	Klik <a href="http://net.axisworld.co.id/" target="_blank">net.axisworld.co.id</a> dari gadget AXISmu dan kamu langsung bisa menikmati fitur-fitur berikut.</h2>
+	<div id="content-axisNetLanding">
+        <div class="col5">
+        	<h3 class="title">AKUN</h3>
+            <div class="col-entry">
+            	<ul>
+                	<li>Cek Pulsa</li>
+                	<li>Isi Pulsa</li>
+                	<li>Beli Voucher</li>
+                	<li>Kirim Pulsa</li>
+                	<li>Perpanjangan Masa Aktif</li>
+                </ul>
+            </div><!-- end .col-entry -->
+        </div><!-- end .col5 -->
+        <div class="col5">
+        	<h3 class="title">PAKET</h3>
+            <div class="col-entry">
+            	<ul>
+                	<li>Cek Pemakaian Internet</li>
+                	<li>Paket Rekomendasi</li>
+                	<li>Beli paket internet</li>
+                	<li>Transfer Paket</li>
+                    <li>Paket Terbaik Untukmu</li>
+                </ul>
+            </div><!-- end .col-entry -->
+        </div><!-- end .col5 -->
+        <div class="col5">
+        	<h3 class="title">MOBILE LIFESTYLE</h3>
+            <div class="col-entry">
+            	<ul>
+                	<li>RBT Keren</li>
+                	<li>Games</li>
+                	<li>Fun Stuff</li>
+                	<li>Makin Gaul</li>
+                </ul>
+            </div><!-- end .col-entry -->
+        </div><!-- end .col5 -->
+        <div class="col5">
+        	<h3 class="title">NOTIFIKASI</h3>
+            <div class="col-entry">
+            	<ul>
+                	<li>Notifikasi Online untuk transaksi yang kamu lakukan</li>
+                </ul>
+            </div><!-- end .col-entry -->
+        </div><!-- end .col5 -->
+        <div class="col5 last">
+        	<h3 class="title">PROMO</h3>
+            <div class="col-entry">
+            	<ul>
+                	<li>Update mengenai promo terbaru AXIS</li>
+                </ul>
+            </div><!-- end .col-entry -->
+        </div><!-- end .col5 -->
+        <div class="col5">
+        	<h3 class="title">AXIS STORE</h3>
+            <div class="col-entry">
+            	<ul>
+                	<li>Kategori</li>
+                	<li>Lihat Transaksi</li>
+                	<li>Petunjuk Berbelanja</li>
+                	<li>Syarat & Ketentuan</li>
+                </ul>
+            </div><!-- end .col-entry -->
+        </div><!-- end .col5 -->
+        <div class="col5">
+        	<h3 class="title">INFO DAN BANTUAN</h3>
+            <div class="col-entry">
+            	<ul>
+                	<li><h3>Info</h3>Informasi Umum</li>
+                	<li>Lokasi AXIS Shop</li>
+                	<li>Pengaturan Handset</li>
+                	<li><h3>Bantuan</h3>P.U.K</li>
+                	<li>Hubungi Kami</li>
+                </ul>
+            </div><!-- end .col-entry -->
+        </div><!-- end .col5 -->
+        <div class="rowBtn" style="top:505px;">
+        <a href="http://net.axisworld.co.id/" target="_blank" class="readmore">GO TO AXIS NET</a>
+        <a href="http://www.axisworld.co.id/promo/hot_promo/download-axisnet" target="_blank" class="readmore" style="width:150px;">DOWNLOAD AXIS NET</a>
+        <a href="{$basedomain}landing/page/panduanaxisnet" target="_blank" class="readmore" style="width:168px;">PETUNJUK PENGGUNAAN</a>
+        </div>
+    </div><!-- end #content-axisNetLanding -->
+</div><!-- end #axisNetLanding -->

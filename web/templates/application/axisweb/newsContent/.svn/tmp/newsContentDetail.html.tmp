@@ -1,0 +1,156 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="index.php">{$locale.home.title}</a> &raquo; <a href="{if $user}index.php?page=user{else}index.php?page=axisLife{/if}">{$locale.axislife.title}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="axisLife">
+    	{$sidebar_content}
+		{if $content}		
+        <div id="contents">
+        	<div class="theTitle">
+            	<h1 class="icon_movie">{$content.category}</h1>
+            </div><!-- end .theTitle -->
+            <div class="shadowCtop">
+            	<div class="shadowCbottom">
+                    <div class="entryDetail">
+                        <div class="imgDetail">
+                            <img src="{$basedomain}public_assets/article/{$content.image}" />
+                        </div><!-- end .imgDetail -->
+                        <div class="rowBtnSocial">
+							<span class="rateVal" rate="{if $content.rating}{$content.rating}{else}0{/if}" > </span>
+                            <div class="rates rating" content="{$content.id}">
+                                <a  href="javascript:void(0)" class=" nodes1" node="1"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+                                <a  href="javascript:void(0)" class=" nodes2" node="2"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+                                <a  href="javascript:void(0)" class=" nodes3" node="3"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+                                <a  href="javascript:void(0)" class=" nodes4" node="4"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+								<a  href="javascript:void(0)" class=" nodes5" node="5"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+                            </div><!-- end .rates -->
+                            <div class="rowShare">
+                                <a class="favorite" contentid="{$content.id}" href="javascript:void(0)" >&nbsp;<span class="fav-count" countFav="0" >0</span></a>
+                            </div>
+                            <div class="socialLike">
+<<<<<<< .mine
+=======
+                                <a class="favorite" contentid="{$content.id}" href="javascript:void(0)" >&nbsp;<span class="fav-count" countFav="{if $content.favorite}{$content.favorite}{else}0{/if}" >{if $content.favorite}{$content.favorite}{else}0{/if}</span></a>
+>>>>>>> .r666
+                                <div class="facebookLike">
+                                 <iframe src="//www.facebook.com/plugins/like.php?href={$URL}&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>	
+                                </div><!-- end .facebookLike -->
+								<a href="https://twitter.com/share" class="twitter-share-button" data-url="{$twitURL}" data-counturl="{$twitURL}" data-via="AXISgsm" data-text="{$content.title}" data-lang="en">Tweet</a>
+								{literal}
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                                {/literal}
+								<div class="googlePlus">
+								{literal}
+                                    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+                                      {parsetags: 'explicit'}
+                                    </script>
+									{/literal}
+                                    <div class="g-plusone" data-size="medium" data-annotation="bubble" data-width="120" data-href="{$twitURL}"></div>
+                                    <script type="text/javascript">gapi.plusone.go();</script>
+                                </div><!-- end .googlePlus -->
+                            </div><!-- end .socialLike -->
+                        </div><!-- end .rowBtnSocial -->
+                        <div class="entry">
+                            <div class="entry-title">
+                           		 <h1>{$content.title}</h1>
+                            </div><!-- end .entry-title -->
+                            <div class="entry-meta">
+                            	<p>Diposting oleh Axis - {$content.posted_date}</p>
+								<p>Tag: {$content.category}</p>
+                            </div><!-- end .entry-meta -->
+                            <div class="entry-post">
+                            <p> {$content.content} </p>
+							</div><!-- end .entry-post -->
+                        </div><!-- end .entry -->
+                    </div><!-- end .entryDetail -->
+                    <div id="komentar">
+                        <div class="theTitle">
+                            <h1 class="icon_comment">{$locale.msg.komentar}</h1>
+						 </div><!-- end .theTitle -->
+                        <div class="shadowCtop ">
+						{if $user}
+								<div class="commentForm">
+									<div class="rowUser">
+										<div class="thumbSmallUser"><a href="#"><img src="https://graph.facebook.com/{$user->fb_id}/picture?type=square&return_ssl_resources=1" /></a></div>
+										<span class="user-info">{$user->name}</span>
+									</div>
+								
+										<span class="rateVal" rate="{if $content.rating}{$content.rating}{else}0{/if}" > </span>
+										<div class="rates rating" content="{$content.id}" style="padding-top: 50px; padding-right: 17px;">
+											<a  href="javascript:void(0)" class="poolingStar node1" node="1"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+											<a  href="javascript:void(0)" class="poolingStar node2" node="2"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+											<a  href="javascript:void(0)" class="poolingStar node3" node="3"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+											<a  href="javascript:void(0)" class="poolingStar node4" node="4"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+											<a  href="javascript:void(0)" class="poolingStar node5" node="5"  > <img src="{$basedomain}assets/images/icon/star.png" /></a>
+										</div><!-- end .rates -->
+									
+									<textarea name="myComment" class="myComment_{$content.id}"  textarea></textarea>
+									<input type="button" value="SUBMIT"  class="postComment" cid="{$content.id}" />
+							
+								</div>
+								{else}
+								 <span class="notLoginMsg">		{$locale.msg.silahkanlogin}	</span>
+								{/if}
+						<span class="appendComment_{$content.id}">
+						{if $content.comment}
+								{foreach from=$content.comment key=kComment item=vComment}
+									 <div class="row">
+											<div class="thumb">
+												<a href="#">
+												{if $vComment.img!=""}<img src="{$basedomain}public_assets/user/content/{$vComment.img}" /></a>
+												{else}<img src="https://graph.facebook.com/{$vComment.fb_id}/picture?type=square&return_ssl_resources=1" /></a>
+												{/if}
+											</div><!-- end .thumb -->
+											<div class="post">
+												<h3 class="username">{$vComment.name}</h3>
+												<p>{$vComment.comment}</p>
+												<span class="post-date">{$vComment.date}</span>
+												<div class="rates">
+												{if $vComment.rate >= 1}
+													{section name=rate start=0 loop=$vComment.rate step=1}
+														<img src="{$basedomain}assets/images/icon/star.png" />
+													{/section}
+												{/if}
+													
+												</div><!-- end .rates -->
+												<span class="arrows"></span>
+											</div><!-- end .post -->
+										</div><!-- end .row -->
+								
+								{/foreach}
+						{/if}
+                           
+                           </span>
+                        </div><!-- end .shadowCtop -->
+                    </div><!-- end #review -->
+                </div><!-- end .shadowCbottom -->
+                <div class="paging">
+                    <a class="prev" href="#">&laquo;</a>
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#" class="current">4</a>
+                    <a class="next" href="#">&raquo;</a>
+                </div><!-- end .paging -->
+            </div><!-- end .shadowCtop -->
+        </div><!-- end #contents -->
+		{else}
+		<div id="contents">
+			{$locale.msg.contentnotfound}
+		</div><!-- end #contents -->
+		{/if}
+    </div><!-- end #axisLife -->
+    <div class="widget-axisLife">
+   {$carousel_banner}
+    </div><!-- end .widget-whyAxis -->
+</div><!-- end #container -->
+
+<script>
+var uname = "{$user->name}";
+var fbid = "{$user->fb_id}";
+{literal}
+
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	
+</script>
+{/literal}

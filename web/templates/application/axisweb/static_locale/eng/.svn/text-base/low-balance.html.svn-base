@@ -1,0 +1,13 @@
+<link rel="stylesheet" type="text/css" href="assets/css/axisnote.css" />
+<div id="container">
+    <div class="wrapper">
+        <div id="axisNote">
+            <div class="entryNote">
+                <div class="entryText">
+                    <h1>You have insufficient balance to<br />access the internet.</h1>
+                    <p>Please reload your AXIS first before activating the data access in your mobile phone<br />or gadget to keep enjoying the best internet access from AXIS.</p>
+                </div>
+            </div>
+        </div><!-- end #axisNote -->
+   </div>
+</div><!-- end #container -->

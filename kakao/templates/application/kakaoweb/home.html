@@ -1,0 +1,139 @@
+		<div class="entryemote">
+			{section name=i loop=$emoticon}
+			<div class="box">
+				<div class="imgBox">
+					<a href="#popupDetail" class="showpopup" onCLick = "getDetail({$emoticon[i].id})" ><img src="{$localpublicassets}galeri/small_{$emoticon[i].image}" /></a>
+				</div><!-- end .imgBox -->
+				<div class="contentBox"> 
+					<span class="iconSmile iconSmile_{$emoticon[i].id}" num="{$emoticon[i].vote}" >{$emoticon[i].vote}</span>
+					<span class="votesspan voteid_{$emoticon[i].id}">
+					{if $emoticon[i].hasvote==false}<a class="votes {if !$facebookButton}clickVotes{/if}" href="{if $fbConnect}{$fbConnect}{else}javascript:void(0){/if}" pid="{$emoticon[i].id}" {if !$facebookButton}onCLick="return false;"{/if}>VOTE</a>
+					{else}<div class="messageHasVote">{$locale.msg.udavote}</div><a class="votes-disable">VOTE</a>
+					{/if}
+					</span>
+				</div><!-- end .contentBox -->
+			</div><!-- end .box -->
+			{/section}
+		</div>
+		<div id="pagingID" class="paging">
+                
+            </div><!-- end .paging -->
+	
+<script>
+	var total_rows = {$emoticon[0].total};
+	var pageurl = "{$paging_ajax}";
+	var votebutton = {if $fbConnect}'{$fbConnect}'{else}'javascript:void(0)'{/if};
+	var fButton = {if $facebookButton}true{else}false{/if};
+	var detailurl = "{$detail_page}";
+	var localpublicassets = "{$localpublicassets}galeri/";
+	var localeudavote = "{$locale.msg.udavote}";
+	var prepid = 0;
+	var nextpid = 0;
+	var voteberhasil = "kamu telah berhasil nge-vote";
+{literal}
+	$(document).ready(function(){
+		var pageInit = 0;
+		var start = 0;
+		//Init Page
+		if(pageInit == 0){
+			pageInit = 1;
+			if(start == 0)start=1;
+			kiPagination(total_rows, start, 'pagingID', 'paging_ajax', 'paging_ajax', 15);
+		}
+	});
+	
+	
+	function paging_ajax(fungsi, start){
+		$.post('index.php?'+pageurl, {start : start}, function(data){
+			var str='';
+			$.each(data, function(k,v){
+						str +='<div class="box">';
+						str +='	<div class="imgBox">';
+						str +='		<a href="#popupDetail" class="showpopup"  onCLick = "getDetail('+v.id+')"><img src="'+localpublicassets+'small_'+v.image+'" /></a>';
+						str +='	</div>';
+						str +='	<div class="contentBox">';
+						str +='		<span class="iconSmile iconSmile_'+v.id+'" num="'+v.vote+'">'+v.vote+'</span> <span class="votesspan voteid_'+v.id+'">';
+						if(v.hasvote==false){
+							if(!fButton)str +='		<a class="votes clickVotes" href="'+votebutton+'" pid="'+v.id+'"  onCLick="return false;">VOTE</a>';
+							else str +='		<a class="votes" href="'+votebutton+'" pid="'+v.id+'" >VOTE</a>';
+						}else str +=' <div class="messageHasVote">'+localeudavote+'</div><a class="votes-disable">VOTE</a>';
+						str +='	</span></div>';
+						str +='</div>';
+			});
+			$('.entryemote').html(str);
+		},"json");
+	}
+	$(document).on('click','.clickVotes', function(){
+			
+		var pid = $(this).attr('pid');
+		var addvote = parseInt($('.iconSmile_'+pid).attr('num'),10);
+		$(".votesspanpopup").html('<a class="votes votespopup" href="javascript:void(0)" pid="" >VOTE</a>');
+		$.post(votebutton,{pid:pid}, function(data){
+			if(data.status==true){
+				if(data.facebook==false){
+					alert('please login facebook');
+					return false;
+				}else {
+					addvote++;
+					window.open(data.dialogurl,'share to facebook','width=996,height=500')
+				}
+				$(".voteid_"+pid).html('<div class="messageHasVote">'+voteberhasil+'</div><a class="votes-disable">VOTE</a>');
+				$(".votesspanpopup").html('<div class="messageHasVote">'+voteberhasil+'</div><a class="votes-disable">VOTE</a>');
+			}else{
+				if(data.facebook==false){
+					alert('please login facebook');
+					return false;
+				}
+				return false;
+			}
+			$('.iconSmile_'+pid).attr('num',addvote);
+			$('.iconSmile_'+pid).html(addvote);
+			$('.votecountpopup').html(addvote);
+			
+			
+		});
+	});
+	
+	$(document).on('click','.prev', function(){
+			getDetail(prepid);
+	});
+	
+	$(document).on('click','.next', function(){
+			getDetail(nextpid);
+	});
+	
+	function getDetail(pid){
+			$(".owner").html('loading..');
+			$(".votespopup").attr('pid','');
+			$(".votecountpopup").html('0');
+			$(".imagepopup").attr('src','assets/images/loader.png');
+			$(".votesspanpopup").html('<a class="votes votespopup" href="javascript:void(0)" pid="" >VOTE</a>');
+			
+			prepid = pid-1;
+			nextpid =pid+1;
+			
+			$.post(detailurl,{pid:pid}, function(data){
+				if(data){
+					$(".owner").html(data.owner);
+					$(".votespopup").attr('pid',data.id);
+					$(".votespopup").attr('href',votebutton);
+					$(".votecountpopup").html(data.vote);
+					$(".imagepopup").attr('src',localpublicassets+data.image);
+					if(data.hasvote==false){
+						if(!fButton){
+							$('.votespopup').addClass('clickVotes');
+							$('.votespopup').attr('onCLick','return false;');
+						}else{
+							$('.votespopup').removeClass('clickVotes');
+							$('.votespopup').attr('onCLick','');
+						}
+					}else {
+						$(".votesspanpopup").html('<div class="messageHasVote">'+voteberhasil+'</div><a class="votes-disable">VOTE</a>');
+					}
+				}else return false;
+			});
+			
+		
+	}
+{/literal}
+</script>

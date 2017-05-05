@@ -1,0 +1,181 @@
+<script type="text/javascript">
+	var page = "project";
+	var page_detail = "social";
+	var projectID = {$userID};
+	var volumeChartData = {$daily};	
+	
+	var min7 = new Date("{$lastDate}");
+	min7.setDate(min7.getDate() - 6);
+	var startDate = new Date("{$startDate}");
+	var currDate = new Date("{$lastDate}"); ;
+	var startD,endD;
+	var initDate = 0;
+	
+	{literal}
+	if(+min7 < +startDate){
+		min7 = new Date(startDate);
+	}
+	$(document).ready(function() {
+		startD = mdy(min7);
+		endD = mdy(currDate);
+		$("#from").val(startD);
+		$("#to").val(endD);
+		
+		
+		$("#from, #to").datepicker({ minDate: startDate, maxDate: currDate });
+		$("#from, #to").datepicker("option", "dateFormat", "dd/mm/yy" ); 
+		
+		$('#semDuration').live('click', function(){
+			initDate = 1;
+			startD = $('input#from').val();;
+			endD = $('input#to').val();
+			dailyTab(ymd(startD), ymd(endD));
+		});
+		
+		//Volume Chart
+		var category = volumeChartData.category;
+		var data = [{
+						name: 'Plus +1',
+						data: volumeChartData.plusone,
+						visible: true
+					}, {
+						name: 'Share',
+						data: volumeChartData.share,
+						visible: false
+					}, {
+						name: 'Comment',
+						data: volumeChartData.comment,
+						visible: false
+					},{
+						name: 'Circle',
+						data: volumeChartData.circle,
+						visible: false
+					},{
+						name: 'Post',
+						data: volumeChartData.post,
+						visible: false
+					}];
+		lineChart('daily', category, data);
+		
+		
+		function mdy(x){
+			return (x.getMonth()+1)+"/"+x.getDate()+"/"+x.getFullYear();
+		}
+		
+		function ymd(x){
+			if(initDate == 1){
+				return (x.substr(6,4)+"-"+x.substr(3,2)+"-"+x.substr(0,2));			
+			}else{
+				return (x.substr(6,4)+"-"+x.substr(0,2)+"-"+x.substr(3,2));
+			}
+		}
+		
+		function dailyTab(st, end){
+			$.post('index.php?s=social&id='+projectID+'&act=gplusAjax',{startDate : st, endDate : end}, function(data) {
+				try{
+					var category = data.category;
+					var dataCollection = [{
+									name: 'Plus +1',
+									data: data.plusone,
+									visible: true
+								}, {
+									name: 'Share',
+									data: data.share,
+									visible: false
+								}, {
+									name: 'Comment',
+									data: data.comment,
+									visible: false
+								},{
+									name: 'Circle',
+									data: data.circle,
+									visible: false
+								},{
+									name: 'Post',
+									data: data.post,
+									visible: false
+								}];
+					lineChart('daily', category, dataCollection);
+				}catch(e){$('#daily').html('No data availble yet.');}
+			}, "json");
+		}
+	
+	});
+	{/literal}
+</script>
+<div id="body-tab" style="width:970px;position:relative;height: 30px;">
+	<span style="position:absolute; top: 10px;right: 0;">Last Update on <span style="color:#9E2666">{$axislastUpdate}</span></span>
+</div>
+<div class="body-content">
+	<div class="body-content-head">
+		<span class="flLeft" style="font-size:14px;">Google +</span>
+		
+		<div class="dropdown flRight fgrey2 arial relative" no="1">
+			<span>Google +</span>
+			<div class="droplist1 dropdown-bg absolute transparent hide" style="top:6px;left:5px;">
+				<a class="dropdown-item" href="index.php?s=social&id={$userID}&act=gplus">Google +</a>
+				<hr>
+				<a class="dropdown-item" href="index.php?s=social&id={$userID}&act=youtube">Youtube</a>
+				<hr>
+				<a class="dropdown-item" href="index.php?s=social&id={$userID}&act=fb">Facebook</a>
+				<hr>
+				<a class="dropdown-item" href="index.php?s=social&id={$userID}&act=twit">Twitter</a>
+			</div>
+		</div>
+	</div>
+	<div style="border: 1px solid #999999;height: 65px;margin: 15px 0;padding: 18px;width: 920px;" class="radius-white bg-white">
+		<div class="radius-white flLeft" style="margin-right: 13px;margin-top:0;width:200px; background:#ccc;height: 45px;padding: 10px;">
+			<span class="arial" style="font-size:12px">Circles/Users</span><br>
+			<span style="font-size:28px">{$circle|number_format}</span>
+		</div>
+		<div class="radius-white flLeft" style="margin-top:0;width:200px; background:#ccc;height: 45px;padding: 10px;">
+			<span class="arial" style="font-size:12px">Plus +1</span><br>
+			<span style="font-size:28px">{$plus1|number_format}</span>
+		</div>
+		<div class="radius-white flRight" style="margin-top:0;width:200px; background:#ccc;height: 45px;padding: 10px;">
+			<span class="arial" style="font-size:12px">Shares</span><br>
+			<span style="font-size:28px">{$shares|number_format}</span>
+		</div>
+		<div class="radius-white flRight" style="margin-right: 13px;margin-top:0;width:200px; background:#ccc;height: 45px;padding: 10px;">
+			<span class="arial" style="font-size:12px">Comments</span><br>
+			<span style="font-size:28px">{$comments|number_format}</span>
+		</div>
+	</div>
+	<span class="relative" style="font-size:14px;margin-top:10px;margin-left:2px;display: block;">
+		Volume
+		<div class="dropdown2 flRight fgrey arial relative">		
+			<span class="absolute" style="left: -60px;top: 10px;">Duration:</span>
+			<input type="text" id="from" name="from" class="absolute">		
+			<input type="text" id="to" name="to" class="absolute" style="left:111px">
+			<input type="hidden" id="rangeDate" name="rangeDate" class="fLeft" value="1">
+			<input id="semDuration" type="button" class="absolute" value="">
+		</div>
+	</span>
+	<div id="daily" style="height: 292px;margin: 15px 0;"></div>
+	
+	<div style="min-height: 400px;">
+		<span class="relative" style="font-size:14px;margin-left:2px;width: 300px;display: block;margin-bottom:15px;">
+			WordCloud
+		</span>
+		<div id="wordcloud" class="wordcloud radius-white bg-white flLeft" style="width:470px; height: 367px;margin-bottom: 21px;overflow:hidden;position:relative;">
+			{$wordcloud}			
+		</div>
+		<table class="body-tbl contentLeft  fgrey2" style="padding: 0;font-size: 11px; width:468px;margin-left: 485px;">
+			<tbody>
+			<tr>
+				<th class="fgrey" colspan="11" style="border-top: 0;font-size: 14px;text-align: left;">
+					Top 10 Post
+				</th>
+			</tr>
+			<tr>
+				<th>Post</th>
+				<th>Total Interaction</th>
+			</tr>
+			{section name=i loop=$post}
+			<tr><td>{$post[i].title}</td><td>{$post[i].num|number_format}</td></tr>
+			{/section}
+			</tbody>
+		</table>
+	</div>
+
+</div>

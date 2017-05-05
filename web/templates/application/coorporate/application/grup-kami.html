@@ -1,0 +1,45 @@
+<div id="breadcumb" class="wrapper">
+
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}tentang_axis/grup_kami">{$locale.tentangaxis.title}</a> &raquo; <a>{$locale.grupkami.title}</a></h1></a></h1></a></h1>
+
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="theContent">
+        <div class="theTitle">
+            <h1>{$locale.tentangaxis.title}</h1>
+        </div><!-- end .theTitle -->
+    	<div id="sidebar">
+            <div class="theBox">
+                <div class="entryBox">
+                    <div class="rowBtns">
+						{include file="application/coorporate/widgets/sidebar_tentang_axis.html"}
+                    </div><!-- end .rowBtns -->
+                </div><!-- end .entryBox -->
+                <div class="shadow"></div>
+            </div><!-- end .theBox -->
+		{$recent_blog}
+        </div><!-- end #sidebar -->
+         <div id="contents">
+            <div class="entryDetail">
+                <div class="entry">
+                    <div class="entry-title">
+                         <h1>{$locale.grupkami.brief}</h1>
+                    </div><!-- end .entry-title -->
+                    <div class="entry-post">
+                    	<h2>STC</h2>
+                        <div class="imgDetail">
+                            <div class="shadowImg"></div>
+                            <div class="splash1"></div>
+                            <a href="http://www.stc.com.sa/" target="_blank"><img src="{$basedomain}assets/content/tentangkami/3.jpg" /></a>
+                        </div><!-- end .imgDetail -->
+                    	<h2>MAXIS</h2>
+                        <div class="imgDetail">
+                            <div class="shadowImg"></div>
+                            <a href="http://maxis.com.my/main.asp" target="_blank"><img src="{$basedomain}assets/content/tentangkami/2.jpg" /></a>
+                        </div><!-- end .imgDetail -->
+                    </div><!-- end .entry-post -->
+                </div><!-- end .entry -->
+            </div><!-- end .entryDetail -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+</div><!-- end #container -->

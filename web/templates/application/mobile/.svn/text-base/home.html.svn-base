@@ -1,0 +1,83 @@
+<div class="page-body" data-role="content">	
+	<div class="promo">
+		 <div class="flexslider">
+			<ul class="slides">
+				{section name=i loop=$banner}
+				<li>
+					<a href="{$mobiledomain}promo/hot/{$banner[i].id}" rel="external">
+					{if $mobiletype}
+						{if $mobiletype==1}	<img width="720" src="{$basedomain}public_assets/article/{$banner[i].thumbnail_image}" />
+						{else}	<img width="720" src="{$basedomain}public_assets/article/realthumb_medium_{$banner[i].thumbnail_image}" />{/if}
+					{else}	<img width="720" src="{$basedomain}public_assets/article/realthumb_medium_{$banner[i].thumbnail_image}" />
+					{/if}
+						
+					</a>
+				</li>
+				{/section}
+			</ul>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	{literal}
+		$('#page-home').live( 'pageshow', function(e){
+			$('.flexslider').flexslider({
+				controlNav: false,
+				slideshowSpeed: 10000,
+				animation: "slide"
+			});
+		});
+	{/literal}
+	</script>
+	
+	<div class="list-nav">
+		<ul data-role="listview" data-inset="true">
+			<li>
+					<a href="{$mobiledomain}kenapaAxis" data-transition="slide">
+						<span class="icon icon-question"></span>
+						<span class="textLink">{$locale.nav.kenapaaxis}</span>
+					</a>
+				</li>
+				<li>
+					<a href="{$mobiledomain}product" data-transition="slide">
+						<span class="icon icon-box"></span>
+						<span class="textLink">{$locale.nav.produk}</span>
+					</a>
+				</li>
+				<li>
+					<a href="{$mobiledomain}promo/hot" data-transition="slide">
+						<span class="icon icon-love"></span>
+						<span class="textLink">{$locale.nav.promo}</span>
+					</a>
+				</li>
+				<li>
+					<a href="{$mobiledomain}myworld" data-transition="slide" rel="external">
+						<span class="icon icon-bubble"></span>
+						<span class="textLink">{$locale.nav.axislife}</span>
+					</a>
+				</li>
+				<li>
+					<a href="{$mobiledomain}kontak" data-transition="slide">
+						<span class="icon icon-tools"></span>
+						<span class="textLink">{$locale.nav.customercare}</span>
+					</a>
+				</li>
+				<li>
+					<a href="http://net.axisworld.co.id" rel="external" target="_blank">
+						<span class="icon icon-globe"></span>
+						<span class="textLink">AXIS NET</span>
+					</a>
+				</li>
+		</ul>
+	</div>
+</div><!-- /content -->
+
+<script>
+postGCS = '{$postGCS}'; 
+{literal}
+	if(postGCS != ''){
+		$('#querySearch').val(postGCS);
+		searchGCS();
+	}
+{/literal}
+</script>

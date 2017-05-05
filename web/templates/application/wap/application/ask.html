@@ -1,0 +1,65 @@
+<div class="title">
+    {$locale.msg.perlubantuan}
+	</div><!-- end .title -->
+{if $result}
+<div class="detail">
+	<div class="post">
+        <div class="entryPost">
+            <div class="customerbox">
+                <div class="entry">
+                	{if $result.result}{$locale.msg.pesanterkirim}{else}{$locale.msg.pesantdkterkirim}{/if}
+                </div><!-- end .entry -->
+           		
+            </div><!-- end .customerbox -->
+		</div>
+	</div>
+</div>
+{else}
+<div class="detail">
+	<div class="post">
+        <div class="entryPost">
+            <div class="customerbox">
+                <div class="entry">
+                	{$locale.customercare.melaluitelepon}
+                </div><!-- end .entry -->
+           		<span class="callNumber">838 <span class="white">atau</span> 0838 8000 838</span>
+            </div><!-- end .customerbox -->
+            <div class="entryTitle">
+               {$locale.customercare.lewatemail}
+            </div><!-- end .entryTitle -->
+           <form class="theForm" action="{$basedomain}ask_axis/saveMessage" method="POST" > 
+                <div class="w300 rowBtns">
+                    <input type="text" name="txtName"  value="{$locale.customercare.nama}"  />
+                    <input type="text" value="Email"  name="txtEmail"  />
+                    <input type="text" value="{$locale.customercare.noaxis}"  name="txtTelepon"  />
+                    <select name="txtPropinisi" class="styled">
+                        <option>{$locale.customercare.propinsi}</option>
+						{section name=i loop=$province}
+							<option value="{$province[i].id}">{$province[i].province}</option>
+						{/section}
+                    </select>
+                    <select class="styled">
+                        <option>{$locale.customercare.kota}</option>
+                    </select>
+					<select  name="txtTipe"  class="styled ">
+                        <option>{$locale.customercare.jenispertanyaan}</option>
+						{section name=i loop=$msgType}
+							<option value='{$msgType[i].type}'>{$msgType[i].type}</option>
+						{/section}
+                    </select>
+                </div>
+                <div class="w600">
+                    <textarea name="txtMessage" ></textarea>
+                    <div class="agreement">
+                        <input type="checkbox" class="styled" name="checkTXT" />
+                        <label>{$locale.customercare.custos}</label>
+                    </div>
+                    <input type="submit" class="kirim" value="KIRIM" />
+                </div>
+        </div><!-- end .entryPost -->
+    </div><!-- end .row -->
+</div><!-- end .detail -->
+{/if}
+<div class="rowBtn">
+	<a href="{$basedomain}" class="btnBack" >&laquo; Back</a>
+</div>

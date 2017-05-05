@@ -1,0 +1,84 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>AXIS - Campaign Dashboard</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="css/mindshare.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/ui-darkness/jquery-ui-1.8.19.custom.css">
+	<link rel="stylesheet" href="css/tip-twitter/tip-twitter.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="css/jqcloud.css" />
+
+	<script data-main="js/main" src="js/libs/require/require.js"></script>
+</head>
+<body>
+
+<div id="container">
+	<div id="header">
+			<div id="head-warp">
+				<div id="head-top">
+					<div id="head-left">
+						<a href="index.php">
+							<img width="134" style="border:none;" src="images/logo-axis.png">
+						</a>
+					</div>
+					{if $user}
+					<div id="head-right">
+						<span class="user-name" style="color: #666666;font-size: 14px;font-weight: bold;">Welcome, {$user.username}</span>
+						<a href="logout.php" class="logout" style="color: #9E2666;font-weight: bold;font-size: 14px;">Log Out</a>
+					</div>
+					{/if}
+				</div>
+				<div id="main-control">
+					
+				</div>
+			</div>
+		</div>
+	<div id="body" class="relative">
+		<div id="body-warp">
+			<div class="body-content">
+			<span style="font-size:12px;margin:10px 0 0 2px;">You have 1 active project. Click on each campaign type to view it's progress</span>
+				<div class="body-project relative">		
+				<div class="box-project flLeft relative">
+					<span>
+						<span style="top:5px;left:10px;" class="absolute">AXIS</span>
+						<span style="font-size:11px;top:25px;left:10px;" class="fgrey arial absolute">
+														Social optimization on AXIS
+										</span>
+					</span>
+					<span style="top:15px;right:10px; font-size: 11px;" class="absolute arial">
+						Execution Phase
+					</span>
+				</div>
+				<div class="project-status flRight">
+					<div style="margin-left:10px" class="statusNon flRight ">WEB</div>
+					<div style="margin-left:10px" class="statusNon flRight statusActive"><a class="link-project" href="index.php?s=social&amp;id=10&amp;act=fb">SOCIAL</a></div>
+					<div style="margin-left:10px" class="statusNon flRight ">SEM</div>
+					<div class="statusNon flRight ">SEO</div>
+				</div>
+				<div class="project-start arial flLeft fgrey2">Started on: 24 July 2012</div>
+				<div style="bottom:16px;right:85px;" class="project-start arial absolute fgrey2"> Last update: 23 August 2012</div>
+				<div class="project-label arial flRight">
+					<div style="margin-left:10px" class="labelNon flRight ">None</div>
+					<div style="margin-left:10px" class="labelNon flRight labelActive">Active</div>
+					<div style="margin-left:10px" class="labelNon flRight ">None</div>
+					<div style="margin-left:10px" class="labelNon flRight ">None</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="splash2"></div>
+	</div>
+	<div id="footer" class="arial">Copyright - Campaign Dashboard, Kana Cipta Media 2012</div>
+</div> 
+</body>
+</html>

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/axis2012/!svn/ver/569/trunk/kakao/templates/application/mobile
+END
+footer.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/527/trunk/kakao/templates/application/mobile/footer.html
+END
+news_detail.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/axis2012/!svn/ver/452/trunk/kakao/templates/application/mobile/news_detail.html
+END
+galeri.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/569/trunk/kakao/templates/application/mobile/galeri.html
+END
+tnc.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/axis2012/!svn/ver/531/trunk/kakao/templates/application/mobile/tnc.html
+END
+meta.html
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/axis2012/!svn/ver/527/trunk/kakao/templates/application/mobile/meta.html
+END
+faq.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/axis2012/!svn/ver/531/trunk/kakao/templates/application/mobile/faq.html
+END
+header.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/452/trunk/kakao/templates/application/mobile/header.html
+END
+home.html
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/axis2012/!svn/ver/531/trunk/kakao/templates/application/mobile/home.html
+END
+login.html
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/axis2012/!svn/ver/452/trunk/kakao/templates/application/mobile/login.html
+END
+master.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/527/trunk/kakao/templates/application/mobile/master.html
+END

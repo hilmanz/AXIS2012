@@ -1,0 +1,14 @@
+<link rel="stylesheet" type="text/css" href="assets/css/axisnote.css" />
+<div id="container">
+    <div class="wrapper">
+        <div id="axisNote">
+            <div class="entryNote">
+                <div class="entryText">
+                    <h1>Pulsa kamu saat ini tidak mencukupi untuk mengakses layanan internet AXIS.</h1>
+                    <p>Silahkan isi ulang AXISmu terlebih dahulu lalu aktifkan akses data pada<br />
+        perangkat mobile phone atau gadget untuk terus dapat menikmati akses internet hemat.</p>
+                </div>
+            </div>
+        </div><!-- end #axisNote -->
+   </div>
+</div><!-- end #container -->

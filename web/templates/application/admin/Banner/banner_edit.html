@@ -1,0 +1,211 @@
+<script type="text/javascript" src="jscripts/tiny_mce/tiny_mce.js"></script>
+{literal}
+<script type="text/javascript">
+	tinyMCE.init({
+		theme : "advanced",
+        mode : "exact",
+        elements : "teditor",
+		plugins : "autolink,lists,spellchecker,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
+		paste_remove_styles: true,
+		paste_auto_cleanup_on_paste : true,
+		
+		theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
+        theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor",
+        theme_advanced_buttons3 : "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,ltr,rtl,|,fullscreen",
+        theme_advanced_buttons4 : "insertlayer,moveforward,movebackward,absolute,|,styleprops,spellchecker,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,blockquote,pagebreak,|,insertfile,insertimage",
+
+		file_browser_callback : "ajaxfilemanager",
+		paste_use_dialog : true,
+		theme_advanced_resizing : true,
+		theme_advanced_resize_horizontal : true,
+		apply_source_formatting : true,
+		force_br_newlines : true,
+		force_p_newlines : false,	
+		relative_urls : true,
+		
+		theme_advanced_toolbar_location : "top",
+		theme_advanced_toolbar_align : "left",
+		theme_advanced_statusbar_location : "bottom",
+		theme_advanced_resizing : false
+	});
+	function ajaxfilemanager(field_name, url, type, win) {
+		var ajaxfilemanagerurl = "jscripts/tiny_mce/plugins/ajaxfilemanager/ajaxfilemanager.php";
+		var view = 'detail';
+		switch (type) {
+			case "image":
+			view = 'thumbnail';
+				break;
+			case "media":
+				break;
+			case "flash": 
+				break;
+			case "file":
+				break;
+			default:
+				return false;
+		}
+		tinyMCE.activeEditor.windowManager.open({
+		    url: "jscripts/tiny_mce/plugins/ajaxfilemanager/ajaxfilemanager.php?view=" + view,
+		    width: 782,
+		    height: 440,
+		    inline : "yes",
+		    close_previous : "no"
+		},{window : win, input : field_name });
+	}
+function validator(){
+	tinyMCE.triggerSave();
+	if( $('#title').val() == '' ){
+		alert("Please fill title");
+		return false;
+	}
+} 
+
+//$(document).ready(function() {
+	//$('#previews').Jcrop({onSelect: updateCoords});
+
+//});
+</script>
+{/literal}
+<p><h3>Edit Banner</h3></p><br>
+<br/>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="addlist zebra">
+	<form name="cal" method="post" action="" enctype="multipart/form-data" onsubmit="javascript: return validator();">
+		<tr class="head">
+			<td width="200"><strong>Language</strong></td>
+			<td colspan="2">
+				<select name="lid" style="width:400px;">
+					<option value=""> - Pilih - </option>
+					{section name=i loop=$language}
+					{if $language[i].id == $lid}
+						<option value="{$language[i].id}" selected="selected">{$language[i].language}</option>
+					{else}
+						<option value="{$language[i].id}">{$language[i].language}</option>
+					{/if}
+					{/section}
+				</select>
+			</td>
+		</tr>
+		<tr class="head">
+			<td><strong>Type</strong></td>
+			<td colspan="2">
+				<select name="articleType" style="width:400px;">
+					<option value=""> - Pilih - </option>
+					{section name=i loop=$type}
+					{if $type[i].id == $bannerData.type}
+						<option value="{$type[i].id}" selected="selected">{if $type[i].type} {$type[i].type} {/if}</option>
+					{else}
+						<option value="{$type[i].id}">{if $type[i].type} {$type[i].type} {/if}  </option>
+					{/if}
+					{/section}
+				</select>
+			</td>
+		</tr>
+		<tr class="head">
+			<td valign="top"><strong>Menu</strong></td>
+			<td colspan="2">
+				<div style="width: 500px; overflow: auto; height: 100px;">					
+					{section name=i loop=$page}
+							{assign var=pageID value=$page[i].id}
+						{if $page[i].id == $bannerData.page.$pageID}
+							<div><input type="checkbox" value="{$page[i].id}" name="pages[]" checked="checked">{$page[i].pagename} </div> 
+						{else}
+							<div><input type="checkbox" value="{$page[i].id}" name="pages[]">{$page[i].pagename} </div>
+						{/if}
+					{/section}
+				</div>
+			</td>
+		</tr>
+		<tr class="head">
+			<td><strong>Text Align</strong></td>
+			<td colspan="2">
+				<select name="textalignment" style="width:400px;">
+						<option value="right" {if $bannerData.textalign=='right'}selected{/if}>Right</option>
+						<option value="left" {if $bannerData.textalign=='left'}selected{/if}>Left</option>
+				</select>
+			</td>
+		</tr>
+		<tr class="head">
+			<td><strong>Title</strong></td>
+			<td colspan="2"><input type="text" id="title" name="title" style="width:500px;" value="{$title}"/></td>
+		</tr>
+		<tr class="head">
+			<td><strong>Brief</strong></td>
+			<td colspan="2"><textarea name="brief" id="brief" style="width:600px">{$brief}</textarea></td>
+		</tr>
+		<tr class="head">
+			<td><strong>External Promotion Url </strong></td>
+			<td><input type="text" id="url" name="url" style="width:500px;" value="{$url}"/></textarea></td>
+		</tr>
+		<tr class="head">
+			<td valign="top"><strong>Images banner</strong></td>
+			<td >
+				<p><img src="{$baseurl}public_assets/banner/{$slider_image}" /></p>
+				{*}	<input type="button" name="upload_thumbnail" value="savethumb" id="upload_thumb" onclick="saveit()"/>	{/*}
+				<p><input type="file" name="image" /> <em>(JPG, GIF, BMP and PNG)</em></p>
+			</td>
+			{*}
+			<td valign="top">
+				&nbsp;<img id="thumbsview" src="{$baseurl}public_assets/banner/thumb_{$image}"/>
+			</td>
+			{/*}
+		</tr>
+			
+		<tr class="head">
+			<td valign="top"><strong>Content</strong></td>
+			<td colspan="2"><textarea id="teditor" name="content" style="width:800px;height:400px;">{$content}</textarea></td>
+		</tr>
+		<tr class="head">
+			<td valign="top"><strong>Device</strong></td>
+			<td colspan="2">
+				<div style="width: 500px; overflow: auto; height: 100px;">					
+					{section name=i loop=$device}
+							{assign var=deviceID value=$device[i].id}
+						{if $device[i].id == $bannerDevice.deviceid.$deviceID}
+							<div><input type="checkbox" value="{$device[i].id}" name="device[]" checked="checked">{$device[i].type} </div> 
+						{else}
+							<div><input type="checkbox" value="{$device[i].id}" name="device[]">{$device[i].type} </div>
+						{/if}
+					{/section}
+				</div>
+			</td>
+		</tr>
+		<tr class="head">
+			<td><strong>Status</strong></td>
+			<td colspan="2">
+				<select name="n_status" style="width:200px;">
+					<option value="0" {if $status==0} selected="selected" {/if}>Inactive</option>
+					<option value="1" {if $status==1} selected="selected" {/if}>Publish</option>
+					<option value="2" {if $status==2} selected="selected" {/if}>Unpublish</option>
+				</select>
+			</td>
+		</tr>
+		<tr class="head">
+			<td>
+				<strong>Date range</strong>
+			</td>
+			<td colspan="2">
+				Publish &nbsp;<input type="text" name="posted_date" value="{$posted_date}" style="width:150px;" class="datepicker" />&nbsp;&nbsp;
+				&nbsp;
+				Unpublish &nbsp;<input type="text" name="expired_date" value="{$expired_date}" style="width:150px;" class="datepicker" />&nbsp;&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<input type="submit" value="Save ">&nbsp;&nbsp; 
+				<input type="button" value="Cancel" onclick="javascript: window.location.href='index.php?s=banner' ;" />
+			</td>
+		</tr>
+	</form>
+	
+</table>
+	{*}
+<form id = "updateThumbPhotoForm" action="" method="POST" >
+					<input type="hidden" id="x" name="x" />
+					<input type="hidden" id="y" name="y" />
+					<input type="hidden" id="w" name="w" />
+					<input type="hidden" id="h" name="h" />
+					<input type="hidden" id="imageFilename" name="imageFilename"  value="{$image}" />
+					<input type="hidden" name="crop" value="1" />
+					
+				</form>
+	{/*}

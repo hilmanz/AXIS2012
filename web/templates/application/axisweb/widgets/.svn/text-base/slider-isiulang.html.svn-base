@@ -1,0 +1,31 @@
+
+    <div id="slider">
+		<link rel="stylesheet" type="text/css" href="{$basedomain}assets/css/slider-isiulang.css" />
+        <div id="da-slider" class="da-slider sliderIsiulang">
+            <div class="da-slide" id="slide3">
+                <div class="entrySlide">
+                   {$locale.slider.isiulang.online}
+                    <a class="detail linkSlide btnGotoAXISnet" href="http://net.axisworld.co.id/account/buy_voucher" target="_blank">{$locale.btn.keaxisnet}</a>
+                    <br style="clear:both;"/>
+                    <a style="width:auto; padding:0 10px 0 35px; margin:10px 0" class="detail linkSlide btnGotoAXISnet" href="http://www.facebook.com/AXISgsm/app_195646697137509?ref=ts" target="_blank">{$locale.btn.viafacebook}</a>
+                    <br style="clear:both;"/>
+                    <a style="width:auto; padding:0 10px 0 35px;" class="detail linkSlide btnGotoAXISnet" href="https://axis-id.ezy-recharge.com/" target="_blank">{$locale.btn.viahandphone}</a>
+                </div>
+                <div class="da-img"><img src="{$basedomain}assets/content/slider/isiulang/slide1.jpg"/></div>
+            </div><!-- end .da-slide -->
+            <div class="da-slide" id="slide3">
+                <div class="entrySlide">
+                    {$locale.slider.isiulang.elektronik}
+                    <a class="detail linkSlide" href="{$basedomain}isi_ulang/pulsa_electronic">{$locale.btn.detail}</a>
+                </div>
+                <div class="da-img"><img src="{$basedomain}assets/content/slider/isiulang/img2.jpg"/></div>
+            </div><!-- end .da-slide -->
+            <div class="da-slide" id="slide3">
+                <div class="entrySlide">
+                   {$locale.slider.isiulang.cekpulsa}
+                    <a class="detail linkSlide" href="{$basedomain}isi_ulang/cek_isi_ulang">{$locale.btn.detail}</a>
+                </div>
+                <div class="da-img"><img src="{$basedomain}assets/content/slider/isiulang/img3.jpg"/></div>
+            </div><!-- end .da-slide -->
+        </div><!-- end #da-slider -->
+    </div><!-- end #slider -->

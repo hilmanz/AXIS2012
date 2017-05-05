@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/64/trunk/dashboard/tools/yt_helper/Zend/Gdata/Books
+END
+VolumeEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/axis2012/!svn/ver/64/trunk/dashboard/tools/yt_helper/Zend/Gdata/Books/VolumeEntry.php
+END
+VolumeFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/axis2012/!svn/ver/64/trunk/dashboard/tools/yt_helper/Zend/Gdata/Books/VolumeFeed.php
+END
+CollectionEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/axis2012/!svn/ver/64/trunk/dashboard/tools/yt_helper/Zend/Gdata/Books/CollectionEntry.php
+END
+VolumeQuery.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/axis2012/!svn/ver/64/trunk/dashboard/tools/yt_helper/Zend/Gdata/Books/VolumeQuery.php
+END
+CollectionFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/axis2012/!svn/ver/64/trunk/dashboard/tools/yt_helper/Zend/Gdata/Books/CollectionFeed.php
+END

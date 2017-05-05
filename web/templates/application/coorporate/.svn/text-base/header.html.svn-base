@@ -1,0 +1,153 @@
+
+<div id="headContainer">
+    <div id="head">
+        <div id="top">
+            <a id="logo" href="{$basedomain}">&nbsp;</a>
+            <a class="axisworldBtn" href="{$web_base_path}">&nbsp;</a>
+            <a class="flagen " href="{encrypt url=$basedomain page='locale' country='2' nexturl=$nexturl}" lid="2" >EN</a>
+			<a class="flagid " href="{encrypt url=$basedomain page='locale' country='1' nexturl=$nexturl}" lid="1" >ID</a>
+            <ul id="topNav">
+                <li><a href="{$basedomain}blog">{$locale.nav.blog}</a></li>
+                <li><a href="{$basedomain}distributor_resmi">{$locale.nav.distributorresmi}</a></li>
+                <li><a href="{$basedomain}hubungi_kami">{$locale.nav.hubungikami}</a></li>
+                {*}<li><a href="award">{$locale.nav.award}</a></li>{/*}
+                {*}<li><a href="relasi">{$locale.nav.relasi}</a></li>{/*}
+            </ul><!-- end #topNav -->
+        </div><!-- end #top -->
+        <div id="navigation">
+            <div class="wrapper">
+                <ul id="nav">
+                    <li><a href="{$basedomain}tentang_axis">{$locale.nav.tetangaxis}</a></li>
+                    <li><a href="{$basedomain}life_in_axis">{$locale.nav.lifeinaxis}</a></li>
+                    <li><a href="{$basedomain}berita">{$locale.nav.ruangberita}</a></li>
+                    <li><a href="{$basedomain}seputar_perusahaan">{$locale.nav.infoseputar}</a></li>
+                </ul><!-- end #nav -->
+                <form id="searchTop" class="searchTop">
+					<input id="querySearch" name="q" type="text" onclick="this.value='';" value="{$locale.gcs.search}">
+					<input name="lang" type="hidden" value="{$locale.js}">
+					<input id="querySubmit" type="submit" value="&nbsp;">					
+                </form><!-- end .searchTop -->
+            </div><!-- end .wrapper -->
+        </div><!-- end #navigation -->
+    </div><!-- end #head -->
+</div><!-- end #headContainer -->
+<script>
+var postGCS;
+var basedomain = "{$basedomain}";
+var lid = "{$locale.gcs.searchresult}";
+var you = "{$locale.gcs.you}";
+var noresult = "{$locale.gcs.noresult}";
+var mailHead = "{$locale.sidenav.hubungikami}";
+var mailBrief = '{$locale.sidenav.hubungikamibox}';
+var mailButton = '{$locale.sidenav.hubungikamibox2}';
+var defaultText = '{$locale.gcs.search}';
+	{literal}
+		$(document).ready(function(){
+			$("#searchTop").submit(function(){
+				var str = strip_tags($('#querySearch').val());
+				if(str != '' || str != defaultText){
+					searchGCS();
+				}
+				return false; 
+			});
+			
+		/*
+			$("#querySearch").blur(function(){
+				var str = $(this).val();
+				if(str != '' || str != defaultText){
+					searchGCS();
+				}
+				return false; 
+			});
+		*/
+		
+		});
+		
+		function searchGCS(){
+			var t = "#searchTop input[name='q']";
+			var lang = "#searchTop input[name='lang']";
+			var key = strip_tags($('#querySearch').val());
+			var mediumBanner;
+			//medium banner
+			$('#mainContent').html('<div class="loaders loaderBox"><img src="'+basedomain+'assets/images/loader.gif"></div>');
+			//$.get('gcs&act=search_ajax', function(mediumBanner){
+				google_search(t,lang,function(data){
+					if(data != null){
+					var str='';
+					str+='<div class="wrapper" id="breadcumb"><h1><a href="'+basedomain+'">Home</a> &raquo; <a>'+you+' "'+data.q+'"</a></h1></div>';
+					str+='<div id="container"><div id="axisLife" class="wrapper">';
+							str+='<div id="sidebar">';			
+								str+=sideBanner();
+							str+='</div>';
+							str+='<div id="contents">';
+								str+='<div class="theTitle">';
+									str+='<h1 class="icon_favorite">'+lid+'</h1>';
+								str+='</div>';
+								str+='<div class="shadowCtop">';
+									str+='<div class="shadowCbottom">';
+										str+='<div class="entryDetail list">';
+										str+=resultListHTML(data);
+										str+='</div>';
+									str+='</div>';
+								str+='</div>';
+							str+='</div>';
+						str+='</div></div>';
+					}else{
+						var str='';
+						str+='<div class="wrapper" id="breadcumb"><h1><a href="'+basedomain+'">Home</a> &raquo; <a>'+you+' "'+key+'"</a></h1></div>';
+						str+='<div id="container"><div id="axisLife" class="wrapper">';
+							str+='<div id="sidebar">';			
+								str+=sideBanner();
+							str+='</div>';
+							str+='<div id="contents">';
+								str+='<div id="SearchNotFound">';
+									str+=noresult;
+								str+='</div>';
+							str+='</div>';
+						str+='</div></div>';
+					}
+					$('#mainContent').html(str);
+				});
+			//});
+		}
+		
+		function resultListHTML(data){
+			var str='';				
+			$.each(data.items, function(k, v){			
+				
+				str+='<div class="row">';
+					if(v.image != ""){
+						str+='<div class="circleThumb">';
+							str+='<a href="'+v.url+'"><img src="'+v.image+'"></a>';
+						str+='</div>';
+					}
+					str+='<div class="searchText">';
+						str+='<div class="entry">';
+							str+='<h3><a href="'+v.url+'">'+v.title+'</a></h3>';
+							str+='<a href="'+v.url+'">'+v.url+'</a>';
+							str+='<p>'+v.text+'</p>';
+						str+='</div>';
+					str+='</div>';
+				str+='</div>';
+			});
+			return str;
+		}
+		
+		function sideBanner(){
+			var str='';
+			str+='<div class="theBox bgMail">';
+                str+='<div class="headBox">';
+                    str+='<h1>'+mailHead+'</h1>';
+                str+='</div>';
+                str+='<div class="entryBox">';
+                	str+='<h2>'+mailBrief+'</h2>';
+                	str+='<a class=readmore href="'+basedomain+'hubungi_kami">'+mailButton+'</a>';
+                str+='</div>';
+                str+='<div class="shadow"></div>';
+            str+='</div>';
+			return str;
+		}
+		
+
+	{/literal}
+</script>

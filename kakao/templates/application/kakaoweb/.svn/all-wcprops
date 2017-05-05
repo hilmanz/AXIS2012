@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/axis2012/!svn/ver/588/trunk/kakao/templates/application/kakaoweb
+END
+footer.html
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/axis2012/!svn/ver/580/trunk/kakao/templates/application/kakaoweb/footer.html
+END
+closeit.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/axis2012/!svn/ver/534/trunk/kakao/templates/application/kakaoweb/closeit.html
+END
+message.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/axis2012/!svn/ver/452/trunk/kakao/templates/application/kakaoweb/message.html
+END
+meta.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/452/trunk/kakao/templates/application/kakaoweb/meta.html
+END
+header.html
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/axis2012/!svn/ver/452/trunk/kakao/templates/application/kakaoweb/header.html
+END
+home.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/581/trunk/kakao/templates/application/kakaoweb/home.html
+END
+master.html
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/axis2012/!svn/ver/452/trunk/kakao/templates/application/kakaoweb/master.html
+END

@@ -1,0 +1,289 @@
+   <script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?key={$developerkey}&sensor=true" >    </script>
+
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}coverage">{$locale.coverage.title}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="headBanner" class="mapContainer">
+    <div class="boxMap">
+    	 <div class="title">
+         	<h1 class="labelAxis">{$locale.coverage.makindekat}</h1>
+         </div>
+         <div class="theMap" id="map_canvas"> </div>
+         <div class="shadow"></div>
+    </div><!-- end .headBanner -->
+</div><!-- end #headBanner -->
+<div id="container">
+    <div class="wrapper" id="lagiIn">
+    	<div id="sidebar">
+        	<div id="pilihWilayah" class="formBox">
+            	<div class="headBox">
+                	<h1 class="icon_wilayah">{$locale.coverage.wilayah}</h1>
+                </div><!-- end .headBox -->
+                <div class="entryBox">
+                    <form class="pilihWilayah">
+                    	<div class="row">
+                        {$locale.coverage.wilayahbrief}	
+                        </div>
+                    	<div class="rowBtns">
+                    	<select id="select1" name="txtPropinisi" class="styled">
+							<option value="" >{$locale.customercare.propinsi}</option>
+							{section name=i loop=$province}
+								<option value="{$province[i].id}">{if $locale.country==1}{$province[i].province}{else}{$province[i].province_en}{/if}</option>
+							{/section}
+						</select>
+						
+                        </div>
+                        {*}<div class="rowBtns">
+                    	<select id="select2" name="txtKota" class="styled">
+							<option value="" >{$locale.customercare.kota}</option>
+						</select>
+                        </div>{/*}
+                 	   <h3  id="wowcoverage" style="display:none">{$locale.coverage.wow}</h3>
+                       <div class="chekedRow">
+                       		<input type="checkbox"  class="" id="2gcheck"  checked="checked"/>
+                            <label>{$locale.coverage.2g}</label>
+                       </div>
+                       <div class="chekedRow checkPurple">
+                       		<input type="checkbox" class="" id="3gcheck" checked="checked" />
+                            <label>{$locale.coverage.3g}</label>
+                       </div>
+                    </form>
+                </div><!-- end .entryBox -->
+                <div class="shadow"></div>
+            </div><!-- end #pilihWilayah -->
+            <div class="textBox">
+            	{$locale.coverage.operator}<br />
+				{$locale.coverage.information}                
+            </div><!-- end .textBox -->
+        </div><!-- end #sidebar -->
+        <div id="contents">
+        	<div class="theTitle">
+            	<h1 class="icon_house">{$locale.coverage.lokasi}</h1>
+				<div class="rightShort">
+				<select class="styled" name="select3" id="select3" >
+					{section name=i loop=$province2}
+						<option value="{$province2[i].id}">{if $locale.country==1}{$province2[i].province}{else}{$province2[i].province_en}{/if}</option>
+					{/section}
+				</select>
+				</div>
+            </div><!-- end .theTitle -->
+            <div class="shadowCtop">
+                <div id="location" class="shadowCbottom">
+				{section name=i loop=$coverage}
+                	<div class="row">
+                    	<div class="circles circle1">
+                        	<a href="#popupMap" class="showPopup imgdetail" mapsid="{$coverage[i].id}"><img src="{if  $coverage[i].image}{$basedomain}public_assets/coverage/{$coverage[i].image}{else}{$basedomain}assets/content/map/map.jpg{/if}" /></a>
+                        </div><!-- end .circles -->
+                        <div class="entry">
+                        	<h1>{$coverage[i].title}</h1>
+                            <p>{$coverage[i].brief}</p>
+                            <a class="detail showPopup" href="#popupMap" mapsid="{$coverage[i].id}" >{$locale.btn.detail}</a>
+                        </div><!-- end .entry -->
+                    </div><!-- end .row -->
+                {/section}	
+                </div><!-- end #location -->
+            </div><!-- end .shadowCtop -->
+            <div id="coveragePaging" class="paging">
+                
+            </div><!-- end .paging -->
+        </div><!-- end #contents -->
+    </div><!-- end #lagiIn -->
+</div><!-- end #container -->
+{include file="application/axisweb/widgets/popup_map.html"}
+<script>
+	var total_rows = {if $coverage[0].total_rows}{$coverage[0].total_rows}{else}0{/if};
+	var locale = "{if $locale.btn.detail}{$locale.btn.detail}{else}0{/if}";
+	var datamaps = {if $datamaps}{$datamaps}{else}false{/if};
+	var kota = '{$locale.customercare.kota}';
+	var provID = '{$province2[0].id}';
+	var on3g = true;
+	var on2g = true;
+	var basedomain = "{$basedomain}";
+	var coveragePage = {$coveragePage};
+	var country = {$locale.country};
+{literal}	
+	
+	$(document).ready(function(){
+		initializePaging();
+		initialize();
+	});
+
+	function initializePaging(){
+		var pageInit = 0;
+		var start = coveragePage;
+		//Init Page
+		if(pageInit == 0){
+			pageInit = 1;
+			if(start == 0)start=1;
+			kiPagination(total_rows, start, 'coveragePaging', 'coverage_ajax', 'coverage_ajax', 3);
+		}
+	}
+
+	$(document).on('click','.detail, .imgdetail', function(){
+		$(".addressname").html('');
+		$(".placename").html('');
+		$(".mapLocation").html('<div class="loaders"><img src="'+basedomain+'assets/images/loader.gif"></div>');
+		var id = $(this).attr("mapsid");
+		$.post(basedomain+"coverage/detail",{id:id, provinceID : provID},function(data){
+			if(data){
+				if(data.content){
+						var googleLocation = data.content;
+						googleLocation = googleLocation.replace("q=","saddr=");
+						$(".mapLocation").html(googleLocation);
+				}else return false
+				$(".addressname").html(data.title);
+				$(".placename").html(data.brief);
+			}else	return false;
+			return true;
+		});
+		
+	});
+	
+
+	
+	function coverage_ajax(fungsi, start, fromDropDown){
+		$('#location').html('<div class="loaders"><img src="'+basedomain+'assets/images/loader.gif"></div>');
+		
+		$.post(basedomain+'coverage/'+fungsi, {start : start, provinceID : provID}, function(data){
+			try{
+			if(fromDropDown){
+				total_rows = data[0].total_rows;
+				initializePaging();
+			}
+	
+			var str='';
+			$.each(data, function(k,v){
+				str+='<div class="row">';
+					str+='<div class="circles circle1">';
+						if(v.image){
+						str+='<a href="#popupMap" class="showPopup imgdetail" mapsid="'+v.id+'"><img src="'+basedomain+'public_assets/coverage/'+v.image+'" /></a>';
+						}else{
+						str+='<a href="#popupMap" class="showPopup imgdetail" mapsid="'+v.id+'"><img src="'+basedomain+'assets/content/map/map.jpg" /></a>';
+						}
+					str+='</div>';
+					str+='<div class="entry">';
+						str+='<h1>'+v.title+'</h1>';
+						str+='<p>'+v.brief+'</p>';
+						str+='<a class="detail showPopup" href="#popupMap" mapsid="'+v.id+'" >'+locale+'</a>';
+					str+='</div>';
+				str+='</div>';
+			});
+			$('.loaders').remove();
+			$('#location').html(str);
+			}catch(e){$('#location').html('No data available.');}
+		});
+		
+	}
+	
+	
+	function initialize() {   
+		var myLatLng = new google.maps.LatLng(-2.196727,120.358886);
+		
+		var mapOptions = {
+		  zoom:5,
+		  center: myLatLng,
+		  mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+		
+		var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+		
+			if(datamaps){
+				for(var x in datamaps){
+					
+					if(on2g==true){
+						if(datamaps[x].signal=="2g"){
+						var swBound = new google.maps.LatLng(datamaps[x].s,datamaps[x].w);
+						var neBound = new google.maps.LatLng(datamaps[x].n,datamaps[x].e);
+						var bounds = new google.maps.LatLngBounds(swBound, neBound);
+						var oldmap = new google.maps.GroundOverlay(
+							datamaps[x].url_image,
+							bounds);
+							oldmap.setMap(map);
+						}
+					}
+					if(on3g==true){
+						if(datamaps[x].signal=="3g"){
+							var swBound = new google.maps.LatLng(datamaps[x].s,datamaps[x].w);
+							var neBound = new google.maps.LatLng(datamaps[x].n,datamaps[x].e);
+							var bounds = new google.maps.LatLngBounds(swBound, neBound);
+							var oldmap = new google.maps.GroundOverlay(
+								datamaps[x].url_image,
+								bounds);
+								oldmap.setMap(map);
+						}
+					}	
+				}
+			}else{
+					var swBound = new google.maps.LatLng(-7.902422,103.544443);
+					var neBound = new google.maps.LatLng(-4.655613,109.370058);
+					var bounds = new google.maps.LatLngBounds(swBound, neBound);
+					var oldmap = new google.maps.GroundOverlay(
+						"http://www.axisworld.co.id/kml/jabodetabek/jabodetabek_edge.png",
+						bounds);
+						oldmap.setMap(map);
+			}
+	}
+	
+	/*
+	$('#select1').change(function(){
+		$('#select2').html('<option value="">'+kota+'</option>');
+		$('#selecttxtKota').html(kota);
+		var province = $(this).val();
+		$.post(basedomain+'isi_ulang/getCitybyProvince', {province : province}, function(city){
+			var str='';
+			str+='<option value="">'+kota+'</option>';
+			$.each(city, function(k,v){
+				if(country==1) str+='<option value="'+v.id+'">'+v.city+'</option>';
+				else str+='<option value="'+v.id+'">'+v.city_en+'</option>';
+			});
+			$('#select2').html(str);
+		});
+	});
+	*/
+	$('#select1').change(function(){
+		var province =  $(this).val();
+		$.post(basedomain+'coverage/coverage_area_maps_ajax', {provinceid : province}, function(data){
+			datamaps = data;
+			initialize();
+		});
+	});
+	$('#select2').change(function(){
+		var province = $('#select1').val();
+		$.post(basedomain+'coverage/coverage_area_maps_ajax', {provinceid : province}, function(data){
+			datamaps = data;
+			/*if(data[0].cover=='edge'){
+				$("#wowcoverage").show();
+				$("#2garea").show();
+				$(".2gcover").show();
+			}
+			if(data[0].cover=='3g'){
+				$("#wowcoverage").show();
+				$("#2garea").show();
+				$("#3garea").show();
+				$(".2gcover").show();
+				$(".3gcover").show();
+			}*/
+			initialize();
+		});
+	});
+	
+	$("#2gcheck").click(function(){
+		if($(this).is(':checked'))on2g = true;
+		else on2g = false;
+
+		initialize();
+	});
+	$("#3gcheck").click(function(){
+		if($(this).is(':checked'))on3g = true;
+		else on3g = false;
+
+		initialize();
+	});
+	
+	$('#select3').change(function(){
+		provID = $(this).val();
+		$('#coveragePaging').html('');
+		coverage_ajax('coverage_ajax', 0, true);
+	});
+{/literal}
+</script>

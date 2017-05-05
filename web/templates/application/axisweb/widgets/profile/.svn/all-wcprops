@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/axis2012/!svn/ver/558/trunk/web/templates/application/axisweb/widgets/profile
+END
+avatar.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/axis2012/!svn/ver/93/trunk/web/templates/application/axisweb/widgets/profile/avatar.html
+END
+bookmarkPage.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/axis2012/!svn/ver/93/trunk/web/templates/application/axisweb/widgets/profile/bookmarkPage.html
+END
+userAttribute.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/axis2012/!svn/ver/93/trunk/web/templates/application/axisweb/widgets/profile/userAttribute.html
+END
+posting.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/axis2012/!svn/ver/93/trunk/web/templates/application/axisweb/widgets/profile/posting.html
+END
+contentUser.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/axis2012/!svn/ver/558/trunk/web/templates/application/axisweb/widgets/profile/contentUser.html
+END
+fbShare.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/axis2012/!svn/ver/93/trunk/web/templates/application/axisweb/widgets/profile/fbShare.html
+END

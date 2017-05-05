@@ -1,0 +1,12 @@
+2012-11-14 13:05:15 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (11) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-14 16:11:10 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (6,5,7,8,12,17,97) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-14 16:13:05 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (6,5,7,8,12,17,97) AND n_status = 1
+					ORDER BY date ASC 
+					

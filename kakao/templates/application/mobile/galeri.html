@@ -1,0 +1,23 @@
+<div id="head2">
+	<a href="index.php"><img src="images/logo1.png" /></a>
+</div>
+<div id="container">
+	{section name=i loop=$list}
+	<div class="box">
+		<div class="imgBox">
+			<a href="#popupDetail" class="showpopup"><img src="../public_assets/galeri/{$list[i].image}" /></a>
+		</div><!-- end .imgBox -->
+		<div class="contentBox">
+			<h3>{$list[i].owner}</h3>
+			<span class="iconSmile iconSmile_{$list[i].id}" num="{$list[i].vote}" >{$list[i].vote}</span>
+			{if $list[i].status_vote==1}
+			<span class="messageHasVote">Maaf kamu tidak bisa vote lagi untuk emoticon ini</span>
+			{else}
+			<a class="votes" href="{$fbConnect}&pid={$list[i].id}">VOTE</a>
+			{/if}
+		</div><!-- end .contentBox -->
+	</div><!-- end .box -->
+	<a class="prev" href="index.php?page=home&act=gallery&st={$list[i].prev}">PREV</a>
+	<a class="next" href="index.php?page=home&act=gallery&st={$list[i].next}">NEXT</a>
+	{/section}
+</div><!-- end #container -->

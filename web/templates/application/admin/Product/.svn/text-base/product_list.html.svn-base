@@ -1,0 +1,113 @@
+
+<div class="theContent">
+    <div class="theTitle">
+        <h2>Product List</h2>
+        <a href="index.php?s=product&act=excelreport&lid={$lid}&id_cat={$id_cat}&id_type={$id_type}" class="btn btn_document"><span>Download XLS</span></a>
+        <a href="index.php?s=product_article" class="btn btn_list"><span>See Product Article</span></a>
+        <a href="index.php?s=product&act=add" class="btn btn_pencil"><span>Add New Product</span></a>
+    </div><!--contenttitle-->
+    <div class="tableoptions">  
+        <form>
+            <input type="hidden" name="s" value="banner" />
+            <select name="lid" style="width:200px;">
+                <option value=""> - Language - </option>
+                {section name=i loop=$language}
+                {if $language[i].id == $lid}
+                    <option value="{$language[i].id}" selected="selected">{$language[i].language}</option>
+                {else}
+                    <option value="{$language[i].id}">{$language[i].language}</option>
+                {/if}
+                {/section}
+            </select>
+            <select name="id_type">
+                <option value=""> - Type - </option>
+                {section name=i loop=$type}
+                {if $type[i].id == $id_type}
+                <option value="{$type[i].id}" selected="selected" >{$type[i].type}</option>
+                {else}
+                <option value="{$type[i].id}">{$type[i].type}</option>
+                {/if}
+                {/section}
+            </select>
+            <span>Date Range</span>
+            <input type="text" name="startdate" value="{$startdate}" style="width:150px;" class="datepicker" />
+            <span>s/d</span>
+            <input type="text" name="enddate" value="{$enddate}" style="width:150px;" class="datepicker" />
+            <input type="submit" value="cari" class="stdbtn btn_orange" />
+            <input type="hidden" name="s" value="product" />
+        </form>
+    </div><!--tableoptions-->	
+    <table cellpadding="0" cellspacing="0" border="0" id="table1" class="stdtable">
+        <colgroup>
+            <col class="con0" style="width: 4%" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="head0">No</th>
+                <th class="head1">Language</th>
+                <th class="head0">Title</th>
+                <th class="head1">Type</th>
+                <th class="head0">Created Date</th>
+                <th class="head1">Published Date</th>
+                <th class="head0">Unpublished Date</th>
+                <th class="head1">Device</th>
+                <th class="head1">Add as Banner</th>
+                <th class="head0">Status</th>
+                <th class="head1">Product Description</th>
+                <th class="head0">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {foreach from=$list key=k item=v}
+            <tr>
+                <td width="10">{$v[$k].no}&nbsp;</td>
+                <td>{$v[$k].language}</td>
+                <td>{$v[$k].title}</td>
+                <td><nobr>{$v[$k].type_name}</nobr></td>
+                <td><nobr>{$v[$k].created_date|date_format:"%d-%m-%Y"} <br />{$v[$k].created_date|date_format:$time.time}</nobr></td>
+                <td><nobr>{$v[$k].posted_date|date_format:"%d-%m-%Y"} <br />{$v[$k].posted_date|date_format:$time.time}</nobr></td>
+                <td><nobr>{$v[$k].expired_date|date_format:"%d-%m-%Y"} <br />{$v[$k].expired_date|date_format:$time.time}</nobr></td>
+                <td>{$v[$k].deviceid}</td>
+                <td>{if $v[$k].is_banner} is Banner ( <a href="index.php?s=banner&act=edit&id={$v[$k].parentid}&id_lang={$v[$k].lid}" class="blue" >edit banner</a> ){else}<a href="index.php?s=banner&act=edit&id={$v[$k].parentid}&id_lang={$v[$k].lid}" class="green">save to banner</a>{/if}</td>
+                <td align="center">
+                    {if $v[$k].n_status==0} <span class="red">Inactive</span>
+                    {elseif $v[$k].n_status==1} <span class="green">Publish </span>
+                    {elseif $v[$k].n_status==2} <span class="orange">Unpublish</span>
+                    {else}
+                    {/if}
+                </td>
+                <td align="center"><a href="index.php?s=product&act=product_list&id={$v[$k].id}" style="text-decoration:none;" class="blue">see product description</a></td>
+                <td width="4%">
+                    <nobr>
+                    {section name=i loop=$language}
+                        <strong>{$language[i].language|capitalize}</strong>
+                            {assign var=langID value=$language[i].id}
+                            {assign var=IDcontent value=$v[$k].id}
+                        {if $language[i].id==$v.hasLang.$langID}
+                            <a href="index.php?s=product&act=edit&id={$v[$k].parentid}&id_lang={$langID}" class="green"> update </a>
+                            |
+                            <a href="index.php?s=product&act=comment&id={$v[$k].id}&id_lang={$langID}" class="orange">comment 
+                            <font color="red">{if $total_comment.$IDcontent.$langID} [{$total_comment.$IDcontent.$langID}] {else} {/if}</font> </a>
+                           	| 
+                            <a href="javascript:void(0)" class="popuppreview blue" url="http://axis-preview.kanadigital.com/produk/detail/{$v[$k].type_name}">preview</a>
+                            | <a href="index.php?s=product&act=hapus&parentid={$v[$k].parentid}" onclick="return confirm('Are you sure you want to delete this?')" class="red">delete</a>
+                            </p>
+                        {else}
+                            <a href="index.php?s=product&act=add_language&id={$v[$k].parentid}&id_lang={$langID}" class="green"> add </a>
+                        {/if}
+                    {/section}
+                    </nobr>
+                </td>
+            </tr>
+            {/foreach}
+        </tbody>
+    </table>
+    <div class="paging">
+    	{$paging}
+    </div>
+</div><!--theContent-->

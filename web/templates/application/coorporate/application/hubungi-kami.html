@@ -1,0 +1,126 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}berita">{$locale.berita.title}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="theContent">
+        <div class="theTitle">
+            <h1>{$locale.sidenav.hubungikami}</h1>
+        </div><!-- end .theTitle -->
+    	<div id="sidebar">
+            <div class="theBox bgMail">
+               {$locale.hubungikami.boxhubungi}
+                <div class="shadow"></div>
+            </div><!-- end .theBox -->
+            {$life_in_axis_box}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+            <div class="shadowCtop">
+            	<div class="shadowCbottom">
+                    <div class="entryDetail">
+                    	<form id="contactForm" action="{$basedomain}hubungi_kami" method="post" class="validate">
+           		  		    <div class="splash3"></div>
+							<div class="row">
+								<span class="tosMsg" style="color:#ff0000;">{if $msg eq 'terkirim'}{$locale.input.msg_true}{/if}{if $msg eq 'tidak'}{$locale.input.msg_false}{/if}{if $msg eq 'captcha failed'}{$locale.input.wrongcaptcha}{/if}</span>
+							</div>
+                        	<div class="row">
+                                <select name="txtTipe" class="styled required"/>
+								{section name=i loop=$msgType}
+                                    <option value='{$msgType[i].id}'>{$msgType[i].type}</option>
+								{/section}
+                                </select>
+                            </div>
+                        	<div class="row">
+                  			  <input rel="txtName" name="txtName" type="text" class="required alpha" value=""  />
+							  <span class="fake" id="txtName">{$locale.input.name}</span>
+							</div>
+                        	<div class="row">
+                  			  <input rel="txtEmail" name="txtEmail" type="text" class="required email" value="" />
+							  <span class="fake" id="txtEmail">{$locale.input.email}</span>
+							</div>
+                        	<div class="row">
+                  			  <input rel="txtTelepon" name="txtTelepon" type="text" class="required numeric" value=""/>
+							   <span class="fake" id="txtTelepon">{$locale.input.phone}</span>
+							</div>
+							<div class="row">
+								<select id="select1" name="txtPropinsi" class="styled required">
+									<option value="" >{$locale.input.province}</option>
+									{section name=i loop=$province}
+											<option value="{$province[i].id}">{if $locale.js==1}{$province[i].province}{else}{$province[i].province_en}{/if}</option>
+									{/section}
+								</select>
+							</div>
+                        	<div class="row">
+                                <select id="select2" name="txtKota" class="styled required"/>
+                                    <option value="">{$locale.input.city}</option>
+                                   
+                                </select>
+                            </div>
+                        	<div class="row">
+                                <textarea rel="txtMessage" name="txtMessage" class="required"></textarea>
+								<span class="fake" id="txtMessage">{$locale.input.msg}</span>
+                            </div>
+                        	<div class="row captcha">
+                                <img src="assets/captcha.php" height="50"/>
+								<input rel="captcha" type="text" name="captcha" class="required" />
+								<span class="fake" id="captcha"></span>
+                            </div>
+                            <div class="rowSubmit">
+                                <input id="checkthis" type="checkbox" class="styled" name="checkPhone"/>
+                            	<label>{$locale.input.check} <br><span id="tosMsg"></span></label>							
+                                <input type="hidden" name="sendingEmail" value="1" />
+                                <input type="submit" value="{$locale.input.send}" />
+                            </div>
+                        </form>
+                    </div><!-- end .entryDetail -->
+                </div><!-- end .shadowCbottom -->
+            </div><!-- end .shadowCtop -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+</div><!-- end #container -->
+<script>
+var cityLng = '{$locale.input.city}'
+var basedomain = '{$basedomain}';
+var country = {if $locale.js=='1'}1{else}0{/if};
+{literal}
+var required = v2.Validator.get('required').getMessage();
+
+$('#select1').change(function(){
+		$('#select2').html('<option value="">-'+cityLng+'-</option>');
+		$('#selectselect2').html('-'+cityLng+'-');
+		var province = $(this).val();
+		$.post(basedomain+'distributor_resmi/getCitybyProvince', {province : province}, function(city){
+			var str='';
+			str+='<option value="">-'+cityLng+'-</option>';
+			$.each(city, function(k,v){
+				if(country==1) str+='<option value="'+v.id+'">'+v.city+'</option>';
+				else str+='<option value="'+v.id+'">'+v.city_en+'</option>';
+			});
+			$('#select2').html(str);
+		});
+	});
+	
+$("#contactForm").submit(function(){
+	//if($("#checkthis:checked").val()!="on") {
+	//	$("#tosMsg").html("<span style='color:red' >"+required.message+"</span>");
+	//	return false;
+	//}
+});
+
+
+$('input, textarea').bind('blur', function(){
+	var checkValue = $(this).val();
+	if(checkValue == ''){
+		var rel = $(this).attr('rel');
+		$('#'+rel).show();
+	}
+});
+$('input, textarea').bind('focus', function(){ 
+	var rel = $(this).attr('rel');
+	$('#'+rel).hide();
+});
+
+$(document).ready(function(){
+	$('.tosMsg').delay(2000).fadeOut();
+});
+{/literal}
+</script>

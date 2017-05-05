@@ -1,0 +1,45 @@
+<div id="breadcumb" class="wrapper">
+
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}blog">{$locale.blog.title}</a> &raquo; <a>{$blog.title}</a></h1>
+
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="theContent">
+        <div class="theTitle">
+            <h1>{$locale.blog.title}</h1>
+        </div><!-- end .theTitle -->
+    	<div id="sidebar">
+        {$arsip_blog}
+		{$recent_news}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+			
+            <div class="entryDetail">
+                {if $blog.image}
+					{*}
+					<div class="imgDetail">
+						<div class="shadowImg"></div>
+						<div class="splash2"></div>
+						<img src="{$base_web_path}public_assets/blog/{$blog.image}" />
+					</div>
+					{/*}<!-- end .imgDetail -->
+				{/if}
+                <div class="entry">
+                    <div class="entry-title">
+                         <h1>{$blog.title}</h1>
+                    </div><!-- end .entry-title -->
+					{*}
+                    <div class="entry-meta">
+                         <p class="post-date">{$blog.posted_date} </p>
+                    </div><!-- end .entry-title -->                    
+					{/*}
+                    <div class="entry-post">
+                        <h2>{$blog.brief}</h2>
+                        <p>{$blog.content}</p>
+                    </div><!-- end .entry-post -->
+                </div><!-- end .entry -->
+            </div><!-- end .entryDetail -->
+			
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+</div><!-- end #container -->

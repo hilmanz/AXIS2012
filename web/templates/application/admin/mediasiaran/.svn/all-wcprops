@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/axis2012/!svn/ver/493/trunk/web/templates/application/admin/mediasiaran
+END
+mediasiaran_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/axis2012/!svn/ver/493/trunk/web/templates/application/admin/mediasiaran/mediasiaran_edit.html
+END
+mediasiaran_new.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/axis2012/!svn/ver/276/trunk/web/templates/application/admin/mediasiaran/mediasiaran_new.html
+END
+mediasiaran_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/axis2012/!svn/ver/276/trunk/web/templates/application/admin/mediasiaran/mediasiaran_list.html
+END

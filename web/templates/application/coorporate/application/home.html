@@ -1,0 +1,24 @@
+{$slider}
+<div id="featured">
+    <div class="wrapper">
+    	<div class="box">
+        	{$locale.home.ruangberita}
+        </div>
+    	<div class="box">
+        	{$locale.home.lifeinaxis}
+        </div>
+    	<div class="box">
+        	{$locale.home.blog}
+        </div>
+    </div><!-- end .wrapper -->
+</div><!-- end #featured -->
+
+<script>
+postGCS = '{$postGCS}'; 
+{literal}
+	if(postGCS != ''){
+		$('#querySearch').val(postGCS);
+		searchGCS();
+	}
+{/literal}
+</script>

@@ -1,0 +1,57 @@
+
+<div class="theContent">
+    <div class="theTitle">
+        <h2>Content {$nama|upper}</h2>
+        <a href="index.php?s=axisuser&act=excel_listuser&search={$search}" class="btn btn_document"><span>Download XLS</span></a>
+    </div><!--contenttitle-->
+    <div class="tableoptions">
+			<form>
+            	<span>Search</span>
+				<input type="hidden" name="s" value="article_user" />
+				<input type="hidden" name="act" value="user_content" />
+				<input type="hidden" name="userid" value="{$userid}" />
+				<input type="text" name="search" value="{$search}"/>&nbsp;
+				<span>Date Range</span>
+				<input type="text" name="startdate" value="{$startdate}" class="datepicker"/>&nbsp;
+				<span>s/d</span>		
+				<input type="text" name="enddate" value="{$enddate}"   class="datepicker"/>&nbsp;
+				<input type="submit" value="cari" class="stdbtn btn_orange" />
+
+			</form>
+    </div><!--tableoptions-->	
+    <table cellpadding="0" cellspacing="0" border="0" id="table1" class="stdtable">
+        <colgroup>
+            <col class="con0" style="width: 4%" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="head0">No</th>
+                <th class="head1">Title</th>
+                <th class="head0">Category</th>
+                <th class="head1">Status</th>
+                <th class="head0">Posted Date</th>
+                <th class="head1">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {section name=i loop=$list}
+            <tr>
+                <td width="3%">{$list[i].no}&nbsp;</td>
+                <td>{$list[i].title}&nbsp;</td>
+                <td>{$list[i].category}</td>
+                <td>{if $list[i].n_status==1} Publish {else} Unpublish {/if}</td>
+                <td width="10%"><nobr>{$list[i].posted_date|date_format:"%d-%m-%Y"} &nbsp;{$list[i].posted_date|date_format:$time.time}</nobr></td>
+                <td width="10%"><nobr><a href="index.php?s=article_user&act=viewPublish&id={$list[i].id}&userid={$userid}" style="text-decoration:none;">Detail</a></nobr></td>
+            </tr>
+            {/section}
+        </tbody>
+    </table>
+    <div class="paging">
+    	{$paging}
+    </div>
+</div><!--theContent-->

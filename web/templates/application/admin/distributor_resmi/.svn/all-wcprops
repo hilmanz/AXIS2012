@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/axis2012/!svn/ver/1300/trunk/web/templates/application/admin/distributor_resmi
+END
+distributor_resmi_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/axis2012/!svn/ver/1300/trunk/web/templates/application/admin/distributor_resmi/distributor_resmi_edit.html
+END
+distributor_resmi_new.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/axis2012/!svn/ver/1300/trunk/web/templates/application/admin/distributor_resmi/distributor_resmi_new.html
+END
+distributor_resmi_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/axis2012/!svn/ver/1300/trunk/web/templates/application/admin/distributor_resmi/distributor_resmi_list.html
+END

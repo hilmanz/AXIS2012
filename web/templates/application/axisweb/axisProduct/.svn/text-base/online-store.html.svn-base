@@ -1,0 +1,160 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}online_store">{$locale.onlinestore.title}</a></h1>
+</div><!-- end #breadcumb -->
+{$slider_store}
+<div id="container">
+    <div class="wrapper" id="lagiIn">
+    	<div id="sidebar">
+				{*}{$isi_pulsa}{/*}
+				{$medium_banner}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+        	<div class="shorter tabStore">
+            	<ul>
+                	<li class="active"><a class="iconGame" href="#tabGames">{$locale.onlinestore.games}</a></li>
+                	<li><a class="iconWallpaper" href="#tabWallpaper">{$locale.onlinestore.walpaper}</a></li>
+                	<li><a class="iconRbt" href="#tabRbt">{$locale.onlinestore.rbt}</a></li>
+                	<li><a class="iconRingtone" href="#tabRingtone">{$locale.onlinestore.ringtone}</a></li>
+                	<li><a class="iconGratis" href="#tabGratis">{$locale.onlinestore.gratis}</a></li>
+                </ul>
+                <form class="rightShort">
+           			<select class="styled"/>
+                	<option>Populer</option>
+					<option>terbaru</option>
+                    </select>
+                </form>
+            </div><!-- end .shorter -->
+            <div class="shadowCtop">
+                <div id="listStore" class="shadowCbottom">
+					<div id="tabGames" class="tab_content">
+					{section name=i loop=$mcp}
+						{if $mcp[i].categoryid==9}
+						 <div class="boxPromo">
+							<div class="bannerThumb">
+								<a href="{$basedomain}online_store/detail/{$mcp[i].id}"><img src="{$basedomain}public_assets/mcp/{$mcp[i].image}"/></a>
+							</div><!-- end .bannerThumb -->
+							
+							<div class="pitaGame"></div>
+							<a class="beli" href="{$basedomain}online_store/detail/{$mcp[i].id}">{$locale.btn.beli}</a>
+							<h3 class="title">{$mcp[i].title}</h3>
+							{if $mcp[i].prize!=0}<span class="price">Rp. {$mcp[i].prize}</span>{/if}
+							<div class="shadow"></div>
+						</div><!-- end .boxPromo -->
+						{/if}
+					{/section}
+					</div>
+					
+					<div id="tabWallpaper" class="tab_content">
+					{section name=i loop=$mcp}
+						{if $mcp[i].categoryid==10}
+						 <div class="boxPromo">
+							<div class="bannerThumb">
+								<a href="{$basedomain}online_store/detail/{$mcp[i].id}"><img src="{$basedomain}public_assets/mcp/{$mcp[i].image}"/></a>
+							</div><!-- end .bannerThumb -->
+							
+							<div class="pitaGame"></div>
+							<a class="beli" href="{$basedomain}online_store/detail/{$mcp[i].id}">{$locale.btn.beli}</a>
+							<h3 class="title">{$mcp[i].title}</h3>
+							{if $mcp[i].prize!=0}<span class="price">Rp. {$mcp[i].prize}</span>{/if}
+							<div class="shadow"></div>
+						</div><!-- end .boxPromo -->
+						{/if}
+					{/section}
+					</div>
+					
+					<div id="tabRbt" class="tab_content">
+					{section name=i loop=$mcp}
+						{if $mcp[i].categoryid==8}
+						 <div class="boxPromo">
+								{if $mcp[i].file}
+								 <div class="mp3Player">
+										<audio id="player2" style="width:245px;" src="{$basedomain}public_assets/media/{$mcp[i].file}" type="audio/mp3" controls="controls"></audio>	
+									</div><!-- end .mp3Player -->
+								{else}
+									<div class="bannerThumb">
+									<a href="{$basedomain}online_store/detail/{$mcp[i].id}"><img src="{$basedomain}public_assets/mcp/{$mcp[i].image}"/></a>
+									</div><!-- end .bannerThumb -->
+								{/if}
+							<div class="pitaGame"></div>
+							<a class="beli" href="{$basedomain}online_store/detail/{$mcp[i].id}">{$locale.btn.beli}</a>
+							<h3 class="title">{$mcp[i].title}</h3>
+							{if $mcp[i].prize!=0}<span class="price">Rp. {$mcp[i].prize}</span>{/if}
+							<div class="shadow"></div>
+						</div><!-- end .boxPromo -->
+						{/if}
+					{/section}
+					</div>
+					
+					<div id="tabRingtone" class="tab_content">
+					{section name=i loop=$mcp}					
+						{if $mcp[i].categoryid==11}
+						 <div class="boxPromo">
+								{if $mcp[i].file}
+								 <div class="mp3Player">
+										<audio id="player2" style="width:245px;" src="{$basedomain}public_assets/media/{$mcp[i].file}" type="audio/mp3" controls="controls"></audio>	
+									</div><!-- end .mp3Player -->
+								{else}
+									<div class="bannerThumb">
+									<a href="{$basedomain}online_store/detail/{$mcp[i].id}"><img src="{$basedomain}public_assets/mcp/{$mcp[i].image}"/></a>
+									</div><!-- end .bannerThumb -->
+								{/if}
+							<div class="pitaGame"></div>
+							<a class="beli" href="{$basedomain}online_store/detail/{$mcp[i].id}">{$locale.btn.beli}</a>
+							<h3 class="title">{$mcp[i].title}</h3>
+							{if $mcp[i].prize!=0}<span class="price">Rp. {$mcp[i].prize}</span>{/if}
+							<div class="shadow"></div>
+						</div><!-- end .boxPromo -->
+						{/if}
+					{/section}
+					</div>
+					
+					<div id="tabGratis" class="tab_content">
+					{section name=i loop=$mcp}	
+						{if $mcp[i].prize==0}
+						 <div class="boxPromo">
+							{if $mcp[i].file}
+								 <div class="mp3Player">
+										<audio id="player2" style="width:245px;" src="{$basedomain}public_assets/media/{$mcp[i].file}" type="audio/mp3" controls="controls"></audio>	
+									</div><!-- end .mp3Player -->
+								{else}
+									<div class="bannerThumb">
+									<a href="{$basedomain}online_store/detail/{$mcp[i].id}"><img src=	"{$basedomain}public_assets/mcp/{$mcp[i].image}"/></a>
+									</div><!-- end .bannerThumb -->
+							{/if}
+							
+							<div class="pitaGame"></div>
+							<a class="beli" href="{$basedomain}online_store/detail/{$mcp[i].id}">{$locale.btn.beli}</a>
+							<h3 class="title">{$mcp[i].title}</h3>
+							{if $mcp[i].prize!=0}<span class="price">Rp. {$mcp[i].prize}</span>{/if}
+							<div class="shadow"></div>
+						</div><!-- end .boxPromo -->
+						{/if}
+					{/section}
+					</div>
+                   
+               
+                </div><!-- end #listStore -->
+            </div><!-- end .shadowCtop -->
+            {*}
+				<div class="paging">
+                <a class="prev" href="#">&laquo;</a>
+                <a href="#" class="current">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a class="next" href="#">&raquo;</a>
+			{/*}
+            </div><!-- end .paging -->
+        </div><!-- end #contents -->
+    </div><!-- end #lagiIn -->
+</div><!-- end #container -->
+
+{literal}
+	<script>
+		$("li").click(function(){
+			$("li").removeClass("active");
+			$(this).addClass("active");
+		
+		});
+	</script>
+{/literal}

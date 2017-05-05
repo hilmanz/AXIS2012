@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/axis2012/!svn/ver/452/trunk/kakao/engines/Admin
+END
+PluginManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/452/trunk/kakao/engines/Admin/PluginManager.php
+END
+UserManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/axis2012/!svn/ver/452/trunk/kakao/engines/Admin/UserManager.php
+END
+DashboardManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/452/trunk/kakao/engines/Admin/DashboardManager.php
+END
+Admin.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/axis2012/!svn/ver/452/trunk/kakao/engines/Admin/Admin.php
+END
+activityTracker.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/452/trunk/kakao/engines/Admin/activityTracker.php
+END

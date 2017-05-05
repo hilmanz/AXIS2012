@@ -1,0 +1,85 @@
+
+<div class="theContent">
+    <div class="theTitle">
+        <h2>List User Profile</h2>
+    </div><!--contenttitle-->
+	<h2 >Total User &nbsp;:&nbsp; {$total}</h2>
+    <div class="tableoptions">
+			<form>
+            	<span>Search</span>
+				<input type="text" name="search" value="{$search}"/>&nbsp;&nbsp;
+				<span>Date Range</span>
+				<input type="text" name="startdate" value="{$startdate}" class="datepicker"/>&nbsp;
+				<span>s/d</span>&nbsp;
+				<input type="text" name="enddate" value="{$enddate}"   class="datepicker"/>&nbsp;
+				<input type="submit" value="cari" class="stdbtn btn_orange" />
+				<input type="hidden" name="s" value="axisuser" />
+			</form>
+    </div><!--tableoptions-->
+	<div class="tableoptions">
+		<h4>Total Register Source &nbsp;:</h4><br>
+		<font size=4 style="color:#0000CD;font-weight: bold;">Facebook {if $total_fb==''}0{else}{$total_fb}{/if}</font>&nbsp;&nbsp;&nbsp;
+		<font size=4 style="color:#00BFFF;font-weight: bold;">Twitter {if $total_twitter==''}0{else}{$total_twitter}{/if}</font>&nbsp;&nbsp;&nbsp;
+		<font size=4 style="color:#D2691E;font-weight: bold;">Google+ {if $total_gplus==''}0{else}{$total_gplus}{/if}</font>&nbsp;&nbsp;&nbsp;
+    </div><!--tableoptions-->
+    <table cellpadding="0" cellspacing="0" border="0" id="table1" class="stdtable">
+        <colgroup>
+            <col class="con0" style="width: 4%" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="head0">No</th>
+                <th class="head1">User ID</th>
+                <th class="head0">Name</th>
+                <th class="head1">Email</th>
+                <th class="head0">Register Source</th>
+                <th class="head0">Register Date</th>
+                <th class="head1">Last Login</th>
+                <th class="head1">Ranking</th>
+                <th class="head1">Pangkat</th>
+                <th class="head0">Status</th>
+               {*} <th class="head1">Total Login</th>{/*}
+                <th class="head0">Image</th>
+                <th class="head1">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {section name=i loop=$list}
+            <tr>
+                <td width="3%">{$list[i].no}&nbsp;</td>
+                <td>{$list[i].id}&nbsp;</td>
+                <td>{$list[i].name|capitalize}</td>
+                <td>{$list[i].email}</td>
+                <td><nobr>{$list[i].register_by|capitalize}</nobr></td>
+                <td width="10%"><nobr>{$list[i].register_date|date_format:"%d-%m-%Y"} &nbsp;{$list[i].register_date|date_format:$time.time}</nobr></td>
+				<td><nobr>{$list[i].last_login_date|date_format:"%d-%m-%Y"} {$list[i].last_login_date|date_format:$time.time}</nobr></td>
+				<td style="text-align:center;">{$list[i].rank}</td>
+				<td>{$list[i].pangkat|capitalize}</td>
+                <td align="center">{if $list[i].n_status == 0} Banned {elseif $list[i].n_status == 1} Approve {else} &nbsp; {/if}</td>
+                {*}<td>{$list[i].login_count}</td>{/*}
+                <td align="center">{if $list[i].img != ''}
+                    <img src="{$baseurl}public_assets/user/photo/{$list[i].img}" height="60"/>
+                    {else}
+                    <img src="{$baseurl}public_assets/user/photo/no_photo_small.gif" height="60"/>
+                    {/if}
+                </td>
+                <td align="center" width="4%">
+                    <nobr>
+                    <a href="index.php?s=article_user&act=user_content&userid={$list[i].id}" style="text-decoration:none;" class="green">My Article</a> |
+                    {if $list[i].img != ''}<a href="index.php?s=axisuser&act=hapus&id={$list[i].id}" style="text-decoration:none;" class="red" onclick="return confirm('Are you sure you want to delete this?')">Delete Photo</a>
+                    {else} <a href="#" style="text-decoration:none;" class="red">Delete Photo</a> {/if}
+                    </nobr>
+                </td>
+            </tr>
+            {/section}
+        </tbody>
+    </table>
+    <div class="paging">
+    	{$paging}
+    </div>
+</div><!--theContent-->

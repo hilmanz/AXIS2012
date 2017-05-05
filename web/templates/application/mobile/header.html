@@ -1,0 +1,137 @@
+<div class="page-header" data-role="header">
+	<div class="branding"><a href="{$mobiledomain}" rel="external"><img src="{$mobiledomain}assets/images/logo.jpg" alt="Axis, GSM yang baik" /></a></div>
+	
+	<div class="wrapper clear">
+		 <div id="language">
+		{if $currentpage=='myworld'}{else}
+			<a class="flagen locale" href="{encrypt url=$mobiledomain page='locale' country='2' nexturl=$nexturl}" lid="2" rel="external" >EN</a>
+			<a class="flagid locale" href="{encrypt url=$mobiledomain page='locale' country='1' nexturl=$nexturl}" lid="1" rel="external" >ID</a>
+		{/if}
+		</div><!-- end #language -->
+		<div class="search-wrapper">
+			<form id="searchTop" name="search-form" class="search-form" method="post" action="">
+				<div id="querySubmit" data-role="fieldcontain" class="input">
+					<input type="search"  id="querySearch" name="q" class="search-keyword" placeholder="{$locale.gcs.search}" />
+					<input name="lang" type="hidden" value="{$locale.country}">	
+				</div>
+			</form>
+		</div>
+			
+    {if $isLogin && $user}
+    <div id="loginBox">
+        <span class="user-info">Hi, 
+        {if $user->name} {$user->name} {$user->last_name} 
+        {else} <a href="{$mobiledomain}user/changeProfile" class="hoverBig" >please add your name</a>
+        {/if} </span>
+        <a href="logout.php" class="logout" rel="external">Logout</a>
+    </div><!-- end #loginBox -->
+    {else}	
+    <div id="loginBtn">
+        <div class="thumbNotLogin"></div>
+        <span class="loginText">LOGIN :</span>
+       {*} <a class="loginAxis" href="{if $isLogin}axisLife{else}login{/if}">&nbsp;</a>{/*}
+        <a class="loginFacebook {$facebookButton}" href="{if $fbConnect}{$fbConnect}{else}javascript:void(0){/if}">&nbsp;</a>
+        <a class="loginTwitter {$twConnectButton}" href="{if $twConnect}{$twConnect}{else}javascript:void(0){/if}">&nbsp;</a>
+        <a class="loginGplus {$gplusConnectButton}" href="{if $gplusConnect}{$gplusConnect}{else}javascript:void(0){/if}">&nbsp;</a>
+       {*} <a class="loginFacebook showPopup" href="#teaserAxisLife">&nbsp;</a>
+        <a class="loginTwitter showPopup" href="#teaserAxisLife">&nbsp;</a>
+        <a class="loginGplus showPopup" href="#teaserAxisLife">&nbsp;</a>{/*}
+    </div><!-- end #loginBtn -->
+        
+    {/if}
+	</div>
+	
+	
+	
+</div><!-- /header -->
+
+<script>
+var postGCS;
+var basedomain = "{$basedomain}";
+var lid = "{$locale.gcs.searchresult}";
+var you = "{$locale.gcs.you}";
+var noresult = "{$locale.gcs.noresult}";
+var mobiledomain = "{$mobiledomain}";
+	{literal}
+		$(document).ready(function(){
+			$("#searchTop").submit(function(){
+				var str = strip_tags($('#querySearch').val());
+				if(str){
+					searchGCS();
+				}
+				return false; 
+			});
+			
+			$("#querySearch").blur(function(){
+				var str = $(this).val();
+				if(str){
+					searchGCS();
+				}
+				return false; 
+			});
+		});
+		function searchGCS(){
+			var t = "#searchTop input[name='q']";
+			var lang = "#searchTop input[name='lang']";
+			var key = strip_tags($('#querySearch').val());
+			var mediumBanner;
+			//medium banner
+			$('.page-body').html('<div class="ui-loader ui-corner-all ui-body-a ui-loader-default" style="display:block;"><span class="ui-icon ui-icon-loading"></span><h1>loading</h1></div>');
+			google_search(t, lang,function(data){
+				if(data != null){
+				var str='';
+				str+='<div class="page-meta"><h1 class="page-title">'+lid+'</h1><div class="page-excerpt">'+you+' "'+data.q+'"</a></div></div>';
+				str+='<div class="page-content clear searchContent">';
+						str+='<div id="life-film-list" class="page-content-list">';
+							str+='<ul data-inset="true" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">';
+									str+=resultListHTML(data);
+							str+='</ul>';
+						str+='</div>';
+					str+='</div>';
+				}else{
+					var str='';
+					str+='<div class="breadcrumb breadcrumbInner"><a href="'+mobiledomain+'">Home</a> &raquo; <a>'+you+' "'+key+'"</a></div>';
+						str+='<div id="container"><div id="axisLife" class="wrapper">';
+							str+='<div id="sidebar">';			
+								//str+=mediumBanner;
+							str+='</div>';
+							str+='<div id="contents">';
+								str+='<div id="SearchNotFound">';
+									str+=noresult;
+								str+='</div>';
+							str+='</div>';
+					str+='</div></div>';
+				}
+				$('.page-body').html(str);
+			});
+		}
+		
+		function resultListHTML(data){
+			var str='';				
+			$.each(data.items, function(k, v){			
+				str+='<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="a" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-li-has-thumb ui-corner-top ui-btn-up-a"> <div class="ui-btn-inner ui-li ui-corner-top">';
+					str+='<a  href="'+v.url+'"  data-transition="slide" class="ui-link-inherit">';
+						if(v.image != ""){
+							str+='<img src="'+v.image+'" class="searchthumbnail ui-li-thumb ui-corner-tl" >';
+						}
+						str+='<span class="text">';
+							str+='<p>'+v.title+'</p>';
+							str+='<small>'+v.text+'</small>';
+						str+='</span>';
+					str+='</a>';
+				str+='</div></li>';
+			});
+			return str;
+		}
+		
+		
+	function strip_tags (input, allowed) {
+	  allowed = (((allowed || "") + "").toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join(''); 
+	  var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi,
+		commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+	  return input.replace(commentsAndPhpTags, '').replace(tags, function ($0, $1) {
+		return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : '';
+	  });
+	}
+	{/literal}
+</script>

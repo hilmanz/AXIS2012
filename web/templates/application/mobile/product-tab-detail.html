@@ -1,0 +1,61 @@
+{literal}
+<style>
+
+.boxBundling{ text-align:center }
+.imgBundling a img{width:150px }
+.entryBundilng h2{font-size:10px}
+</style>
+{/literal}
+<div class="breadcrumb">
+		<a href="{$mobiledomain}">{$locale.home.title}</a>	&raquo; 
+        <a href="{$mobiledomain}product">{$locale.nav.produk}</a> &raquo; 
+        <a href="{$mobiledomain}product/tab/{$type}">{$locale.product.type.$type}</a>
+</div>
+<div class="page-body" data-role="content">
+		
+	<div class="page-image-heading">	
+		{if $product[0].image}<img src="{$basedomain}public_assets/product/small_{$product[0].image}" />{/if}
+	</div>
+	
+	<div class="page-meta">
+		<h1 class="page-title page-title2"><span class="icon"></span>{$product[0].title}</h1>
+		
+		<div class="page-content clear">
+			<article>
+			{if !$product[0].image}
+				{if $product[0].brief} <h2>{$product[0].brief}</h2>{/if}
+				{if $product[0].content}<div class="white_table">{$product[0].content|replace:'public_assets/content/uploads/':"`$basedomain`public_assets/content/uploads/"|replace:'produk':'product'|replace:'':$mobiledomain|replace:'home/app/':$basedomain|replace:"promo/detail/":"promo/hot/"|replace:"Online Registration":""|replace:"REGISTRASI ONLINE":""|replace:"Klik di sini Untuk Melihat Lokasi AXIS SHOP":""|replace:"Click here to find AXIS SHOP location":""}</div>{/if}
+			{/if}
+			<div class="accordion">
+				{if $product[0].desc}
+					{foreach from=$product[0].desc key=kdesc item=vdesc}
+					<h3>{$vdesc.title}</h3>
+						<div class="entry">
+							<div class="white_table">
+								{$vdesc.description|replace:'public_assets/content/uploads/':"`$basedomain`public_assets/content/uploads/"|replace:'produk':'product'|replace:'':$mobiledomain|replace:'home/app/':$basedomain|replace:"promo/detail/":"promo/hot/"|replace:"Online Registration":""|replace:"REGISTRASI ONLINE":""|replace:"Klik di sini Untuk Melihat Lokasi AXIS SHOP":""|replace:"Click here to find AXIS SHOP location":""}
+							</div>
+						</div>
+					{/foreach}
+				{/if}
+			</div><!-- end .accordion -->
+			</article>
+		</div>
+	</div>
+	
+	<div class="list-nav">
+		<ul data-role="listview" data-inset="true">
+			<li>
+				<a href="{$mobiledomain}product/tab/{$type}" data-transition="slide" data-rel="back">
+					<span class="icon icon-plus"></span>
+					<span class="textLink">{$locale.mobilebtn.productbundling}</span>
+				</a>
+			</li>
+			<li>
+				<a href="{$mobiledomain}product" data-transition="slide">
+					<span class="icon icon-home"></span>
+					<span class="textLink">{$locale.mobilebtn.productlist}</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div><!-- /content -->

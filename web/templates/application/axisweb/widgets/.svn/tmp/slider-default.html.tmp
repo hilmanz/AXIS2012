@@ -1,0 +1,27 @@
+{if $banner}
+    <div id="slider">
+		<link rel="stylesheet" type="text/css" href="assets/css/slider-default.css" />
+        <div id="da-slider" class="da-slider">
+            	{section name=i loop=$banner}
+				<div class="da-slide" id="{if $banner[i].banner.textalign=='left' }slide1{else}slide3{/if}">
+                    <div class="entrySlide">
+                        <h1>{$banner[i].title}</h1>
+                        <h2>{$banner[i].brief}</h2>
+                        {if $banner[i].articleType==1} <a class="detail " href="index.php?page=online_store&act=detail&id={$banner[i].id}">{$locale.btn.detail}</a>       
+                        {else}<a class="detail " href="index.php?page=promo&act=detail&id={$banner[i].id}">{$locale.btn.detail}</a>  {/if} 
+                    </div>
+                    {if $banner[i].banner.textalign=='left' }
+					<div class="splash1"></div>
+					<div class="splash2"></div>
+                    {else}
+					<div class="splash3"></div>
+					<div class="splash4"></div>
+                    {/if}
+					<div class="da-img">{if $banner[i].slider_image!=''}<img src="public_assets/banner/{$banner[i].slider_image}"/>{/if}</div>
+				</div><!-- end .da-slide -->
+			    {/section}
+
+            </div><!-- end .da-slide -->
+        </div><!-- end #da-slider -->
+    </div><!-- end #slider -->
+{/if}

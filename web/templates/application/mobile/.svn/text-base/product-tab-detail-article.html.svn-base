@@ -1,0 +1,41 @@
+<div class="breadcrumb">
+		<a href="{$mobiledomain}">{$locale.home.title}</a>	&raquo; 
+        <a href="{$mobiledomain}product">{$locale.nav.produk}</a> &raquo; 
+        <a href="{$mobiledomain}product/tab/{$type}">{$locale.product.type.$type}</a>
+</div>
+<div class="page-body" data-role="content">
+		
+	<div class="page-image-heading">	
+		{if $product.image}<img src='{$basedomain}public_assets/product_article/small_{$product.image}' />{/if}
+	</div>
+	
+	<div class="page-meta">
+		<h1 class="page-title page-title2"><span class="icon"></span>{$product.title}</h1>
+		
+		<div class="page-content clear">
+			<article>
+				    <h1>{$product.title}</h1>
+					{if $product.prize!=0}<h3>Rp{$product.prize|number_format:0:",":"."}</h3>{/if}					{$product.content|replace:'public_assets/content/uploads/':"`$basedomain`public_assets/content/uploads/"|replace:'produk':'product'|replace:'':$mobiledomain|replace:'home/app/':$basedomain}
+			
+			
+			</article>
+		</div>
+	</div>
+	
+	<div class="list-nav">
+		<ul data-role="listview" data-inset="true">
+			<li>
+				<a href="{$mobiledomain}product/tab" data-transition="slide" data-rel="back">
+					<span class="icon icon-plus"></span>
+					<span class="textLink">{$locale.mobilebtn.productbundling}</span>
+				</a>
+			</li>
+			<li>
+				<a href="{$mobiledomain}product" data-transition="slide">
+					<span class="icon icon-home"></span>
+					<span class="textLink">{$locale.mobilebtn.productlist}</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div><!-- /content -->

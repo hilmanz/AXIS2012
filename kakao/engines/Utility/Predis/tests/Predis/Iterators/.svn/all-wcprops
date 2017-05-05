@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/Iterators
+END
+MultiBulkResponseSimpleTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/Iterators/MultiBulkResponseSimpleTest.php
+END
+MultiBulkResponseTupleTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/tests/Predis/Iterators/MultiBulkResponseTupleTest.php
+END

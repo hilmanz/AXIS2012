@@ -1,0 +1,64 @@
+
+<div class="theBox" id="arsipBlog">
+    <div class="headBox">
+        <h1>{$locale.arsipblog.title}</h1>
+    </div><!-- end .headBox -->
+    <div id="arsipBlogList" class="entryBox">
+	{section name=i loop=$arsipblog}
+        <div class="row">
+			{if $arsipblog[i].image}
+            <div class="smallThumb">
+                <a href="{$basedomain}blog/detail/{$arsipblog[i].parentid}"><img src="{$base_web_path}public_assets/blog/{$arsipblog[i].image}" /></a>
+            </div>
+			{/if}
+            <div class="entrySmall">
+                <h1>{$arsipblog[i].author.name} {*} <a href="#">({$arsipblog[i].author.position})</a>{/*}</h1>
+                <p><a href="{$basedomain}blog/detail/{$arsipblog[i].parentid}">{$arsipblog[i].title}</a></p> 
+                <p class="date">{$arsipblog[i].posted_date}</p>
+            </div>
+        </div><!-- end .row -->
+      {/section} 
+    </div><!-- end .entryBox -->
+    <div class="shadow"></div>
+    <div id="arsipBlogPaging" class="paging">
+    </div><!-- end .paging -->
+</div><!-- end .theBox -->
+<script>
+	var total_rows = {$arsipblog[0].total_rows};
+	var basedomain = "{$base_web_path}";
+	var corporatedomain = "{$basedomain}";
+{literal}
+	$(document).ready(function(){
+		var pageInit = 0;
+		var start = 0;
+		//Init Page
+		if(pageInit == 0){
+			pageInit = 1;
+			if(start == 0)start=1;
+			kiPagination(total_rows,start, 'arsipBlogPaging', 'arsip_blog_ajax', 'arsipBlogBox', 4, true);
+		}
+	});
+	function arsipBlogBox(fungsi, start){
+		$('#arsipBlogList').html('<div class="loaders"><img src="'+basedomain+'assets/images/loader.png"></div>');
+		$.post(corporatedomain+'blog/'+fungsi, {start : start}, function(arsip){
+			var str = '';
+			$.each(arsip, function(k,v){
+				str+='<div class="row">';
+					if(v.image != ""){
+					str+='<div class="smallThumb">';
+						str+='<a href="'+corporatedomain+'blog/detail/'+v.parentid+'"><img src="'+basedomain+'public_assets/blog/'+v.image+'" /></a>';
+					str+='</div>';
+					}
+					str+='<div class="entrySmall">';
+						str+='<h1>'+v.author.name+'</h1>';
+						str+='<p><a href="'+corporatedomain+'blog/detail/'+v.parentid+'">'+v.title+'</a></p>';
+						str+='<p class="date">'+v.posted_date+'</p>';
+					str+='</div>';
+				str+='</div>';
+			});
+			$('.loaders').remove();
+			$('#arsipBlogList').html(str);
+		});
+	}
+{/literal}
+</script>

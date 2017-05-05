@@ -1,0 +1,92 @@
+<div class="theContent">
+    <div class="theTitle">
+        <h2>Division</h2>
+        <a href="index.php?s=division&act=excel&lid={$lid}&startdate={$startdate}&enddate={$enddate}" class="btn btn_document"><span>Download XLS</span></a>
+        <a href="index.php?s=division&act=add" class="btn btn_pencil"><span>Add New</span></a>
+    </div><!--contenttitle-->
+    <div class="tableoptions">
+			<form>
+				<input type="hidden" name="s" value="banner" />
+				<select name="lid" style="width:200px;">
+					<option value=""> - Language - </option>
+					{section name=i loop=$language}
+					{if $language[i].id == $lid}
+						<option value="{$language[i].id}" selected="selected">{$language[i].language}</option>
+					{else}
+						<option value="{$language[i].id}">{$language[i].language}</option>
+					{/if}
+					{/section}
+				</select>
+				 <span>Date Range</span>
+				<input type="text" name="startdate" value="{$startdate}" style="width:150px;" class="datepicker" />
+				 <span>s/d</span>
+				<input type="text" name="enddate" value="{$enddate}" style="width:150px;" class="datepicker" />
+				<input type="submit" value="cari" class="stdbtn btn_orange" />
+				<input type="hidden" name="s" value="division" />
+			</form>
+    </div><!--tableoptions-->	
+    <table cellpadding="0" cellspacing="0" border="0" id="table1" class="stdtable">
+        <colgroup>
+            <col class="con0" style="width: 4%" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="head0">No</th>
+                <th class="head1">Language</th>
+                <th class="head0">Title</th>
+               {*}<th class="head0">Created Date</th>{/*}
+                <th class="head1">Published Date</th>
+                <th class="head0">Unpublished Date</th>
+                <th class="head1">Status</th>
+                <th class="head1">Division Description</th>
+                <th class="head0">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {foreach from=$list key=k item=v}
+            <tr>
+                <td width="3%">{$v[$k].no}&nbsp;</td>
+                <td>{$v[$k].language}</td>
+                <td>{$v[$k].title}</td>
+               {*} <td width="10%"><nobr>{$v[$k].created_date|date_format:"%d-%m-%Y"} &nbsp;{$v[$k].created_date|date_format:$time.time}</nobr></td>{/*}
+                <td width="10%"><nobr>{$v[$k].posted_date|date_format:"%d-%m-%Y"} &nbsp;{$v[$k].posted_date|date_format:$time.time}</nobr></td>
+                <td width="10%"><nobr>{$v[$k].expired_date|date_format:"%d-%m-%Y"} &nbsp;{$v[$k].expired_date|date_format:$time.time}</nobr></td>
+                <td align="center">
+                    {if $v[$k].n_status==0} Inactive 
+                    {elseif $v[$k].n_status==1} Publish 
+                    {elseif $v[$k].n_status==2} Unpublish
+                    {else}
+                    {/if}
+                </td>
+                <td width="10%" align="center"><a href="index.php?s=division&act=division_tab&id={$v[$k].id}" style="text-decoration:none;">see division description</a></td>
+                <td width="4%">
+                    <nobr>
+                    {section name=i loop=$language}
+                        <strong>{$language[i].language|capitalize}</strong>
+                            {assign var=langID value=$language[i].id}
+                            {assign var=IDcontent value=$v[$k].id}
+                        {if $language[i].id==$v.hasLang.$langID}
+                            <a href="index.php?s=division&act=edit&id={$v[$k].parentid}&id_lang={$langID}" class="green"> update </a>
+                            |<a href=""  class="blue">preview</a> 
+                            | <a href="index.php?s=division&act=delete&parentid={$v[$k].parentid}" class="red" onclick="return confirm('Are you sure you want to delete this?')">delete</a>
+                            <br />
+                        {else}
+                            <a href="index.php?s=division&act=add_language&id={$v[$k].parentid}&id_lang={$langID}" class="green"> add </a>
+                           
+                        {/if}
+                    {/section}
+                    </nobr>
+                </td>
+            </tr>
+            {/foreach}
+        </tbody>
+    </table>
+    <div class="paging">
+    	{$paging}
+    </div>
+</div><!--theContent-->

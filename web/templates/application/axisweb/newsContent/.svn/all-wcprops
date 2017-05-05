@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/1407/trunk/web/templates/application/axisweb/newsContent
+END
+newsContentDetail-backbone.html
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/axis2012/!svn/ver/93/trunk/web/templates/application/axisweb/newsContent/newsContentDetail-backbone.html
+END
+userContentDetail.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/axis2012/!svn/ver/1407/trunk/web/templates/application/axisweb/newsContent/userContentDetail.html
+END
+contentList.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/axis2012/!svn/ver/93/trunk/web/templates/application/axisweb/newsContent/contentList.html
+END
+newsContentDetail.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/axis2012/!svn/ver/1407/trunk/web/templates/application/axisweb/newsContent/newsContentDetail.html
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/axis2012/!svn/ver/1432/trunk/web/templates/application/axisweb/gcs
+END
+searchList.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/axis2012/!svn/ver/725/trunk/web/templates/application/axisweb/gcs/searchList.html
+END
+search-result.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/axis2012/!svn/ver/1432/trunk/web/templates/application/axisweb/gcs/search-result.html
+END
+search-result-notfound.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/axis2012/!svn/ver/1322/trunk/web/templates/application/axisweb/gcs/search-result-notfound.html
+END

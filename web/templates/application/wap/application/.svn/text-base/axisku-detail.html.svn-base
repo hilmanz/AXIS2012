@@ -1,0 +1,21 @@
+<div class="title">
+{$locale.axislife.wapheader}
+</div><!-- end .title -->
+<div class="detail">
+	<div class="post">
+    	<div class="imgDetail">
+        	<img src="{$basedomain}content/1.jpg" />
+        </div><!-- end .imgDetail -->
+        <div class="entryTitle">
+        	<h1>{$data.title}</h1>
+            <p>{$data.brief}</p>
+        </div><!-- end .entryTitle -->
+        <div class="entryPost">
+                <p>{$data.content}</p>
+				{if $data.categoryid==18} <strong>sumber :</strong><a href="{$data.url}" >{$data.url}</a> {/if}
+        </div><!-- end .entryPost -->
+    </div><!-- end .row -->
+</div><!-- end .detail -->
+<div class="rowBtn">
+	<a href="{$basedomain}axisku/tab/{$type}" class="btnBack" onclick="history.go(-1)">&laquo; Back</a> 
+</div>

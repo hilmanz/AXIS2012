@@ -1,0 +1,15 @@
+<div id="breadcumb" class="wrapper">
+</div><!-- end #breadcumb -->
+{$slider_default2}
+{$carousel_banner}
+
+
+<script>
+postGCS = '{$postGCS}'; 
+{literal}
+	if(postGCS != ''){
+		$('#querySearch').val(postGCS);
+		searchGCS();
+	}
+{/literal}
+</script>

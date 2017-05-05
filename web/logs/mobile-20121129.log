@@ -1,0 +1,50 @@
+2012-11-29 16:33:35 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 16:33:35 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 16:33:35 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 16:33:53 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 16:33:53 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 16:33:53 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 16:35:08 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 16:35:08 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 16:35:08 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 16:36:42 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 16:36:42 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 16:36:42 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 16:37:54 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 16:38:03 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 16:42:16 SELECT * FROM axis_news_content_category WHERE used=0 AND id=4 LIMIT 0,1
+2012-11-29 16:42:16 SELECT * FROM axis_news_content_type 
+2012-11-29 16:42:16 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:44:29 SELECT * FROM axis_news_content_category WHERE used=0 AND id=4 LIMIT 0,1
+2012-11-29 16:44:29 SELECT * FROM axis_news_content_type 
+2012-11-29 16:44:29 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:45:26 SELECT * FROM axis_news_content_category WHERE used=0 AND id=4 LIMIT 0,1
+2012-11-29 16:45:26 SELECT * FROM axis_news_content_type 
+2012-11-29 16:45:26 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:49:31 SELECT * FROM axis_news_content_category WHERE used=0 AND id=4 LIMIT 0,1
+2012-11-29 16:49:31 SELECT * FROM axis_news_content_type 
+2012-11-29 16:49:31 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:51:26 SELECT * FROM axis_news_content_category WHERE used=0 AND id=4 LIMIT 0,1
+2012-11-29 16:51:26 SELECT * FROM axis_news_content_type 
+2012-11-29 16:51:26 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:55:04 SELECT * FROM axis_news_content_category WHERE used=0 AND id=4 LIMIT 0,1
+2012-11-29 16:55:04 SELECT * FROM axis_news_content_type 
+2012-11-29 16:55:04 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:56:47 SELECT * FROM axis_news_content_category WHERE used=0 AND id=4 LIMIT 0,1
+2012-11-29 16:56:47 SELECT * FROM axis_news_content_type 
+2012-11-29 16:56:47 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:57:24 SELECT * FROM axis_news_content_category WHERE used=0 AND id=4 LIMIT 0,1
+2012-11-29 16:57:24 SELECT * FROM axis_news_content_type 
+2012-11-29 16:57:24 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 17:01:01 SELECT * FROM axis_news_content_category WHERE used=0 AND id=4 LIMIT 0,1
+2012-11-29 17:01:01 SELECT * FROM axis_news_content_type 
+2012-11-29 17:01:01 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 17:01:48 SELECT * FROM axis_news_content_category WHERE used=0 AND id=4 LIMIT 0,1
+2012-11-29 17:01:48 SELECT * FROM axis_news_content_type 
+2012-11-29 17:01:48 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 17:02:16 SELECT * FROM axis_news_content_category WHERE used=0 AND id=4 LIMIT 0,1
+2012-11-29 17:02:16 SELECT * FROM axis_news_content_type 
+2012-11-29 17:02:16 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 17:02:24 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 17:02:24 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 17:02:24 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 

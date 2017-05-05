@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/lib/Predis/Pipeline
+END
+PipelineContext.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/lib/Predis/Pipeline/PipelineContext.php
+END
+IPipelineExecutor.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/lib/Predis/Pipeline/IPipelineExecutor.php
+END
+SafeExecutor.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/lib/Predis/Pipeline/SafeExecutor.php
+END
+FireAndForgetExecutor.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/lib/Predis/Pipeline/FireAndForgetExecutor.php
+END
+SafeClusterExecutor.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/lib/Predis/Pipeline/SafeClusterExecutor.php
+END
+StandardExecutor.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Predis/lib/Predis/Pipeline/StandardExecutor.php
+END

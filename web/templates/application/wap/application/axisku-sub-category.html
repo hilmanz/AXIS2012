@@ -1,0 +1,25 @@
+<div class="title">
+{$locale.axislife.wapheader}
+</div><!-- end .title -->
+
+<div id="navigation">
+	<ul>
+	{if $data}
+		{foreach from=$data key=k item=v}
+     <li><a href="{$basedomain}axisku/detail/{$v.id}/{$type}">{$v.title}  &raquo;</a></li> 
+		{/foreach}
+    </ul>
+	{else}
+		 <li><a href="{$basedomain}axisku/tab/{$type}/{$start-$max}">&laquo; Sebelumnya</a></li> 
+	{/if}
+</div>
+
+<div class="paging">
+	{if $data}
+		{if $start>0}<a href="{$basedomain}axisku/tab/{$type}/{$start-$max}">&laquo; Sebelumnya</a>{/if} 
+		<a href="{$basedomain}axisku/tab/{$type}/{$start+$max}">Selanjutnya &raquo;</a> 
+	{/if}
+</div>
+<div class="rowBtn">
+	<a href="{$basedomain}axisku" class="btnBack">&laquo; Back</a> 
+</div>

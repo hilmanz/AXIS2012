@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Runner
+END
+TestSuiteLoader.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Runner/TestSuiteLoader.php
+END
+StandardTestSuiteLoader.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Runner/StandardTestSuiteLoader.php
+END
+BaseTestRunner.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Runner/BaseTestRunner.php
+END
+Version.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/axis2012/!svn/ver/8/trunk/web/test/PHPUnit/Runner/Version.php
+END

@@ -1,0 +1,71 @@
+<div id="container">
+    <div class="wrapper" id="axisLife">
+		<div id="shorter">
+        	<h1 class="titleDetail">{$locale.axislife.category}</h1>
+            <a class="backBtn" href="{$basedomain}{$userpage}">&laquo;  {$locale.msg.kembali}</a>
+        </div>
+    	{$sidebar_content}
+    	
+    	{$sidebar_axis_life}
+        <div id="contents">
+			<div class="theTitle">
+            	<h1 class="icon_favorite">{$locale.widget.myarticle}</h1>
+            </div><!-- end .theTitle -->
+	
+			{if $article} 
+				  <div class="shadowCtop">
+					<div class="shadowCbottom">
+						<div class="entryDetail list">
+							{foreach from=$article key=k item=v}
+							{assign var="rate" value=1}
+							{assign var="idx" value=$idx+1}
+								<div class="row">
+									<div class="cat_movie">
+										<div class="circleThumb">
+											{if $v.n_status==1}<a href="{$basedomain}content/sdetail/{$v.id}">{/if}
+												{if $v.image}<img src="{$basedomain}public_assets/user/content/{$v.image}" />
+												{else}<img src="{$basedomain}assets/images/thumb.jpg" />
+												{/if}												
+											{if $v.n_status==1}</a>{/if}
+										</div><!-- end .circleThumb -->
+										<div class="entry">
+											<h3>
+											{if $v.n_status==1}<a href="{$basedomain}content/sdetail/{$v.id}">{$v.title} </a>
+											{else}{$v.title} ( waiting for moderation ){/if}
+											</h3>
+											<h3>
+											{if $v.n_status==1}<a href="{$basedomain}content/sdetail/{$v.id}">{$v.brief} </a>
+											{else}{$v.brief}   {/if}											
+											</h3>
+											<p>{$v.url}</p>
+											<a class="commentCount">{if $v.comment}{$v.comment}{else}0{/if} {$locale.axislife.komentar}</a>
+											{if $v.rating >= 1}
+												{section name=rate start=0 loop=$v.rating step=1}
+													<img src="{$basedomain}assets/images/icon/stars.png" />
+												{/section}
+											{/if}
+											{*}<a class="removeBtn" href="#">X</a>{/*}
+										</div><!-- end .entry -->
+									</div>
+								</div><!-- end .row -->
+							{/foreach}
+						</div><!-- end .entryDetail -->
+					</div><!-- end .shadowCbottom -->
+				
+					<div class="paging">
+						
+					</div><!-- end .paging -->
+				</div><!-- end .shadowCtop -->
+				
+			{else}
+			  <div class="shadowCtop">
+				<h3 class="emptyMessage">{$locale.axislife.emptymyarticle}</h3>
+			  </div>
+          	{/if}
+        </div><!-- end #contents -->
+       
+    </div><!-- end #axisLife -->
+    <div class="widget-axisLife">
+    {$carousel_banner}
+    </div><!-- end .widget-whyAxis -->
+</div><!-- end #container -->

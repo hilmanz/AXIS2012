@@ -1,0 +1,48 @@
+2012-12-20 15:05:53 SELECT * FROM axis_news_content_banner_type WHERE type ='header' AND n_status=1 LIMIT 1 
+2012-12-20 15:05:54 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-12-20 15:05:54 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type IN (1) AND n_status IN (1) 
+2012-12-20 15:05:54 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-12-20 15:05:54 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-12-20 15:05:54 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type IN (2,1) AND n_status IN (1) 
+2012-12-20 15:05:54 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid ,anc.parentid,ancc.category
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		LEFT JOIN axis_news_content_category ancc ON ancc.id = anc.categoryid
+		WHERE anc.articleType IN (2)   AND
+		anc.n_status IN (1) AND anc.lid = 1 	
+		 ORDER BY anc.posted_date DESC LIMIT 4
+		
+2012-12-20 15:05:54 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid ,anc.parentid,ancc.category,anc.thumbnail_image,anc.url
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		LEFT JOIN axis_news_content_category ancc ON ancc.id = anc.categoryid
+		WHERE anc.articleType IN (2)  AND
+		anc.n_status IN (1) AND anc.lid = 1 	
+		ORDER BY anc.posted_date DESC LIMIT 4
+		
+2012-12-20 15:06:46 SELECT * FROM axis_news_content_banner_type WHERE type ='header' AND n_status=1 LIMIT 1 
+2012-12-20 15:06:46 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-12-20 15:06:46 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type IN (1) AND n_status IN (1) 
+2012-12-20 15:06:46 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-12-20 15:06:46 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-12-20 15:06:46 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type IN (2,1) AND n_status IN (1) 
+2012-12-20 15:06:46 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid ,anc.parentid,ancc.category
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		LEFT JOIN axis_news_content_category ancc ON ancc.id = anc.categoryid
+		WHERE anc.articleType IN (2)   AND
+		anc.n_status IN (1) AND anc.lid = 1 	
+		 ORDER BY anc.posted_date DESC LIMIT 4
+		
+2012-12-20 15:06:46 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid ,anc.parentid,ancc.category,anc.thumbnail_image,anc.url
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		LEFT JOIN axis_news_content_category ancc ON ancc.id = anc.categoryid
+		WHERE anc.articleType IN (2)  AND
+		anc.n_status IN (1) AND anc.lid = 1 	
+		ORDER BY anc.posted_date DESC LIMIT 4
+		

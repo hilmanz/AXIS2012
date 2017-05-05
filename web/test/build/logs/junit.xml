@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="viki_helper_test" file="/home/duf/www/axis2/axis2012/trunk/web/test/modules/viki_helper_test.php" fullPackage="viki.helper" tests="3" assertions="3" failures="0" errors="0" time="20.981831">
+    <testcase name="test_videos" class="viki_helper_test" file="/home/duf/www/axis2/axis2012/trunk/web/test/modules/viki_helper_test.php" line="10" assertions="1" time="11.492878"/>
+    <testcase name="test_featured" class="viki_helper_test" file="/home/duf/www/axis2/axis2012/trunk/web/test/modules/viki_helper_test.php" line="18" assertions="1" time="8.176354"/>
+    <testcase name="test_music_videos" class="viki_helper_test" file="/home/duf/www/axis2/axis2012/trunk/web/test/modules/viki_helper_test.php" line="22" assertions="1" time="1.312599"/>
+  </testsuite>
+</testsuites>

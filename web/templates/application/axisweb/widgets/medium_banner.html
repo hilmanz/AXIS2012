@@ -1,0 +1,14 @@
+{if $banner}
+{section name=i loop=$banner}
+<div id="bannerMedium">
+    <div class="bannerMedium">
+       {if $banner[i].slider_image}<a href="{$basedomain}promo/detail/{$banner[i].id}"><img src="{$basedomain}public_assets/banner/{$banner[i].slider_image}" /></a>{/if}
+    </div>
+    {*}
+    <a class="detail" href="{$basedomain}promo/detail/{$banner[i].id}">{$locale.btn.detail}</a>
+    <a class="beli" href="#">{$locale.btn.beli}</a>
+    {/*}
+    <div class="shadow"></div>
+</div><!-- end #bannerMedium -->
+{/section}
+{/if}

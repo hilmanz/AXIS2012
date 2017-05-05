@@ -1,0 +1,60 @@
+<h2>DASHBOARD CONFIGURATION</h2> 
+<hr /> 
+<p>{$msg}</p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list zebra">
+  <tr class="head">
+	<td><strong>Class Name</strong></td>	 	 	 	
+    <td><strong>module Path</strong></td>
+    <td><strong>Request ID</strong></td>
+    <td colspan="2"><strong>Action</strong></td>
+  </tr>
+  {section name=i loop=$list}
+  <tr>
+	<td>{$list[i].className}</td>
+    <td>{$list[i].plugin_path}</td>
+    <td>{$list[i].requestID}</td>
+	<td>{if $list[i].is_enabled eq '1'} ACTIVE {else} DISABLED{/if}</td>
+    <td><a href="?s=pluginBuilder&do=editModule&id={$list[i].id}">Edit</a>
+	&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="javascript:void(0)" ondblclick="window.location='?s=pluginBuilder&do=deleteModule&id={$list[i].id}' " title="double click to delete" >Delete</a></td>
+  </tr>
+  {/section}
+</table>
+<h2>Add Module</h2>
+<hr /> 
+<form name="form1" method="post" action="">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="addlist zebra">
+    <tr>
+	<tr>
+      <td>Class Name</td>
+      <td><input name="className" type="text" id="invoker" size="50" maxlength="255" value="{$editList.className}"> </td>
+    </tr>
+      <td>Module Path</td>
+      <td><input name="pluginPath" type="text" id="class" size="50" maxlength="255" value="{$editList.plugin_path}"> 
+        example : applicationFolder/adminFolder/moduleFolder/</td>
+    </tr>
+    <tr>
+      <td>Request ID</td>
+      <td><input name="requestID" type="text" id="invoker" size="50" maxlength="255" value="{$editList.requestID}"> </td>
+    </tr>
+	 
+    <tr>
+      <td>Status</td>
+      <td><select name="status" id="status">
+        <option value="1" {if $editList.is_enabled=='1'} selected {/if}>Active</option>
+        <option value="0" {if $editList.is_enabled=='0'} selected {/if}>Disabled</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+	  <input type="submit" name="button" id="button" value="{if $editList}Update{else}Save{/if}">
+	  {if $editList}
+		<input type="button" name="button" id="button" value="New Module" onCLick="window.location='index.php?s=pluginBuilder'" ></a>
+		<input name="id" type="hidden" id="idxID" value="{$editList.id}">
+	  {/if}
+      <input name="s" type="hidden" id="s" value="pluginBuilder">
+      <input name="do" type="hidden" id="do" value="{if $editList}updateModule{else}saveModule{/if}"></td>
+    </tr>
+  </table>
+</form>

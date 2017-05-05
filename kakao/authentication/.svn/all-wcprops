@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/axis2012/!svn/ver/452/trunk/kakao/authentication
+END
+.htaccess
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/452/trunk/kakao/authentication/.htaccess
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/452/trunk/kakao/authentication/index.php
+END
+common.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/axis2012/!svn/ver/452/trunk/kakao/authentication/common.php
+END

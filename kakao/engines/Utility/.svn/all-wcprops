@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility
+END
+ntlm_sasl_client.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/ntlm_sasl_client.php
+END
+Mailer_Blast.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Mailer_Blast.php
+END
+digest_sasl_client.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/digest_sasl_client.php
+END
+Mobile_Detect.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Mobile_Detect.php
+END
+CSVPrinter.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/CSVPrinter.php
+END
+basic_sasl_client.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/basic_sasl_client.php
+END
+CaptchaUtil.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/CaptchaUtil.php
+END
+WordCloud.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/WordCloud.php
+END
+sasl.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/sasl.php
+END
+PHPExcel.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/PHPExcel.php
+END
+PHPExcelWrapper.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/PHPExcelWrapper.php
+END
+Mailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Mailer.php
+END
+FileUploader.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/FileUploader.php
+END
+SessionManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/SessionManager.php
+END
+smtp.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/smtp.php
+END
+Browser.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Browser.php
+END
+Thumbnail.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Thumbnail.php
+END
+plain_sasl_client.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/plain_sasl_client.php
+END
+RequestManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/RequestManager.php
+END
+Debugger.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Debugger.php
+END
+login_sasl_client.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/login_sasl_client.php
+END
+Paginate.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/axis2012/!svn/ver/452/trunk/kakao/engines/Utility/Paginate.php
+END

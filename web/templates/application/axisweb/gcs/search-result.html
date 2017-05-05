@@ -1,0 +1,232 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">Home</a> &raquo; <a>You Search "{$keywords}"</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="axisLife">
+    	<div id="sidebar">
+   			{$medium_banner}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+        	<div class="theTitle">
+            	<h1 class="icon_favorite">{$locale.gcs.searchresult}</h1>
+            </div><!-- end .theTitle -->
+            <div class="shadowCtop">
+            	<div class="shadowCbottom">
+                    <div class="entryDetail list">
+                       	{foreach from=$contentlist key=k item=content}
+							
+							{if $content.link}
+									{assign var=pagefromsearch value=$content.link}
+								{else}
+									{assign var=pagefromsearch value='content'}
+									{if $content.user}
+										{assign var=detailfromsearch value='sdetail'}
+									{else}
+										{assign var=detailfromsearch value='detail'}
+									{/if}									
+								{/if}				
+						<div class="row">
+                            <div class="circleThumb">
+								<a href='									
+									{encrypt url=$basedomain page="gcs" act="redirecttocontent" keywords=$keywords contentid=$content.id fromwhere=$content.user link="`$basedomain``$pagefromsearch``$detailfromsearch``$content.id`"}'
+								>
+								{if $content.categoryid==18} <img src="http://img.youtube.com/vi/{$content.video_thumbnail}/0.jpg" onerror="imgErrorSearch(this);" /></a>
+									{else}
+										{if $content.image}<img onerror="imgErrorSearch(this)"; src="{$basedomain}public_assets/{if $content.user}user/content{else}article{/if}/{if $content.articleType==1}realthumb_{else}thumb_{/if}{$content.image}" />
+										{else}<img src="{$basedomain}assets/images/thumb.jpg" />
+										{/if}
+									{/if}
+                                </a>
+                            </div><!-- end .circleThumb -->
+                            <div class="searchText">
+                                <div class="entry">
+									
+									
+											
+                                    <h3><a href='									
+									{encrypt url=$basedomain page="gcs" act="redirecttocontent" keywords=$keywords contentid=$content.id fromwhere=$content.user link="`$basedomain``$pagefromsearch``$detailfromsearch``$content.id`"}'>{$content.title} </a></h3>
+									<a href='									
+									{encrypt url=$basedomain page="gcs" act="redirecttocontent" keywords=$keywords contentid=$content.id fromwhere=$content.user link="`$basedomain``$pagefromsearch``$detailfromsearch``$content.id`"}'>
+									{$basedomain}
+										{if $content.link}
+											{$content.link}
+										{else}
+											content/
+												{if $content.user}
+													sdetail/
+												{else}
+													detail/
+												{/if}											
+										{/if}
+									{$content.id}
+									</a>
+                                    <p>{if $content.brief}{$content.brief}{else}{$content.title}{/if}</p>
+                                </div><!-- end .entry -->
+                            </div>
+                        </div><!-- end .row -->
+                        {/foreach}
+                    </div><!-- end .entryDetail -->
+                </div><!-- end .shadowCbottom -->
+                <div class="paging" id="pagingID">
+					<a href="" class="current">1</a>
+                    <a href="javascript:void(0)" onclick="getquerygcs('{$keywords}')">2</a>
+                    <a class="next" href="javascript:void(0)" onclick="getquerygcs('{$keywords}')">&raquo;</a>
+                </div><!-- end .paging -->
+            </div><!-- end .shadowCtop -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+    <div class="widget-axisLife">
+	{$carousel_banner}
+    </div><!-- end .widget-whyAxis -->
+</div><!-- end #container -->
+
+<script>
+	var keywords = '{if $keywords}{$keywords}{else}{$locale.gcs.search}{/if}';
+	var total_rows = {$total};
+	var basedomain = '{$basedomain}';
+	{literal}
+	$("#querySearch").val(keywords);
+	
+	$(document).ready(function(){
+			
+			initPageGCS();
+			
+			/*if(total_rows>0&&total_rows<=7){
+					appendGCS()				
+					return false;
+			}*/
+			
+			
+			
+	});
+	
+	function appendGCS(){
+			var t = "#searchTop input[name='q']";
+				var lang = "#searchTop input[name='lang']";
+				var key = strip_tags($('#querySearch').val());
+				var mediumBanner;
+				$.get(basedomain+'gcs/search_ajax', function(mediumBanner){
+					google_search(t, lang,function(data){
+						if(data != null){
+							
+							var str='';				
+							$.each(data.items, function(k, v){			
+								
+								str+='<div class="row">';
+									if(v.image != ""){
+										str+='<div class="circleThumb">';
+											str+='<a href="'+v.url+'"><img src="'+v.image+'"></a>';
+										str+='</div>';
+									}
+									str+='<div class="searchText">';
+										str+='<div class="entry">';
+											str+='<h3><a href="'+v.url+'">'+v.title+'</a></h3>';
+											str+='<a href="'+v.url+'">'+v.url+'</a>';
+											str+='<p>'+v.text+'</p>';
+										str+='</div>';
+									str+='</div>';
+								str+='</div>';
+							});
+							$('.entryDetail.list').append(str);
+						}else{
+							return false;
+						}
+					
+					});
+						
+				});
+				
+				return false;
+	}
+	
+	function paging_ajax(fungsi, start){
+		$('.entryDetail.list').html('');
+		$('.entryDetail.list').append('<div class="loaders"><img src="'+basedomain+'assets/images/loader.gif"></div>');
+		var query = keywords;
+		$.post(basedomain+'gcs/ajaxsearch/', {start : start,q:query}, function(data){
+			if(data){
+				var html ='';
+				$.each(data.content,function(i,e){
+					var detailfromsearch = "";
+					var pagefromsearch = "";
+					var thisuser = 0;
+					if(e.user) thisuser = 1;
+					if(e.link) pagefromsearch = e.link;
+					else {
+						pagefromsearch = "content";
+						if(e.user) detailfromsearch = "sdetail";
+						else detailfromsearch = "detail";
+					}
+					/*{/literal}			
+						var redirectcontentLink = "{encrypt  url="+basedomain+" page='gcs' act='redirecttocontent' keywords="+query+" contentid="+e.id+" fromwhere="+e.user+" link="+basedomain+pagefromsearch+detailfromsearch+e.id+" }";
+						
+					{literal}
+					*/
+					
+					var links = basedomain+pagefromsearch+detailfromsearch+e.id;
+					var redirectcontentLink = basedomain+"gcs/redirecttocontent/"+keywords+"/"+e.id+"/"+thisuser+"/"+ links.replace(/\//g,"|");
+				
+					html += '<div class="row">';
+					html += '            <div class="circleThumb">';
+					html += '				<a href="'+redirectcontentLink+'">';
+					if(e.categoryid==18) html += '<img onerror="imgErrorSearch(this);" src="http://img.youtube.com/vi/'+e.video_thumbnail+'/0.jpg" /></a>';
+					else {
+						if(e.image) {
+							html += '	<img onerror="imgErrorSearch(this);" src="'+basedomain+'public_assets/';
+							if (e.user)  html += 'user/content';
+							else  {
+								html += 'article/';
+								if(e.articleType==1) html += 'realthumb_';
+								else html += 'thumb_';
+								html += e.image+'" />';
+							}
+						}else html += '	<img src="'+basedomain+'assets/images/thumb.jpg" />';
+						
+					}
+				
+					html += '            </div>';
+					html += '             <div class="searchText">';
+					html += '               <div class="entry">';			
+					html += '                   <h3><a href="'+redirectcontentLink+'">'+e.title+'</a></h3>';
+					html += '					<a href="'+redirectcontentLink+'" >'+basedomain+pagefromsearch+detailfromsearch+e.id+'</a>';
+					if(e.brief!='') html += '                   <p>'+e.brief+'</p>';
+					else html += '                   <p>'+e.title+'</p>';
+					html += '               </div>';
+					html += '           </div>';
+					html += '       </div>';
+				});
+					
+				
+			
+			}
+			$('.loaders').remove();
+			$('.entryDetail.list').html(html);
+			
+			/*if(total_rows>7&&total_rows<=10) initPageGCS();
+			else addPageGCS();*/
+			/*var content =  data.content;
+			var totaldata = content.length;
+			if(totaldata>0&&totaldata<=7){
+					appendGCS()				
+					return false;
+			}*/
+			
+		},"json");
+	
+	
+		
+	}
+	
+	function getquerygcs(keywords){
+				var str = strip_tags(keywords);
+				$('#querySearch').val(keywords);
+				if(str != '' || str != defaultText){
+					searchGCS();
+				}
+				return false; 
+			}
+	$(document).on('click','.cPaging', function(){
+		$('html, body').animate({scrollTop: '0px'}, 500);
+	}); 
+	</script>
+{/literal}

@@ -1,0 +1,29 @@
+<div id="banner">
+	<a href="#"><img src="{$basepath}public_assets/banner/tiny_{$promo[0].slider_image}" /></a>
+</div>
+<div id="searchForm">
+    {*}<form class="" action="{$baseurl}" name="gotourl">
+    <input type="text" value="Bisa dibantu? Cari di sini..." onBlur="if(this.value=='')this.value='Bisa dibantu? Cari di sini...';" onFocus="if(this.value=='Bisa dibantu? Cari di sini...')this.value='';"  />
+    <input type="button" value="Search" onclick="url();" />
+    </form>
+	
+	{literal}
+		<script>
+			var url;
+			function url(){
+			url = "index.php?menu=search";
+			location.href = url;
+			}
+		</script>
+	{/literal}
+	{/*}
+</div>
+<div id="navigation">
+	<ul>
+    	 <li><a href="{$basedomain}pakai_axis">{$locale.nav.kenapaaxis}</a></li>
+		<li><a href="{$basedomain}produk">{$locale.nav.produk}</a></li>
+		<li><a href="{$basedomain}promo">{$locale.nav.promo}</a></li>
+		<li><a href="{$basedomain}axisku">{$locale.nav.axislife}</a></li>
+		<li><a href="{$basedomain}ask_axis">{$locale.nav.customercare}</a></li> 
+    </ul>
+</div>

@@ -1,0 +1,118 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}international">{$locale.footnav.internasional}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="headBanner">
+    <div class="headBanner" id="headBannerInternational">
+        <div id="headBannerContent">
+            <div class="headBannerImg"><img src="{$basedomain}assets/content/slider/international.jpg"/></div>
+        	<div class="headBannerEntry">
+                <h1>{$locale.intl.head}</h1>
+                <h2>{$locale.intl.body}</h2>
+            </div>
+        </div><!-- end #headBannerContent -->
+    </div><!-- end .headBanner -->
+</div><!-- end #headBanner -->
+{if $product}
+<div id="produkDetailPage">
+	<div class="wrapper">
+    	<div class="navTab">
+        	<ul>
+				{foreach from=$product key=k item=v}
+					<li><a href="#tab{$v.id}" >{$v.title}</a></li>
+				{/foreach}
+            </ul>
+        </div>
+    </div>
+    <div class="productPage">
+    	<div class="wrapper" id="produkDetail">
+        	<div class="tabContainer">
+			{assign var="ddomain" value="`$basedomain``$basedomain`"}
+			{foreach from=$product key=k item=v}
+                <div class="tabContent" id="tab{$v.id}">
+                	
+                        {if $v.image}<img src="{$basedomain}public_assets/product/{$v.image}" />{/if}
+                        {if $v.brief} <h2>{$v.brief}</h2>{/if}
+                        {if $v.content}	<div class="white_table">{$v.content|replace:'../':''|replace:'index.php?':"`$basedomain`index.php?"|replace:'public_assets/content/uploads/':"`$basedomain`public_assets/content/uploads/"|replace:"`$ddomain`":"`$basedomain`"}</div>{/if}
+                 
+                    <div class="accordion">
+						{if $v.desc}
+							{foreach from=$v.desc key=kdesc item=vdesc}
+							<h3>{$vdesc.title}</h3>
+								<div class="entry">
+									<div class="white_table">
+										{$vdesc.description|replace:'../':''|replace:'index.php?':"`$basedomain`index.php?"|replace:'public_assets/content/uploads/':"`$basedomain`public_assets/content/uploads/"|replace:"`$ddomain`":"`$basedomain`"}
+									</div>
+								</div>
+							{/foreach}
+                        {/if}
+                    </div><!-- end .accordion -->
+					
+                </div><!-- end .tabContent -->
+             {/foreach}  
+            </div><!-- end .tabContainer -->
+		</div><!-- end #produkDetail -->
+    </div><!-- end .productPage -->
+</div><!-- end #produkDetailPage -->
+{/if}
+<div class="widget-product">
+{$carousel_banner}
+</div><!-- end .widget-whyAxis -->
+<script>
+var country;
+var kolom1 = '{$locale.kolom1}';
+var kolom2 = '{$locale.kolom2}';
+var kolom3 = '{$locale.kolom3}';
+var basedomain = "{$basedomain}";
+{literal}
+$(document).ready(function(){
+	$.post(basedomain+'international/countryList', function(list){
+		var str='';
+		country = list[0].country;
+		$('#selectroamingCountry').html(list[0].country);
+		$.each(list, function(k,v){
+			str+='<option value="'+v.country+'">'+v.country+'</option>';
+		});
+		$('#select1').html(str);
+		roamingData();
+	});
+});
+
+$('#select1').change(function(){
+	country = $(this).val();
+	$('#roamingData').html('<div class="loaders"><img src="'+basedomain+'assets/images/loader.png"></div>');
+	roamingData();
+});
+
+function roamingData(){
+	$.post(basedomain+'international/roamingData', {countryName : country}, function(data){
+		var rowspan = parseInt(data.length) + 1; 
+		var str='';
+		str+='<tr><td>'+kolom1+'</td><td>'+kolom2+'</td><td colspan="3">'+kolom3+'</td></tr>';
+		str+='<tr>';
+			str+='<td rowspan="'+rowspan+'">'+country+'</td>';
+			str+='<td> </td>';
+			str+='<td>USSD Call back</td>';
+			str+='<td>GPRS</td>';
+			str+='<td>Direct Call</td>';
+		str+='</tr>';
+		
+		$.each(data, function(k,v){
+			str+='<tr>';
+				str+='<td>'+v.telco+'</td>';
+				if(v.voice == '1'){
+					str+='<td>&bull;</td>';
+				}else{str+='<td></td>';}
+				if(v.gprs == '1'){
+					str+='<td>&bull;</td>';
+				}else{str+='<td></td>';}
+				if(v.direct_call == '1'){
+					str+='<td>&bull;</td>';
+				}else{str+='<td></td>';}
+			str+='</tr>';
+		});
+		
+		$('#roamingData').html(str);
+	});
+}
+{/literal}
+</script>

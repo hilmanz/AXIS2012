@@ -1,0 +1,48 @@
+
+<div class="theContent">
+    <div class="theTitle">
+        <h2>Weekly Report</h2>
+        {if !$xls}<a href="index.php?s=dashboard&act=getxls&startdate={$startdate}&enddate={$enddate}" class="btn btn_document"><span>Download XLS</span></a>{/if}
+      
+    </div><!--contenttitle-->
+	{if !$xls}
+    <div class="tableoptions">  
+			<form>
+				<input type="hidden" name="s" value="dashboard" />
+				<span>Date Range</span>
+				<input type="text" name="startdate" value="{$startdate}" style="width:150px;" class="datepicker"/>
+				 <span>s/d</span>
+				<input type="text" name="enddate" value="{$enddate}" style="width:150px;" class="datepicker"/>
+				<input type="submit" value="cari" class="stdbtn btn_orange"/>
+			</form>
+        <form>
+    </div><!--tableoptions-->
+	{/if}
+	  {foreach from=$data key=submenu item=items}
+		<table cellpadding="0" cellspacing="0" border="0" id="table1" class="stdtable" >
+			<colgroup>
+				<col class="con0" style="width: 4%" />
+				<col class="con1" />
+				<col class="con0" />
+				<col class="con1" />
+				<col class="con0" />
+				<col class="con1" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th class="head0" colspan=3>{$submenu}</th>
+				   
+				</tr>
+			</thead>
+			<tbody>
+				{foreach from=$items key=keyitems item=subitems}
+					<tr >
+					{foreach from=$subitems key=desc item=val}
+						<td width="10%">{$val|replace:"-":" "}</td>
+					{/foreach}
+					</tr>
+				{/foreach}
+			</tbody>
+		</table>
+   {/foreach}
+</div><!--theContent-->

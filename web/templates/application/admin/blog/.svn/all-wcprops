@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/1312/trunk/web/templates/application/admin/blog
+END
+blog_new.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/axis2012/!svn/ver/1312/trunk/web/templates/application/admin/blog/blog_new.html
+END
+blog_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/axis2012/!svn/ver/1197/trunk/web/templates/application/admin/blog/blog_list.html
+END
+blog_comment.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/blog/blog_comment.html
+END
+blog_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/blog/blog_edit.html
+END

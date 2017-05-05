@@ -1,0 +1,103 @@
+
+<div class="contentUpdateStatus" style="width:500px;" >
+<div> Update Status </div>
+<div> 
+<a href="javascript:void(0)" class="tabsPost" type="posting">posting</a>  
+<a href="javascript:void(0)" class="tabsPost" type="shareUrl">share url</a>  
+</div>
+<div id="posting" class="contentPost" style="display:block">
+<form method="POST" class="shareForm" action="index.php?page=axisLife&act=posting" enctype="multipart/form-data" >
+	<div><input type="file" name="myImage" /></div>
+		<div><input type="text" name="myUrl" value="url" style="width: 411px;margin-bottom:5px;margin-top:3px" /></div>
+	<div><input type="text" name="myTitle" value="title" style="width: 411px;margin-bottom:5px;margin-top:3px" /></div>
+	<div><textarea cols="50" rows="2" name="myPosting" >your posting</textarea></div>
+
+	<input type="submit" value="share" class="share" />
+</form>
+
+</div>
+
+<div id="shareUrl" class="contentPost"style="display:none">
+<div ><input type="text" name="url" style="width:200px" class="thisUrl" /> <span>please add your url in here</span></div>
+<div class="urlContent"></div>	
+<div style="clear:both"> </div>
+<form method="POST"  class="shareForm" action="index.php?page=axisLife&act=shareUrl">
+	<input type="hidden" name="myTitle" />
+	<div><textarea style="display:none" cols="50" rows="2" name="myPosting" ></textarea></div>
+	<input type="submit" value="share" class="share" />
+</form>
+</div>
+
+<div style="clear:both"> </div>
+</div>
+
+
+{literal}
+<script>
+
+$(".tabsPost").click(function(){
+	$(".contentPost").hide();
+	var type = $(this).attr("type");
+	$("#"+type).show();
+});
+
+$(".thisUrl").dblclick(function(){
+	$(".urlContent").html('loading..');	
+	var url = $(this).val();
+	$.post('index.php?page=axisLife&act=getUrlContent',{url:url},function(data){
+		var html ="";
+		if(data){
+			html+="<div>";
+			html+="<div><a href='"+url+"' target='_blank'>"+data.title+"</a></div>";
+			if(data.img){
+			html+="<div style='float: left; padding: 10px;width:300px;'>";
+			
+				for (var x in data.img){
+					if(x==0) html+="<div class='slideImage row"+x+"' row='"+x+"' > <img src='"+data.img[x]+"' style='width:100%;' /> </div>";
+					else html+="<div class='slideImage row"+x+"' style='display:none' row='"+x+"'  > <img src='"+data.img[x]+"' style='width:100%;' /> </div>";
+				}
+				html+="<a class='slideImagePrev'> prev  </a> | <a class='slideImageNext'> next </a><div class='currentImage' row='0'><span class='currentImageSpan' >0</span>/"+data.img.length+"</div>";
+		
+			html+="</div>";
+			}
+			if(data.content)	html+="<div style='float: left; padding: 10px;'><div style='width: 339px; height: 130px;'><p>Description </p>"+data.content+"</div></div>";
+			html+="</div>";
+			$(".urlContent").html(html);	
+		}
+		
+		$(".slideImageNext").click(function(){
+			var currentRow = parseInt($('.currentImage').attr("row"),10);
+			var nextRow = currentRow+1;
+			if(nextRow > data.img.length) return false;
+			$('.slideImage').hide();			
+			$('.currentImage').attr("row",nextRow);
+			$('.currentImageSpan').html(nextRow);
+			$('.row'+nextRow+'').show();
+		
+		});
+		
+		$(".slideImagePrev").click(function(){
+			var currentRow = parseInt($('.currentImage').attr("row"),10);
+			var nextRow = currentRow-1;
+			if(nextRow < 0) return false;
+			$('.slideImage').hide();			
+			$('.currentImage').attr("row",nextRow);
+			$('.currentImageSpan').html(nextRow);
+			$('.row'+nextRow+'').show();
+		
+		});
+	});
+
+
+});
+	
+  $('.share').click(function() { 
+	$(this).parent('.shareForm').ajaxForm(function(data){
+		$('.shareForm').clearForm();
+	
+	});
+		
+  });
+
+</script>
+{/literal}

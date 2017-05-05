@@ -1,0 +1,84 @@
+
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}promo">{$locale.promo.title}</a></h1>
+</div><!-- end #breadcumb -->
+{$slider_default}
+<div id="container">
+    <div class="wrapper" id="lagiIn">
+    	<div id="sidebar">
+		{$medium_banner}
+       {*} {$axis_hot}	{/*}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+        	<div class="theTitle">
+            	<h1 class="icon_horn2">{$locale.promo.hot}</h1>
+            </div>
+            <div class="shadowCtop">
+				{if $promo}
+                <div id="hotPromo" class="shadowCbottom">
+					{section name=i loop=$promo}
+                    <div class="boxPromo">
+                        <div class="bannerThumb">
+                            <a href="{$basedomain}promo/detail/{$promo[i].id}">
+							{if $promo[i].thumbnail_image}<img src="{$basedomain}public_assets/article/realthumb_{$promo[i].thumbnail_image}" height="130px" width="245px"/>
+							{else}<img src="{$basedomain}public_assets/article/thumb_{$promo[i].image}" height="130px" width="245px"/>
+							{/if}
+							</a>
+                        </div><!-- end .bannerThumb -->
+                        {if $smarty.section.i.index<=1}<div class="{$locale.promo.pita}"></div>{/if}
+                        <div class="shadow"></div>
+                        <a class="detail" href="{$basedomain}promo/detail/{$promo[i].id}">{$locale.btn.detail}</a>
+                    </div><!-- end .boxPromo -->
+                   {/section}
+                </div><!-- end #hotPromo -->
+				{/if}
+            </div>
+            <div id="promoPaging" class="paging">
+                
+            </div><!-- end .paging -->
+        </div><!-- end #contents -->
+    </div><!-- end #lagiIn -->
+</div><!-- end #container -->
+<script>
+	var total_rows = {$promo[0].total_rows};
+	var basedomain = "{$basedomain}";
+	var promoPage = {$promoPage};
+{literal}
+	$(document).ready(function(){
+		var pageInit = 0;
+		var start = promoPage;
+		//Init Page
+		if(pageInit == 0){
+			pageInit = 1;
+			if(start == 0)start=1;
+			kiPagination(total_rows, start, 'promoPaging', 'promo_ajax', 'promo_ajax', 6);
+		}
+	});
+	
+	
+	function promo_ajax(fungsi, start){
+		$('#hotPromo').html('');
+		$('#hotPromo').append('<div class="loaders"><img src="'+basedomain+'assets/images/loader.gif"></div>');
+		$.post(basedomain+'promo/'+fungsi, {start : start}, function(data){
+			var str='';
+			$.each(data, function(k,v){
+				str+='<div class="boxPromo">';
+					str+='<div class="bannerThumb">';
+						if(v.thumbnail_image)str+='<a href="'+basedomain+'promo/detail/'+v.id+'"><img src="'+basedomain+'public_assets/article/realthumb_'+v.thumbnail_image+'" height="130px" width="245px" ></a>';
+						else str+='<a href="'+basedomain+'promo/detail/'+v.id+'"><img src="'+basedomain+'public_assets/article/thumb_'+v.image+'" height="130px" width="245px" ></a>';
+					str+='</div>';
+					//str+='<div class="pitaPromo"></div>';
+					str+='<div class="shadow"></div>';
+					str+='<a href="'+basedomain+'promo/detail/'+v.id+'" class="detail">DETAIL</a>';
+				str+='</div>';
+			});
+			$('.loaders').remove();
+			$('#hotPromo').append(str);
+		},"json");
+	}
+	
+	$(document).on('click','.cPaging', function(){
+		$('html, body').animate({scrollTop: '400px'}, 500);
+	});
+{/literal}
+</script>

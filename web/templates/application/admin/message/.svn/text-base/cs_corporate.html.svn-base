@@ -1,0 +1,66 @@
+
+<div class="theContent">
+    <div class="theTitle">
+        <h2>Message CS Corporate</h2>
+        <a href="index.php?s=message&act=excel_message&search={$search}" class="btn btn_document"><span>Download XLS</span></a>
+    </div><!--contenttitle-->
+    <div class="tableoptions">   
+    
+        <form>
+        	<span>Search</span>
+            <input type="text" name="search" value="{$search}"/>
+            <span>Date Range</span>
+            <input type="text" name="startdate" value="{$startdate}" class="datepicker"/>
+            <span>s/d </span>			
+            <input type="text" name="enddate" value="{$enddate}" class="datepicker"/>
+            <input type="submit" value="cari" class="stdbtn btn_orange"/>
+            <input type="hidden" name="s" value="message" />
+            <input type="hidden" name="act" value="csCorporate" />
+        </form>    
+    </div><!--tableoptions-->	
+    <table cellpadding="0" cellspacing="0" border="0" id="table1" class="stdtable">
+        <colgroup>
+            <col class="con0" style="width: 4%" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="head0">Nama</th>
+                <th class="head1">email</th>
+                <th class="head0">Propinsi</th>
+                <th class="head1">Kota</th>
+                <th class="head0">Telepon</th>
+                <th class="head1">Type</th>
+                <th class="head0">Message</th>
+                <th class="head1">Post Date</th>
+                <!--<th class="head0">Status</th>-->
+                <th class="head1" colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+                    
+              {section name=i loop=$list}
+              <tr>
+                <td>{$list[i].nama}&nbsp;</td>
+                <td>{$list[i].email}</td>
+                <td>{$list[i].province}</td>
+                <td>{$list[i].city}</td>
+                <td>{$list[i].telepon}</td>
+                <td>{$list[i].type}</td>
+                <td>{$list[i].message}</td>
+                <td width="10%"><nobr>{$list[i].date_time|date_format:"%d-%m-%Y"} &nbsp;{$list[i].date_time|date_format:$time.time}</nobr></td>
+                <!-- <td>{if $list[i].n_status == 0} Failed sent to Email {else} Sent To Email {/if}</td> -->
+                <td align="center" width="4%"><a href="index.php?s=message&act=detail_csCorporate&id={$list[i].id}"  class="green" style="text-decoration:none;">View</a></td>
+                <td align="center" width="4%"><a href="index.php?s=message&act=hapus_csCorporate&id={$list[i].id}" class="red" onclick="return confirm('Are you sure you want to delete this?')">Delete</a></td>
+              </tr>
+              {/section}
+        </tbody>
+    </table>
+    <div class="paging">
+    	{$paging}
+    </div>
+</div><!--theContent-->

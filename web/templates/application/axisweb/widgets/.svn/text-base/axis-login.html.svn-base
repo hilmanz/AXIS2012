@@ -1,0 +1,15 @@
+			<div id="bannerMedium">
+                <div class="bannerMedium">
+                    <!--<a href="{if $user}axisLife{else}login{/if}">--><img src="{$basedomain}assets/content/banner/medium/{$locale.axislife.banner_login}" /></a>
+                </div>
+               {*} <a class="loginbtn" href="{if $user}{$basedomain}{$userpage}{else}{$basedomain}{$userpage}{/if}">{$locale.btn.loginyuk}</a>{/*}
+				
+				<div class="socialloginBtn" id="loginBtn">
+					<a class="loginpopup loginFacebook {$facebookButton}" href="javascript:void(0)" url="{if $fbConnect}{$fbConnect}{else}javascript:void(0){/if}">&nbsp;</a>
+					<a class="loginpopup loginTwitter {$twConnectButton}" href="javascript:void(0)" url="{if $twConnect}{$twConnect}{else}javascript:void(0){/if}">&nbsp;</a>
+					<a class="loginpopup loginGplus {$gplusConnectButton}" href="javascript:void(0)" url="{if $gplusConnect}{$gplusConnect}{else}javascript:void(0){/if}">&nbsp;</a>
+				 </div><!-- end #socialloginBtn -->
+                <div class="shadow"></div>
+                <div class="splashBox1"></div>
+            </div><!-- end #bannerMedium -->
+			

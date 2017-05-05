@@ -1,0 +1,56 @@
+<div class="breadcrumb">
+		<a href="{$mobiledomain}">{$locale.home.title}</a>	&raquo; <a href="{$mobiledomain}/promo">{$locale.nav.promo}</a>	
+	</div>
+<div class="page-body" data-role="content">
+		
+		<div class="promo">
+			 <div class="flexslider">
+				<ul class="slides">
+					{foreach from=$promo key=k item=v}
+						<li><a href="#">{if $v.image}<img src="{$basedomain}public_assets/article/thumb_{$v.image}" alt="Akses VIKI pake AXIS" />{else}{$v.title}{/if}</a></li>
+					{/foreach}
+				</ul>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			{literal}
+		    $('#page-home').live( 'pageshow', function(e){
+		        $('.flexslider').flexslider({
+		        	controlNav: false,
+		        	slideshowSpeed: 10000,
+					animation: "slide"
+				});
+		    });
+			{/literal}
+		</script>
+		<div class="page-content clear">
+			<div id="product-category-list" class="page-content-list">
+				<ul data-role="listview" data-inset="true">
+				<li>
+					<a href="{$mobiledomain}promo/hot" data-transition="slide">
+						Hot Promo
+					</a>
+				</li>
+				{*}
+				<li>
+					<a href="{$mobiledomain}promo/axisLife" data-transition="slide">
+						Hot Di Axis Life
+					</a>
+				</li>
+				{/*}
+				</ul>
+			</div>
+		</div>
+
+		<div class="list-nav">
+			<ul data-role="listview" data-inset="true">
+				<li>
+					<a href="{$mobiledomain}" data-transition="slide">
+						<span class="icon icon-home"></span>
+						<span class="textLink">{$locale.mobilebtn.home}</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /content -->

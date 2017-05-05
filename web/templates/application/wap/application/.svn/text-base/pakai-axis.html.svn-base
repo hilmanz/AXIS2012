@@ -1,0 +1,48 @@
+<div class="title">
+<h1>{$locale.knapaaxis.title}</h1>
+</div><!-- end .title -->
+<div class="detail">
+	<div class="post">
+        <div class="produkbox">
+            <div class="entry">
+                <ol>
+                    <li>
+                       {$locale.knapaaxis.wap.layanan}
+                    </li>
+                    <li>
+                        {$locale.knapaaxis.wap.jangkauan}
+                    </li>
+                    <li>
+                        {$locale.knapaaxis.wap.tarif}
+                    </li>
+                </ol>
+            </div><!-- end .entry -->
+        </div><!-- end .customerbox -->
+        <div class="entryTitle">
+        	<h3>{$locale.knapaaxis.panduan}</h3>
+        </div><!-- end .entryTitle -->
+        	<ol>
+            	<li>
+					{$locale.knapaaxis.kartuaxis2}
+                </li>
+            	<li>
+					{$locale.knapaaxis.kartumu2}
+                </li>
+            	<li>
+					{$locale.knapaaxis.registrasi2}
+                </li>
+            	<li>
+					{$locale.knapaaxis.restart2}
+                	
+                </li>
+            	<li>
+					{$locale.knapaaxis.pengaturan2}
+                	
+                </li>
+            </ol>
+        </div><!-- end .entryPost -->
+    </div><!-- end .row -->
+</div><!-- end .detail -->
+<div class="rowBtn">
+	<a href="{$basedomain}" class="btnBack" >&laquo; Back</a>
+</div>

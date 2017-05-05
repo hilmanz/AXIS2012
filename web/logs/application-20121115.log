@@ -1,0 +1,4 @@
+2012-11-15 15:07:36 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (32,31,26,23) AND n_status = 1
+					ORDER BY date ASC 
+					

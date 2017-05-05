@@ -1,0 +1,39 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}berita">{$locale.berita.title}</a>&raquo; <a href="{$basedomain}berita/detail/{$news.parentid}">{$news.title}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="theContent">
+        <div class="theTitle">
+            <h1>{$locale.berita.title}</h1>
+        </div><!-- end .theTitle -->
+    	<div id="sidebar">
+            {$arsip_berita}
+          
+			{$recent_blog}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+            <div class="entryDetail">
+            	 <!--
+                 {if $news.image}<div class="imgDetail">
+           		    <div class="shadowImg"></div>
+           		    <div class="splash4"></div>
+                   <img src="{$base_web_path}public_assets/news/{$news.image}" />
+                </div>
+                {/if}
+                -->
+                <div class="entry">
+                    <div class="entry-title">
+                         <h1>{$news.title}</h1>
+                    </div><!-- end .entry-title -->
+                    <div class="entry-meta">
+                         <p class="post-date">{$news.posted_date|date_format:"%Y-%m-%d"} </p>
+                    </div><!-- end .entry-title -->                    
+                    <div class="entry-post">
+                        <h2>{$news.brief}</h2>
+                        <p>{$news.content|replace:'\\':''}</p>
+                    </div><!-- end .entry-post -->
+                </div><!-- end .entry -->
+            </div><!-- end .entryDetail -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+</div><!-- end #container -->

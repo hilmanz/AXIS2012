@@ -1,0 +1,78 @@
+{literal}
+<style>
+    .boxs{
+        width:20%;
+        float:left;
+        background:#EE2B74;
+        border-radius:10px;
+        margin:10px 2% 20px 2%;
+        color:#fff;
+        text-align:center;
+        padding:20px 0;
+    }
+    .boxs h3{
+        margin:0;
+        color:#fff;
+    }
+    .boxs p{
+        margin:0;
+    }
+</style>
+{/literal}
+<div id="breadcumb" class="wrapper">
+	<h1><a href="index.php">Home</a> &raquo; <a>AXIS GAUL</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="axisLife">
+    	<div id="sidebar">
+   			{$medium_banner}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+        	<div class="theTitle">
+            	<h1 class="icon_register">AXIS GAUL</h1>
+            </div><!-- end .theTitle -->
+            <div class="shadowCtop">
+            	<div class="shadowCbottom" style="height:345px;">
+                    <div class="entryDetail">
+                        <p>Get along easily with AXIS Gaul!<br />
+                          Enjoy unlimited internet with FUP (Fair Usage Policy) scheme 100MB in total.<br />
+                          You can freely access these websites in 7,2Mbps speed with fair usage policy up to 50MB:</p>
+                        <ul>
+                          <li>Facebook</li>
+                          <li>Twitter</li>
+                          <li>Detik.com</li>
+                          <li>Kompas.com</li>
+                          <li>Vova.co.id</li>
+                          <li>Kapanlagi.com</li>
+                          <li>YM</li>
+                          <li>Kaskus</li>
+                        </ul>
+                        <p>You will also get 50MB FUP (Fair Usage Policy) with maximum speed of  384kbps to access other websites.</p>
+                         <p>Once you reach the limit, you will still be able to access unlimited internet at decelerated speed.</p>
+          <p>Keep using your AXIS GAUL to enjoy SMS bonuses. See the scheme bellow:</p>
+                          <div class="boxs">
+                          	<h3>Week 1-2</h3>
+                            <p>Bonus XXX</p>
+                          </div>
+                          <div class="boxs">
+                          	<h3>Week 2-3</h3>
+                            <p>Bonus XXX</p>
+                          </div>
+                          <div class="boxs">
+                          	<h3>Week 3-4</h3>
+                            <p>Bonus XXX</p>
+                          </div>
+                          <div class="boxs">
+                          	<h3>Week 5&gt;</h3>
+                            <p>Unlimited</p>
+                          </div>
+                        <p>AXIS GAUL, a perfect solution for those who wants to stay update in Social Media and connected to the internet for 7 days!</p>
+                    </div><!-- end .entryDetail -->
+                </div><!-- end .shadowCbottom -->
+            </div><!-- end .shadowCtop -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+    <div class="widget-axisLife">
+    {$carousel_banner}
+    </div><!-- end .widget-whyAxis -->
+</div><!-- end #container -->

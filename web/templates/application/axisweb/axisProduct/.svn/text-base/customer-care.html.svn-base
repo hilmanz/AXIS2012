@@ -1,0 +1,220 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}customer_care">{$locale.customercare.title}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="headBanner">
+    <div class="headBanner">
+        <div id="headBannerContent">
+            <div class="headBannerImg"><img src="{$basedomain}assets/content/slider/cutomer-care.jpg"/></div>
+        	<div class="headBannerEntry">
+                {$locale.customercare.headermsg}
+            </div>
+        </div><!-- end #headBannerContent -->
+    </div><!-- end .headBanner -->
+</div><!-- end #headBanner -->
+<div id="customerPage">
+    <div class="customerPage">
+    	<div class="wrapper" id="customer">
+            <div class="customerbox box1">
+            	<a class="icon_chat">&nbsp;</a>
+                <div class="entry">
+                	 {$locale.customercare.onlinechat}
+                </div><!-- end .entry -->
+           		<a class="chatNow" href="http://net.axisworld.co.id/sso/login/?ref=aHR0cDovL25ldC5heGlzd29ybGQuY28uaWQvY2hhdC9waHBsaXZlLnBocA==&secret_key=20845863decf6abc" target="_blank">{$locale.btn.chat}</a>
+            </div><!-- end .customerbox -->
+            <div class="customerbox box2">
+            	<a class="icon_phone">&nbsp;</a>
+                <div class="entry">
+                	{$locale.customercare.melaluitelepon}
+                </div><!-- end .entry -->
+           			{$locale.customercare.melaluiteleponnomer}
+            </div><!-- end .customerbox -->
+            <div class="customerbox box3">
+            	<a class="icon_twits">&nbsp;</a>
+                <div class="entry">
+                	 {$locale.customercare.melaluitwitter}
+                </div><!-- end .entry -->
+           		<a class="followNow" href="https://twitter.com/ask_AXIS" target="_blank">Follow <span class="" style="color: #FDB813; font-size: 15px;">@ask_AXIS</span> </a>
+            </div><!-- end .customerbox -->
+            <div class="customerbox box4">
+            	<a class="icon_kaskus">&nbsp;</a>
+                <div class="entry">
+                	{$locale.customercare.melaluikaskus}
+                </div><!-- end .entry -->
+           		<a class="cekNow" href="http://www.kaskus.co.id/post/000000000000000761221201#post000000000000000761221201" target="_blank">{$locale.customercare.melaluikaskusbutton}</a>
+            </div><!-- end .customerbox -->
+		</div><!-- end #customer -->
+    </div><!-- end .customerPage -->
+</div><!-- end #customerPage -->
+<div class="wrapper" id="contactBox">
+	<div class="headContact">
+    	{$locale.customercare.lewatemail}
+    </div><!-- end .headContact -->
+    <div class="entryContact">
+    	<form class="contactForm validate" action="{$basedomain}customer_care/saveMessage" id="contactForm" method="POST" >
+        	<div class="w300 rowBtns">
+				<div>
+					<input type="text" name="txtName" value="{$locale.customercare.nama}" onBlur="if(this.value=='')this.value='{$locale.customercare.nama}';" onFocus="if(this.value=='{$locale.customercare.nama}')this.value='';$('#txtName_error').hide()" class="alpha required" />
+				</div>
+				<div>
+					<input type="text" value="Email" name="txtEmail" onBlur="if(this.value=='')this.value='Email';" onFocus="if(this.value=='Email')this.value='';$('#txtEmail_error').hide()" class="email required" />
+				</div>
+				<div>
+					<input type="text" name="txtTelepon" value="{$locale.customercare.noaxis}" onBlur="if(this.value=='')this.value='{$locale.customercare.noaxis}';" onFocus="if(this.value=='{$locale.customercare.noaxis}')this.value='';$('#txtTelepon_error').hide()" class="numeric required" />
+                </div>
+				<div>
+					<select id="select1" name="txtPropinisi" class="styled required">
+						<option value="" >{$locale.customercare.propinsi}</option>
+						{section name=i loop=$province}
+							<option value="{$province[i].id}">{if $locale.country==1}{$province[i].province}{else}{$province[i].province_en}{/if}</option>
+						{/section}
+					</select>
+                </div>
+				<div>
+					<select id="select2" name="txtKota" class="styled required">
+						<option value="" >{$locale.customercare.kota}</option>
+					</select>
+               </div>
+				<div>
+					<select  name="txtTipe"  class="styled required">
+						<option value="">{$locale.customercare.jenispertanyaan}</option>
+						{section name=i loop=$msgType}
+							<option value='{$msgType[i].id}'>{$msgType[i].type}</option>
+						{/section}
+					</select>
+				</div>
+            </div>
+            <div class="w600">
+            	<textarea name="txtMessage" onFocus="$('#txtMessage_error').hide()" class="required " ></textarea>
+				
+                <div class="agreement">
+                	<input type="checkbox" id="checkthis" name="checkTXT"  class="styled"/>
+                    <label>{$locale.customercare.custos}</label>
+					<span class="tosMsg" ></span>
+                </div>
+				<div class="captcha">
+                	 <img height="50" src="assets/captcha.php">
+                	 <input type="text" class="required numeric" onfocus="$('#captcha_error').hide()" name="captcha">
+                </div>
+                <input type="submit" class="kirim" value="&nbsp;" />
+            </div>
+        </form>
+    </div><!-- end .entryContact -->
+   
+</div><!-- end #contactBox -->
+<div class="wrapper" id="moreInfo">
+	<p>{$locale.msg.infoaxis}</p>
+	 <div class="popup" id="PremiumContact">
+      
+        <div class="popupContent smallPopup">
+            <div class="headPopup">
+                <h3>{$locale.msg.premiumcontacttitle}</h3>
+            </div>
+            <div class="entry">
+                <ul>
+                  {$locale.msg.premiumcontact}
+                </ul>
+            </div><!-- end .entry -->
+        </div><!-- end .popupContent -->
+		  <div class="ui-overlay">
+            <div class="ui-widget-overlay">&nbsp;</div>
+        </div><!-- end .ui-overlay -->
+    </div><!-- end .popup -->
+</div><!-- end #moreInfo -->
+<div class="widget-customer">
+	{$carousel_banner}
+</div><!-- end .widget-customer -->
+
+	 <div class="popup sendmessage" >
+      
+        <div class="popupContent smallPopup popupMessage">
+           
+            <div class="entry">
+                 <span class="successend"> <h1 style="color:black">{$locale.msg.pesanterkirim}</h1></span>
+				<span class="failedtosend"> <h1 style="color:black">{$locale.msg.pesantdkterkirim}</h1></span>
+				<span class="wrongcaptcha"> <h1 style="color:black">{$locale.msg.wrongcaptcha}</h1></span>
+            </div><!-- end .entry -->
+        </div><!-- end .popupContent -->
+		  <div class="ui-overlay">
+            <div class="ui-widget-overlay">&nbsp;</div>
+        </div><!-- end .ui-overlay -->
+    </div><!-- end .popup -->
+
+<script>
+	var kota = '{$locale.customercare.kota}';
+	var basedomain = "{$basedomain}";
+	var country = {$locale.country};
+{literal}
+	var required = v2.Validator.get('required').getMessage();
+	
+$("#contactForm").submit(function(){
+	if($('input[name=txtName]').val() == 'Nama' || $('input[name=txtName]').val() == 'Name'){ 
+		$('.rowBtns div:eq(0)').prepend('<div id="hackNamemsg" class="error"><ul id="txtEmail_error" class="messages"><li>'+required.message+'</li></ul></div>');
+		return false;
+	}else{
+		$('#hackNamemsg').remove();
+	}
+	$(".failedtosend").hide();
+	$(".successend").hide();
+	$(".wrongcaptcha").hide();
+	$('html, body').animate({scrollTop: '800px'}, 800);
+	
+	var arrRequired = new Array();
+	$(".required").each(function(i,e){
+		if($(this).val()=='')arrRequired.push(false);
+		else arrRequired.push(true);
+	})
+	
+	if($.inArray(false,arrRequired)>0) return false;
+	
+	$(this).ajaxSubmit(function(data) {
+		if(data.captcha){
+			if(data.result) {
+			//alert ("sukses");
+					$(".ui-overlay").show();
+					$(".successend").show();
+					$('.sendmessage').show();
+					//$(".required").val('');
+					//$("#selecttxtPropinisi").html('');
+					//$("#selecttxtTipe").html('');
+					//$("#selecttxtKota").html('');
+				}else {
+			//alert ("gagal");
+					$(".ui-overlay").show();
+					//$(".failedtosend").show();
+					$(".successend").show();
+					$('.sendmessage').show();
+					//$(".required").val('');
+					//$("#selecttxtPropinisi").html('');
+					//$("#selecttxtTipe").html('');
+					//$("#selecttxtKota").html('');
+				}
+		}else {
+			$(".ui-overlay").show();			
+			$(".wrongcaptcha").show();
+			$('.sendmessage').show();
+		}
+	});
+	return false; 
+});
+
+$('#select1').change(function(){
+	$('#select2').html('<option value="">'+kota+'</option>');
+	$('#selectselect2').html(kota);
+	var province = $(this).val();
+	$.post(basedomain+'isi_ulang/getCitybyProvince', {province : province}, function(city){
+		var str='';
+		str+='<option value="">'+kota+'</option>';
+		$.each(city, function(k,v){
+			if(country==1) str+='<option value="'+v.id+'">'+v.city+'</option>';
+			else str+='<option value="'+v.id+'">'+v.city_en+'</option>';
+		});
+		$('#select2').html(str);
+	});
+});
+$('.ui-overlay').click(function(){
+	window.location = basedomain+"customer_care";
+});
+
+{/literal}
+</script>
+

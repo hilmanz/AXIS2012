@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/1229/trunk/web/templates/application/admin/Article
+END
+article_new.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/Article/article_new.html
+END
+article_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/1197/trunk/web/templates/application/admin/Article/article_list.html
+END
+userpost_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/axis2012/!svn/ver/1199/trunk/web/templates/application/admin/Article/userpost_list.html
+END
+article_comment.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/axis2012/!svn/ver/1119/trunk/web/templates/application/admin/Article/article_comment.html
+END
+product_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/axis2012/!svn/ver/337/trunk/web/templates/application/admin/Article/product_edit.html
+END
+article_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/1229/trunk/web/templates/application/admin/Article/article_edit.html
+END
+product_new.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/axis2012/!svn/ver/176/trunk/web/templates/application/admin/Article/product_new.html
+END
+userpost_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/axis2012/!svn/ver/1199/trunk/web/templates/application/admin/Article/userpost_edit.html
+END
+product_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/1115/trunk/web/templates/application/admin/Article/product_list.html
+END

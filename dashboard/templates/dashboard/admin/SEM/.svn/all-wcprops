@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/axis2012/!svn/ver/64/trunk/dashboard/templates/dashboard/admin/SEM
+END
+upload-sem-report.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/axis2012/!svn/ver/64/trunk/dashboard/templates/dashboard/admin/SEM/upload-sem-report.html
+END
+upload_csv_keyword.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/axis2012/!svn/ver/64/trunk/dashboard/templates/dashboard/admin/SEM/upload_csv_keyword.html
+END
+upload_csv_ads.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/64/trunk/dashboard/templates/dashboard/admin/SEM/upload_csv_ads.html
+END

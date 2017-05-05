@@ -1,0 +1,15 @@
+{if $banner}
+<div id="featured">
+    <div class="featured wrapper">
+	{section name=i loop=$banner}
+        <div class="circle">
+            <a class="icon" href="{$basedomain}promo/detail/{$banner[i].id}"><img src="{$basedomain}assets/images/cat_icon/small/icon-{$banner[i].category|truncate:3:"":true}.png" /></a>
+            <div class="entry">
+                <p>{$banner[i].title}</p>
+            </div><!-- end .entry -->
+            <a class="detail" href="{$basedomain}promo/detail/{$banner[i].id}">{$locale.btn.detail}</a>
+        </div><!-- end .circle -->
+      {/section}
+    </div><!-- end .featured -->
+</div><!-- end #featured -->
+{/if}

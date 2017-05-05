@@ -1,0 +1,68 @@
+<?php
+class registration extends App{
+	
+	
+	function beforeFilter(){
+		global $LOCALE,$CONFIG;
+		$this->assign('basedomain', $CONFIG['BASE_DOMAIN']);
+		$this->assign('assets_domain', $CONFIG['ASSETS_DOMAIN_WEB']);
+		$this->assign('locale',$LOCALE[$this->lid]);
+		$this->contentHelper = $this->useHelper('contentHelper');
+	}
+	function main(){
+		global $CONFIG;
+		$this->View->assign('medium_banner',$this->setWidgets('medium_banner'));
+		$this->View->assign('carousel_banner',$this->setWidgets('carousel_banner'));
+		$this->View->assign('registrationLink',$CONFIG['Postpaid_OnlineRegistration']);
+		$this->log('globalAction','registrasi pascabayar');
+		
+		if($this->_g('f')=='0'){
+			$this->View->assign('msg', 'Your registration is failed. Please complete the form.');
+		}else if($this->_g('f')=='1'){
+			$this->View->assign('msg', 'Your registration is completed.');
+		}
+		
+		
+		return $this->View->toString(TEMPLATE_DOMAIN_WEB .'registration/registration_pascabayar.html');
+	}
+	
+	function prabayar(){
+		global $CONFIG;
+		$this->View->assign('medium_banner',$this->setWidgets('medium_banner'));
+		$this->View->assign('carousel_banner',$this->setWidgets('carousel_banner'));
+		$this->View->assign('registrationLink',$CONFIG['Prepaid_Registrations']);
+		$this->log('globalAction','registrasi prabayar');
+		
+		if($this->_g('f')=='1'){
+			$this->View->assign('msg', 'Please insert your active AXIS number.');
+		}else if($this->_g('f')=='0'){
+			$this->View->assign('msg', 'Your AXIS number is already registered.');
+		}
+	
+		return $this->View->toString(TEMPLATE_DOMAIN_WEB .'registration/registrasi-prabayar.html');
+	}
+	
+	function prabayar_form(){
+		global $CONFIG;
+		if(isset($_SESSION['number'])){
+			
+			$this->View->assign('medium_banner',$this->setWidgets('medium_banner'));
+			$this->View->assign('carousel_banner',$this->setWidgets('carousel_banner'));
+			$this->View->assign('registrationLink',$CONFIG['Prepaid_Registrations']);
+			$this->View->assign('number',($_SESSION['number']));
+			$this->log('globalAction','registrasi prabayar form');
+			
+			if($this->_g('f')=='0'){
+				$this->View->assign('msg', 'Your registration is failed. Please complete the form.');
+			}else if($this->_g('f')=='1'){
+				$this->View->assign('msg', 'Your registration is completed.');
+			}
+		
+			return $this->View->toString(TEMPLATE_DOMAIN_WEB .'registration/registrasi-prabayar-form.html');
+		}else{
+			sendRedirect($CONFIG['BASE_DOMAIN'].'index.php?page=registration&act=prabayar');
+		}
+	}
+	
+}
+?>

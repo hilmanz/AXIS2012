@@ -1,0 +1,21 @@
+<div id="head">
+	<img src="images/logo2.png" />
+</div>
+<div id="container">
+	<div id="welcomeText">
+		<h1>VOTE EMOTICON BARU PILIHANMU!</h1>
+		<h3>kamu akan menentukan emoticon <br />
+		mana saja yang akan terpilih sebagai<br /> 
+		emoticon resmi dari KakaoTalk. <br />
+		karya terbaik akan digunakan <br />
+		oleh 62 juta pengguna <br />
+		KakaoTalk di lebih dari 230 Negara!</h3>
+	</div>
+	<a href="index.php?page=home&act=gallery" class="btnGaleri">GALERI</a>        
+</div><!-- end #container --> 
+<div id="foot">
+	<div class="linkFoot">
+		<a href="index.php?page=home&act=faq">FAQ</a>
+		<a href="index.php?page=home&act=tnc">T &amp; C</a>
+	</div><!-- end .linkFoot -->
+</div><!-- end #foot -->

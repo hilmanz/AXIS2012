@@ -1,0 +1,79 @@
+
+<div id="profileBox">
+    <div id="profileBoxTab">
+		<div class="headBox">
+            <ul>
+                <li><a href="#tab_profile" >{$locale.widget.myprofile}</a></li>
+                <li><a href="#tab_activity" >{$locale.widget.myactivity}</a></li>
+                <li><a href="#tab_setting" >{$locale.widget.setting}</a></li>
+            </ul>
+		
+        </div><!-- end .headBox -->
+        <div class="entryBox" id="tab_profile">
+            <div class="thumbUser">
+                <a href="#" class="thumbUsers"><img src="{if $user->img}{$basedomain}public_assets/user/photo/{$user->img}{else}{$user->socmed}{/if}" /></a>
+            </div><!-- end .thumbUser -->
+            <div class="userDetail">
+                <h4>{$user->name}</h4>
+                <p class="pangkat">{$userAttribute.titleRank}</p>
+                {*}
+                <h4>{$locale.widget.nomoraxis}</h4>
+                <p>-</p>
+                
+                <h4>{$locale.widget.sisapulsa}</h4>
+                <p>-</p>
+                
+                <h4>{$locale.widget.masaberlaku}</h4>
+                <p>-</p>
+				{/*}
+                <div class="rates">
+					{if $userAttribute.levelRank >= 1}
+						{section name=rate start=0 loop=$userAttribute.levelRank step=2}
+							<img src="{$basedomain}assets/images/icon/stars_yellow.png" />
+						{/section}
+					{/if}
+                </div><!-- end .rates -->
+            </div><!-- end .userDetail -->
+            <div class="rowBtn">
+                {*}<a class="purpleBtn" href="{$basedomain}{$userpage}/submit_article/url">Submit URL</a>{/*}
+                <a class="purpleBtn arrows2" href="{$basedomain}{$userpage}/submit_article/article">{$locale.axislife.kirimarticle}</a>
+                <!--<a class="myAxisBtn" href="http://net.axisworld.co.id/">{$locale.widget.myaxisnet}</a>-->
+				<a class="purpleBtn arrows2" href="http://net.axisworld.co.id/" target="_blank">{$locale.widget.myaxisnet}</a>
+                {*}<a class="myStoreBtn" href="http://rbt.axisworld.co.id/">{$locale.widget.mystore}</a>{/*}
+            </div><!-- end .rowBtn -->
+        </div><!-- end #tab_profile -->
+        <div class="entryBox" id="tab_activity">
+            <div class="rowBtns">
+                {*}<a class="submitArticleBTn" href="{$basedomain}{$userpage}/submit_article">{$locale.widget.submitarticle}</a>{/*}
+                <a class="myFavoriteBtn" href="{$basedomain}{$userpage}/myfavorite#ptab1">{$locale.widget.myfavorit} {if $favcount}($favcount){/if}</a>
+                <a class="myArticleBtn" href="{$basedomain}{$userpage}/myarticle#ptab1">{$locale.widget.myarticle} {if $artcount}($artcount){/if}</a>
+                <a class="komentarBtn" href="{$basedomain}{$userpage}/mycomment#ptab1">{$locale.widget.mykomentar} {if $comcount}($comcount){/if}</a>
+            </div><!-- end .rowBtns -->
+        </div><!-- end #tab_activity -->
+        <div class="entryBox" id="tab_setting">
+            <div class="rowBtns">
+                <a class="purpleBtn showPopup arrows2" href="#updateFoto" onclick="clearPhoto()">{$locale.widget.updatefoto}</a>
+               <a class="purpleBtn showPopup arrows2" href="#customizeThemes">{$locale.widget.customizethemes}</a>
+                 {*} <a class="purpleBtn showPopup arrows2" href="#editUsername">{$locale.widget.editusername}</a>
+                <a class="purpleBtn showPopup arrows2" href="#changePassword">{$locale.widget.changepassword}</a>{/*}
+            </div><!-- end .rowBtns -->
+        </div><!-- end #tab_setting -->
+    </div><!-- end #profileBoxTab -->
+    <div class="shadow"></div>
+    <div class="splashBox2"></div>
+</div><!-- end #profileBox -->
+{include file="application/axisweb/widgets/popup_updateFoto.html"}
+{include file="application/axisweb/widgets/popup_customizeThemes.html"}
+{include file="application/axisweb/widgets/popup_editUsername.html"}
+{include file="application/axisweb/widgets/popup_changePassword.html"}
+
+{literal}
+	<script>	
+		function clearPhoto() {
+					$(".imageFilename").val('');
+					$("#previewPhoto").html("<img id='preview' src='' />");
+					$("#preview").attr('src','');
+			}
+	</script>
+	
+{/literal}

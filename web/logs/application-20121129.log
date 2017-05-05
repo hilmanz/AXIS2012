@@ -1,0 +1,655 @@
+2012-11-29 11:15:03 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 11:15:03 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 11:15:04 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 11:15:34 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 11:15:34 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 11:15:34 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 11:16:50 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 11:16:50 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 11:16:50 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 11:17:13 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 11:17:13 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 11:17:13 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 11:17:52 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 11:17:52 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 11:17:52 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 11:18:02 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 11:20:37 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 11:20:57 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 11:22:18 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 11:23:06 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 11:23:55 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 11:25:12 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 11:25:25 SELECT * FROM axis_news_content_category WHERE used=0 AND id=1 LIMIT 0,1
+2012-11-29 11:25:25 SELECT * FROM axis_news_content_type 
+2012-11-29 11:25:25 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 11:25:38 SELECT * FROM axis_news_content_category WHERE used=0 AND id=2 LIMIT 0,1
+2012-11-29 11:25:38 SELECT * FROM axis_news_content_type 
+2012-11-29 11:25:38 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 11:26:20 SELECT * FROM axis_news_content_category WHERE used=0 AND id=5 LIMIT 0,1
+2012-11-29 11:26:20 SELECT * FROM axis_news_content_type 
+2012-11-29 11:26:20 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 11:26:23 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 11:26:23 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 11:26:23 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 11:27:22 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 11:27:22 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 11:27:22 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 11:27:32 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='internet'  AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:27:32 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (97,17,12,8,7,5,6) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:27:32 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (97,17,12,8,7,5,6) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:27:37 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='internet' AND anc.id = 6 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 6 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:27:37 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (6) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:27:37 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (6) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:28:38 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='internet' AND anc.id = 6 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 6 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:28:38 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (6) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:28:38 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (6) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:29:42 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='internet'  AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:29:42 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (97,17,12,8,7,5,6) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:29:42 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (97,17,12,8,7,5,6) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:29:45 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='internet' AND anc.id = 7 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 7 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:29:45 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (7) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:29:45 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (7) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:29:50 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='internet'  AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:29:50 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (97,17,12,8,7,5,6) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:29:50 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (97,17,12,8,7,5,6) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:29:58 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon'  AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:29:58 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101,44,9) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:29:58 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101,44,9) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:30:01 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:30:01 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:30:01 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:30:05 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon'  AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:30:05 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101,44,9) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:30:05 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101,44,9) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:30:08 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:30:08 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:30:08 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:30:13 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon'  AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:30:13 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101,44,9) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:30:13 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101,44,9) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:30:16 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:30:16 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:30:16 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:31:53 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:31:53 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:31:53 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:33:00 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:33:00 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:33:00 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:33:16 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:33:16 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:33:16 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:33:28 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:33:28 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:33:28 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:34:09 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:34:10 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:34:10 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:36:41 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:36:41 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:36:41 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:37:05 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:37:05 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:37:05 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:37:30 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:37:30 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:37:30 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:38:11 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:38:11 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:38:11 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:43:11 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:43:11 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:43:11 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:45:22 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:45:22 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:45:22 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:46:12 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:46:12 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:46:12 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:48:15 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:48:15 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:48:15 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:49:22 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 101 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 101 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:49:22 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:49:22 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:49:28 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon'  AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:49:28 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101,44,9) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:49:28 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (101,44,9) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:49:31 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='telepon' AND anc.id = 44 AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 AND anc.parentid = 44 
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 11:49:31 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (44) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:49:31 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (44) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 11:50:11 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 11:50:11 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 11:50:11 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 11:52:24 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 11:52:24 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 11:52:24 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 11:53:56 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 11:54:05 SELECT * FROM axis_news_content_category WHERE used=0 AND id=5 LIMIT 0,1
+2012-11-29 11:54:05 SELECT * FROM axis_news_content_type 
+2012-11-29 11:54:05 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 11:54:10 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 11:54:17 SELECT * FROM axis_news_content_category WHERE used=0 AND id=5 LIMIT 0,1
+2012-11-29 11:54:17 SELECT * FROM axis_news_content_type 
+2012-11-29 11:54:17 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 11:54:26 SELECT * FROM axis_news_content_category WHERE used=0 AND id=5 LIMIT 0,1
+2012-11-29 11:54:26 SELECT * FROM axis_news_content_type 
+2012-11-29 11:54:26 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 11:54:30 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 11:54:33 SELECT * FROM axis_news_content_category WHERE used=0 AND id=1 LIMIT 0,1
+2012-11-29 11:54:33 SELECT * FROM axis_news_content_type 
+2012-11-29 11:54:33 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 12:06:31 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 12:06:35 SELECT * FROM axis_news_content_category WHERE used=0 AND id=1 LIMIT 0,1
+2012-11-29 12:06:35 SELECT * FROM axis_news_content_type 
+2012-11-29 12:06:35 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 12:06:38 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 12:06:52 SELECT * FROM axis_news_content_category WHERE used=0 AND id=1 LIMIT 0,1
+2012-11-29 12:06:52 SELECT * FROM axis_news_content_type 
+2012-11-29 12:06:52 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 14:01:37 SELECT * FROM axis_news_content_category WHERE used=0 AND id=1 LIMIT 0,1
+2012-11-29 14:01:37 SELECT * FROM axis_news_content_type 
+2012-11-29 14:01:37 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 14:36:41 SELECT * FROM axis_news_content_category WHERE used=0 AND id=1 LIMIT 0,1
+2012-11-29 14:36:41 SELECT * FROM axis_news_content_type 
+2012-11-29 14:36:41 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 14:37:32 SELECT * FROM axis_news_content_category WHERE used=0 AND id=1 LIMIT 0,1
+2012-11-29 14:37:32 SELECT * FROM axis_news_content_type 
+2012-11-29 14:37:32 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 14:40:34 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 14:40:34 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 14:40:34 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 14:44:40 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid,anc.url,anc.parentid,anct.type
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE 
+		anct.type='kartu'  AND anct.content=5 AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		
+		ORDER BY posted_date DESC LIMIT 10
+		
+2012-11-29 14:44:40 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (32,31,26,23) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 14:44:40 	SELECT * FROM axis_news_content_product 
+					WHERE contentid IN (32,31,26,23) AND n_status = 1
+					ORDER BY date ASC 
+					
+2012-11-29 14:44:43 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 14:44:43 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 14:44:43 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 14:44:45 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 14:45:12 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 14:45:53 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 14:45:53 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 14:45:53 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 14:47:29 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 14:47:29 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 14:47:29 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 14:47:49 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 14:47:49 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 14:47:49 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 14:56:03 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 14:56:03 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 14:56:03 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 14:56:07 SELECT * FROM axis_news_content_category WHERE used=0  LIMIT 0,5
+2012-11-29 14:56:15 SELECT * FROM axis_news_content_category WHERE used=0 AND id=5 LIMIT 0,1
+2012-11-29 14:56:15 SELECT * FROM axis_news_content_type 
+2012-11-29 14:56:15 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 15:56:10 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 15:56:10 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 15:56:10 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 
+2012-11-29 15:57:19 SELECT * FROM axis_news_content_type 
+2012-11-29 15:57:19 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 15:57:25 	
+		SELECT anc.id,anc.content,anc.brief,anc.title,anc.image,anc.posted_date ,anc.categoryid 
+		FROM axis_news_content anc
+		LEFT JOIN axis_news_content_type anct ON anct.id = anc.articleType
+		WHERE anc.articleType IN (2,3)   AND
+		anc.n_status = 1 AND anc.lid = 1 	
+		 ORDER BY posted_date LIMIT 4
+		
+2012-11-29 15:57:35 SELECT * FROM axis_news_content_type 
+2012-11-29 15:57:35 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:08:02 SELECT * FROM axis_news_content_type 
+2012-11-29 16:08:03 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:08:40 SELECT * FROM axis_news_content_type 
+2012-11-29 16:08:40 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:09:04 SELECT * FROM axis_news_content_type 
+2012-11-29 16:09:04 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:10:34 SELECT * FROM axis_news_content_type 
+2012-11-29 16:10:34 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:10:52 SELECT * FROM axis_news_content_type 
+2012-11-29 16:10:52 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:11:13 SELECT * FROM axis_news_content_type 
+2012-11-29 16:11:13 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:12:27 SELECT * FROM axis_news_content_type 
+2012-11-29 16:12:27 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:13:32 SELECT * FROM axis_news_content_type 
+2012-11-29 16:13:32 SELECT * FROM axis_news_content_banner WHERE  n_status = 1 
+2012-11-29 16:31:35 SELECT * FROM axis_news_content_banner_type WHERE type ='footer' AND n_status=1 LIMIT 1 
+2012-11-29 16:31:35 SELECT * FROM axis_news_content_page WHERE pagename = 'home' AND n_status = 1 LIMIT 1
+2012-11-29 16:31:35 SELECT * FROM axis_news_content_banner WHERE page LIKE '%6%' AND type=2 AND n_status = 1 

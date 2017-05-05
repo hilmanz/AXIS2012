@@ -1,0 +1,79 @@
+10
+
+dir
+1385
+https://acit@kana.svn.beanstalkapp.com/axis2012/trunk/web
+https://acit@kana.svn.beanstalkapp.com/axis2012
+
+
+
+2013-03-04T04:07:46.552930Z
+1347
+bummi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+incomplete
+90bf587b-b71f-4fb0-ae68-5139f00ccc23
+
+test
+dir
+
+authentication
+dir
+
+Postpaid_OnlineRegistration
+dir
+
+db
+dir
+
+engines
+dir
+
+mobile_html
+dir
+
+templates
+dir
+
+tools
+dir
+
+service
+dir
+
+Prepaid_Registrations
+dir
+
+coorporate_html
+dir
+
+public_html
+dir
+
+logs
+dir
+
+config
+dir
+
+static_html
+dir
+
+wap_html
+dir
+
+com
+dir
+

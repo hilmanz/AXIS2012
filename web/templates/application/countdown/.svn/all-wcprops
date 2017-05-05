@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/axis2012/!svn/ver/1043/trunk/web/templates/application/countdown
+END
+splash-wap.html
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/axis2012/!svn/ver/1043/trunk/web/templates/application/countdown/splash-wap.html
+END
+countdown.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/axis2012/!svn/ver/1035/trunk/web/templates/application/countdown/countdown.html
+END
+countdown-nojs.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/axis2012/!svn/ver/1039/trunk/web/templates/application/countdown/countdown-nojs.html
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/axis2012/!svn/ver/549/trunk/kakao/templates/application/admin/galeri
+END
+galeri_new.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/axis2012/!svn/ver/547/trunk/kakao/templates/application/admin/galeri/galeri_new.html
+END
+galeri_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/axis2012/!svn/ver/547/trunk/kakao/templates/application/admin/galeri/galeri_list.html
+END
+galeri_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/axis2012/!svn/ver/549/trunk/kakao/templates/application/admin/galeri/galeri_edit.html
+END

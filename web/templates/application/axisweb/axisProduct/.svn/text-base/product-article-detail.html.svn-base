@@ -1,0 +1,57 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}produk">{$locale.product.title}</a> &raquo; <a href="{$basedomain}produk/article/{$content.id}">{$content.title}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="promoDetail">
+    	<div id="imgBundling">
+        	<img src='{$basedomain}public_assets/product_article/{$content.image}' />
+        </div>
+		 <div id="contentBundling" class="entryDetail">
+        	
+			<div class="scrollbar scroll-pane wide3 tall3">
+            	<div class="scrollbarContent">
+                    <h1>{$content.title}</h1>
+					{if $content.prize!=0}<h3>Rp{$content.prize|number_format:0:",":"."}</h3>{/if}
+				{$content.content|replace:'public_assets/content/uploads/':"`$basedomain`public_assets/content/uploads/"|replace:'home/app/public_html/':''}
+                </div><!-- end .scrollbarContent -->
+            </div><!-- end .scrollbar -->
+				
+           
+            <div class="socialLike">
+            	 <a class="favorite" contentid="{if $content.myfavorite}0{else}{$content.parentid}{/if}" href="javascript:void(0)" >&nbsp;<span class="fav-count" countFav="{if $content.favorite}{$content.favorite}{else}0{/if}" >{if $content.favorite}{$content.favorite}{else}0{/if}</span></a>		
+				<!-- s: social media -->
+					<div class="facebookLike">
+						<a href="#" onclick="shareFB('{$content.title}','{$twitURL}','{$basedomain}public_assets/product_article/small_{$content.image}','AXISgsm','{$content.prize}{$content.content|strip_tags}');"><img width="63" src="{$basedomain}assets/images/icon/facebook_share_button.png"></a>
+					</div><!-- end .facebookLike -->
+						<a href="https://twitter.com/share" class="twitter-share-button" data-url="{$twitURL}" data-counturl="{$twitURL}" data-via="AXISgsm" data-text="{$content.title}" data-lang="en">Tweet</a>
+					{literal}
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					{/literal}
+						<div class="googlePlus">
+					{literal}
+						<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+					  {parsetags: 'explicit'}
+						</script>
+					{/literal}
+						<div class="g-plusone" data-size="medium" data-annotation="bubble" data-width="120" data-href="{$twitURL}"></div>
+						<script type="text/javascript">gapi.plusone.go();</script>
+						</div><!-- end .googlePlus -->
+				<!-- e: social media -->
+            </div><!-- end .socialLike -->
+        </div><!-- end #contentPromo -->
+    </div><!-- end #promoDetail -->
+</div><!-- end #container -->
+<div class="widget-promoDetail">
+{$carousel_promo}
+</div><!-- end .widget-whyAxis -->
+
+
+<script>
+var uname = "{$user->name}";
+var fbid = "{$user->fb_id}";
+{literal}
+
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	
+</script>
+{/literal}

@@ -1,0 +1,13 @@
+<div class="page-footer" data-role="footer">
+	<div>
+		<a href="{$mobiledomain}index.php?fullsite=true" class="link-fullsite" rel="external">Fullsite Version</a>
+        <a href="{$mobiledomain}penyangkalan" class="link-fullsite">{$locale.botnav.kebijakanprivasi}</a>
+        <a href="{$mobiledomain}syarat_ketentuan" class="link-fullsite">{$locale.botnav.syaratketentuan}</a>
+		<ul class="social-media">
+			<li class="facebook"><a href="http://www.facebook.com/AXISgsm" target="_blank" title="Facebook">facebook</a></li>
+			<li class="twitter"><a href="https://twitter.com/AXISgsm" target="_blank" title="Twitter">twitter</a></li>
+			<li class="google"><a href="https://plus.google.com/114517187362247493119/posts" target="_blank" title="Google+">google+</a></li>
+			<li class="youtube"><a href="http://www.youtube.com/user/AXISGSM" target="_blank" title="Youtube">youtube</a></li>
+		</ul>
+	</div>
+</div><!-- /footer -->

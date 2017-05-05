@@ -1,0 +1,182 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="index.php">{$locale.home.title}</a> &raquo; <a>{$locale.postpaidonlinereg.title}</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper" id="axisLife">
+    	<div id="sidebar">
+			{$medium_banner}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+        	<div class="theTitle">
+            	<h1 class="icon_register">{$locale.postpaidonlinereg.title}</h1>
+            </div><!-- end .theTitle -->
+            <div class="shadowCtop">
+            	<div class="shadowCbottom">
+                    <div class="entryDetail">
+                            <div class="white_table">
+                                  <h2>{$locale.postpaidonlinereg.subject}</h2>
+                                  {$locale.postpaidonlinereg.content}
+                                  <form accept-charset="utf-8" action="{$registrationLink}" class="theForm validate registrationForm" method="post" id="PostpaidRegistratorAddForm">
+                                      <span style="color:#ff0000">{if $msg eq '1'}{$locale.postpaidonlinereg.message}{/if}</span>
+									  <span class="headform">{$locale.postpaidonlinereg.datapribadi}</span>
+                                      <div class="row">
+                                        <label for="NamaLengkap">{$locale.postpaidonlinereg.nama}</label>
+                                        <input type="text"  name="name" class="required"/>
+                                      </div>
+                                      <div class="row">
+                                        <label for="JenisKelamin">{$locale.postpaidonlinereg.kelamin}</label>
+                                        <select class="required" id="Gender" name="gender">
+                                          <option value="">-{$locale.onlinereg.pilih}-</option>
+                                          <option value="male">{$locale.postpaidonlinereg.wanita}</option>
+                                          <option value="female">{$locale.postpaidonlinereg.pria}</option>
+                                        </select>
+                                      </div>
+                                      <div class="row">
+                                        <label for="date_of_birth">{$locale.postpaidonlinereg.tanggallahir}</label>
+                                        <input type="text" id="DOB" maxlength="255" class="dateBirth required" name="bod"/>
+                                      </div>
+                                      <div class="row">
+                                        <label for="place_of_birth">{$locale.postpaidonlinereg.tempatlahir}</label>
+                                        <input id="Place_of_birth" type="text" name="place_of_birth" class="required"/>
+                                      </div>
+                                      <div class="row">
+                                        <label for="address">{$locale.postpaidonlinereg.alamat}</label>
+                                        <textarea id="Address" name="address" class="required"></textarea>
+                                      </div>
+                                      <div class="row">
+                                        <label for="rtrw">{$locale.postpaidonlinereg.rtrw}</label>
+                                        <input id="RTRW" type="text"  name="rtrw" class="required"/>
+                                      </div>
+                                      <div class="row">
+                                        <label for="kelurahankecamatan">{$locale.postpaidonlinereg.kelurahan}</label>
+                                        <input id="KelurahanKecamatan" type="text" name="kelurahankecamatan" class="required" />
+                                      </div>
+                                      <div class="row">
+                                        <label for="city">{$locale.postpaidonlinereg.kota}</label>
+                                        <input id="City" type="text" name="city" class="required"/>
+                                      </div>
+                                      <div class="row">
+                                        <label for="province">{$locale.postpaidonlinereg.provinsi}</label>
+                                        <select id="Province" class="required" name="province">
+                                          <option value="">-{$locale.onlinereg.pilih}-</option>
+                                          <option value="Jabodetabek">Jabodetabek</option>
+                                          <option value="Central Java">Central Java</option>
+                                          <option value="East Java">East Java</option>
+                                          <option value="West Java">West Java</option>
+                                          <option value="Bali Lombok">Bali Lombok</option>
+                                          <option value="North Sumatera">North Sumatera</option>
+                                          <option value="West Sumatera">West Sumatera</option>
+                                          <option value="Riau dan Kepulauan Riau">Riau dan Kepulauan Riau</option>
+                                          <option value="Lainnya">Lainnya</option>
+                                        </select>
+                                      </div>
+                                      <div class="row">
+                                        <label for="phone">{$locale.postpaidonlinereg.telp}</label>
+                                        <input type="text"  class="wSmall" name="prefix" />
+                                        <input id="Phone" type="text"  class="wMedium required" name="phone numeric" />
+                                      </div>
+                                      <div class="row">
+                                        <label for="mobile_number">{$locale.postpaidonlinereg.hp}</label>
+                                        <input id="Mobile_phone" type="text" name="mobile_number" class="required numeric"/>
+                                      </div>
+                                      <div class="row">
+                                        <label for="religion">{$locale.postpaidonlinereg.agama}</label>
+                                        <input type="text" id="Religion" maxlength="255" name="religion" class="required"/>
+                                      </div>
+                                      <div class="row">
+                                        <label for="mother_name">{$locale.postpaidonlinereg.ibu}</label>
+                                        <input type="text" id="Mother_name" maxlength="255" name="mother_name" class="required">
+                                      </div>
+                                      <div class="row">
+                                        <label for="id_number">{$locale.postpaidonlinereg.noid}</label>
+                                        <input type="text" id="ID_number" maxlength="50" name="id_number" class="required">
+                                      </div>
+                                      <div class="row">
+                                        <label for="id_card_type">{$locale.postpaidonlinereg.typeid}</label>
+                                        <select id="ID_type" class="required" name="id_card_type">
+                                          <option value="">-{$locale.onlinereg.pilih}-</option>
+                                          <option value="KTP/KITAS">{$locale.postpaidonlinereg.ktp}</option>
+                                          <option value="SIM">{$locale.postpaidonlinereg.sim}</option>
+                                          <option value="PASSPORT">{$locale.postpaidonlinereg.paspor}</option>
+                                          <option value="KARTU PELAJAR">{$locale.postpaidonlinereg.kartupelajar}</option>
+                                        </select>
+                                      </div>
+                                      <div class="row">
+                                        <label for="npwp">{$locale.postpaidonlinereg.npwp}</label>
+                                        <input type="text" id="NPWP" maxlength="255" name="npwp" class="required numeric">
+                                      </div>
+                                      <div class="row lastchild">
+                                        <label for="email">{$locale.postpaidonlinereg.email}</label>
+                                        <input type="text" id="Email" maxlength="50" name="email" class="required email">
+                                      </div>
+                                      <span class="headform">{$locale.postpaidonlinereg.orangdekat}</span>
+                                      <div class="row">
+                                        <label for="contactable_person">{$locale.postpaidonlinereg.nama}</label>
+                                        <input type="text" id="Family_name" maxlength="50" name="contactable_person" class="required">
+                                      </div>
+                                      <div class="row">
+                                        <label for="contactable_relation">{$locale.postpaidonlinereg.hubungan}</label>
+                                        <select id="Relationship_type" class="required" name="contactable_relation">
+                                          <option value="">-{$locale.onlinereg.pilih}-</option>
+                                          <option value="Anak">{$locale.postpaidonlinereg.anak}</option>
+                                          <option value="Orang tua">{$locale.postpaidonlinereg.orangtua}</option>
+                                          <option value="Saudara kandung">{$locale.postpaidonlinereg.saudara}</option>
+                                          <option value="Lainnya">{$locale.postpaidonlinereg.lainnya}</option>
+                                        </select>
+                                      </div>
+                                      <div class="row">
+                                        <label for="contactable_address">{$locale.postpaidonlinereg.alamat}</label>
+                                        <textarea id="Relative_address" maxlength="50" cols="34" rows="4" wrap="yes" name="contactable_address" class="required"></textarea>
+                                      </div>
+                                      <div class="row lastchild">
+                                        <label for="contactable_phone">{$locale.postpaidonlinereg.telp}</label>
+                                        <input type="text" id="Relative_phone" maxlength="50" name="contactable_phone" class="required">
+                                      </div>
+                                      <span class="headform">{$locale.postpaidonlinereg.pkttambahan}</span>
+                                      <div class="rowCheck">
+                                        <label for="packed">{$locale.postpaidonlinereg.pktbasic}</label>
+                                        <input type="radio" value="50000" id="PostpaidRegistratorPacked50000" name="packed" class="required">
+                                        <span class="radiovalue">50000</span>
+                                        <input type="radio" value="100000" id="PostpaidRegistratorPacked100000" name="packed">
+                                        <span class="radiovalue">100000</span>
+                                        <input type="radio" value="150000" id="PostpaidRegistratorPacked150000" name="packed">
+                                        <span class="radiovalue">150000</span> 
+                                      </div>
+                                      <div class="rowCheck lastchild">
+                                        <label for="optionalpaket">{$locale.postpaidonlinereg.pktlain}</label>
+                                      <input type="checkbox" id="PostpaidRegistratorExtraPackedInternet" value="Internet" class="g_paket min-length_1" name="extra[]">
+                                      <span>Internet</span>
+                                      <input type="checkbox" id="PostpaidRegistratorExtraPackedSMS" value="SMS" class="g_paket" name="extra[]">
+                                      <span>SMS</span>
+                                      <input type="checkbox" id="PostpaidRegistratorExtraPackedBlackBerry" value="BlackBerry" class="g_paket" name="extra[]">
+                                      <span>BlackBerry</span>
+                                      </div>
+                                      <span class="headform">{$locale.postpaidonlinereg.pembayaran}</span>
+                                      <div class="rowCheck lastchild">
+										<label for="payment">{$locale.postpaidonlinereg.pembayaran}</label>
+                                        <input type="radio" value="Deposit" id="PostpaidRegistratorPaymentDeposit" name="payment" class="required">
+                                        <span class="radiovalue">Deposit</span>
+                                        <input type="radio" value="Auto debit kartu kredit"  id="PostpaidRegistratorPaymentAutoDebitKartuKredit" name="payment">
+                                        <span class="radiovalue">Auto debit kartu kredit</span>
+                                        <input type="radio" value="Cash/Transfer" id="PostpaidRegistratorPaymentCashTransfer" name="payment">
+                                        <span class="radiovalue">Cash/Transfer</span><br /><br />
+                                        <p class="clear">{$locale.postpaidonlinereg.notepembayaran}</p>
+                                      </div>
+                                      <span class="headform">{$locale.postpaidonlinereg.infopembayaran}</span>
+                                        <ul>
+                                            {$locale.postpaidonlinereg.infomessage}
+                                        </ol>
+                                      <input type="hidden" name="registering" value="1">
+                                      <input type="submit" value="{$locale.postpaidonlinereg.reg}" class="submit">
+                                    </form>
+
+                          </div><!-- end .white_table -->
+                    </div><!-- end .entryDetail -->
+                </div><!-- end .shadowCbottom -->
+            </div><!-- end .shadowCtop -->
+        </div><!-- end #contents -->
+    </div><!-- end #axisLife -->
+    <div class="widget-axisLife">
+    {$carousel_banner}
+    </div><!-- end .widget-whyAxis -->
+</div><!-- end #container -->

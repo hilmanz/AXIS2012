@@ -1,0 +1,59 @@
+/*
+Theme Name: AXIS 
+Version: 1.0
+Author: ACIT JAZZ - 2012
+*/
+/* ============ LAYOUT =================*/
+#axisNote{
+	background:url(../images/bg_note.jpg) no-repeat -25px 0;
+	position:relative;
+	width:1000px;
+	margin:0 auto;
+	min-height:585px;
+	top:50px;
+}
+#axisNote h1{
+    font-family: 'ColaborateBoldRegular';
+	color:#ca006c;
+	font-size:22px;
+}
+#axisNote p{
+	font-size:16px;
+	color:#7a1878;
+	margin:0 0 20px 0;
+}
+#axisNote p span.grey{
+	color:#666;
+}
+.img404{
+	position:absolute;
+	width:620px; height:585px;
+}
+.entryNote{
+	width:600px;
+	height:500px;
+	position:absolute;
+	z-index:2;
+	left:415px;
+	top:110px;
+}
+a.back{
+	background:url(../images/arrow_back.png) no-repeat right;
+	display:table;
+	margin:20px 0 0;
+	font-size:18px;
+	color:#cc0066;
+	text-decoration:none;
+	padding:0 30px 0 0;
+}
+a.back:hover{
+	color:#660066;
+}
+a.back .grey{
+	font-size:18px;
+}
+.borders{
+	background:url(../images/dot.png) top repeat-x;
+	padding:20px 0 0 0;
+	margin:20px 0 0 0;
+}

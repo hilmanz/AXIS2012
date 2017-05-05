@@ -1,0 +1,43 @@
+<div class="popup" id="customizeThemes">
+    <div class="ui-overlay">
+        <div class="ui-widget-overlay"></div>
+    </div><!-- end .ui-overlay -->
+    <div class="popupContent largePopup">
+    	<a class="closePopup" href="#">X</a>
+    	<div class="headPopup">
+           	<h3>{$locale.popup.customethemes}</h3>
+        </div>
+        <div class="entry">
+            <form  method="POST" action="{$basedomain}myworld/savePreferances" id="preferenceThemeForm" >
+            	<div class="colThemes">
+                	<img src="{$basedomain}assets/content/theme/default.jpg" />
+                    <input type="radio" name="themetype"  class="styled" value=""/>
+                    <span class="currentThemes">{$locale.popup.currentthemes}</span>
+                </div>
+            	<div class="colThemes">
+                	<img src="{$basedomain}assets/content/theme/1.jpg" />
+                    <input type="radio" name="themetype" class="styled" value="sport" />
+                </div>
+            	<div class="colThemes">
+                	<img src="{$basedomain}assets/content/theme/2.jpg" />
+                    <input type="radio" name="themetype"  class="styled" value="geek" />
+                </div>
+            	<div class="colThemes">
+                	<img src="{$basedomain}assets/content/theme/3.jpg" />
+                    <input type="radio" name="themetype"  class="styled" value="woman" />
+                </div>
+                <input type="submit" name="upload_thumbnail" value="{$locale.popup.savethemes}" />
+            </form>
+        </div><!-- end .entry -->
+    </div><!-- end .popupContent -->
+</div><!-- end .popup -->
+{literal}
+<script>
+	$('#preferenceThemeForm').ajaxForm(function(data) {
+			if(data) location.reload();
+			else return false;
+		
+	});
+</script>
+
+{/literal}

@@ -1,0 +1,287 @@
+<script type="text/javascript">
+	var page = "project";
+	var page_detail = "social";
+	var volumeChartData = {$volume};
+	var visitChartData = {$visit};
+	var reachChartData = {$reach};
+	var demogChartData = {$demog};
+	var locChartData = {$location};
+	var projectID = {$userID};
+	
+	var min7 = new Date("{$lastDate}");
+	min7.setDate(min7.getDate() - 6);
+	var startDate = new Date("{$startDate}");
+	var currDate = new Date("{$lastDate}"); ;
+	var startD,endD;
+	var currentTab = 'likes';
+	var initDate = 0;
+	
+	{literal}
+	if(+min7 < +startDate){
+		min7 = new Date(startDate);
+	}
+	
+	$(document).ready(function() {
+		startD = mdy(min7);
+		endD = mdy(currDate);
+		$("#from").val(startD);
+		$("#to").val(endD);
+		
+		
+		$("#from, #to").datepicker({ minDate: startDate, maxDate: currDate });
+		$("#from, #to").datepicker("option", "dateFormat", "dd/mm/yy" ); 
+	
+	
+		//Volume Chart
+		var category = volumeChartData.category;
+		var data = [{
+						name: volumeChartData.name,
+						data: volumeChartData.dat,
+						visible: true
+					}];
+		lineChart('volume', category, data, 'no', true);
+		
+		//Visit Chart
+		var category = visitChartData.category;
+		var data = [{
+						name: 'All',
+						data: visitChartData.all,
+						color: 'red'
+					}, {
+						name: 'Unique',
+						data: visitChartData.unique
+					}];
+		lineChart('visit', category, data);
+		
+		//Reach Chart
+		var category = reachChartData.category;
+		var data = [{
+						name: 'Organic',
+						data: reachChartData.organic,
+						color: 'red'
+					},{
+						name: 'Paid',
+						data: reachChartData.paid,
+						color: 'orange'
+					},{
+						name: 'Viral',
+						data: reachChartData.viral
+					}];
+		stackAreaChart('reach', category, data);
+		
+		//Demography Chart
+		var category = demogChartData.category;
+		var data = [{
+						name: 'Male',
+						data: demogChartData.male,
+						color: 'red'
+						
+					}, {
+						name: 'Female',
+						data: demogChartData.female
+					}];
+		stackColumnChart('demog', category, data);
+		
+		//Location Chart
+		var temp = [];
+		for (var x in locChartData.location){
+			var data = {
+						name: locChartData.location[x],
+						y: locChartData.value[x]
+					};
+			temp.push(data);
+			
+		}
+		pieChart('location', category, temp);
+	});
+	
+	$('.dailyTab span').live('click', function(){
+		currentTab = $(this).attr('tab');
+		$('.dailyTab span').removeClass('dailyTabStyle');
+		$(this).addClass('dailyTabStyle');
+		startD = $('input#from').val();;
+		endD = $('input#to').val();
+		dailyTab(currentTab, ymd(startD), ymd(endD));
+	});
+	
+	$('#semDuration').live('click', function(){
+		initDate = 1;
+		startD = $('input#from').val();;
+		endD = $('input#to').val();
+		dailyTab(currentTab, ymd(startD), ymd(endD));
+	});
+	
+	function dailyTab(req, st, end){
+		$.post('index.php?s=social&id='+projectID+'&act=facebookAjax',{tab: req, startDate : st, endDate : end}, function(data) {
+			try{
+				var category = data.dailyVolume.category;
+				var result = [{
+							name: data.dailyVolume.name,
+							data: data.dailyVolume.dat,
+							visible: true
+						}];
+				var category2 = data.pageReach.category;
+				var data2 = [{
+								name: 'Organic',
+								data: data.pageReach.organic,
+								color: 'red'
+							},{
+								name: 'Paid',
+								data: data.pageReach.paid,
+								color: 'orange'
+							},{
+								name: 'Viral',
+								data: data.pageReach.viral
+							}];
+				var category3 = data.visit.category;
+				var data3 = [{
+								name: 'All',
+								data: data.visit.all,
+								color: 'red'
+							}, {
+								name: 'Unique',
+								data: data.visit.unique
+							}];
+				lineChart('visit', category3, data3);
+				stackAreaChart('reach', category2, data2);
+				lineChart('volume', category, result, 'no',true);
+			}catch(e){$('#volume').html('No data availble yet.');}
+		}, "json");
+	}
+	
+	function mdy(x){
+		return (x.getMonth()+1)+"/"+x.getDate()+"/"+x.getFullYear();
+	}
+	
+	function ymd(x){
+			return (x.substr(6,4)+"-"+x.substr(3,2)+"-"+x.substr(0,2));			
+	}
+	{/literal}
+</script>
+<div id="body-tab" style="width:970px;position:relative;height: 30px;">
+	<span style="position:absolute; top: 10px;right: 0;">Last Update on <span style="color:#9E2666">{$axislastUpdate}</span></span>
+</div>
+<div class="body-content">
+	<div class="body-content-head">
+		<span class="flLeft" style="font-size:14px;">Facebook Page Performance - AXISGSM</span>
+		
+		<div class="dropdown flRight fgrey2 arial relative" no="1">
+			<span>Facebook</span>
+			<div class="droplist1 dropdown-bg absolute transparent hide" style="top:6px;left:5px;">
+				<a class="dropdown-item" href="index.php?s=social&id={$userID}&act=fb">Facebook</a>
+				<hr>
+				<a class="dropdown-item" href="index.php?s=social&id={$userID}&act=twit">Twitter</a>
+				<hr>
+				<a class="dropdown-item" href="index.php?s=social&id={$userID}&act=youtube">Youtube</a>
+				<hr>
+				<a class="dropdown-item" href="index.php?s=social&id={$userID}&act=gplus">Google+</a>
+			</div>
+		</div>
+	</div>
+	<div style="border: 1px solid #999999;height: 65px;margin: 15px 0;padding: 18px;width: 920px;" class="radius-white bg-white">
+		<div class="radius-white flLeft" style="margin-right: 13px;margin-top:0;width:200px; background:#ccc;height: 45px;padding: 10px;">
+			<span class="arial" style="font-size:12px">Likes</span><br>
+			<span style="font-size:28px">{$likes|number_format}</span>
+		</div>
+		<div class="radius-white flLeft" style="margin-top:0;width:200px; background:#ccc;height: 45px;padding: 10px;">
+			<span class="arial" style="font-size:12px">People Talking About This</span><br>
+			<span style="font-size:28px">{$story|number_format}</span>
+		</div>
+		<div class="radius-white flRight" style="margin-top:0;width:200px; background:#ccc;height: 45px;padding: 10px;">
+			<span class="arial" style="font-size:12px">Engagement</span><br>
+			<span style="font-size:28px">{$LCS|number_format}</span>
+		</div>
+		<div class="radius-white flRight" style="margin-right: 13px;margin-top:0;width:200px; background:#ccc;height: 45px;padding: 10px;">
+			<span class="arial" style="font-size:12px">Posts</span><br>
+			<span style="font-size:28px">{$postSum|number_format}</span>
+		</div>
+	</div>
+	<span class="relative" style="font-size:14px;margin-top:10px;margin-left:2px;display: block;">
+		Daily Activity
+		<div class="dailyTab absolute" style="font-size: 12px;right: 20px;top: 50px;z-index: 9999;cursor: pointer;">
+			<span class="dailyTabStyle" tab="likes">&bull; Likes</span>
+			&nbsp;&nbsp;
+			<span tab="ptat"> &bull; Talking About This </span>
+			&nbsp;&nbsp;
+			<span tab="posts"> &bull; Posts </span>
+			&nbsp;&nbsp;
+			<span tab="comments"> &bull; Comments </span>
+			&nbsp;&nbsp;
+			<span tab="shares"> &bull; Shares </span>
+			&nbsp;&nbsp;
+		</div>
+		<div class="dropdown2 flRight fgrey arial relative">		
+			<span class="absolute" style="left: -60px;top: 10px;">Duration:</span>
+			<input type="text" id="from" name="from" class="absolute">		
+			<input type="text" id="to" name="to" class="absolute" style="left:111px">
+			<input type="hidden" id="rangeDate" name="rangeDate" class="fLeft" value="1">
+			<input id="semDuration" type="button" class="absolute" value="">
+		</div>
+	</span>
+	<div id="volume" style="height: 292px;margin: 15px 0;"></div>
+	<div style="height: 400px;">
+		<span class="relative" style="font-size:14px;margin-left:2px;width: 300px;display: block;margin-bottom:15px;">
+			Page Visits
+		</span>
+		<div id="visit" class="flLeft" style="width: 470px; height: 370px;margin: 0 0 20px 0;">
+		</div>
+		<span class="relative flRight" style="font-size:14px;margin-left:2px;margin-top: -33px;width: 468px;display: block;margin-bottom:15px;">
+			Page Reach
+		</span>
+		<div id="reach" class="flRight" style="width: 470px; height: 370px;margin: 0 0 20px 0;">
+		</div>
+	</div>
+	<div style="height: 450px;">
+		<span class="relative" style="font-size:14px;margin-left:2px;width: 300px;display: block;margin-bottom:15px;">
+			Demography		
+		</span>
+		<div id="demog" class="flLeft" style="width: 470px; height: 370px;margin: 0 0 20px 0;">
+		</div>
+		<span class="relative flRight" style="font-size:14px;margin-left:2px;margin-top: -33px;width: 468px;display: block;margin-bottom:15px;">
+			Location
+		</span>
+		<div id="location" class="flRight" style="width: 470px; height: 370px;margin: 0 0 20px 0;">
+		</div>
+	</div>
+	<div class="relative" style="min-height: 730px;">
+		<span class="relative" style="font-size:14px;margin-left:2px;width: 300px;display: block;margin-bottom:15px;margin-left: 490px;">
+			WordCloud
+		</span>
+		<div id="wordcloud" class="wordcloud radius-white bg-white flRight" style="width:470px; height: 367px;margin-bottom: 21px;overflow:hidden;position:relative;">
+			{$wordcloud}			
+		</div>
+		<table class="body-tbl contentLeft  fgrey2" style="padding: 0;font-size: 11px; width:468px;">
+			<tbody>
+			<tr>
+				<th class="fgrey" colspan="11" style="border-top: 0;font-size: 14px;text-align: left;">
+					Top 10 Posts
+				</th>
+			</tr>
+			<tr>
+				<th>Post</th>
+				<th>Like</th>
+				<th>Comment</th>
+			</tr>
+			{section name=i loop=$post}
+			<tr><td>{$post[i].message}</td><td>{$post[i].likes|number_format}</td><td>{$post[i].comments|number_format}</td></tr>
+			{/section}
+			</tbody>
+		</table>
+		<table class="body-tbl contentLeft fgrey2 absolute" style="padding: 0;font-size: 11px; width:468px; top:0;right:0;margin-top: 420px;">
+			<tbody>
+			<tr>
+				<th class="fgrey" colspan="11" style="border-top: 0;font-size: 14px;text-align: left;">
+					Top 10 Cities
+				</th>
+			</tr>
+			<tr>
+				<th>City</th>
+				<th>Post</th>
+			</tr>
+			{section name=i loop=$cities}
+			<tr><td>{$cities[i].region}</td><td>{$cities[i].value|number_format}</td></tr>
+			{/section}
+			</tbody>
+		</table>
+	</div>
+</div>

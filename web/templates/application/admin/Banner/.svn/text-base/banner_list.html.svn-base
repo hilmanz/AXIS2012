@@ -1,0 +1,181 @@
+
+<div class="theContent">
+    <div class="theTitle">
+        <h2>Banner List</h2>
+        <a href="index.php?s=banner&act=excelreport&lid={$lid}&id_cat={$id_cat}&id_type={$id_type}" class="btn btn_document"><span>Download XLS</span></a>
+        <a href="index.php?s=banner&act=add" class="btn btn_pencil"><span>Add New Banner</span></a>
+    </div><!--contenttitle-->
+    <div class="tableoptions">      
+			<form>
+				<input type="text" name="search" value="{$search}"/>
+				<select name="lid" style="width:150px;">
+					<option value=""> - Language - </option>
+					{section name=i loop=$language}
+					{if $language[i].id == $lid}
+						<option value="{$language[i].id}" selected="selected">{$language[i].language}</option>
+					{else}
+						<option value="{$language[i].id}">{$language[i].language}</option>
+					{/if}
+					{/section}
+				</select>
+				<select name="id_type">
+					<option value=""> - Type - </option>
+					{section name=i loop=$type}
+					{if $type[i].id == $id_type}
+						<option value="{$type[i].id}" selected="selected" >{$type[i].type}</option>
+					{else}
+						<option value="{$type[i].id}">{$type[i].type}</option>
+					{/if}
+					{/section}
+				</select>
+				<select name="id_page"  >
+					<option value=""> - Menu - </option>
+					{section name=i loop=$page}
+					{if $page[i].id == $id_page}
+						<option value="{$page[i].id}" selected="selected" >{$page[i].pagename}</option>
+					{else}
+						<option value="{$page[i].id}">{$page[i].pagename}</option>
+					{/if}
+					{/section}
+				</select>
+                <span>Date Range</span>
+				<input type="text" name="startdate" value="{$startdate}" class="datepicker" />
+				<span>s/d</span>
+				<input type="text" name="enddate" value="{$enddate}"class="datepicker" />
+				<input type="submit" value="cari" />
+				<input type="hidden" name="s" value="banner" class="stdbtn btn_orange" />
+			</form>
+    </div><!--tableoptions-->	
+    <table cellpadding="0" cellspacing="0" border="0" id="table1" class="stdtable">
+        <colgroup>
+            <col class="con0" style="width: 4%" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+            <col class="con0" />
+            <col class="con1" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="head0">No</th>
+                <th class="head1">Language</th>
+                <th class="head0">Title</th>
+                <th class="head1">Menu</th>
+                {*}<th class="head0">Type</th>{/*}
+                {*}<th class="head1">Created Date</th>{/*}
+                <th class="head0">Publish Date</th>
+                <th class="head1">Unpublish Date</th>
+                <th class="head1">Status</th>
+                {*}<th class="head0">Device</th>{/*}
+                <th class="head1">Image</th>
+                <th class="head0">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {foreach from=$list key=k item=v}
+        <tr>
+            <td>{$v[$k].no}&nbsp;</td>
+            <td>{$v[$k].language}</td>
+            <td>{$v[$k].title}</td>
+            <td><div style="width:200px;word-wrap:break-word;">{$v[$k].page}</div></td>
+            {*}<td><nobr>{$v[$k].type}</nobr></td>{/*}
+            {*}<td><nobr>{$v[$k].created_date|date_format:"%d-%m-%Y"} {$v[$k].created_date|date_format:$time.time}</nobr></td>{/*}
+            <td><nobr>{$v[$k].posted_date|date_format:"%d-%m-%Y"} {$v[$k].posted_date|date_format:$time.time}</nobr></td>
+            <td><nobr>{$v[$k].expired_date|date_format:"%d-%m-%Y"} {$v[$k].expired_date|date_format:$time.time}</nobr></td>
+            <td align="center">
+                {if $v[$k].n_status==0} Inactive 
+                {elseif $v[$k].n_status==1} Publish 
+                {elseif $v[$k].n_status==2} Unpublish
+                {else}
+                {/if}
+            </td>
+            {*}<td>{$v[$k].deviceid}</td>{/*}
+            <td><img src="{$baseurl}public_assets/banner/tiny_{$v[$k].slider_image}" width="100"/></td>
+            <td width="4%">
+                <nobr>
+                {section name=i loop=$language}
+                    <strong>{$language[i].language}</strong>
+                        {assign var=langID value=$language[i].id}
+                    {if $language[i].id==$v.hasLang.$langID}
+                        <a href="index.php?s=banner&act=edit&id={$v[$k].parentid}&id_lang={$langID}{$param_search}" class="green"> update </a>
+                        |
+                        <a href="index.php?s=banner&act=comment&id={$v[$k].parentid}&id_lang={$langID}{$param_search}" class="orange"> comment </a>
+                        | <a href="javascript:void(0)" class="popuppreview" url="http://axis-preview.kanadigital.com/promo/detail/{$v[$k].parentid}" class="blue">preview</a>
+                        | <a href="index.php?s=banner&act=hapus&parentid={$v[$k].parentid}{$param_search}" class="red" onclick="return confirm('Are you sure you want to delete this?')">Delete</a>
+                        <br />
+                    {else}
+                        <a href="index.php?s=banner&act=add_language&id={$v[$k].parentid}&id_lang={$langID}{$param_search}" class="green"> add </a>
+                        
+                    {/if}
+                {/section}
+                </nobr>
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    <div class="paging">
+    	{$paging}
+    </div>
+</div><!--theContent-->
+{literal}
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+	function changeStatus(parentid,status){
+		$.get(
+			'index.php?s=banner&act=change_status&parentid='+parentid+'&status='+status,
+			{},
+			function(data){
+				if(data.success > 0){
+					$("#sel-"+parentid).fadeOut('fast',function(){
+						$("#sel-"+parentid).fadeIn('slow');
+					});
+				}else{
+					alert('Gagal mengganti status, silakan coba lagi!');
+				}
+			},
+			"json"
+		);
+		return false;
+	}
+	
+	function changeOnline(parentid,online){
+		$.get(
+			'index.php?s=banner&act=change_online&parentid='+parentid+'&online='+online,
+			{},
+			function(data){
+				if(data.success > 0){
+					$("#sel-"+parentid).fadeOut('fast',function(){
+						$("#sel-"+parentid).fadeIn('slow');
+					});
+				}else{
+					alert('Gagal mengganti online, silakan coba lagi!');
+				}
+			},
+			"json"
+		);
+		return false;
+	}
+	
+	function changePrize(parentid,prize){
+		$.get(
+			'index.php?s=banner&act=change_prize&parentid='+parentid+'&prize='+prize,
+			{},
+			function(data){
+				if(data.success > 0){
+					$("#sel-"+parentid).fadeOut('fast',function(){
+						$("#sel-"+parentid).fadeIn('slow');
+					});
+				}else{
+					alert('Gagal mengganti prize, silakan coba lagi!');
+				}
+			},
+			"json"
+		);
+		return false;
+	}	
+</script>
+{/literal}

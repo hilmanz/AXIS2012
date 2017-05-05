@@ -1,0 +1,14 @@
+
+    <div id="slider">
+		<link rel="stylesheet" type="text/css" href="{$basedomain}assets/css/slider.css" />
+        <div id="da-slider" class="da-slider">
+            <div class="da-slide" id="slide1">
+				{$locale.slider.telekomunikasiglobal}
+            </div><!-- end .da-slide -->
+	   		{*}
+            <div class="da-slide" id="slide2">
+                {$locale.slider.bestgrowth}
+            </div>
+	   		{/*}
+        </div><!-- end #da-slider -->
+    </div><!-- end #slider -->

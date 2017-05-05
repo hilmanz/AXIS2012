@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/1197/trunk/web/templates/application/admin/career
+END
+career_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/axis2012/!svn/ver/1197/trunk/web/templates/application/admin/career/career_list.html
+END
+career_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/axis2012/!svn/ver/1153/trunk/web/templates/application/admin/career/career_edit.html
+END
+career_new.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/axis2012/!svn/ver/1153/trunk/web/templates/application/admin/career/career_new.html
+END

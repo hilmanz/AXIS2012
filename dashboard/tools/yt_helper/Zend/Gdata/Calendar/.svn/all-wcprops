@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/axis2012/!svn/ver/64/trunk/dashboard/tools/yt_helper/Zend/Gdata/Calendar
+END
+ListEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/64/trunk/dashboard/tools/yt_helper/Zend/Gdata/Calendar/ListEntry.php
+END
+ListFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/axis2012/!svn/ver/64/trunk/dashboard/tools/yt_helper/Zend/Gdata/Calendar/ListFeed.php
+END
+EventEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/axis2012/!svn/ver/64/trunk/dashboard/tools/yt_helper/Zend/Gdata/Calendar/EventEntry.php
+END
+EventFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/axis2012/!svn/ver/64/trunk/dashboard/tools/yt_helper/Zend/Gdata/Calendar/EventFeed.php
+END
+EventQuery.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/axis2012/!svn/ver/64/trunk/dashboard/tools/yt_helper/Zend/Gdata/Calendar/EventQuery.php
+END

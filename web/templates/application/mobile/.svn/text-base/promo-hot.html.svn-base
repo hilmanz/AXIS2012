@@ -1,0 +1,81 @@
+<div class="breadcrumb">
+		<a href="{$mobiledomain}">{$locale.home.title}</a>	&raquo;  <a href="{$mobiledomain}promo">{$locale.nav.promo}</a>{*}	 &raquo; <a href="{$mobiledomain}product/hot">HOT PROMO</a>{/*}	
+</div>
+<div class="page-body" data-role="content">	
+	<div class="page-meta">
+		<h1 class="page-title">HOT PROMO</h1>
+		
+		<div class="page-excerpt">
+			<p>
+				{$locale.mobileheader.lagitrend}
+			</p>	
+		</div>
+	</div>
+	
+	<div class="page-content clear">
+		<div id="product-category-list" class="page-content-list">
+			<ul id="productList" data-role="listview" data-inset="true">
+				{foreach from=$promo key=k item=v}
+					<li>
+						<a href="{$mobiledomain}promo/hot/{$v.id}" data-transition="slide" rel="external">
+							<span class="text">{$v.title}</span>
+						</a>
+					</li>
+				{/foreach}
+			</ul>
+		</div>
+	</div>
+	<div id="promoHotPaging" class="paging">
+	</div><!-- end .paging -->
+	<div class="list-nav">
+		<ul data-role="listview" data-inset="true">
+
+			<li>
+				<a href="{$mobiledomain}" data-transition="slide" data-url="{$mobiledomain}">
+					<span class="icon icon-home"></span>
+					<span class="textLink">{$locale.mobilebtn.home}</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div><!-- /content -->
+
+<script type="text/javascript">
+	var total_rows = '{$promo[0].total_rows}';
+	var basedomain = "{$basedomain}";
+	var mobiledomain = "{$mobiledomain}";
+	var promoPage = {$promoPage};
+	{literal}
+		$(document).ready(function(){
+			initiatePaging(total_rows);
+		});
+		function initiatePaging(total_rows){
+			var pageInit = 0;
+			var start = promoPage;
+			//Init Page
+			if(pageInit == 0){
+				pageInit = 1;
+				if(start == 0)start=1;
+				kiPagination(total_rows, start, 'promoHotPaging', 'hot', 'hot_ajax', 5);
+			}
+		}
+		function hot_ajax(fungsi, start){
+			$('#productList').html('<div class="loaders"><img src="'+basedomain+'assets/images/loader.png"></div>');
+			$.post(mobiledomain+'promo/'+fungsi, {start : start, hot_list : 1}, function(data){
+				var str='';
+				$.each(data, function(k,v){
+					str+='<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="a" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-corner-top ui-btn-up-a">';
+						str+='<div class="ui-btn-inner ui-li ui-corner-top"><div class="ui-btn-text">';
+							str+='<a rel="external" data-transition="slide" href="'+mobiledomain+'promo&#47;hot&#47;'+v.id+'" class="ui-link-inherit">';
+								str+='<span class="text">'+v.title+'</span>';
+							str+='</a>';
+						str+='</div>';
+						str+='<span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div>';
+					str+='</li>';
+				});
+				$('.loaders').remove();
+				$('#productList').html(str);
+			});
+		}
+	{/literal}
+</script>

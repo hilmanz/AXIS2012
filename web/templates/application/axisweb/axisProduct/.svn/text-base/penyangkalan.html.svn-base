@@ -1,0 +1,9 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">Home</a> &raquo; <a href="">Penyangkalan</a></h1>
+</div><!-- end #breadcumb -->
+<div id="container">
+    <div class="wrapper">
+		{if $locale.country==1}{include file="application/axisweb/static_locale/ind/penyangkalan.html"}
+		{else}{include file="application/axisweb/static_locale/eng/penyangkalan.html"} {/if}
+    </div><!-- end #promoDetail -->
+</div><!-- end #container -->

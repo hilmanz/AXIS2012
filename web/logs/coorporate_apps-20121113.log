@@ -1,0 +1,5 @@
+2012-11-13 11:36:25 	SELECT * FROM  axis_coorporate_blog 
+					WHERE n_status = 1 AND lid=1 AND type=0
+					
+					ORDER BY posted_date DESC LIMIT 1
+					

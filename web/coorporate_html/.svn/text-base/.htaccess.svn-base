@@ -1,0 +1,11 @@
+## Redirect ke Front Page if got 404 HTTP Error
+
+ErrorDocument 404 /corporate/404.html
+ErrorDocument 403 http://www.axisworld.co.id/corporate/
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php?/$1 [QSA,L]
+</IfModule>

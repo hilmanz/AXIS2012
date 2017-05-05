@@ -1,0 +1,20 @@
+	{if $banner}
+    <div id="slider">
+		<link rel="stylesheet" type="text/css" href="{$basedomain}assets/css/slider.css" />
+        <div id="da-slider" class="da-slider">
+		
+			{section name=i loop=$banner}
+            <div class="da-slide" id="slide1">
+                <div class="splash1"></div>
+                <div class="splash2"></div>
+                <h2>{$banner[i].title} <span class="red">{$banner[i].brief}</span></h2>
+                <p>{$banner[i].content}</p>
+                <a href="{$basedomain}content/detail/{$banner[i].id}" class="detail">{$locale.btn.detail}</a>
+                <a href="#" class="beli">beli</a>
+                <div class="da-img"><img src="{$basedomain}public_assets/banner/{$banner[i].image}" alt="image01" /></div>
+            </div><!-- end .da-slide -->
+           {/section}
+
+        </div><!-- end #da-slider -->
+    </div><!-- end #slider -->
+			   {/if}

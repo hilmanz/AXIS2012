@@ -1,0 +1,363 @@
+<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+<div id="boxNetwork">
+    <div class="headBox">
+        <h1>{$locale.widget.socialnetwork}</h1>
+    </div><!-- end .headBox -->
+    <div id="boxNetworkTab">
+        <ul>           
+            <li><a href="#tab_facebook" class="icon_fb">Facebook</a></li>
+			<li><a href="#tab_twitter" class="icon_twitter">Twitter</a></li>
+            <li><a href="#tab_gplus" class="icon_gplus">G+</a></li>
+        </ul>
+        <div class="entryBox" id="tab_twitter">     
+			{if $twitter_check eq 1}
+			<div id="axisLastTwit" class="row rowDefault">
+            </div><!-- end .rowDefault -->
+				<div id="userTwitData" class="{*}scrollbar{/*} scroll-pane wide2 tall2">
+				{section name=i loop=$twitFeed}
+					<div class="row">
+						<div class="smallThumb">
+							<a href="#"><img class="twIMG" src="{$twitFeed[i].user.profile_image_url}" /></a>
+						</div>
+						<div class="entry">  
+							<h3 class="twName">{$twitFeed[i].user.name} <a href="#">(@{$twitFeed[i].user.screen_name})</a></h3>
+							<p>{$twitFeed[i].text}</p>
+							<p class="dates">{$twitFeed[i].created_at}</p>
+							<div class="rowBtns">'
+							   <a class="reply" href="https://twitter.com/intent/tweet?in_reply_to={$twitFeed[i].id_str}">Reply</a>
+							   <a class="retweet" href="https://twitter.com/intent/retweet?tweet_id={$twitFeed[i].id_str}">Retweet</a>
+							   <a class="favourite" href="https://twitter.com/intent/favorite?tweet_id={$twitFeed[i].id_str}">Favourite</a>
+							</div>
+						</div>
+					</div>
+				{/section}
+				</div><!-- end .scrollbar -->
+				<div class="rowInput">
+						<p id="twError" style="display:none;color:#ff0000;">{$locale.msg.entrycomment}</p>
+						<textarea id="contentTwit"></textarea>
+						<input id="updateTwit" type="button" value="POST" />
+				</div><!-- end .rowInput -->
+			{else}
+				<div class="scrollbar scroll-pane wide2 tall2">
+					<div class="socialConnect">
+                    	<h3>{$locale.widget.socialnetworktw}</h3>
+						<a class="loginTwitter loginpopup" href="javascript:void(0)" url="{$twitURL}"><span></span>Login Twitter</a>
+					</div><!-- end #socialConnect -->
+				</div><!-- end .scrollbar -->
+			{/if}
+        </div><!-- end #tab_twitter -->
+        <div class="entryBox" id="tab_facebook">
+            {if $facebook_check eq 1}
+			<div class="row rowDefault">
+                <div class="smallThumb">
+                    <a href="#"><img src="https://graph.facebook.com/{$fbAXIS.from.id}/picture" /></a>
+                </div><!-- end .smallThumb -->
+                <div class="entry">
+                    <h3>{$fbAXIS.from.name} <a href="#">(AXISgsm)</a></h3>
+                    <p>{if $fbAXIS.message}{$fbAXIS.message}{else}{$fbAXIS.story}{/if}</p>
+                    <p class="dates">{$fbAXIS.created_time|date_format_socmed}</p>
+                </div><!-- end .entry -->
+            </div><!-- end .rowDefault -->
+            <div class="{*}scrollbar{/*} scroll-pane wide2 tall2">
+            {section name=i loop=$fbList}    
+				<div class="row">
+                    <div class="smallThumb">
+                        <a href="#"><img src="https://graph.facebook.com/{$fbList[i].from.id}/picture" /></a>
+                    </div><!-- end .smallThumb -->
+                    <div class="entry">
+                        <h3>{$fbList[i].from.name}</h3>
+                        <p>{if $fbList[i].message}{$fbList[i].message}{elseif $fbList[i].story}{$fbList[i].story}{/if}</p>
+                        <p class="dates">{$fbList[i].updated_time|date_format}</p>
+						{if $fbList[i].likes}
+						<div id="btn{$fbList[i].id}" class="rowBtns">											
+							{if $fbList[i].likes.can_like}						
+								<a id="unlike{$fbList[i].id}" class="reply unlike" href="#" onclick="likeFB('{$fbList[i].id}', 0);return false;">Unlike</a>
+							{else}
+								<a id="like{$fbList[i].id}" class="reply like" href="#" onclick="likeFB('{$fbList[i].id}', 1);return false;">Like</a>
+							{/if}
+						</div><!-- end .rowBtns -->
+						{/if}
+                    </div><!-- end .entry -->
+                </div><!-- end .row -->
+			{/section}
+        	</div><!-- end .scrollbar -->
+            <div class="rowInput">
+					<p id="fbError" style="display:none;color:#ff0000;">{$locale.msg.entrycomment}</p>
+                    <textarea id="fbPOST"></textarea>
+                    <input type="button" value="POST" id="postingFB" />
+            </div><!-- end .rowInput -->
+			{else}
+            <div class="scrollbar scroll-pane wide2 tall2">
+                <div class="socialConnect">
+                    	<h3>{$locale.widget.socialnetworkfb}</h3>
+                    <a class="loginFacebook loginpopup" href="javascript:void(0)" url="{$fbURL}"><span></span>Login Facebook</a>
+                </div><!-- end #socialConnect -->
+        	</div><!-- end .scrollbar -->
+			{/if}
+        </div><!-- end #tab_facebook -->
+        <div class="entryBox" id="tab_gplus">
+			{if $gplus_check eq 1}
+            <div class="row rowDefault">
+                <div class="smallThumb">
+					<a href="{$gplusDefault.object.url}" target="_blank"><img src="{$gplusDefault.actor.image.url}" /></a>
+				</div><!-- end .smallThumb -->
+				<div class="entry">
+					<h3><a href="{$gplusDefault.object.url}" target="_blank">{$gplusDefault.actor.displayName}</a></h3>
+					<p>{$gplusDefault.object.content}</p>
+					<p class="dates">{$gplusDefault.published|date_format_socmed}</p>
+				</div><!-- end .entry -->
+            </div><!-- end .rowDefault -->
+		
+            <div class="{*}scrollbar{/*} scroll-pane wide2 tall2">
+			{section name=i loop=$gplusList}
+                <div class="row">
+                    <div class="smallThumb">
+                        <a href="{$gplusList[i].object.url}" target="_blank"><img src="{$gplusList[i].actor.image.url}" /></a>
+                    </div><!-- end .smallThumb -->
+                    <div class="entry">
+                        <h3><a href="{$gplusList[i].object.url}" target="_blank">{$gplusList[i].actor.displayName}</a></h3>
+                        <p>{$gplusList[i].object.content}</p>
+                        <p class="dates">{$gplusList[i].published|date_format_socmed}</p>
+                    </div><!-- end .entry -->
+                </div><!-- end .row -->
+			{/section}
+        	</div><!-- end .scrollbar -->
+			
+            <div class="rowInput bgPinks">
+            	<h3>Sambil liat-liat postinganmu<br />
+                    kamu gak bakal ketinggalan yang terbaru <br />
+                    dan seru-seru dari Google+ AXIS </h3>
+            </div><!-- end .rowInput -->
+			
+		{else}
+            <div class="scrollbar scroll-pane wide2 tall2">
+                <div class="socialConnect">
+                    <h3>{$locale.widget.socialnetworkgpls}</h3>
+                    <a class="loginGplus loginpopup" href="javascript:void(0)" url="{$gplusURL}"><span></span>Login Google+</a>
+                </div><!-- end #socialConnect -->
+        	</div><!-- end .scrollbar -->	
+		{/if}
+        </div><!-- end #tab_gplus -->
+    </div><!-- end #boxNetworkTab -->
+    <div class="shadow"></div>
+</div><!-- end #boxNetwork -->
+
+
+<script type="text/javascript">
+	var username = "{$twitter_id}";
+	var twitPic = "{$twitPic}";
+	var userpage = "{$userpage}";
+	var at = '{$at}';
+	var fbID = '{$fbID}';
+	var fbName = "{$fbNameSoc}";
+	var tabActive = '{$tab_check}';
+	var unlikeFB = '{$deleteLikeFB}';
+	var twitterActive = '{$twitter_check}';
+	var twitterURL = '{$twitter_ajax}';
+	var fbActive = '{$facebook_check}';
+	var fbURL = '{$fb_ajax}';
+	var gplusActive = '{$gplus_check}';
+	var gplusURL = '{$gplus_ajax}';
+{literal}
+	$(document).ready(function(){
+		if(twitterActive != ''){
+			loadAXISTwitter();
+			setInterval(function(){loadAXISTwitter();loadUserTwitter();},180000);
+		}
+		if(fbActive != ''){
+			setInterval(function(){loadUserFB();},180000);
+		}
+		if(gplusActive != ''){
+			setInterval(function(){loadUserGplus();},180000);
+		}
+	});
+	
+	function loadUserGplus(){
+		$('#tab_gplus .tall2').html('<div class="loaders"><img src="'+basedomain+'assets/images/loader.gif"></div>');
+		$.post(basedomain+'index.php?'+gplusURL,function(data){
+			var str='';
+			$.each(data, function(k,v){
+				str+='<div class="row">';
+                    str+='<div class="smallThumb">';
+                        str+='<a href="'+v.object.url+'" target="_blank"><img src="'+v.actor.image.url+'" /></a>';
+                    str+='</div>';
+                    str+='<div class="entry">';
+                        str+='<h3><a href="'+v.object.url+'" target="_blank">'+v.actor.displayName+'</a></h3>';
+                        str+='<p>'+v.object.content+'</p>';
+                        str+='<p class="dates">'+v.published+'</p>';
+                    str+='</div>';
+                str+='</div>';
+			});
+			$('#tab_gplus .tall2').html(str);
+		});
+	}
+	
+	function loadUserFB(){
+		$('#tab_facebook .tall2').html('<div class="loaders"><img src="'+basedomain+'assets/images/loader.gif"></div>');
+		$.post(basedomain+'index.php?'+fbURL,function(data){
+			var str='';
+			$.each(data, function(k,v){
+				str+='<div class="row">';
+                   str+=' <div class="smallThumb">';
+                        str+='<a href="#"><img src="https://graph.facebook.com/'+v.from.id+'/picture" /></a>';
+                   str+='</div>';
+                    str+='<div class="entry">';
+                        str+='<h3>'+v.from.name+'</h3>';
+						if(v.message){
+							str+='<p>'+v.message+'</p>';
+						}else if(v.story){
+							str+='<p>'+v.story+'</p>';
+						}
+                        str+='<p class="dates">'+v.updated_time+'</p>';
+						str+='<div id="btn{$fbList[i].id}" class="rowBtns">	';										
+							if(v.likes){
+								if(v.likes.can_like){						
+									str+='<a id="unlike'+v.id+'" class="reply unlike" href="#" onclick="likeFB(\''+v.id+'\', 0);return false;">Unlike</a>';
+								}else{
+									str+='<a id="like'+v.id+'" class="reply like" href="#" onclick="likeFB(\''+v.id+'\', 1);return false;">Like</a>';
+								}
+							}
+						str+='</div>';
+                    str+='</div>';
+                str+='</div>';
+			});
+			$("#tab_facebook .tall2").html(str);
+		});
+	}
+	
+	function loadUserTwitter(){
+		$('#tab_twitter .tall2').html('<div class="loaders"><img src="'+basedomain+'assets/images/loader.gif"></div>');
+		$.post(basedomain+'index.php?'+twitterURL,function(data){
+			var str='';
+			$.each(data, function(k,v){
+				str+='<div class="row">';
+					str+='<div class="smallThumb">';
+						str+='<a href="#"><img class="twIMG" src="'+v.user.profile_image_url+'" /></a>';
+					str+='</div>';
+					str+='<div class="entry">';  
+						str+='<h3 class="twName">'+v.user.name+' <a href="#">(@'+v.user.screen_name+')</a></h3>';
+						str+='<p>'+v.text+'</p>';
+						str+='<p class="dates">'+v.created_at+'</p>';
+						str+='<div class="rowBtns">';
+						   str+='<a class="reply" href="https://twitter.com/intent/tweet?in_reply_to='+v.id_str+'">Reply</a>';
+						   str+='<a class="retweet" href="https://twitter.com/intent/retweet?tweet_id='+v.id_str+'">Retweet</a>';
+						   str+='<a class="favourite" href="https://twitter.com/intent/favorite?tweet_id='+v.id_str+'">Favourite</a>';
+						str+='</div>';
+					str+='</div>';
+				str+='</div>';
+			});
+			$("#tab_twitter .tall2").html(str);
+		});
+	}
+	
+	function loadAXISTwitter(){
+		var userAXIS = 'axisGSM'; 
+		var urlAXIS='http://search.twitter.com/search.json?callback=?&rpp=1&search_type=recent&q=from:'+userAXIS+'';
+		var show = new Array(); 				 
+
+		$('#axisLastTwit').html('<div class="loaders"><img src="'+basedomain+'assets/images/loader.gif"></div>');
+		$.post(urlAXIS,function(json){
+			$( "#axisLastTwit" ).empty();
+			$.each(json.results,function(i,item){ 
+					show[i] = '<div class="smallThumb">'
+							+'<a href="#"><img src="'+item.profile_image_url+'" /></a>'
+							+'</div>'
+							+'<div class="entry">'     
+							+'<h3>'+item.from_user_name+' <a href="#">(@'+item.from_user+')</a></h3>'
+							+'<p>'+item.text+'</p>'
+							+'<p class="dates">'+item.created_at+'</p>'
+							+'<div class="rowBtns">'
+							   +'<a class="reply" href="https://twitter.com/intent/tweet?in_reply_to='+item.id_str+'">Reply</a>'
+							   +'<a class="retweet" href="https://twitter.com/intent/retweet?tweet_id='+item.id_str+'">Retweet</a>'
+							   +'<a class="favourite" href="https://twitter.com/intent/favorite?tweet_id='+item.id_str+'">Favourite</a>'
+							+'</div>'
+							+'</div>';
+			   $("#axisLastTwit").append(show[i]); 
+			});
+		},'json');
+	}
+	
+	$("#updateTwit").live('click', function(){
+		var tweeting = $("#contentTwit").val()+' via http://www.axisworld.co.id';
+		tweeting = tweeting.replace(/(<([^>]+)>)/ig,"");
+		tweeting = tweeting.replace(/(\r\n|\n|\r)/gm,"");
+		if($("#contentTwit").val()){
+			$('#tab_twitter .tall2').prepend('<div class="loaders"><img src="'+basedomain+'assets/images/loader.gif"></div>');
+			$.post(basedomain+userpage,{status: tweeting, updateTwitStatus: 1}, function(){
+				var twit ='';
+				twit+='<div class="row"><div class="smallThumb">'
+								+'<a href="#"><img src="'+twitPic+'" /></a>'
+								+'</div>'
+								+'<div class="entry">'     
+								+'<h3>'+username+' <a href="#">(@'+username+')</a></h3>'
+								+'<p>'+tweeting+'</p>'
+								+'<p class="dates">3 seconds ago</p>'
+								+'</div></div>';
+				$('.loaders').remove();
+				$("#tab_twitter .tall2").prepend(twit);
+				$("#contentTwit").val('');
+			});
+		}else{
+			$('#twError').show();
+			$('#contentTwit').val('');
+			$('#twError').delay(1000).fadeOut();
+		}
+		
+	});
+	
+	$("#postingFB").live('click', function(){
+		var fbPOST = $('#fbPOST').val()+' via www.axisworld.co.id';
+		fbPOST = fbPOST.replace(/(<([^>]+)>)/ig,"");
+		fbPOST = fbPOST.replace(/(\r\n|\n|\r)/gm,"");
+		if($('#fbPOST').val()){
+			$('#tab_facebook .tall2').prepend('<div class="loaders"><img src="'+basedomain+'assets/images/loader.gif"></div>');
+			$.post('https://graph.facebook.com/'+fbID+'/feed?access_token='+at,{message: fbPOST}, function(data){
+				try{
+					var str ='';		
+					str+='<div class="row">';
+					   str+=' <div class="smallThumb">';
+						   str+='<a href="#"><img src="https://graph.facebook.com/'+fbID+'/picture""></a>';
+						str+='</div>';
+						str+='<div class="entry">';
+							str+='<h3>'+fbName+'</h3>';
+							str+='<p>'+fbPOST+'</p>';
+							str+='<p class="dates">3 seconds ago</p>';
+						str+='</div>';
+					str+='</div>';
+					$('.loaders').remove();
+					$("#tab_facebook .tall2").prepend(str);
+					$('#fbPOST').val('');			
+				}catch(e){
+					$('#fbError').show();
+					$('#fbPOST').val('');
+					$('#fbError').delay(1000).fadeOut();
+				}
+			},'json');
+		}else{
+			$('#fbError').show();
+			$('#fbPOST').val('');
+			$('#fbError').delay(1000).fadeOut();
+		}
+		
+	});
+	
+	function likeFB(postID, status){
+		if(status == '1'){
+			$.post('https://graph.facebook.com/'+postID+'/likes?access_token='+at, function(result){
+				if(result){
+					$('#like'+postID).remove();
+					$('#btn'+postID).prepend('<a id="unlike'+postID+'" class="reply unlike" href="#" onclick="likeFB(\''+postID+'\', 0);return false;">Unlike</a>');
+				}
+			});
+		}else{
+			$.post(basedomain+'index.php?'+unlikeFB, {post_id : postID}, function(result){
+				if(result){
+					$('#unlike'+postID).remove();
+					$('#btn'+postID).prepend('<a id="like'+postID+'" class="reply like" href="#" onclick="likeFB("'+postID+'", 1);return false;">Like</a>');
+				}
+			});
+		}
+		
+	}
+{/literal}
+</script>

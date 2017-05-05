@@ -1,0 +1,27 @@
+/* Theme Name: AXIS Website FOR SUCKERs IE Version: 1.0 Author: ACIT JAZZ - 2012*/
+#widgetfooter .last {
+	padding:30px 0
+}
+#slider .da-slide {
+	margin-left:220px
+}
+#productpage .produkbox, #panduan .panduan ,.customerbox,.produkbox{
+	opacity:1;
+	filter: alpha(opacity=100);
+}
+.odd .circleThumb2, .circleThumb2{
+	background:none;
+}
+.odd .circleThumb2 a.thumbnails, .circleThumb2 a.thumbnails{
+	background:#7A1878;
+	padding:5px;
+}
+.odd .circleThumb2 .icon,.circleThumb2 .icon{
+	top:10px;
+}
+.smallThumb{
+	margin:0 10px;
+}
+#moreInfo p{
+	width:600px;
+}

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Regression/783
+END
+TwoTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Regression/783/TwoTest.php
+END
+ChildSuite.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Regression/783/ChildSuite.php
+END
+OneTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Regression/783/OneTest.php
+END
+ParentSuite.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Regression/783/ParentSuite.php
+END

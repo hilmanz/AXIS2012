@@ -1,0 +1,147 @@
+<div id="breadcumb" class="wrapper">
+	<h1><a href="{$basedomain}">{$locale.home.title}</a> &raquo; <a href="{$basedomain}isi_ulang">{$locale.isiulang.title}</a></h1>
+</div><!-- end #breadcumb -->
+{$slider_Isi_ulang}
+<div id="container">
+    <div class="wrapper" id="lagiIn">
+    	<div id="sidebar">					
+		{$medium_banner}
+        </div><!-- end #sidebar -->
+        <div id="contents">
+        	<div class="theTitle">
+            	<h1 class="icon_connector">{$locale.isiulang.lokasi}</h1>
+            </div><!-- end .theTitle -->
+            <div class="shadowCtop">
+                <div id="location" class="shadowCbottom">
+					<div class="rowSelect">
+					<select id="select1" name="select1" class="styled">
+					  {*}<option value="">-{$locale.btn.daerah}-</option>{/*}
+					  {section name=i loop=$province}
+					  <option value="{$province[i].id}">{if $locale.country==1}{$province[i].province}{else}{$province[i].province_en}{/if}</option>
+					  {/section}
+					</select>
+					<select id="select2" name="select2" class="styled">
+					  {*}<option value="">-{$locale.btn.kota}-</option>{/*}
+					  {section name=i loop=$city}
+					  <option value="{$city[i].id}">{if $locale.country==1}{$city[i].city}{else}{$city[i].city_en}{/if}</option>
+					  {/section}
+					</select>
+					</div>
+					<span id="result" class="white_table">
+					<table cellpadding="0" cellspacing="0" border="0">
+					  <tbody id="daftarLokasi">
+						<tr>
+						  <td><span id="namaKota">{$city[0].city}</span></td>
+						</tr>
+						{section name=i loop=$default}
+						<tr>
+						<td><div class="title_area">{$default[i].title}</div>
+						{$default[i].brief}
+						</td>
+						</tr>
+						{/section}
+					  </tbody>
+					</table>
+					</span>
+                </div><!-- end #location -->
+            </div><!-- end .shadowCtop -->
+            <div id="isi_ulangPaging" class="paging">
+                
+            </div><!-- end .paging -->
+
+        </div><!-- end #contents -->
+    </div><!-- end #lagiIn -->
+	  <div class="widget-axisLife">
+    {$carousel_banner}
+    </div><!-- end .widget-whyAxis -->
+</div><!-- end #container -->
+{include file="application/axisweb/widgets/popup_map.html"}
+
+<script>
+	var locale = "{if $locale.btn.detail}{$locale.btn.detail}{else}0{/if}";
+	var kota = '{$locale.customercare.kota}';
+	var total_rows = '{$default[0].total_rows}';
+	var notfound = '{$locale.err.notfound}';
+	var basedomain = "{$basedomain}";
+	var province = {$provID};	
+	var isiUlangPage = {$isiUlangPage};	
+	var cityID = {$cityID};	
+		var country = {$locale.country};
+{literal}
+	$(document).ready(function(){
+		initiatePaging(total_rows);
+	});
+	
+	$("#pickCity").change(function(){
+		$("#formSearch").submit();
+	});
+	
+	function initiatePaging(total_rows){
+		var pageInit = 0;
+		var start = isiUlangPage;
+		//Init Page
+		if(pageInit == 0){
+			pageInit = 1;
+			if(start == 0)start=1;
+			kiPagination(total_rows, start, 'isi_ulangPaging', 'isi_ulang_ajax', 'isi_ulang_ajax', 7);
+		}
+	}
+	
+	function isi_ulang_ajax(fungsi, start){
+		$('#daftarLokasi').html('<tr><td><span>'+$('#selectselect2').html()+'</span></td></tr>');
+		$('#daftarLokasi').append('<div class="loaders"><img src="'+basedomain+'assets/images/loader.png"></div>');
+		$.post(basedomain+'isi_ulang/'+fungsi, {start : start, city : cityID}, function(data){
+			var str='';
+			$.each(data, function(k,v){
+				str+='<tr>';
+					str+='<td><div class="title_area">'+v.title+'</div>';
+					str+=''+v.brief+'</td>';
+				str+='</tr>';
+			});
+			$('.loaders').remove();
+			$('#daftarLokasi').append(str);
+		});
+	}
+	
+	$('#select1').change(function(){
+		$('#select2').html('<option value="">'+kota+'</option>');
+		$('#selectselect2').html(kota);
+		province = $(this).val();
+		$.post(basedomain+'isi_ulang/getCitybyProvince', {province : province}, function(city){
+			var str='';
+			str+='<option value="">'+kota+'</option>';
+			$.each(city, function(k,v){
+					if(country==1) str+='<option value="'+v.id+'">'+v.city+'</option>';
+					else str+='<option value="'+v.id+'">'+v.city_en+'</option>';
+			});
+			$('#select2').html(str);
+		});
+	});
+	
+	$(document).on('change','#select2',function(){
+		$('#isi_ulangPaging').html('');
+		cityID = $(this).val();
+		$('#namaKota').html($('#selectselect2').html());
+		$('#daftarLokasi').html('<tr><td><span>'+$('#selectselect2').html()+'</span></td></tr>');
+		$('#daftarLokasi').append('<div class="loaders"><img src="'+basedomain+'assets/images/loader.png"></div>');
+		$.post(basedomain+'isi_ulang/getLocationIsiUlang', {province : province, city : cityID}, function(data){
+			var str='';
+			if(data!=false){
+				initiatePaging(data[0].total_rows);
+				$.each(data, function(k,v){
+					str+='<tr>';
+					str+='<td><div class="title_area">'+v.title+'</div>';
+					str+=''+v.brief+'</td>';
+					str+='</tr>';
+				});
+			}else{
+				$('.loaders').remove();
+				$('#isi_ulangPaging').html('');
+				str+='<tr><td>'+notfound+'</td></tr>';
+			}
+			$('.loaders').remove();
+			$('#daftarLokasi').append(str);
+		});
+	});
+{/literal}		
+</script>

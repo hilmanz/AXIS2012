@@ -1,0 +1,19 @@
+<div class="theTitle">
+            	<h1 class="icon_shop">{$locale.widget.storeterkait}</h1>
+            </div>
+            <div id="listStore" class="widget shadowWtop">
+            	<div class="widgetContainer shadowWbottom">
+					{section name=i loop=$mcpterkait}
+                        <div class="boxPromo">
+                            <div class="bannerThumb">
+                                <a href="{$basedomain}online_store/detail/{$mcpterkait[i].id}"><img src="{$basedomain}public_assets/article/{$mcpterkait[i].image}"/></a>
+                            </div><!-- end .bannerThumb -->
+                            <div class="pitaGame"></div>
+                            <a class="beli" href="{$basedomain}online_store/detail/{$mcpterkait[i].id}">{$locale.btn.beli}</a>
+                            <h3 class="title">{$mcpterkait[i].title}</h3>
+                            <span class="price">Rp. {$mcpterkait[i].prize}</span>
+                            <div class="shadow"></div>
+                        </div><!-- end .boxPromo -->
+                     {/section}    
+                </div><!-- end .widgetContainer -->
+            </div><!-- end #listStore -->

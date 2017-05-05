@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Framework
+END
+SuiteTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Framework/SuiteTest.php
+END
+TestCaseTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Framework/TestCaseTest.php
+END
+TestImplementorTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Framework/TestImplementorTest.php
+END
+AssertTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Framework/AssertTest.php
+END
+ConstraintTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Framework/ConstraintTest.php
+END
+TestListenerTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Framework/TestListenerTest.php
+END
+ComparatorTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/axis2012/!svn/ver/8/trunk/web/test/Tests/Framework/ComparatorTest.php
+END
